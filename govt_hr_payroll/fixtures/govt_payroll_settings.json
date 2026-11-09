@@ -1,0 +1,15 @@
+[
+  {
+    "name": "Govt Payroll Settings",
+    "doctype": "Govt Payroll Settings",
+    "docstatus": 0,
+    "current_financial_year": "2026-2027",
+    "current_da_rate": 50.0,
+    "nps_emp_rate": 10.0,
+    "nps_govt_rate": 14.0,
+    "standard_edu_cess": 4.0,
+    "hra_x_rate": 30.0,
+    "hra_y_rate": 20.0,
+    "hra_z_rate": 10.0
+  }
+]

@@ -5,12 +5,6 @@ app_description = "Comprehensive 7th CPC Government HR and Payroll System for Fr
 app_email = "support@nexgenerptechnologies.com"
 app_license = "mit"
 
-# Fixtures for default government master configurations
-fixtures = [
-	{
-		"dt": "CPC Pay Level"
-	},
-	{
-		"dt": "Govt Payroll Settings"
-	}
-]
+# Installation and migration hooks for automated master setup
+after_install = "govt_hr_payroll.setup.install.after_install"
+after_migrate = "govt_hr_payroll.setup.install.after_migrate"

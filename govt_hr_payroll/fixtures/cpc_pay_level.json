@@ -1,2870 +1,5608 @@
 [
   {
+    "name": "Level-1",
     "doctype": "CPC Pay Level",
+    "docstatus": 0,
     "pay_level": "Level-1",
     "grade_pay": 1800,
     "entry_pay": 18000,
     "maximum_pay": 56900,
     "cells": [
       {
+        "name": "Level-1-cell-1",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-1",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 1,
         "basic_pay": 18000
       },
       {
+        "name": "Level-1-cell-2",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-1",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 2,
         "basic_pay": 18500
       },
       {
+        "name": "Level-1-cell-3",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-1",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 3,
         "basic_pay": 19100
       },
       {
+        "name": "Level-1-cell-4",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-1",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 4,
         "basic_pay": 19700
       },
       {
+        "name": "Level-1-cell-5",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-1",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 5,
         "basic_pay": 20300
       },
       {
+        "name": "Level-1-cell-6",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-1",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 6,
         "basic_pay": 20900
       },
       {
+        "name": "Level-1-cell-7",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-1",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 7,
         "basic_pay": 21500
       },
       {
+        "name": "Level-1-cell-8",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-1",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 8,
         "basic_pay": 22100
       },
       {
+        "name": "Level-1-cell-9",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-1",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 9,
         "basic_pay": 22800
       },
       {
+        "name": "Level-1-cell-10",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-1",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 10,
         "basic_pay": 23500
       },
       {
+        "name": "Level-1-cell-11",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-1",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 11,
         "basic_pay": 24200
       },
       {
+        "name": "Level-1-cell-12",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-1",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 12,
         "basic_pay": 24900
       },
       {
+        "name": "Level-1-cell-13",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-1",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 13,
         "basic_pay": 25600
       },
       {
+        "name": "Level-1-cell-14",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-1",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 14,
         "basic_pay": 26400
       },
       {
+        "name": "Level-1-cell-15",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-1",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 15,
         "basic_pay": 27200
       },
       {
+        "name": "Level-1-cell-16",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-1",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 16,
         "basic_pay": 28000
       },
       {
+        "name": "Level-1-cell-17",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-1",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 17,
         "basic_pay": 28800
       },
       {
+        "name": "Level-1-cell-18",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-1",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 18,
         "basic_pay": 29700
       },
       {
+        "name": "Level-1-cell-19",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-1",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 19,
         "basic_pay": 30600
       },
       {
+        "name": "Level-1-cell-20",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-1",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 20,
         "basic_pay": 31500
       },
       {
+        "name": "Level-1-cell-21",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-1",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 21,
         "basic_pay": 32400
       },
       {
+        "name": "Level-1-cell-22",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-1",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 22,
         "basic_pay": 33400
       },
       {
+        "name": "Level-1-cell-23",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-1",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 23,
         "basic_pay": 34400
       },
       {
+        "name": "Level-1-cell-24",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-1",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 24,
         "basic_pay": 35400
       },
       {
+        "name": "Level-1-cell-25",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-1",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 25,
         "basic_pay": 36500
       },
       {
+        "name": "Level-1-cell-26",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-1",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 26,
         "basic_pay": 37600
       },
       {
+        "name": "Level-1-cell-27",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-1",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 27,
         "basic_pay": 38700
       },
       {
+        "name": "Level-1-cell-28",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-1",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 28,
         "basic_pay": 39900
       },
       {
+        "name": "Level-1-cell-29",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-1",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 29,
         "basic_pay": 41100
       },
       {
+        "name": "Level-1-cell-30",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-1",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 30,
         "basic_pay": 42300
       },
       {
+        "name": "Level-1-cell-31",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-1",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 31,
         "basic_pay": 43600
       },
       {
+        "name": "Level-1-cell-32",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-1",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 32,
         "basic_pay": 44900
       },
       {
+        "name": "Level-1-cell-33",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-1",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 33,
         "basic_pay": 46200
       },
       {
+        "name": "Level-1-cell-34",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-1",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 34,
         "basic_pay": 47600
       },
       {
+        "name": "Level-1-cell-35",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-1",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 35,
         "basic_pay": 49000
       },
       {
+        "name": "Level-1-cell-36",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-1",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 36,
         "basic_pay": 50500
       },
       {
+        "name": "Level-1-cell-37",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-1",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 37,
         "basic_pay": 52000
       },
       {
+        "name": "Level-1-cell-38",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-1",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 38,
         "basic_pay": 53600
       },
       {
+        "name": "Level-1-cell-39",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-1",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 39,
         "basic_pay": 55200
       },
       {
+        "name": "Level-1-cell-40",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-1",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 40,
         "basic_pay": 56900
       }
     ]
   },
   {
+    "name": "Level-2",
     "doctype": "CPC Pay Level",
+    "docstatus": 0,
     "pay_level": "Level-2",
     "grade_pay": 1900,
     "entry_pay": 19900,
     "maximum_pay": 63100,
     "cells": [
       {
+        "name": "Level-2-cell-1",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-2",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 1,
         "basic_pay": 19900
       },
       {
+        "name": "Level-2-cell-2",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-2",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 2,
         "basic_pay": 20500
       },
       {
+        "name": "Level-2-cell-3",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-2",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 3,
         "basic_pay": 21100
       },
       {
+        "name": "Level-2-cell-4",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-2",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 4,
         "basic_pay": 21700
       },
       {
+        "name": "Level-2-cell-5",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-2",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 5,
         "basic_pay": 22400
       },
       {
+        "name": "Level-2-cell-6",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-2",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 6,
         "basic_pay": 23100
       },
       {
+        "name": "Level-2-cell-7",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-2",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 7,
         "basic_pay": 23800
       },
       {
+        "name": "Level-2-cell-8",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-2",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 8,
         "basic_pay": 24500
       },
       {
+        "name": "Level-2-cell-9",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-2",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 9,
         "basic_pay": 25200
       },
       {
+        "name": "Level-2-cell-10",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-2",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 10,
         "basic_pay": 26000
       },
       {
+        "name": "Level-2-cell-11",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-2",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 11,
         "basic_pay": 26800
       },
       {
+        "name": "Level-2-cell-12",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-2",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 12,
         "basic_pay": 27600
       },
       {
+        "name": "Level-2-cell-13",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-2",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 13,
         "basic_pay": 28400
       },
       {
+        "name": "Level-2-cell-14",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-2",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 14,
         "basic_pay": 29300
       },
       {
+        "name": "Level-2-cell-15",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-2",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 15,
         "basic_pay": 30200
       },
       {
+        "name": "Level-2-cell-16",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-2",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 16,
         "basic_pay": 31100
       },
       {
+        "name": "Level-2-cell-17",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-2",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 17,
         "basic_pay": 32000
       },
       {
+        "name": "Level-2-cell-18",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-2",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 18,
         "basic_pay": 33000
       },
       {
+        "name": "Level-2-cell-19",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-2",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 19,
         "basic_pay": 34000
       },
       {
+        "name": "Level-2-cell-20",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-2",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 20,
         "basic_pay": 35000
       },
       {
+        "name": "Level-2-cell-21",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-2",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 21,
         "basic_pay": 36000
       },
       {
+        "name": "Level-2-cell-22",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-2",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 22,
         "basic_pay": 37100
       },
       {
+        "name": "Level-2-cell-23",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-2",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 23,
         "basic_pay": 38200
       },
       {
+        "name": "Level-2-cell-24",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-2",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 24,
         "basic_pay": 39300
       },
       {
+        "name": "Level-2-cell-25",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-2",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 25,
         "basic_pay": 40500
       },
       {
+        "name": "Level-2-cell-26",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-2",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 26,
         "basic_pay": 41700
       },
       {
+        "name": "Level-2-cell-27",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-2",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 27,
         "basic_pay": 43000
       },
       {
+        "name": "Level-2-cell-28",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-2",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 28,
         "basic_pay": 44300
       },
       {
+        "name": "Level-2-cell-29",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-2",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 29,
         "basic_pay": 45600
       },
       {
+        "name": "Level-2-cell-30",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-2",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 30,
         "basic_pay": 47000
       },
       {
+        "name": "Level-2-cell-31",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-2",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 31,
         "basic_pay": 48400
       },
       {
+        "name": "Level-2-cell-32",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-2",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 32,
         "basic_pay": 49900
       },
       {
+        "name": "Level-2-cell-33",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-2",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 33,
         "basic_pay": 51400
       },
       {
+        "name": "Level-2-cell-34",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-2",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 34,
         "basic_pay": 52900
       },
       {
+        "name": "Level-2-cell-35",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-2",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 35,
         "basic_pay": 54500
       },
       {
+        "name": "Level-2-cell-36",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-2",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 36,
         "basic_pay": 56100
       },
       {
+        "name": "Level-2-cell-37",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-2",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 37,
         "basic_pay": 57800
       },
       {
+        "name": "Level-2-cell-38",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-2",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 38,
         "basic_pay": 59500
       },
       {
+        "name": "Level-2-cell-39",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-2",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 39,
         "basic_pay": 61300
       },
       {
+        "name": "Level-2-cell-40",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-2",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 40,
         "basic_pay": 63100
       }
     ]
   },
   {
+    "name": "Level-3",
     "doctype": "CPC Pay Level",
+    "docstatus": 0,
     "pay_level": "Level-3",
     "grade_pay": 2000,
     "entry_pay": 21700,
     "maximum_pay": 69000,
     "cells": [
       {
+        "name": "Level-3-cell-1",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-3",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 1,
         "basic_pay": 21700
       },
       {
+        "name": "Level-3-cell-2",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-3",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 2,
         "basic_pay": 22400
       },
       {
+        "name": "Level-3-cell-3",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-3",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 3,
         "basic_pay": 23100
       },
       {
+        "name": "Level-3-cell-4",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-3",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 4,
         "basic_pay": 23800
       },
       {
+        "name": "Level-3-cell-5",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-3",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 5,
         "basic_pay": 24500
       },
       {
+        "name": "Level-3-cell-6",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-3",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 6,
         "basic_pay": 25200
       },
       {
+        "name": "Level-3-cell-7",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-3",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 7,
         "basic_pay": 26000
       },
       {
+        "name": "Level-3-cell-8",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-3",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 8,
         "basic_pay": 26800
       },
       {
+        "name": "Level-3-cell-9",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-3",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 9,
         "basic_pay": 27600
       },
       {
+        "name": "Level-3-cell-10",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-3",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 10,
         "basic_pay": 28400
       },
       {
+        "name": "Level-3-cell-11",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-3",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 11,
         "basic_pay": 29300
       },
       {
+        "name": "Level-3-cell-12",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-3",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 12,
         "basic_pay": 30200
       },
       {
+        "name": "Level-3-cell-13",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-3",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 13,
         "basic_pay": 31100
       },
       {
+        "name": "Level-3-cell-14",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-3",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 14,
         "basic_pay": 32000
       },
       {
+        "name": "Level-3-cell-15",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-3",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 15,
         "basic_pay": 33000
       },
       {
+        "name": "Level-3-cell-16",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-3",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 16,
         "basic_pay": 34000
       },
       {
+        "name": "Level-3-cell-17",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-3",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 17,
         "basic_pay": 35000
       },
       {
+        "name": "Level-3-cell-18",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-3",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 18,
         "basic_pay": 36000
       },
       {
+        "name": "Level-3-cell-19",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-3",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 19,
         "basic_pay": 37100
       },
       {
+        "name": "Level-3-cell-20",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-3",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 20,
         "basic_pay": 38200
       },
       {
+        "name": "Level-3-cell-21",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-3",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 21,
         "basic_pay": 39300
       },
       {
+        "name": "Level-3-cell-22",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-3",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 22,
         "basic_pay": 40500
       },
       {
+        "name": "Level-3-cell-23",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-3",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 23,
         "basic_pay": 41700
       },
       {
+        "name": "Level-3-cell-24",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-3",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 24,
         "basic_pay": 43000
       },
       {
+        "name": "Level-3-cell-25",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-3",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 25,
         "basic_pay": 44300
       },
       {
+        "name": "Level-3-cell-26",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-3",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 26,
         "basic_pay": 45600
       },
       {
+        "name": "Level-3-cell-27",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-3",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 27,
         "basic_pay": 47000
       },
       {
+        "name": "Level-3-cell-28",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-3",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 28,
         "basic_pay": 48400
       },
       {
+        "name": "Level-3-cell-29",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-3",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 29,
         "basic_pay": 49900
       },
       {
+        "name": "Level-3-cell-30",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-3",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 30,
         "basic_pay": 51400
       },
       {
+        "name": "Level-3-cell-31",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-3",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 31,
         "basic_pay": 52900
       },
       {
+        "name": "Level-3-cell-32",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-3",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 32,
         "basic_pay": 54500
       },
       {
+        "name": "Level-3-cell-33",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-3",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 33,
         "basic_pay": 56100
       },
       {
+        "name": "Level-3-cell-34",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-3",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 34,
         "basic_pay": 57800
       },
       {
+        "name": "Level-3-cell-35",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-3",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 35,
         "basic_pay": 59500
       },
       {
+        "name": "Level-3-cell-36",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-3",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 36,
         "basic_pay": 61300
       },
       {
+        "name": "Level-3-cell-37",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-3",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 37,
         "basic_pay": 63100
       },
       {
+        "name": "Level-3-cell-38",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-3",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 38,
         "basic_pay": 65000
       },
       {
+        "name": "Level-3-cell-39",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-3",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 39,
         "basic_pay": 67000
       },
       {
+        "name": "Level-3-cell-40",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-3",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 40,
         "basic_pay": 69000
       }
     ]
   },
   {
+    "name": "Level-4",
     "doctype": "CPC Pay Level",
+    "docstatus": 0,
     "pay_level": "Level-4",
     "grade_pay": 2400,
     "entry_pay": 25500,
     "maximum_pay": 81100,
     "cells": [
       {
+        "name": "Level-4-cell-1",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-4",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 1,
         "basic_pay": 25500
       },
       {
+        "name": "Level-4-cell-2",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-4",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 2,
         "basic_pay": 26300
       },
       {
+        "name": "Level-4-cell-3",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-4",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 3,
         "basic_pay": 27100
       },
       {
+        "name": "Level-4-cell-4",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-4",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 4,
         "basic_pay": 27900
       },
       {
+        "name": "Level-4-cell-5",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-4",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 5,
         "basic_pay": 28700
       },
       {
+        "name": "Level-4-cell-6",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-4",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 6,
         "basic_pay": 29600
       },
       {
+        "name": "Level-4-cell-7",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-4",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 7,
         "basic_pay": 30500
       },
       {
+        "name": "Level-4-cell-8",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-4",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 8,
         "basic_pay": 31400
       },
       {
+        "name": "Level-4-cell-9",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-4",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 9,
         "basic_pay": 32300
       },
       {
+        "name": "Level-4-cell-10",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-4",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 10,
         "basic_pay": 33300
       },
       {
+        "name": "Level-4-cell-11",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-4",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 11,
         "basic_pay": 34300
       },
       {
+        "name": "Level-4-cell-12",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-4",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 12,
         "basic_pay": 35300
       },
       {
+        "name": "Level-4-cell-13",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-4",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 13,
         "basic_pay": 36400
       },
       {
+        "name": "Level-4-cell-14",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-4",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 14,
         "basic_pay": 37500
       },
       {
+        "name": "Level-4-cell-15",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-4",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 15,
         "basic_pay": 38600
       },
       {
+        "name": "Level-4-cell-16",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-4",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 16,
         "basic_pay": 39800
       },
       {
+        "name": "Level-4-cell-17",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-4",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 17,
         "basic_pay": 41000
       },
       {
+        "name": "Level-4-cell-18",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-4",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 18,
         "basic_pay": 42200
       },
       {
+        "name": "Level-4-cell-19",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-4",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 19,
         "basic_pay": 43500
       },
       {
+        "name": "Level-4-cell-20",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-4",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 20,
         "basic_pay": 44800
       },
       {
+        "name": "Level-4-cell-21",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-4",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 21,
         "basic_pay": 46100
       },
       {
+        "name": "Level-4-cell-22",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-4",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 22,
         "basic_pay": 47500
       },
       {
+        "name": "Level-4-cell-23",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-4",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 23,
         "basic_pay": 48900
       },
       {
+        "name": "Level-4-cell-24",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-4",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 24,
         "basic_pay": 50400
       },
       {
+        "name": "Level-4-cell-25",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-4",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 25,
         "basic_pay": 51900
       },
       {
+        "name": "Level-4-cell-26",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-4",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 26,
         "basic_pay": 53500
       },
       {
+        "name": "Level-4-cell-27",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-4",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 27,
         "basic_pay": 55100
       },
       {
+        "name": "Level-4-cell-28",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-4",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 28,
         "basic_pay": 56800
       },
       {
+        "name": "Level-4-cell-29",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-4",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 29,
         "basic_pay": 58500
       },
       {
+        "name": "Level-4-cell-30",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-4",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 30,
         "basic_pay": 60300
       },
       {
+        "name": "Level-4-cell-31",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-4",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 31,
         "basic_pay": 62100
       },
       {
+        "name": "Level-4-cell-32",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-4",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 32,
         "basic_pay": 64000
       },
       {
+        "name": "Level-4-cell-33",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-4",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 33,
         "basic_pay": 65900
       },
       {
+        "name": "Level-4-cell-34",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-4",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 34,
         "basic_pay": 67900
       },
       {
+        "name": "Level-4-cell-35",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-4",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 35,
         "basic_pay": 69900
       },
       {
+        "name": "Level-4-cell-36",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-4",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 36,
         "basic_pay": 72000
       },
       {
+        "name": "Level-4-cell-37",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-4",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 37,
         "basic_pay": 74200
       },
       {
+        "name": "Level-4-cell-38",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-4",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 38,
         "basic_pay": 76400
       },
       {
+        "name": "Level-4-cell-39",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-4",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 39,
         "basic_pay": 78700
       },
       {
+        "name": "Level-4-cell-40",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-4",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 40,
         "basic_pay": 81100
       }
     ]
   },
   {
+    "name": "Level-5",
     "doctype": "CPC Pay Level",
+    "docstatus": 0,
     "pay_level": "Level-5",
     "grade_pay": 2800,
     "entry_pay": 29200,
     "maximum_pay": 92200,
     "cells": [
       {
+        "name": "Level-5-cell-1",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-5",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 1,
         "basic_pay": 29200
       },
       {
+        "name": "Level-5-cell-2",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-5",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 2,
         "basic_pay": 30100
       },
       {
+        "name": "Level-5-cell-3",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-5",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 3,
         "basic_pay": 31000
       },
       {
+        "name": "Level-5-cell-4",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-5",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 4,
         "basic_pay": 31900
       },
       {
+        "name": "Level-5-cell-5",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-5",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 5,
         "basic_pay": 32900
       },
       {
+        "name": "Level-5-cell-6",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-5",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 6,
         "basic_pay": 33900
       },
       {
+        "name": "Level-5-cell-7",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-5",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 7,
         "basic_pay": 34900
       },
       {
+        "name": "Level-5-cell-8",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-5",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 8,
         "basic_pay": 35900
       },
       {
+        "name": "Level-5-cell-9",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-5",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 9,
         "basic_pay": 37000
       },
       {
+        "name": "Level-5-cell-10",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-5",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 10,
         "basic_pay": 38100
       },
       {
+        "name": "Level-5-cell-11",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-5",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 11,
         "basic_pay": 39200
       },
       {
+        "name": "Level-5-cell-12",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-5",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 12,
         "basic_pay": 40400
       },
       {
+        "name": "Level-5-cell-13",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-5",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 13,
         "basic_pay": 41600
       },
       {
+        "name": "Level-5-cell-14",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-5",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 14,
         "basic_pay": 42800
       },
       {
+        "name": "Level-5-cell-15",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-5",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 15,
         "basic_pay": 44100
       },
       {
+        "name": "Level-5-cell-16",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-5",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 16,
         "basic_pay": 45400
       },
       {
+        "name": "Level-5-cell-17",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-5",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 17,
         "basic_pay": 46800
       },
       {
+        "name": "Level-5-cell-18",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-5",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 18,
         "basic_pay": 48200
       },
       {
+        "name": "Level-5-cell-19",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-5",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 19,
         "basic_pay": 49600
       },
       {
+        "name": "Level-5-cell-20",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-5",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 20,
         "basic_pay": 51100
       },
       {
+        "name": "Level-5-cell-21",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-5",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 21,
         "basic_pay": 52600
       },
       {
+        "name": "Level-5-cell-22",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-5",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 22,
         "basic_pay": 54200
       },
       {
+        "name": "Level-5-cell-23",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-5",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 23,
         "basic_pay": 55800
       },
       {
+        "name": "Level-5-cell-24",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-5",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 24,
         "basic_pay": 57500
       },
       {
+        "name": "Level-5-cell-25",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-5",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 25,
         "basic_pay": 59200
       },
       {
+        "name": "Level-5-cell-26",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-5",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 26,
         "basic_pay": 61000
       },
       {
+        "name": "Level-5-cell-27",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-5",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 27,
         "basic_pay": 62800
       },
       {
+        "name": "Level-5-cell-28",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-5",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 28,
         "basic_pay": 64700
       },
       {
+        "name": "Level-5-cell-29",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-5",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 29,
         "basic_pay": 66600
       },
       {
+        "name": "Level-5-cell-30",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-5",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 30,
         "basic_pay": 68600
       },
       {
+        "name": "Level-5-cell-31",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-5",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 31,
         "basic_pay": 70700
       },
       {
+        "name": "Level-5-cell-32",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-5",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 32,
         "basic_pay": 72800
       },
       {
+        "name": "Level-5-cell-33",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-5",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 33,
         "basic_pay": 75000
       },
       {
+        "name": "Level-5-cell-34",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-5",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 34,
         "basic_pay": 77200
       },
       {
+        "name": "Level-5-cell-35",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-5",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 35,
         "basic_pay": 79500
       },
       {
+        "name": "Level-5-cell-36",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-5",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 36,
         "basic_pay": 81900
       },
       {
+        "name": "Level-5-cell-37",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-5",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 37,
         "basic_pay": 84400
       },
       {
+        "name": "Level-5-cell-38",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-5",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 38,
         "basic_pay": 86900
       },
       {
+        "name": "Level-5-cell-39",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-5",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 39,
         "basic_pay": 89500
       },
       {
+        "name": "Level-5-cell-40",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-5",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 40,
         "basic_pay": 92200
       }
     ]
   },
   {
+    "name": "Level-6",
     "doctype": "CPC Pay Level",
+    "docstatus": 0,
     "pay_level": "Level-6",
     "grade_pay": 4200,
     "entry_pay": 35400,
     "maximum_pay": 112400,
     "cells": [
       {
+        "name": "Level-6-cell-1",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-6",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 1,
         "basic_pay": 35400
       },
       {
+        "name": "Level-6-cell-2",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-6",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 2,
         "basic_pay": 36500
       },
       {
+        "name": "Level-6-cell-3",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-6",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 3,
         "basic_pay": 37600
       },
       {
+        "name": "Level-6-cell-4",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-6",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 4,
         "basic_pay": 38700
       },
       {
+        "name": "Level-6-cell-5",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-6",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 5,
         "basic_pay": 39900
       },
       {
+        "name": "Level-6-cell-6",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-6",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 6,
         "basic_pay": 41100
       },
       {
+        "name": "Level-6-cell-7",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-6",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 7,
         "basic_pay": 42300
       },
       {
+        "name": "Level-6-cell-8",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-6",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 8,
         "basic_pay": 43600
       },
       {
+        "name": "Level-6-cell-9",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-6",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 9,
         "basic_pay": 44900
       },
       {
+        "name": "Level-6-cell-10",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-6",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 10,
         "basic_pay": 46200
       },
       {
+        "name": "Level-6-cell-11",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-6",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 11,
         "basic_pay": 47600
       },
       {
+        "name": "Level-6-cell-12",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-6",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 12,
         "basic_pay": 49000
       },
       {
+        "name": "Level-6-cell-13",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-6",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 13,
         "basic_pay": 50500
       },
       {
+        "name": "Level-6-cell-14",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-6",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 14,
         "basic_pay": 52000
       },
       {
+        "name": "Level-6-cell-15",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-6",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 15,
         "basic_pay": 53600
       },
       {
+        "name": "Level-6-cell-16",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-6",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 16,
         "basic_pay": 55200
       },
       {
+        "name": "Level-6-cell-17",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-6",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 17,
         "basic_pay": 56900
       },
       {
+        "name": "Level-6-cell-18",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-6",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 18,
         "basic_pay": 58600
       },
       {
+        "name": "Level-6-cell-19",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-6",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 19,
         "basic_pay": 60400
       },
       {
+        "name": "Level-6-cell-20",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-6",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 20,
         "basic_pay": 62200
       },
       {
+        "name": "Level-6-cell-21",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-6",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 21,
         "basic_pay": 64100
       },
       {
+        "name": "Level-6-cell-22",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-6",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 22,
         "basic_pay": 66000
       },
       {
+        "name": "Level-6-cell-23",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-6",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 23,
         "basic_pay": 68000
       },
       {
+        "name": "Level-6-cell-24",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-6",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 24,
         "basic_pay": 70000
       },
       {
+        "name": "Level-6-cell-25",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-6",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 25,
         "basic_pay": 72100
       },
       {
+        "name": "Level-6-cell-26",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-6",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 26,
         "basic_pay": 74300
       },
       {
+        "name": "Level-6-cell-27",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-6",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 27,
         "basic_pay": 76500
       },
       {
+        "name": "Level-6-cell-28",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-6",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 28,
         "basic_pay": 78800
       },
       {
+        "name": "Level-6-cell-29",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-6",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 29,
         "basic_pay": 81200
       },
       {
+        "name": "Level-6-cell-30",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-6",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 30,
         "basic_pay": 83600
       },
       {
+        "name": "Level-6-cell-31",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-6",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 31,
         "basic_pay": 86100
       },
       {
+        "name": "Level-6-cell-32",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-6",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 32,
         "basic_pay": 88700
       },
       {
+        "name": "Level-6-cell-33",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-6",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 33,
         "basic_pay": 91400
       },
       {
+        "name": "Level-6-cell-34",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-6",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 34,
         "basic_pay": 94100
       },
       {
+        "name": "Level-6-cell-35",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-6",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 35,
         "basic_pay": 96900
       },
       {
+        "name": "Level-6-cell-36",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-6",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 36,
         "basic_pay": 99800
       },
       {
+        "name": "Level-6-cell-37",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-6",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 37,
         "basic_pay": 102800
       },
       {
+        "name": "Level-6-cell-38",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-6",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 38,
         "basic_pay": 105900
       },
       {
+        "name": "Level-6-cell-39",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-6",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 39,
         "basic_pay": 109100
       },
       {
+        "name": "Level-6-cell-40",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-6",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 40,
         "basic_pay": 112400
       }
     ]
   },
   {
+    "name": "Level-7",
     "doctype": "CPC Pay Level",
+    "docstatus": 0,
     "pay_level": "Level-7",
     "grade_pay": 4600,
     "entry_pay": 44900,
     "maximum_pay": 142400,
     "cells": [
       {
+        "name": "Level-7-cell-1",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-7",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 1,
         "basic_pay": 44900
       },
       {
+        "name": "Level-7-cell-2",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-7",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 2,
         "basic_pay": 46200
       },
       {
+        "name": "Level-7-cell-3",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-7",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 3,
         "basic_pay": 47600
       },
       {
+        "name": "Level-7-cell-4",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-7",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 4,
         "basic_pay": 49000
       },
       {
+        "name": "Level-7-cell-5",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-7",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 5,
         "basic_pay": 50500
       },
       {
+        "name": "Level-7-cell-6",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-7",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 6,
         "basic_pay": 52000
       },
       {
+        "name": "Level-7-cell-7",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-7",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 7,
         "basic_pay": 53600
       },
       {
+        "name": "Level-7-cell-8",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-7",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 8,
         "basic_pay": 55200
       },
       {
+        "name": "Level-7-cell-9",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-7",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 9,
         "basic_pay": 56900
       },
       {
+        "name": "Level-7-cell-10",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-7",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 10,
         "basic_pay": 58600
       },
       {
+        "name": "Level-7-cell-11",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-7",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 11,
         "basic_pay": 60400
       },
       {
+        "name": "Level-7-cell-12",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-7",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 12,
         "basic_pay": 62200
       },
       {
+        "name": "Level-7-cell-13",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-7",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 13,
         "basic_pay": 64100
       },
       {
+        "name": "Level-7-cell-14",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-7",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 14,
         "basic_pay": 66000
       },
       {
+        "name": "Level-7-cell-15",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-7",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 15,
         "basic_pay": 68000
       },
       {
+        "name": "Level-7-cell-16",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-7",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 16,
         "basic_pay": 70000
       },
       {
+        "name": "Level-7-cell-17",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-7",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 17,
         "basic_pay": 72100
       },
       {
+        "name": "Level-7-cell-18",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-7",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 18,
         "basic_pay": 74300
       },
       {
+        "name": "Level-7-cell-19",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-7",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 19,
         "basic_pay": 76500
       },
       {
+        "name": "Level-7-cell-20",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-7",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 20,
         "basic_pay": 78800
       },
       {
+        "name": "Level-7-cell-21",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-7",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 21,
         "basic_pay": 81200
       },
       {
+        "name": "Level-7-cell-22",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-7",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 22,
         "basic_pay": 83600
       },
       {
+        "name": "Level-7-cell-23",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-7",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 23,
         "basic_pay": 86100
       },
       {
+        "name": "Level-7-cell-24",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-7",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 24,
         "basic_pay": 88700
       },
       {
+        "name": "Level-7-cell-25",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-7",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 25,
         "basic_pay": 91400
       },
       {
+        "name": "Level-7-cell-26",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-7",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 26,
         "basic_pay": 94100
       },
       {
+        "name": "Level-7-cell-27",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-7",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 27,
         "basic_pay": 96900
       },
       {
+        "name": "Level-7-cell-28",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-7",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 28,
         "basic_pay": 99800
       },
       {
+        "name": "Level-7-cell-29",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-7",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 29,
         "basic_pay": 102800
       },
       {
+        "name": "Level-7-cell-30",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-7",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 30,
         "basic_pay": 105900
       },
       {
+        "name": "Level-7-cell-31",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-7",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 31,
         "basic_pay": 109100
       },
       {
+        "name": "Level-7-cell-32",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-7",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 32,
         "basic_pay": 112400
       },
       {
+        "name": "Level-7-cell-33",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-7",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 33,
         "basic_pay": 115800
       },
       {
+        "name": "Level-7-cell-34",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-7",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 34,
         "basic_pay": 119300
       },
       {
+        "name": "Level-7-cell-35",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-7",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 35,
         "basic_pay": 122900
       },
       {
+        "name": "Level-7-cell-36",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-7",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 36,
         "basic_pay": 126600
       },
       {
+        "name": "Level-7-cell-37",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-7",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 37,
         "basic_pay": 130400
       },
       {
+        "name": "Level-7-cell-38",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-7",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 38,
         "basic_pay": 134300
       },
       {
+        "name": "Level-7-cell-39",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-7",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 39,
         "basic_pay": 138300
       },
       {
+        "name": "Level-7-cell-40",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-7",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 40,
         "basic_pay": 142400
       }
     ]
   },
   {
+    "name": "Level-8",
     "doctype": "CPC Pay Level",
+    "docstatus": 0,
     "pay_level": "Level-8",
     "grade_pay": 4800,
     "entry_pay": 47600,
     "maximum_pay": 151100,
     "cells": [
       {
+        "name": "Level-8-cell-1",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-8",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 1,
         "basic_pay": 47600
       },
       {
+        "name": "Level-8-cell-2",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-8",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 2,
         "basic_pay": 49000
       },
       {
+        "name": "Level-8-cell-3",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-8",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 3,
         "basic_pay": 50500
       },
       {
+        "name": "Level-8-cell-4",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-8",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 4,
         "basic_pay": 52000
       },
       {
+        "name": "Level-8-cell-5",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-8",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 5,
         "basic_pay": 53600
       },
       {
+        "name": "Level-8-cell-6",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-8",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 6,
         "basic_pay": 55200
       },
       {
+        "name": "Level-8-cell-7",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-8",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 7,
         "basic_pay": 56900
       },
       {
+        "name": "Level-8-cell-8",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-8",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 8,
         "basic_pay": 58600
       },
       {
+        "name": "Level-8-cell-9",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-8",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 9,
         "basic_pay": 60400
       },
       {
+        "name": "Level-8-cell-10",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-8",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 10,
         "basic_pay": 62200
       },
       {
+        "name": "Level-8-cell-11",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-8",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 11,
         "basic_pay": 64100
       },
       {
+        "name": "Level-8-cell-12",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-8",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 12,
         "basic_pay": 66000
       },
       {
+        "name": "Level-8-cell-13",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-8",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 13,
         "basic_pay": 68000
       },
       {
+        "name": "Level-8-cell-14",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-8",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 14,
         "basic_pay": 70000
       },
       {
+        "name": "Level-8-cell-15",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-8",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 15,
         "basic_pay": 72100
       },
       {
+        "name": "Level-8-cell-16",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-8",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 16,
         "basic_pay": 74300
       },
       {
+        "name": "Level-8-cell-17",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-8",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 17,
         "basic_pay": 76500
       },
       {
+        "name": "Level-8-cell-18",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-8",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 18,
         "basic_pay": 78800
       },
       {
+        "name": "Level-8-cell-19",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-8",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 19,
         "basic_pay": 81200
       },
       {
+        "name": "Level-8-cell-20",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-8",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 20,
         "basic_pay": 83600
       },
       {
+        "name": "Level-8-cell-21",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-8",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 21,
         "basic_pay": 86100
       },
       {
+        "name": "Level-8-cell-22",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-8",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 22,
         "basic_pay": 88700
       },
       {
+        "name": "Level-8-cell-23",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-8",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 23,
         "basic_pay": 91400
       },
       {
+        "name": "Level-8-cell-24",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-8",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 24,
         "basic_pay": 94100
       },
       {
+        "name": "Level-8-cell-25",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-8",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 25,
         "basic_pay": 96900
       },
       {
+        "name": "Level-8-cell-26",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-8",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 26,
         "basic_pay": 99800
       },
       {
+        "name": "Level-8-cell-27",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-8",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 27,
         "basic_pay": 102800
       },
       {
+        "name": "Level-8-cell-28",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-8",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 28,
         "basic_pay": 105900
       },
       {
+        "name": "Level-8-cell-29",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-8",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 29,
         "basic_pay": 109100
       },
       {
+        "name": "Level-8-cell-30",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-8",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 30,
         "basic_pay": 112400
       },
       {
+        "name": "Level-8-cell-31",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-8",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 31,
         "basic_pay": 115800
       },
       {
+        "name": "Level-8-cell-32",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-8",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 32,
         "basic_pay": 119300
       },
       {
+        "name": "Level-8-cell-33",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-8",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 33,
         "basic_pay": 122900
       },
       {
+        "name": "Level-8-cell-34",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-8",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 34,
         "basic_pay": 126600
       },
       {
+        "name": "Level-8-cell-35",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-8",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 35,
         "basic_pay": 130400
       },
       {
+        "name": "Level-8-cell-36",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-8",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 36,
         "basic_pay": 134300
       },
       {
+        "name": "Level-8-cell-37",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-8",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 37,
         "basic_pay": 138300
       },
       {
+        "name": "Level-8-cell-38",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-8",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 38,
         "basic_pay": 142400
       },
       {
+        "name": "Level-8-cell-39",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-8",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 39,
         "basic_pay": 146700
       },
       {
+        "name": "Level-8-cell-40",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-8",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 40,
         "basic_pay": 151100
       }
     ]
   },
   {
+    "name": "Level-9",
     "doctype": "CPC Pay Level",
+    "docstatus": 0,
     "pay_level": "Level-9",
     "grade_pay": 5400,
     "entry_pay": 53100,
     "maximum_pay": 167800,
     "cells": [
       {
+        "name": "Level-9-cell-1",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-9",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 1,
         "basic_pay": 53100
       },
       {
+        "name": "Level-9-cell-2",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-9",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 2,
         "basic_pay": 54700
       },
       {
+        "name": "Level-9-cell-3",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-9",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 3,
         "basic_pay": 56300
       },
       {
+        "name": "Level-9-cell-4",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-9",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 4,
         "basic_pay": 58000
       },
       {
+        "name": "Level-9-cell-5",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-9",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 5,
         "basic_pay": 59700
       },
       {
+        "name": "Level-9-cell-6",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-9",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 6,
         "basic_pay": 61500
       },
       {
+        "name": "Level-9-cell-7",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-9",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 7,
         "basic_pay": 63300
       },
       {
+        "name": "Level-9-cell-8",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-9",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 8,
         "basic_pay": 65200
       },
       {
+        "name": "Level-9-cell-9",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-9",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 9,
         "basic_pay": 67200
       },
       {
+        "name": "Level-9-cell-10",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-9",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 10,
         "basic_pay": 69200
       },
       {
+        "name": "Level-9-cell-11",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-9",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 11,
         "basic_pay": 71300
       },
       {
+        "name": "Level-9-cell-12",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-9",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 12,
         "basic_pay": 73400
       },
       {
+        "name": "Level-9-cell-13",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-9",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 13,
         "basic_pay": 75600
       },
       {
+        "name": "Level-9-cell-14",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-9",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 14,
         "basic_pay": 77900
       },
       {
+        "name": "Level-9-cell-15",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-9",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 15,
         "basic_pay": 80200
       },
       {
+        "name": "Level-9-cell-16",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-9",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 16,
         "basic_pay": 82600
       },
       {
+        "name": "Level-9-cell-17",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-9",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 17,
         "basic_pay": 85100
       },
       {
+        "name": "Level-9-cell-18",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-9",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 18,
         "basic_pay": 87700
       },
       {
+        "name": "Level-9-cell-19",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-9",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 19,
         "basic_pay": 90300
       },
       {
+        "name": "Level-9-cell-20",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-9",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 20,
         "basic_pay": 93000
       },
       {
+        "name": "Level-9-cell-21",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-9",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 21,
         "basic_pay": 95800
       },
       {
+        "name": "Level-9-cell-22",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-9",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 22,
         "basic_pay": 98700
       },
       {
+        "name": "Level-9-cell-23",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-9",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 23,
         "basic_pay": 101700
       },
       {
+        "name": "Level-9-cell-24",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-9",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 24,
         "basic_pay": 104800
       },
       {
+        "name": "Level-9-cell-25",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-9",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 25,
         "basic_pay": 107900
       },
       {
+        "name": "Level-9-cell-26",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-9",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 26,
         "basic_pay": 111100
       },
       {
+        "name": "Level-9-cell-27",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-9",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 27,
         "basic_pay": 114400
       },
       {
+        "name": "Level-9-cell-28",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-9",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 28,
         "basic_pay": 117800
       },
       {
+        "name": "Level-9-cell-29",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-9",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 29,
         "basic_pay": 121300
       },
       {
+        "name": "Level-9-cell-30",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-9",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 30,
         "basic_pay": 124900
       },
       {
+        "name": "Level-9-cell-31",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-9",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 31,
         "basic_pay": 128600
       },
       {
+        "name": "Level-9-cell-32",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-9",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 32,
         "basic_pay": 132500
       },
       {
+        "name": "Level-9-cell-33",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-9",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 33,
         "basic_pay": 136500
       },
       {
+        "name": "Level-9-cell-34",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-9",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 34,
         "basic_pay": 140600
       },
       {
+        "name": "Level-9-cell-35",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-9",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 35,
         "basic_pay": 144800
       },
       {
+        "name": "Level-9-cell-36",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-9",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 36,
         "basic_pay": 149100
       },
       {
+        "name": "Level-9-cell-37",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-9",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 37,
         "basic_pay": 153600
       },
       {
+        "name": "Level-9-cell-38",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-9",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 38,
         "basic_pay": 158200
       },
       {
+        "name": "Level-9-cell-39",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-9",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 39,
         "basic_pay": 162900
       },
       {
+        "name": "Level-9-cell-40",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-9",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 40,
         "basic_pay": 167800
       }
     ]
   },
   {
+    "name": "Level-10",
     "doctype": "CPC Pay Level",
+    "docstatus": 0,
     "pay_level": "Level-10",
     "grade_pay": 5400,
     "entry_pay": 56100,
     "maximum_pay": 177500,
     "cells": [
       {
+        "name": "Level-10-cell-1",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-10",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 1,
         "basic_pay": 56100
       },
       {
+        "name": "Level-10-cell-2",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-10",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 2,
         "basic_pay": 57800
       },
       {
+        "name": "Level-10-cell-3",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-10",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 3,
         "basic_pay": 59500
       },
       {
+        "name": "Level-10-cell-4",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-10",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 4,
         "basic_pay": 61300
       },
       {
+        "name": "Level-10-cell-5",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-10",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 5,
         "basic_pay": 63100
       },
       {
+        "name": "Level-10-cell-6",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-10",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 6,
         "basic_pay": 65000
       },
       {
+        "name": "Level-10-cell-7",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-10",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 7,
         "basic_pay": 67000
       },
       {
+        "name": "Level-10-cell-8",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-10",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 8,
         "basic_pay": 69000
       },
       {
+        "name": "Level-10-cell-9",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-10",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 9,
         "basic_pay": 71100
       },
       {
+        "name": "Level-10-cell-10",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-10",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 10,
         "basic_pay": 73200
       },
       {
+        "name": "Level-10-cell-11",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-10",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 11,
         "basic_pay": 75400
       },
       {
+        "name": "Level-10-cell-12",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-10",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 12,
         "basic_pay": 77700
       },
       {
+        "name": "Level-10-cell-13",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-10",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 13,
         "basic_pay": 80000
       },
       {
+        "name": "Level-10-cell-14",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-10",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 14,
         "basic_pay": 82400
       },
       {
+        "name": "Level-10-cell-15",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-10",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 15,
         "basic_pay": 84900
       },
       {
+        "name": "Level-10-cell-16",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-10",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 16,
         "basic_pay": 87400
       },
       {
+        "name": "Level-10-cell-17",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-10",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 17,
         "basic_pay": 90000
       },
       {
+        "name": "Level-10-cell-18",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-10",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 18,
         "basic_pay": 92700
       },
       {
+        "name": "Level-10-cell-19",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-10",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 19,
         "basic_pay": 95500
       },
       {
+        "name": "Level-10-cell-20",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-10",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 20,
         "basic_pay": 98400
       },
       {
+        "name": "Level-10-cell-21",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-10",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 21,
         "basic_pay": 101400
       },
       {
+        "name": "Level-10-cell-22",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-10",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 22,
         "basic_pay": 104400
       },
       {
+        "name": "Level-10-cell-23",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-10",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 23,
         "basic_pay": 107500
       },
       {
+        "name": "Level-10-cell-24",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-10",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 24,
         "basic_pay": 110700
       },
       {
+        "name": "Level-10-cell-25",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-10",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 25,
         "basic_pay": 114000
       },
       {
+        "name": "Level-10-cell-26",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-10",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 26,
         "basic_pay": 117400
       },
       {
+        "name": "Level-10-cell-27",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-10",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 27,
         "basic_pay": 120900
       },
       {
+        "name": "Level-10-cell-28",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-10",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 28,
         "basic_pay": 124500
       },
       {
+        "name": "Level-10-cell-29",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-10",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 29,
         "basic_pay": 128200
       },
       {
+        "name": "Level-10-cell-30",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-10",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 30,
         "basic_pay": 132000
       },
       {
+        "name": "Level-10-cell-31",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-10",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 31,
         "basic_pay": 136000
       },
       {
+        "name": "Level-10-cell-32",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-10",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 32,
         "basic_pay": 140100
       },
       {
+        "name": "Level-10-cell-33",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-10",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 33,
         "basic_pay": 144300
       },
       {
+        "name": "Level-10-cell-34",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-10",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 34,
         "basic_pay": 148600
       },
       {
+        "name": "Level-10-cell-35",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-10",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 35,
         "basic_pay": 153100
       },
       {
+        "name": "Level-10-cell-36",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-10",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 36,
         "basic_pay": 157700
       },
       {
+        "name": "Level-10-cell-37",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-10",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 37,
         "basic_pay": 162400
       },
       {
+        "name": "Level-10-cell-38",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-10",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 38,
         "basic_pay": 167300
       },
       {
+        "name": "Level-10-cell-39",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-10",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 39,
         "basic_pay": 172300
       },
       {
+        "name": "Level-10-cell-40",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-10",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 40,
         "basic_pay": 177500
       }
     ]
   },
   {
+    "name": "Level-11",
     "doctype": "CPC Pay Level",
+    "docstatus": 0,
     "pay_level": "Level-11",
     "grade_pay": 6600,
     "entry_pay": 67700,
     "maximum_pay": 208700,
     "cells": [
       {
+        "name": "Level-11-cell-1",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-11",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 1,
         "basic_pay": 67700
       },
       {
+        "name": "Level-11-cell-2",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-11",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 2,
         "basic_pay": 69700
       },
       {
+        "name": "Level-11-cell-3",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-11",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 3,
         "basic_pay": 71800
       },
       {
+        "name": "Level-11-cell-4",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-11",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 4,
         "basic_pay": 74000
       },
       {
+        "name": "Level-11-cell-5",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-11",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 5,
         "basic_pay": 76200
       },
       {
+        "name": "Level-11-cell-6",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-11",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 6,
         "basic_pay": 78500
       },
       {
+        "name": "Level-11-cell-7",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-11",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 7,
         "basic_pay": 80900
       },
       {
+        "name": "Level-11-cell-8",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-11",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 8,
         "basic_pay": 83300
       },
       {
+        "name": "Level-11-cell-9",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-11",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 9,
         "basic_pay": 85800
       },
       {
+        "name": "Level-11-cell-10",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-11",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 10,
         "basic_pay": 88400
       },
       {
+        "name": "Level-11-cell-11",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-11",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 11,
         "basic_pay": 91100
       },
       {
+        "name": "Level-11-cell-12",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-11",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 12,
         "basic_pay": 93800
       },
       {
+        "name": "Level-11-cell-13",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-11",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 13,
         "basic_pay": 96600
       },
       {
+        "name": "Level-11-cell-14",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-11",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 14,
         "basic_pay": 99500
       },
       {
+        "name": "Level-11-cell-15",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-11",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 15,
         "basic_pay": 102500
       },
       {
+        "name": "Level-11-cell-16",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-11",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 16,
         "basic_pay": 105600
       },
       {
+        "name": "Level-11-cell-17",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-11",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 17,
         "basic_pay": 108800
       },
       {
+        "name": "Level-11-cell-18",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-11",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 18,
         "basic_pay": 112100
       },
       {
+        "name": "Level-11-cell-19",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-11",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 19,
         "basic_pay": 115500
       },
       {
+        "name": "Level-11-cell-20",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-11",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 20,
         "basic_pay": 119000
       },
       {
+        "name": "Level-11-cell-21",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-11",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 21,
         "basic_pay": 122600
       },
       {
+        "name": "Level-11-cell-22",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-11",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 22,
         "basic_pay": 126300
       },
       {
+        "name": "Level-11-cell-23",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-11",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 23,
         "basic_pay": 130100
       },
       {
+        "name": "Level-11-cell-24",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-11",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 24,
         "basic_pay": 134000
       },
       {
+        "name": "Level-11-cell-25",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-11",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 25,
         "basic_pay": 138000
       },
       {
+        "name": "Level-11-cell-26",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-11",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 26,
         "basic_pay": 142100
       },
       {
+        "name": "Level-11-cell-27",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-11",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 27,
         "basic_pay": 146400
       },
       {
+        "name": "Level-11-cell-28",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-11",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 28,
         "basic_pay": 150800
       },
       {
+        "name": "Level-11-cell-29",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-11",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 29,
         "basic_pay": 155300
       },
       {
+        "name": "Level-11-cell-30",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-11",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 30,
         "basic_pay": 160000
       },
       {
+        "name": "Level-11-cell-31",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-11",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 31,
         "basic_pay": 164800
       },
       {
+        "name": "Level-11-cell-32",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-11",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 32,
         "basic_pay": 169700
       },
       {
+        "name": "Level-11-cell-33",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-11",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 33,
         "basic_pay": 174800
       },
       {
+        "name": "Level-11-cell-34",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-11",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 34,
         "basic_pay": 180000
       },
       {
+        "name": "Level-11-cell-35",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-11",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 35,
         "basic_pay": 185400
       },
       {
+        "name": "Level-11-cell-36",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-11",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 36,
         "basic_pay": 191000
       },
       {
+        "name": "Level-11-cell-37",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-11",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 37,
         "basic_pay": 196700
       },
       {
+        "name": "Level-11-cell-38",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-11",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 38,
         "basic_pay": 202600
       },
       {
+        "name": "Level-11-cell-39",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-11",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 39,
         "basic_pay": 208700
       }
     ]
   },
   {
+    "name": "Level-12",
     "doctype": "CPC Pay Level",
+    "docstatus": 0,
     "pay_level": "Level-12",
     "grade_pay": 7600,
     "entry_pay": 78800,
     "maximum_pay": 209200,
     "cells": [
       {
+        "name": "Level-12-cell-1",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-12",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 1,
         "basic_pay": 78800
       },
       {
+        "name": "Level-12-cell-2",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-12",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 2,
         "basic_pay": 81200
       },
       {
+        "name": "Level-12-cell-3",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-12",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 3,
         "basic_pay": 83600
       },
       {
+        "name": "Level-12-cell-4",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-12",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 4,
         "basic_pay": 86100
       },
       {
+        "name": "Level-12-cell-5",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-12",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 5,
         "basic_pay": 88700
       },
       {
+        "name": "Level-12-cell-6",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-12",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 6,
         "basic_pay": 91400
       },
       {
+        "name": "Level-12-cell-7",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-12",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 7,
         "basic_pay": 94100
       },
       {
+        "name": "Level-12-cell-8",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-12",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 8,
         "basic_pay": 96900
       },
       {
+        "name": "Level-12-cell-9",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-12",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 9,
         "basic_pay": 99800
       },
       {
+        "name": "Level-12-cell-10",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-12",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 10,
         "basic_pay": 102800
       },
       {
+        "name": "Level-12-cell-11",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-12",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 11,
         "basic_pay": 105900
       },
       {
+        "name": "Level-12-cell-12",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-12",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 12,
         "basic_pay": 109100
       },
       {
+        "name": "Level-12-cell-13",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-12",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 13,
         "basic_pay": 112400
       },
       {
+        "name": "Level-12-cell-14",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-12",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 14,
         "basic_pay": 115800
       },
       {
+        "name": "Level-12-cell-15",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-12",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 15,
         "basic_pay": 119300
       },
       {
+        "name": "Level-12-cell-16",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-12",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 16,
         "basic_pay": 122900
       },
       {
+        "name": "Level-12-cell-17",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-12",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 17,
         "basic_pay": 126600
       },
       {
+        "name": "Level-12-cell-18",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-12",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 18,
         "basic_pay": 130400
       },
       {
+        "name": "Level-12-cell-19",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-12",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 19,
         "basic_pay": 134300
       },
       {
+        "name": "Level-12-cell-20",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-12",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 20,
         "basic_pay": 138300
       },
       {
+        "name": "Level-12-cell-21",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-12",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 21,
         "basic_pay": 142400
       },
       {
+        "name": "Level-12-cell-22",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-12",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 22,
         "basic_pay": 146700
       },
       {
+        "name": "Level-12-cell-23",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-12",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 23,
         "basic_pay": 151100
       },
       {
+        "name": "Level-12-cell-24",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-12",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 24,
         "basic_pay": 155600
       },
       {
+        "name": "Level-12-cell-25",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-12",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 25,
         "basic_pay": 160300
       },
       {
+        "name": "Level-12-cell-26",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-12",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 26,
         "basic_pay": 165100
       },
       {
+        "name": "Level-12-cell-27",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-12",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 27,
         "basic_pay": 170100
       },
       {
+        "name": "Level-12-cell-28",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-12",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 28,
         "basic_pay": 175200
       },
       {
+        "name": "Level-12-cell-29",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-12",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 29,
         "basic_pay": 180500
       },
       {
+        "name": "Level-12-cell-30",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-12",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 30,
         "basic_pay": 185900
       },
       {
+        "name": "Level-12-cell-31",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-12",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 31,
         "basic_pay": 191500
       },
       {
+        "name": "Level-12-cell-32",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-12",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 32,
         "basic_pay": 197200
       },
       {
+        "name": "Level-12-cell-33",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-12",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 33,
         "basic_pay": 203100
       },
       {
+        "name": "Level-12-cell-34",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-12",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 34,
         "basic_pay": 209200
       }
     ]
   },
   {
+    "name": "Level-13",
     "doctype": "CPC Pay Level",
+    "docstatus": 0,
     "pay_level": "Level-13",
     "grade_pay": 8700,
     "entry_pay": 123100,
     "maximum_pay": 215900,
     "cells": [
       {
+        "name": "Level-13-cell-1",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-13",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 1,
         "basic_pay": 123100
       },
       {
+        "name": "Level-13-cell-2",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-13",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 2,
         "basic_pay": 126800
       },
       {
+        "name": "Level-13-cell-3",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-13",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 3,
         "basic_pay": 130600
       },
       {
+        "name": "Level-13-cell-4",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-13",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 4,
         "basic_pay": 134500
       },
       {
+        "name": "Level-13-cell-5",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-13",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 5,
         "basic_pay": 138500
       },
       {
+        "name": "Level-13-cell-6",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-13",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 6,
         "basic_pay": 142700
       },
       {
+        "name": "Level-13-cell-7",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-13",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 7,
         "basic_pay": 147000
       },
       {
+        "name": "Level-13-cell-8",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-13",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 8,
         "basic_pay": 151400
       },
       {
+        "name": "Level-13-cell-9",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-13",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 9,
         "basic_pay": 155900
       },
       {
+        "name": "Level-13-cell-10",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-13",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 10,
         "basic_pay": 160600
       },
       {
+        "name": "Level-13-cell-11",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-13",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 11,
         "basic_pay": 165400
       },
       {
+        "name": "Level-13-cell-12",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-13",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 12,
         "basic_pay": 170400
       },
       {
+        "name": "Level-13-cell-13",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-13",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 13,
         "basic_pay": 175500
       },
       {
+        "name": "Level-13-cell-14",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-13",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 14,
         "basic_pay": 180800
       },
       {
+        "name": "Level-13-cell-15",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-13",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 15,
         "basic_pay": 186200
       },
       {
+        "name": "Level-13-cell-16",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-13",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 16,
         "basic_pay": 191800
       },
       {
+        "name": "Level-13-cell-17",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-13",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 17,
         "basic_pay": 197600
       },
       {
+        "name": "Level-13-cell-18",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-13",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 18,
         "basic_pay": 203500
       },
       {
+        "name": "Level-13-cell-19",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-13",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 19,
         "basic_pay": 209600
       },
       {
+        "name": "Level-13-cell-20",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-13",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 20,
         "basic_pay": 215900
       }
     ]
   },
   {
+    "name": "Level-13A",
     "doctype": "CPC Pay Level",
+    "docstatus": 0,
     "pay_level": "Level-13A",
     "grade_pay": 8900,
     "entry_pay": 131100,
     "maximum_pay": 216500,
     "cells": [
       {
+        "name": "Level-13A-cell-1",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-13A",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 1,
         "basic_pay": 131100
       },
       {
+        "name": "Level-13A-cell-2",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-13A",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 2,
         "basic_pay": 135000
       },
       {
+        "name": "Level-13A-cell-3",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-13A",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 3,
         "basic_pay": 139000
       },
       {
+        "name": "Level-13A-cell-4",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-13A",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 4,
         "basic_pay": 143200
       },
       {
+        "name": "Level-13A-cell-5",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-13A",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 5,
         "basic_pay": 147500
       },
       {
+        "name": "Level-13A-cell-6",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-13A",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 6,
         "basic_pay": 151900
       },
       {
+        "name": "Level-13A-cell-7",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-13A",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 7,
         "basic_pay": 156500
       },
       {
+        "name": "Level-13A-cell-8",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-13A",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 8,
         "basic_pay": 161200
       },
       {
+        "name": "Level-13A-cell-9",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-13A",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 9,
         "basic_pay": 166000
       },
       {
+        "name": "Level-13A-cell-10",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-13A",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 10,
         "basic_pay": 171000
       },
       {
+        "name": "Level-13A-cell-11",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-13A",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 11,
         "basic_pay": 176100
       },
       {
+        "name": "Level-13A-cell-12",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-13A",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 12,
         "basic_pay": 181400
       },
       {
+        "name": "Level-13A-cell-13",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-13A",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 13,
         "basic_pay": 186800
       },
       {
+        "name": "Level-13A-cell-14",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-13A",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 14,
         "basic_pay": 192400
       },
       {
+        "name": "Level-13A-cell-15",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-13A",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 15,
         "basic_pay": 198200
       },
       {
+        "name": "Level-13A-cell-16",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-13A",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 16,
         "basic_pay": 204100
       },
       {
+        "name": "Level-13A-cell-17",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-13A",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 17,
         "basic_pay": 210200
       },
       {
+        "name": "Level-13A-cell-18",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-13A",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 18,
         "basic_pay": 216500
       }
     ]
   },
   {
+    "name": "Level-14",
     "doctype": "CPC Pay Level",
+    "docstatus": 0,
     "pay_level": "Level-14",
     "grade_pay": 10000,
     "entry_pay": 144200,
     "maximum_pay": 218200,
     "cells": [
       {
+        "name": "Level-14-cell-1",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-14",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 1,
         "basic_pay": 144200
       },
       {
+        "name": "Level-14-cell-2",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-14",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 2,
         "basic_pay": 148500
       },
       {
+        "name": "Level-14-cell-3",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-14",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 3,
         "basic_pay": 153000
       },
       {
+        "name": "Level-14-cell-4",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-14",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 4,
         "basic_pay": 157600
       },
       {
+        "name": "Level-14-cell-5",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-14",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 5,
         "basic_pay": 162300
       },
       {
+        "name": "Level-14-cell-6",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-14",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 6,
         "basic_pay": 167200
       },
       {
+        "name": "Level-14-cell-7",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-14",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 7,
         "basic_pay": 172200
       },
       {
+        "name": "Level-14-cell-8",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-14",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 8,
         "basic_pay": 177400
       },
       {
+        "name": "Level-14-cell-9",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-14",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 9,
         "basic_pay": 182700
       },
       {
+        "name": "Level-14-cell-10",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-14",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 10,
         "basic_pay": 188200
       },
       {
+        "name": "Level-14-cell-11",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-14",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 11,
         "basic_pay": 193800
       },
       {
+        "name": "Level-14-cell-12",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-14",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 12,
         "basic_pay": 199600
       },
       {
+        "name": "Level-14-cell-13",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-14",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 13,
         "basic_pay": 205600
       },
       {
+        "name": "Level-14-cell-14",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-14",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 14,
         "basic_pay": 211800
       },
       {
+        "name": "Level-14-cell-15",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-14",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 15,
         "basic_pay": 218200
       }
     ]
   },
   {
+    "name": "Level-15",
     "doctype": "CPC Pay Level",
+    "docstatus": 0,
     "pay_level": "Level-15",
     "grade_pay": 0,
     "entry_pay": 182200,
     "maximum_pay": 224100,
     "cells": [
       {
+        "name": "Level-15-cell-1",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-15",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 1,
         "basic_pay": 182200
       },
       {
+        "name": "Level-15-cell-2",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-15",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 2,
         "basic_pay": 187700
       },
       {
+        "name": "Level-15-cell-3",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-15",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 3,
         "basic_pay": 193300
       },
       {
+        "name": "Level-15-cell-4",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-15",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 4,
         "basic_pay": 199100
       },
       {
+        "name": "Level-15-cell-5",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-15",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 5,
         "basic_pay": 205100
       },
       {
+        "name": "Level-15-cell-6",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-15",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 6,
         "basic_pay": 211300
       },
       {
+        "name": "Level-15-cell-7",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-15",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 7,
         "basic_pay": 217600
       },
       {
+        "name": "Level-15-cell-8",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-15",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 8,
         "basic_pay": 224100
       }
     ]
   },
   {
+    "name": "Level-16",
     "doctype": "CPC Pay Level",
+    "docstatus": 0,
     "pay_level": "Level-16",
     "grade_pay": 0,
     "entry_pay": 205400,
     "maximum_pay": 224400,
     "cells": [
       {
+        "name": "Level-16-cell-1",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-16",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 1,
         "basic_pay": 205400
       },
       {
+        "name": "Level-16-cell-2",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-16",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 2,
         "basic_pay": 211600
       },
       {
+        "name": "Level-16-cell-3",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-16",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 3,
         "basic_pay": 217900
       },
       {
+        "name": "Level-16-cell-4",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-16",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 4,
         "basic_pay": 224400
       }
     ]
   },
   {
+    "name": "Level-17",
     "doctype": "CPC Pay Level",
+    "docstatus": 0,
     "pay_level": "Level-17",
     "grade_pay": 0,
     "entry_pay": 225000,
     "maximum_pay": 225000,
     "cells": [
       {
+        "name": "Level-17-cell-1",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-17",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 1,
         "basic_pay": 225000
       }
     ]
   },
   {
+    "name": "Level-18",
     "doctype": "CPC Pay Level",
+    "docstatus": 0,
     "pay_level": "Level-18",
     "grade_pay": 0,
     "entry_pay": 250000,
     "maximum_pay": 250000,
     "cells": [
       {
+        "name": "Level-18-cell-1",
         "doctype": "CPC Pay Cell",
+        "parent": "Level-18",
+        "parenttype": "CPC Pay Level",
+        "parentfield": "cells",
+        "docstatus": 0,
         "cell_no": 1,
         "basic_pay": 250000
       }
