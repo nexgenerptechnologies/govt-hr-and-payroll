@@ -1,0 +1,155 @@
+{
+ "actions": [],
+ "creation": "2026-11-09 23:50:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "month_name",
+  "pay_in_band",
+  "grade_pay",
+  "da_amount",
+  "hra_amount",
+  "cash_allowance",
+  "tpt_allowance",
+  "govt_nps_contribution",
+  "arrears_bonus_ota",
+  "total_monthly_gross",
+  "gpf_nps_employee",
+  "cghs_deduction",
+  "cgegis_deduction",
+  "hba_principal",
+  "hba_interest",
+  "lic_pli",
+  "tax_paid",
+  "cess_paid"
+ ],
+ "fields": [
+  {
+   "fieldname": "month_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Month",
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "pay_in_band",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Pay in Band / Basic (₹)"
+  },
+  {
+   "default": "0",
+   "fieldname": "grade_pay",
+   "fieldtype": "Currency",
+   "label": "Grade Pay (₹)"
+  },
+  {
+   "default": "0",
+   "fieldname": "da_amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "DA (₹)"
+  },
+  {
+   "default": "0",
+   "fieldname": "hra_amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "HRA (₹)"
+  },
+  {
+   "default": "0",
+   "fieldname": "cash_allowance",
+   "fieldtype": "Currency",
+   "label": "Cash Allow (₹)"
+  },
+  {
+   "default": "0",
+   "fieldname": "tpt_allowance",
+   "fieldtype": "Currency",
+   "label": "Tpt Allowance (₹)"
+  },
+  {
+   "default": "0",
+   "fieldname": "govt_nps_contribution",
+   "fieldtype": "Currency",
+   "label": "Govt NPS Contrib (₹)"
+  },
+  {
+   "default": "0",
+   "fieldname": "arrears_bonus_ota",
+   "fieldtype": "Currency",
+   "label": "Bonus/Arrears/OTA (₹)"
+  },
+  {
+   "fieldname": "total_monthly_gross",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Total Gross (₹)",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "gpf_nps_employee",
+   "fieldtype": "Currency",
+   "label": "GPF / NPS (Emp) (₹)"
+  },
+  {
+   "default": "0",
+   "fieldname": "cghs_deduction",
+   "fieldtype": "Currency",
+   "label": "CGHS (₹)"
+  },
+  {
+   "default": "0",
+   "fieldname": "cgegis_deduction",
+   "fieldtype": "Currency",
+   "label": "CGEGIS (₹)"
+  },
+  {
+   "default": "0",
+   "fieldname": "hba_principal",
+   "fieldtype": "Currency",
+   "label": "HBA Principal (₹)"
+  },
+  {
+   "default": "0",
+   "fieldname": "hba_interest",
+   "fieldtype": "Currency",
+   "label": "HBA Interest (₹)"
+  },
+  {
+   "default": "0",
+   "fieldname": "lic_pli",
+   "fieldtype": "Currency",
+   "label": "LIC / PLI (₹)"
+  },
+  {
+   "default": "0",
+   "fieldname": "tax_paid",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Tax Paid (TDS) (₹)"
+  },
+  {
+   "default": "0",
+   "fieldname": "cess_paid",
+   "fieldtype": "Currency",
+   "label": "Cess Paid (₹)"
+  }
+ ],
+ "istable": 1,
+ "links": [],
+ "modified": "2026-11-09 23:50:00.000000",
+ "modified_by": "Administrator",
+ "module": "Govt Income Tax",
+ "name": "Govt IT Monthly Salary Item",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "idx",
+ "sort_order": "ASC",
+ "states": [],
+ "track_changes": 1
+}

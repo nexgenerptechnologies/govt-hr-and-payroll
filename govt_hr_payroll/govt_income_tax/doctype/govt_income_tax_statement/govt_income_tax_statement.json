@@ -1,0 +1,415 @@
+{
+ "actions": [],
+ "autoname": "naming_series:",
+ "creation": "2026-11-09 23:50:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "employee",
+  "employee_name",
+  "designation",
+  "office_unit",
+  "pan",
+  "column_break_tax_hdr",
+  "financial_year",
+  "tax_regime",
+  "pran_gpf_no",
+  "pay_matrix_level",
+  "fetch_salary_btn",
+  "section_break_monthly_table",
+  "monthly_salary_items",
+  "section_break_computation",
+  "total_gross_salary",
+  "hra_rebate_claimed",
+  "annual_rent_paid",
+  "hra_exemption_u_s_10",
+  "income_under_salaries",
+  "standard_deduction",
+  "income_loss_house_property",
+  "income_other_sources",
+  "gross_total_income",
+  "column_break_deductions_via",
+  "sec_80c_gpf",
+  "sec_80c_cgegis",
+  "sec_80c_hba_principal",
+  "sec_80c_cea",
+  "sec_80c_ppf_nsc",
+  "sec_80c_lic",
+  "sec_80c_total_claimed",
+  "sec_80c_admissible",
+  "sec_80ccd_1b_nps",
+  "sec_80ccd_2_govt_nps",
+  "sec_80d_mediclaim_cghs",
+  "sec_80g_donations",
+  "total_chapter_vi_a",
+  "section_break_tax_slabs",
+  "net_taxable_income",
+  "tax_on_income",
+  "rebate_u_s_87a",
+  "net_tax_payable",
+  "column_break_tax_cess",
+  "educational_cess",
+  "total_tax_and_cess",
+  "tax_deducted_at_source",
+  "tax_balance_payable_or_refundable",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "default": "IT-.YYYY.-.#####",
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "IT-.YYYY.-.#####",
+   "reqd": 1
+  },
+  {
+   "fieldname": "employee",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Employee ID",
+   "options": "Govt Employee",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "employee.employee_name",
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Employee Name",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee.designation",
+   "fieldname": "designation",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Designation",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee.office_unit",
+   "fieldname": "office_unit",
+   "fieldtype": "Link",
+   "label": "Office / Unit",
+   "options": "Govt Office Unit",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee.pan",
+   "fieldname": "pan",
+   "fieldtype": "Data",
+   "label": "PAN No",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_tax_hdr",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "2026-2027",
+   "fieldname": "financial_year",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Assessment / Financial Year",
+   "reqd": 1
+  },
+  {
+   "default": "New Tax Regime (Default)",
+   "fieldname": "tax_regime",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Tax Regime",
+   "options": "New Tax Regime (Default)\nOld Tax Regime",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "employee.pran_no",
+   "fieldname": "pran_gpf_no",
+   "fieldtype": "Data",
+   "label": "PRAN / GPF No",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee.pay_matrix_level",
+   "fieldname": "pay_matrix_level",
+   "fieldtype": "Link",
+   "label": "Pay Matrix Level",
+   "options": "CPC Pay Level",
+   "read_only": 1
+  },
+  {
+   "fieldname": "fetch_salary_btn",
+   "fieldtype": "Button",
+   "label": "Populate 12-Month Table"
+  },
+  {
+   "fieldname": "section_break_monthly_table",
+   "fieldtype": "Section Break",
+   "label": "12-Month March to February Salary Ledger"
+  },
+  {
+   "fieldname": "monthly_salary_items",
+   "fieldtype": "Table",
+   "label": "12-Month Salary Ledger Items",
+   "options": "Govt IT Monthly Salary Item"
+  },
+  {
+   "fieldname": "section_break_computation",
+   "fieldtype": "Section Break",
+   "label": "Gross Income & Exemptions (Points 1 to 7)"
+  },
+  {
+   "fieldname": "total_gross_salary",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "1. Total Emoluments / Gross Salary (₹)",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "hra_rebate_claimed",
+   "fieldtype": "Check",
+   "label": "2. HRA Rebate Claimed u/s 10 (Yes/No)"
+  },
+  {
+   "depends_on": "eval:doc.hra_rebate_claimed==1",
+   "fieldname": "annual_rent_paid",
+   "fieldtype": "Currency",
+   "label": "Total Rent Paid During Year (₹)"
+  },
+  {
+   "fieldname": "hra_exemption_u_s_10",
+   "fieldtype": "Currency",
+   "label": "3. Exemption of HRA u/s 10 (₹)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "income_under_salaries",
+   "fieldtype": "Currency",
+   "label": "4. Income Chargeable under Salaries (1-3) (₹)",
+   "read_only": 1
+  },
+  {
+   "default": "75000",
+   "fieldname": "standard_deduction",
+   "fieldtype": "Currency",
+   "label": "Standard Deduction (₹75,000 New / ₹50,000 Old) (₹)"
+  },
+  {
+   "default": "0",
+   "fieldname": "income_loss_house_property",
+   "fieldtype": "Currency",
+   "label": "5. Income / (Loss) from House Property (HBA) (₹)"
+  },
+  {
+   "default": "0",
+   "fieldname": "income_other_sources",
+   "fieldtype": "Currency",
+   "label": "6. Income from Other Sources (₹)"
+  },
+  {
+   "fieldname": "gross_total_income",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "7. Gross Total Income (4 - Std Ded + 5 + 6) (₹)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_deductions_via",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "sec_80c_gpf",
+   "fieldtype": "Currency",
+   "label": "80C (a) GPF Subscription (₹)"
+  },
+  {
+   "default": "0",
+   "fieldname": "sec_80c_cgegis",
+   "fieldtype": "Currency",
+   "label": "80C (b) CGEGIS Subscription (₹)"
+  },
+  {
+   "default": "0",
+   "fieldname": "sec_80c_hba_principal",
+   "fieldtype": "Currency",
+   "label": "80C (c) HBA Housing Loan Principal (₹)"
+  },
+  {
+   "default": "0",
+   "fieldname": "sec_80c_cea",
+   "fieldtype": "Currency",
+   "label": "80C (d) Tuition Fee / CEA (₹)"
+  },
+  {
+   "default": "0",
+   "fieldname": "sec_80c_ppf_nsc",
+   "fieldtype": "Currency",
+   "label": "80C (e) NSC / PPF (₹)"
+  },
+  {
+   "default": "0",
+   "fieldname": "sec_80c_lic",
+   "fieldtype": "Currency",
+   "label": "80C (f) LIC / PLI Premium (₹)"
+  },
+  {
+   "fieldname": "sec_80c_total_claimed",
+   "fieldtype": "Currency",
+   "label": "80C Total Claimed (₹)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sec_80c_admissible",
+   "fieldtype": "Currency",
+   "label": "80C Admissible (Max ₹1.5 Lakh) (₹)",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "sec_80ccd_1b_nps",
+   "fieldtype": "Currency",
+   "label": "80CCD(1B) Individual NPS (Max ₹50,000) (₹)"
+  },
+  {
+   "fieldname": "sec_80ccd_2_govt_nps",
+   "fieldtype": "Currency",
+   "label": "80CCD(2) Govt Contribution to NPS (14%) (₹)",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "sec_80d_mediclaim_cghs",
+   "fieldtype": "Currency",
+   "label": "80D Mediclaim / CGHS Contribution (₹)"
+  },
+  {
+   "default": "0",
+   "fieldname": "sec_80g_donations",
+   "fieldtype": "Currency",
+   "label": "80G Approved Donations (₹)"
+  },
+  {
+   "fieldname": "total_chapter_vi_a",
+   "fieldtype": "Currency",
+   "label": "11. Total Deductions under Chapter VI-A (₹)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_tax_slabs",
+   "fieldtype": "Section Break",
+   "label": "Tax Computation & Payable (Points 12 to 19)"
+  },
+  {
+   "fieldname": "net_taxable_income",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "12. Net Taxable Income (₹)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "tax_on_income",
+   "fieldtype": "Currency",
+   "label": "14. Tax on Total Taxable Income (₹)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "rebate_u_s_87a",
+   "fieldtype": "Currency",
+   "label": "Rebate u/s 87A (₹)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "net_tax_payable",
+   "fieldtype": "Currency",
+   "label": "Net Tax Payable (₹)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_tax_cess",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "educational_cess",
+   "fieldtype": "Currency",
+   "label": "16. Educational Cess (4%) (₹)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_tax_and_cess",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "17. Total Tax + Cess (₹)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "tax_deducted_at_source",
+   "fieldtype": "Currency",
+   "label": "18. Less: Tax Deducted at Source (TDS) (₹)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "tax_balance_payable_or_refundable",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "19. Tax Balance Payable / (Refundable) (₹)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Govt Income Tax Statement",
+   "print_hide": 1,
+   "read_only": 1
+  }
+ ],
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2026-11-09 23:50:00.000000",
+ "modified_by": "Administrator",
+ "module": "Govt Income Tax",
+ "name": "Govt Income Tax Statement",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "amend": 1,
+   "cancel": 0,
+   "create": 1,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "HR Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "search_fields": "name,employee,employee_name,financial_year",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

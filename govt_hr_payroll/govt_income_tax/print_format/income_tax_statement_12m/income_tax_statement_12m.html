@@ -1,0 +1,172 @@
+<style>
+  @page {
+    size: A4 landscape;
+    margin: 8mm;
+  }
+  .it-container {
+    font-family: Arial, sans-serif;
+    font-size: 7.5pt;
+    color: #000;
+  }
+  .it-title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 11pt;
+    margin-bottom: 8px;
+    text-decoration: underline;
+  }
+  .it-meta {
+    width: 100%;
+    margin-bottom: 6px;
+    font-size: 8pt;
+  }
+  .it-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 7pt;
+    margin-bottom: 8px;
+  }
+  .it-table th, .it-table td {
+    border: 1px solid #000;
+    padding: 3px 2px;
+    text-align: center;
+  }
+  .it-table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+  }
+  .text-left { text-align: left !important; }
+  .text-right { text-align: right !important; }
+  .summary-flex {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 6px;
+    font-size: 8pt;
+  }
+  .summary-box {
+    width: 48%;
+    border: 1px solid #000;
+    padding: 6px;
+  }
+</style>
+
+<div class="it-container">
+  <div class="it-title">
+    INCOME-TAX STATEMENT FOR THE YEAR {{ doc.financial_year }}
+  </div>
+
+  <table class="it-meta">
+    <tr>
+      <td style="width: 25%;"><b>ID No:</b> {{ doc.employee }}</td>
+      <td style="width: 25%;"><b>NAME:</b> {{ doc.employee_name }}</td>
+      <td style="width: 25%;"><b>PAN No:</b> {{ doc.pan or "" }}</td>
+      <td style="width: 25%;"><b>DESIGNATION:</b> {{ doc.designation }}</td>
+    </tr>
+    <tr>
+      <td><b>PRAN / GPF No:</b> {{ doc.pran_gpf_no or "" }}</td>
+      <td><b>OFFICE:</b> {{ doc.office_unit }}</td>
+      <td><b>REGIME:</b> {{ doc.tax_regime }}</td>
+      <td><b>PAY MATRIX LEVEL:</b> {{ doc.pay_matrix_level or "" }}</td>
+    </tr>
+  </table>
+
+  <!-- 12-Month Table -->
+  <table class="it-table">
+    <thead>
+      <tr>
+        <th>Month</th>
+        <th>Pay in Pay Band</th>
+        <th>Grade Pay</th>
+        <th>DA</th>
+        <th>HRA</th>
+        <th>Cash Allow</th>
+        <th>Tpt Allow</th>
+        <th>Govt NPS Contrib</th>
+        <th>Arrears / Bonus / OTA</th>
+        <th>Total Gross</th>
+        <th>GPF / NPS (Emp)</th>
+        <th>CGHS</th>
+        <th>CGEGIS</th>
+        <th>HBA Prin</th>
+        <th>HBA Int</th>
+        <th>LIC / PLI</th>
+        <th>Tax Paid</th>
+        <th>Cess Paid</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for item in doc.monthly_salary_items %}
+      <tr>
+        <td><b>{{ item.month_name }}</b></td>
+        <td class="text-right">{{ "{:,.0f}".format(item.pay_in_band or 0) }}</td>
+        <td class="text-right">{{ "{:,.0f}".format(item.grade_pay or 0) }}</td>
+        <td class="text-right">{{ "{:,.0f}".format(item.da_amount or 0) }}</td>
+        <td class="text-right">{{ "{:,.0f}".format(item.hra_amount or 0) }}</td>
+        <td class="text-right">{{ "{:,.0f}".format(item.cash_allowance or 0) }}</td>
+        <td class="text-right">{{ "{:,.0f}".format(item.tpt_allowance or 0) }}</td>
+        <td class="text-right">{{ "{:,.0f}".format(item.govt_nps_contribution or 0) }}</td>
+        <td class="text-right">{{ "{:,.0f}".format(item.arrears_bonus_ota or 0) }}</td>
+        <td class="text-right"><b>{{ "{:,.0f}".format(item.total_monthly_gross or 0) }}</b></td>
+        <td class="text-right">{{ "{:,.0f}".format(item.gpf_nps_employee or 0) }}</td>
+        <td class="text-right">{{ "{:,.0f}".format(item.cghs_deduction or 0) }}</td>
+        <td class="text-right">{{ "{:,.0f}".format(item.cgegis_deduction or 0) }}</td>
+        <td class="text-right">{{ "{:,.0f}".format(item.hba_principal or 0) }}</td>
+        <td class="text-right">{{ "{:,.0f}".format(item.hba_interest or 0) }}</td>
+        <td class="text-right">{{ "{:,.0f}".format(item.lic_pli or 0) }}</td>
+        <td class="text-right">{{ "{:,.0f}".format(item.tax_paid or 0) }}</td>
+        <td class="text-right">{{ "{:,.0f}".format(item.cess_paid or 0) }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+    <tfoot>
+      <tr style="font-weight: bold; background-color: #f5f5f5;">
+        <td>TOTAL</td>
+        <td class="text-right">{{ "{:,.0f}".format(doc.monthly_salary_items | sum(attribute='pay_in_band')) }}</td>
+        <td class="text-right">{{ "{:,.0f}".format(doc.monthly_salary_items | sum(attribute='grade_pay')) }}</td>
+        <td class="text-right">{{ "{:,.0f}".format(doc.monthly_salary_items | sum(attribute='da_amount')) }}</td>
+        <td class="text-right">{{ "{:,.0f}".format(doc.monthly_salary_items | sum(attribute='hra_amount')) }}</td>
+        <td class="text-right">{{ "{:,.0f}".format(doc.monthly_salary_items | sum(attribute='cash_allowance')) }}</td>
+        <td class="text-right">{{ "{:,.0f}".format(doc.monthly_salary_items | sum(attribute='tpt_allowance')) }}</td>
+        <td class="text-right">{{ "{:,.0f}".format(doc.monthly_salary_items | sum(attribute='govt_nps_contribution')) }}</td>
+        <td class="text-right">{{ "{:,.0f}".format(doc.monthly_salary_items | sum(attribute='arrears_bonus_ota')) }}</td>
+        <td class="text-right">₹{{ "{:,.0f}".format(doc.total_gross_salary or 0) }}</td>
+        <td class="text-right">{{ "{:,.0f}".format(doc.monthly_salary_items | sum(attribute='gpf_nps_employee')) }}</td>
+        <td class="text-right">{{ "{:,.0f}".format(doc.monthly_salary_items | sum(attribute='cghs_deduction')) }}</td>
+        <td class="text-right">{{ "{:,.0f}".format(doc.monthly_salary_items | sum(attribute='cgegis_deduction')) }}</td>
+        <td class="text-right">{{ "{:,.0f}".format(doc.monthly_salary_items | sum(attribute='hba_principal')) }}</td>
+        <td class="text-right">{{ "{:,.0f}".format(doc.monthly_salary_items | sum(attribute='hba_interest')) }}</td>
+        <td class="text-right">{{ "{:,.0f}".format(doc.monthly_salary_items | sum(attribute='lic_pli')) }}</td>
+        <td class="text-right">{{ "{:,.0f}".format(doc.monthly_salary_items | sum(attribute='tax_paid')) }}</td>
+        <td class="text-right">{{ "{:,.0f}".format(doc.monthly_salary_items | sum(attribute='cess_paid')) }}</td>
+      </tr>
+    </tfoot>
+  </table>
+
+  <!-- Calculation Summary Blocks -->
+  <div class="summary-flex">
+    <div class="summary-box">
+      <b>INCOME COMPUTATION:</b><br>
+      1. Total Emoluments / Gross Salary: ₹{{ "{:,.0f}".format(doc.total_gross_salary or 0) }}<br>
+      3. Less: Exemption of HRA u/s 10: ₹{{ "{:,.0f}".format(doc.hra_exemption_u_s_10 or 0) }}<br>
+      4. Income under Salaries: ₹{{ "{:,.0f}".format(doc.income_under_salaries or 0) }}<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;Less: Standard Deduction: -₹{{ "{:,.0f}".format(doc.standard_deduction or 0) }}<br>
+      7. Gross Total Income: <b>₹{{ "{:,.0f}".format(doc.gross_total_income or 0) }}</b><br>
+      8. Deductions under Chapter VI-A:<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;• 80C Admissible: ₹{{ "{:,.0f}".format(doc.sec_80c_admissible or 0) }}<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;• 80CCD(2) Govt NPS Contrib: ₹{{ "{:,.0f}".format(doc.sec_80ccd_2_govt_nps or 0) }}<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;• 80D Mediclaim / CGHS: ₹{{ "{:,.0f}".format(doc.sec_80d_mediclaim_cghs or 0) }}<br>
+      11. Total Chapter VI-A Deductions: -₹{{ "{:,.0f}".format(doc.total_chapter_vi_a or 0) }}
+    </div>
+    <div class="summary-box">
+      <b>TAX CALCULATION & NET BALANCE:</b><br>
+      12. Net Taxable Income: <b>₹{{ "{:,.0f}".format(doc.net_taxable_income or 0) }}</b><br>
+      14. Tax on Total Taxable Income: ₹{{ "{:,.0f}".format(doc.tax_on_income or 0) }}<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;Less: Rebate u/s 87A: -₹{{ "{:,.0f}".format(doc.rebate_u_s_87a or 0) }}<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;Net Tax: ₹{{ "{:,.0f}".format(doc.net_tax_payable or 0) }}<br>
+      16. Educational Cess (4%): ₹{{ "{:,.0f}".format(doc.educational_cess or 0) }}<br>
+      17. Total Tax + Cess Payable: <b>₹{{ "{:,.0f}".format(doc.total_tax_and_cess or 0) }}</b><br>
+      18. Less: Tax Deducted at Source (TDS): -₹{{ "{:,.0f}".format(doc.tax_deducted_at_source or 0) }}<br>
+      19. <b>Tax Balance Payable / (Refundable): ₹{{ "{:,.0f}".format(doc.tax_balance_payable_or_refundable or 0) }}/-</b>
+    </div>
+  </div>
+</div>
