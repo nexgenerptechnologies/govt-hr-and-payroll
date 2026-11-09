@@ -1,0 +1,177 @@
+{
+ "actions": [],
+ "autoname": "naming_series:",
+ "creation": "2026-11-09 23:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "order_no",
+  "order_date",
+  "office_unit",
+  "column_break_leave_ref",
+  "leave_application",
+  "employee",
+  "employee_name",
+  "designation",
+  "section_break_order_text",
+  "sanction_text",
+  "section_break_sb",
+  "service_book_entered",
+  "service_book_entry_date",
+  "entered_by_clerk",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "default": "DO-II-.YYYY.-.#####",
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "DO-II-.YYYY.-.#####",
+   "reqd": 1
+  },
+  {
+   "fieldname": "order_no",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Daily Order Part II No.",
+   "reqd": 1
+  },
+  {
+   "default": "Today",
+   "fieldname": "order_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Order Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "office_unit",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Office / Unit",
+   "options": "Govt Office Unit",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_leave_ref",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "leave_application",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Leave Application Reference",
+   "options": "CCS Leave Application"
+  },
+  {
+   "fetch_from": "leave_application.employee",
+   "fieldname": "employee",
+   "fieldtype": "Link",
+   "label": "Employee",
+   "options": "Govt Employee"
+  },
+  {
+   "fetch_from": "leave_application.employee_name",
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "label": "Employee Name",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "leave_application.designation",
+   "fieldname": "designation",
+   "fieldtype": "Data",
+   "label": "Designation",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_order_text",
+   "fieldtype": "Section Break",
+   "label": "Sanction Order Text (For DO Part II / Service Record Entry)"
+  },
+  {
+   "fieldname": "sanction_text",
+   "fieldtype": "Text",
+   "label": "Sanction Order Text",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_sb",
+   "fieldtype": "Section Break",
+   "label": "Service Book Verification"
+  },
+  {
+   "default": "0",
+   "fieldname": "service_book_entered",
+   "fieldtype": "Check",
+   "label": "Entry Made in Service Book"
+  },
+  {
+   "depends_on": "eval:doc.service_book_entered==1",
+   "fieldname": "service_book_entry_date",
+   "fieldtype": "Date",
+   "label": "Service Book Entry Date"
+  },
+  {
+   "depends_on": "eval:doc.service_book_entered==1",
+   "fieldname": "entered_by_clerk",
+   "fieldtype": "Data",
+   "label": "Entered By (Dealing Assistant Name / ID)"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "DO Part Two Order",
+   "print_hide": 1,
+   "read_only": 1
+  }
+ ],
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2026-11-09 23:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Govt Leave Management",
+ "name": "DO Part Two Order",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "amend": 1,
+   "cancel": 0,
+   "create": 1,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "HR Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "search_fields": "name,order_no,employee_name,office_unit",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

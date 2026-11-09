@@ -1,0 +1,71 @@
+{% set unit = frappe.get_doc("Govt Office Unit", doc.office_unit) if doc.office_unit else None %}
+<style>
+  @page {
+    size: A4 portrait;
+    margin: 15mm;
+  }
+  .order-container {
+    font-family: Arial, sans-serif;
+    font-size: 10pt;
+    line-height: 1.6;
+    color: #000;
+  }
+  .order-header {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 25px;
+  }
+  .order-body {
+    text-align: justify;
+    margin-bottom: 30px;
+  }
+  .sig-block {
+    float: right;
+    text-align: center;
+    margin-top: 40px;
+  }
+  .clear { clear: both; }
+  .copy-to {
+    margin-top: 30px;
+    font-size: 9pt;
+  }
+</style>
+
+<div class="order-container">
+  <div class="order-header">
+    <div style="font-size: 12pt;">{{ unit.ministry_dept if unit else doc.office_unit }}</div>
+    <div style="font-size: 11pt; text-decoration: underline; margin-top: 5px;">
+      DAILY ORDER PART - II (CASUALTY / LEAVE)
+    </div>
+    <div style="margin-top: 6px; font-weight: normal; font-size: 9.5pt;">
+      <b>Order No:</b> {{ doc.order_no }} &nbsp;&nbsp;|&nbsp;&nbsp; <b>Date:</b> {{ frappe.format_date(doc.order_date) }}
+    </div>
+  </div>
+
+  <div class="order-body">
+    <p>
+      {{ doc.sanction_text }}
+    </p>
+    <p>
+      2. Certified that necessary entries have been made in the Service Book and Leave Account of the official.
+    </p>
+  </div>
+
+  <div class="sig-block">
+    <br><br>
+    <b>(Competent / Sanctioning Authority)</b><br>
+    {{ unit.office_unit_name if unit else "" }}
+  </div>
+
+  <div class="clear"></div>
+
+  <div class="copy-to">
+    <b>Copy forwarded for information and necessary action to:</b>
+    <ol>
+      <li>The Individual concerned: <b>{{ doc.employee_name }}</b> ({{ doc.designation }}).</li>
+      <li>Establishment Section / Service Book Cell.</li>
+      <li>Accounts Section / Pay Bill Section for necessary verification.</li>
+      <li>Office Copy / Guard File.</li>
+    </ol>
+  </div>
+</div>

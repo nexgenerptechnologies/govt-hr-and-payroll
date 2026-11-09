@@ -1,0 +1,268 @@
+{
+ "actions": [],
+ "autoname": "naming_series:",
+ "creation": "2026-11-09 23:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "employee",
+  "employee_name",
+  "designation",
+  "office_unit",
+  "status",
+  "column_break_leave_info",
+  "leave_type",
+  "from_date",
+  "to_date",
+  "total_days",
+  "current_balance",
+  "section_break_station_ltc",
+  "prefix_holidays",
+  "suffix_holidays",
+  "reason_for_leave",
+  "column_break_ltc",
+  "permission_to_leave_station",
+  "station_leave_address",
+  "is_ltc_availed",
+  "ltc_block_year",
+  "is_leave_encashment_sought",
+  "encashment_days",
+  "section_break_medical",
+  "medical_certificate_attached",
+  "medical_certificate_file",
+  "column_break_sanction",
+  "sanctioning_authority_remarks",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "default": "LA-.YYYY.-.#####",
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "LA-.YYYY.-.#####",
+   "reqd": 1
+  },
+  {
+   "fieldname": "employee",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Employee ID",
+   "options": "Govt Employee",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "employee.employee_name",
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Name of the Applicant",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee.designation",
+   "fieldname": "designation",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Designation",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee.office_unit",
+   "fieldname": "office_unit",
+   "fieldtype": "Link",
+   "label": "Deptt / Office / Section",
+   "options": "Govt Office Unit",
+   "read_only": 1
+  },
+  {
+   "default": "Applied",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Application Status",
+   "options": "Applied\nRecommended by RO\nVerified by Dealing Clerk\nSanctioned by Competent Authority\nRejected",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_leave_info",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "leave_type",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Type of Leave Applied For",
+   "options": "CCS Leave Type",
+   "reqd": 1
+  },
+  {
+   "fieldname": "from_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Period of Leave: From Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "to_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Period of Leave: To Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "total_days",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Total Leave Days",
+   "read_only": 1
+  },
+  {
+   "fieldname": "current_balance",
+   "fieldtype": "Float",
+   "label": "Leave Balance at Credit",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_station_ltc",
+   "fieldtype": "Section Break",
+   "label": "Station Leave, LTC & Encashment Details"
+  },
+  {
+   "fieldname": "prefix_holidays",
+   "fieldtype": "Data",
+   "label": "Prefix of Holidays, if any"
+  },
+  {
+   "fieldname": "suffix_holidays",
+   "fieldtype": "Data",
+   "label": "Suffix of Holidays, if any"
+  },
+  {
+   "fieldname": "reason_for_leave",
+   "fieldtype": "Small Text",
+   "label": "Reason for Leave Applied For",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_ltc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "permission_to_leave_station",
+   "fieldtype": "Check",
+   "label": "Permission to Leave Station Required?"
+  },
+  {
+   "depends_on": "eval:doc.permission_to_leave_station==1",
+   "fieldname": "station_leave_address",
+   "fieldtype": "Small Text",
+   "label": "Address during Leave Period"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_ltc_availed",
+   "fieldtype": "Check",
+   "label": "LTC Availed During Leave?"
+  },
+  {
+   "depends_on": "eval:doc.is_ltc_availed==1",
+   "fieldname": "ltc_block_year",
+   "fieldtype": "Data",
+   "label": "LTC Block Year (e.g. 2026-2029)"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_leave_encashment_sought",
+   "fieldtype": "Check",
+   "label": "Leave Encashment Sought?"
+  },
+  {
+   "depends_on": "eval:doc.is_leave_encashment_sought==1",
+   "fieldname": "encashment_days",
+   "fieldtype": "Int",
+   "label": "Encashment Days (Max 10 days for LTC)"
+  },
+  {
+   "fieldname": "section_break_medical",
+   "fieldtype": "Section Break",
+   "label": "Medical Certificate (For Commuted / Medical Leave)"
+  },
+  {
+   "default": "0",
+   "fieldname": "medical_certificate_attached",
+   "fieldtype": "Check",
+   "label": "Medical Certificate Attached"
+  },
+  {
+   "depends_on": "eval:doc.medical_certificate_attached==1",
+   "fieldname": "medical_certificate_file",
+   "fieldtype": "Attach",
+   "label": "Medical Certificate Document"
+  },
+  {
+   "fieldname": "column_break_sanction",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "sanctioning_authority_remarks",
+   "fieldtype": "Small Text",
+   "label": "Competent Authority Sanction Remarks"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "CCS Leave Application",
+   "print_hide": 1,
+   "read_only": 1
+  }
+ ],
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2026-11-09 23:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Govt Leave Management",
+ "name": "CCS Leave Application",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "amend": 1,
+   "cancel": 0,
+   "create": 1,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "HR Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "search_fields": "name,employee,employee_name,leave_type,status",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

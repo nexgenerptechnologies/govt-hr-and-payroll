@@ -1,0 +1,208 @@
+{
+ "actions": [],
+ "autoname": "naming_series:",
+ "creation": "2026-11-09 23:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "employee",
+  "employee_name",
+  "designation",
+  "pay_matrix_level",
+  "column_break_header",
+  "office_unit",
+  "arrear_type",
+  "from_date",
+  "to_date",
+  "order_reference",
+  "recalculate_btn",
+  "section_break_items",
+  "items",
+  "section_break_summary",
+  "total_diff_pna",
+  "total_diff_nps",
+  "net_arrear_payable",
+  "remarks",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "default": "ARR-.YYYY.-.#####",
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "ARR-.YYYY.-.#####",
+   "reqd": 1
+  },
+  {
+   "fieldname": "employee",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Employee",
+   "options": "Govt Employee",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "employee.employee_name",
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Employee Name",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee.designation",
+   "fieldname": "designation",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Designation",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee.pay_matrix_level",
+   "fieldname": "pay_matrix_level",
+   "fieldtype": "Link",
+   "label": "Level in Pay Matrix",
+   "options": "CPC Pay Level",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_header",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "employee.office_unit",
+   "fieldname": "office_unit",
+   "fieldtype": "Link",
+   "label": "Office / Unit",
+   "options": "Govt Office Unit",
+   "read_only": 1
+  },
+  {
+   "default": "DA Rate Revision",
+   "fieldname": "arrear_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Arrear Type",
+   "options": "DA Rate Revision\nAnnual Increment Arrear\nPromotion / MACP Arrear\nPay Fixation Arrear",
+   "reqd": 1
+  },
+  {
+   "fieldname": "from_date",
+   "fieldtype": "Date",
+   "label": "Arrear Period From",
+   "reqd": 1
+  },
+  {
+   "fieldname": "to_date",
+   "fieldtype": "Date",
+   "label": "Arrear Period To",
+   "reqd": 1
+  },
+  {
+   "fieldname": "order_reference",
+   "fieldtype": "Data",
+   "label": "Govt Order / Sanction Reference"
+  },
+  {
+   "fieldname": "recalculate_btn",
+   "fieldtype": "Button",
+   "label": "Recalculate Statement"
+  },
+  {
+   "fieldname": "section_break_items",
+   "fieldtype": "Section Break",
+   "label": "Due vs Drawn Monthly Breakdown"
+  },
+  {
+   "fieldname": "items",
+   "fieldtype": "Table",
+   "label": "Due & Drawn Rows",
+   "options": "Due Drawn Arrear Item"
+  },
+  {
+   "fieldname": "section_break_summary",
+   "fieldtype": "Section Break",
+   "label": "Arrear Summary & Net Payable"
+  },
+  {
+   "fieldname": "total_diff_pna",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Total Diff of Pay & Allowances (₹)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_diff_nps",
+   "fieldtype": "Currency",
+   "label": "Total Diff of NPS (₹)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "net_arrear_payable",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Net Arrear Payable (Diff P&A - Diff NPS) (₹)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "Remarks"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Due Drawn Arrear",
+   "print_hide": 1,
+   "read_only": 1
+  }
+ ],
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2026-11-09 23:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Govt Payroll",
+ "name": "Due Drawn Arrear",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "amend": 1,
+   "cancel": 0,
+   "create": 1,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "HR Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "search_fields": "name,employee,employee_name,arrear_type",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

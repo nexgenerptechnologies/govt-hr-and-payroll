@@ -1,0 +1,152 @@
+{
+ "actions": [],
+ "creation": "2026-11-09 23:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "employee",
+  "employee_name",
+  "leave_type",
+  "posting_date",
+  "column_break_txn",
+  "transaction_type",
+  "credit_days",
+  "debit_days",
+  "buffer_credit_days",
+  "buffer_debit_days",
+  "section_break_ref",
+  "reference_type",
+  "reference_name",
+  "remarks"
+ ],
+ "fields": [
+  {
+   "fieldname": "employee",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Employee",
+   "options": "Govt Employee",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "employee.employee_name",
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Employee Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "leave_type",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Leave Type",
+   "options": "CCS Leave Type",
+   "reqd": 1
+  },
+  {
+   "default": "Today",
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Posting Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_txn",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Advance Credit (Jan/Jul)",
+   "fieldname": "transaction_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Transaction Type",
+   "options": "Advance Credit (Jan/Jul)\nLeave Availed\nLeave Encashment\nBuffer Advance Credit\nBuffer Set-off\nPro-rata Joining Credit\nEOL Deduction",
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "credit_days",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Credit Days"
+  },
+  {
+   "default": "0",
+   "fieldname": "debit_days",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Debit Days"
+  },
+  {
+   "default": "0",
+   "fieldname": "buffer_credit_days",
+   "fieldtype": "Float",
+   "label": "Buffer Credit Days (286-300 Ceiling)"
+  },
+  {
+   "default": "0",
+   "fieldname": "buffer_debit_days",
+   "fieldtype": "Float",
+   "label": "Buffer Debit Days"
+  },
+  {
+   "fieldname": "section_break_ref",
+   "fieldtype": "Section Break",
+   "label": "Reference & Remarks"
+  },
+  {
+   "fieldname": "reference_type",
+   "fieldtype": "Data",
+   "label": "Reference DocType"
+  },
+  {
+   "fieldname": "reference_name",
+   "fieldtype": "Data",
+   "label": "Reference Document"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "Remarks"
+  }
+ ],
+ "links": [],
+ "modified": "2026-11-09 23:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Govt Leave Management",
+ "name": "CCS Leave Ledger Entry",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "HR Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "search_fields": "employee,employee_name,leave_type,transaction_type",
+ "sort_field": "posting_date",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

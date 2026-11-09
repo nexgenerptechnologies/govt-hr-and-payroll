@@ -2,14 +2,17 @@
 # For license information, please see license.txt
 
 import frappe
+from frappe.utils import flt, today
 
 def after_install():
 	setup_cpc_pay_levels()
 	setup_payroll_settings()
+	setup_default_leave_types()
 
 def after_migrate():
 	setup_cpc_pay_levels()
 	setup_payroll_settings()
+	setup_default_leave_types()
 
 def setup_payroll_settings():
 	try:
@@ -78,3 +81,142 @@ def setup_cpc_pay_levels():
 			frappe.log_error(f"Error creating pay level {lvl_name}: {e}")
 
 	frappe.db.commit()
+
+def setup_default_leave_types():
+	types = [
+		{
+			"leave_type_name": "Earned Leave",
+			"leave_code": "EL",
+			"max_days_at_a_time": 180,
+			"max_accumulation": 300,
+			"is_commuted": 0,
+			"requires_medical_certificate": 0,
+			"description": "CCS Rule: 15 days advance credit on 01 Jan and 01 Jul. 300 days ceiling."
+		},
+		{
+			"leave_type_name": "Half Pay Leave",
+			"leave_code": "HPL",
+			"max_days_at_a_time": 180,
+			"max_accumulation": 300,
+			"is_commuted": 0,
+			"requires_medical_certificate": 0,
+			"description": "CCS Rule: 10 days advance credit on 01 Jan and 01 Jul."
+		},
+		{
+			"leave_type_name": "Commuted Leave",
+			"leave_code": "COMMUTED",
+			"max_days_at_a_time": 90,
+			"max_accumulation": 150,
+			"is_commuted": 1,
+			"requires_medical_certificate": 1,
+			"description": "Debits 2x from HPL balance. Mandatory medical certificate."
+		},
+		{
+			"leave_type_name": "Maternity Leave",
+			"leave_code": "MAT",
+			"max_days_at_a_time": 180,
+			"max_accumulation": 180,
+			"is_commuted": 0,
+			"requires_medical_certificate": 1,
+			"description": "Admissible up to 180 days for female employees."
+		},
+		{
+			"leave_type_name": "Paternity Leave",
+			"leave_code": "PAT",
+			"max_days_at_a_time": 15,
+			"max_accumulation": 15,
+			"is_commuted": 0,
+			"requires_medical_certificate": 0,
+			"description": "Admissible for 15 days during confinement of wife."
+		},
+		{
+			"leave_type_name": "Child Care Leave",
+			"leave_code": "CCL",
+			"max_days_at_a_time": 180,
+			"max_accumulation": 730,
+			"is_commuted": 0,
+			"requires_medical_certificate": 0,
+			"description": "Admissible up to 730 days during entire service."
+		},
+		{
+			"leave_type_name": "Extraordinary Leave",
+			"leave_code": "EOL",
+			"max_days_at_a_time": 365,
+			"max_accumulation": 0,
+			"is_commuted": 0,
+			"requires_medical_certificate": 0,
+			"description": "Without pay. 1/10th EL deducted for EOL availed."
+		}
+	]
+
+	for lt in types:
+		try:
+			if not frappe.db.exists("CCS Leave Type", lt["leave_type_name"]):
+				doc = frappe.new_doc("CCS Leave Type")
+				doc.update(lt)
+				doc.flags.ignore_permissions = True
+				doc.flags.ignore_mandatory = True
+				doc.insert()
+		except Exception as e:
+			frappe.log_error(f"Error creating leave type {lt['leave_type_name']}: {e}")
+
+	frappe.db.commit()
+
+@frappe.whitelist()
+def credit_half_yearly_el_and_hpl():
+	"""
+	CCS Leave Rule 1 & 2:
+	1. 15 days EL auto credited on 01 Jan and 01 Jul.
+	2. Ceiling is 300 days. If balance at credit is between 286-300 days,
+	   the advance 15 days is placed into buffer_credit_days to set off during the half year.
+	3. 10 days HPL credited on 01 Jan and 01 Jul.
+	"""
+	active_employees = frappe.get_all("Govt Employee", filters={"status": "Active"}, fields=["employee_id", "employee_name"])
+	count = 0
+
+	for emp in active_employees:
+		# 1. Earned Leave Credit
+		el_entries = frappe.get_all(
+			"CCS Leave Ledger Entry",
+			filters={"employee": emp.employee_id, "leave_type": "Earned Leave"},
+			fields=["credit_days", "debit_days"]
+		)
+		curr_el = sum([flt(e.credit_days) - flt(e.debit_days) for e in el_entries])
+
+		std_credit = 0.0
+		buffer_credit = 0.0
+
+		if curr_el >= 300:
+			buffer_credit = 15.0
+		elif curr_el >= 285:
+			std_credit = 300.0 - curr_el
+			buffer_credit = 15.0 - std_credit
+		else:
+			std_credit = 15.0
+
+		entry_el = frappe.new_doc("CCS Leave Ledger Entry")
+		entry_el.employee = emp.employee_id
+		entry_el.leave_type = "Earned Leave"
+		entry_el.posting_date = today()
+		entry_el.transaction_type = "Advance Credit (Jan/Jul)"
+		entry_el.credit_days = std_credit
+		entry_el.buffer_credit_days = buffer_credit
+		entry_el.remarks = "Half-yearly advance credit under CCS Leave Rules"
+		entry_el.flags.ignore_permissions = True
+		entry_el.insert()
+
+		# 2. Half Pay Leave Credit (10 days)
+		entry_hpl = frappe.new_doc("CCS Leave Ledger Entry")
+		entry_hpl.employee = emp.employee_id
+		entry_hpl.leave_type = "Half Pay Leave"
+		entry_hpl.posting_date = today()
+		entry_hpl.transaction_type = "Advance Credit (Jan/Jul)"
+		entry_hpl.credit_days = 10.0
+		entry_hpl.remarks = "Half-yearly advance HPL credit under CCS Leave Rules"
+		entry_hpl.flags.ignore_permissions = True
+		entry_hpl.insert()
+
+		count += 1
+
+	frappe.db.commit()
+	return {"credited_employees": count}

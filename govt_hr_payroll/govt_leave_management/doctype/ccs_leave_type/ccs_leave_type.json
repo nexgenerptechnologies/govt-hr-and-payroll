@@ -1,0 +1,104 @@
+{
+ "actions": [],
+ "autoname": "field:leave_type_name",
+ "creation": "2026-11-09 23:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "leave_type_name",
+  "leave_code",
+  "column_break_rules",
+  "max_days_at_a_time",
+  "max_accumulation",
+  "is_commuted",
+  "requires_medical_certificate",
+  "description"
+ ],
+ "fields": [
+  {
+   "fieldname": "leave_type_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Leave Type Name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "leave_code",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Leave Code",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_rules",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "180",
+   "fieldname": "max_days_at_a_time",
+   "fieldtype": "Int",
+   "label": "Max Continuous Days Allowed"
+  },
+  {
+   "default": "300",
+   "fieldname": "max_accumulation",
+   "fieldtype": "Int",
+   "label": "Max Accumulation Ceiling"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_commuted",
+   "fieldtype": "Check",
+   "label": "Is Commuted Leave (Debits 2x HPL)"
+  },
+  {
+   "default": "0",
+   "fieldname": "requires_medical_certificate",
+   "fieldtype": "Check",
+   "label": "Requires Medical Certificate"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Small Text",
+   "label": "Description / Statutory Rules"
+  }
+ ],
+ "links": [],
+ "modified": "2026-11-09 23:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Govt Leave Management",
+ "name": "CCS Leave Type",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "HR Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "search_fields": "leave_type_name,leave_code",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

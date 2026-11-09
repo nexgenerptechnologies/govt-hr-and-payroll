@@ -1,0 +1,143 @@
+<style>
+  @page {
+    size: A4 landscape;
+    margin: 8mm;
+  }
+  .arrear-container {
+    font-family: Arial, sans-serif;
+    font-size: 8pt;
+    color: #000;
+  }
+  .arrear-title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 11pt;
+    margin-bottom: 8px;
+    text-decoration: underline;
+  }
+  .meta-grid {
+    width: 100%;
+    margin-bottom: 6px;
+    font-size: 8.5pt;
+  }
+  .arrear-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 7.5pt;
+  }
+  .arrear-table th, .arrear-table td {
+    border: 1px solid #000;
+    padding: 3px 2px;
+    text-align: center;
+  }
+  .arrear-table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+  }
+  .text-left { text-align: left !important; }
+  .text-right { text-align: right !important; }
+  .footer-summary {
+    font-size: 9pt;
+    font-weight: bold;
+    margin-top: 12px;
+  }
+</style>
+
+<div class="arrear-container">
+  <div class="arrear-title">
+    ARREARS OF PAY AND ALLOWANCES FOR THE PERIOD OF {{ frappe.format_date(doc.from_date) }} - {{ frappe.format_date(doc.to_date) }}
+  </div>
+
+  <table class="meta-grid">
+    <tr>
+      <td style="width: 33%;"><b>Name :</b> {{ doc.employee_name }}</td>
+      <td style="width: 33%; text-align: center;"><b>Level :</b> {{ doc.pay_matrix_level or "" }}</td>
+      <td style="width: 33%; text-align: right;"><b>Desgn :</b> {{ doc.designation or "" }}</td>
+    </tr>
+  </table>
+
+  <table class="arrear-table">
+    <thead>
+      <tr>
+        <th rowspan="2">Month</th>
+        <th colspan="9">Due Details</th>
+        <th colspan="9">Drawn Details</th>
+        <th rowspan="2">Diff of<br>P&A (₹)</th>
+        <th rowspan="2">Diff of<br>NPS (₹)</th>
+      </tr>
+      <tr>
+        <!-- Due sub headers -->
+        <th>Band Pay</th>
+        <th>DA Rate</th>
+        <th>DA ON Basic</th>
+        <th>HRA Rate</th>
+        <th>HRA</th>
+        <th>TPT</th>
+        <th>DA on TPT</th>
+        <th>Total per month</th>
+        <th>NPS</th>
+
+        <!-- Drawn sub headers -->
+        <th>Basic Pay</th>
+        <th>HRA Rate</th>
+        <th>HRA</th>
+        <th>DA Rate</th>
+        <th>DA</th>
+        <th>TPT</th>
+        <th>DA on TPT</th>
+        <th>Total per month</th>
+        <th>NPS</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for item in doc.items %}
+      <tr>
+        <td><b>{{ item.month_year }}</b></td>
+        
+        <!-- Due Details -->
+        <td class="text-right">{{ "{:,.0f}".format(item.due_basic_pay or 0) }}</td>
+        <td>{{ "{:,.0f}".format(item.due_da_rate or 0) }}%</td>
+        <td class="text-right">{{ "{:,.0f}".format(item.due_da_amount or 0) }}</td>
+        <td>{{ "{:,.0f}".format(item.due_hra_rate or 0) }}%</td>
+        <td class="text-right">{{ "{:,.0f}".format(item.due_hra_amount or 0) }}</td>
+        <td class="text-right">{{ "{:,.0f}".format(item.due_tpt_allowance or 0) }}</td>
+        <td class="text-right">{{ "{:,.0f}".format(item.due_da_on_tpt or 0) }}</td>
+        <td class="text-right"><b>{{ "{:,.0f}".format(item.due_total_pna or 0) }}</b></td>
+        <td class="text-right">{{ "{:,.0f}".format(item.due_nps_amount or 0) }}</td>
+
+        <!-- Drawn Details -->
+        <td class="text-right">{{ "{:,.0f}".format(item.drawn_basic_pay or 0) }}</td>
+        <td>{{ "{:,.0f}".format(item.drawn_hra_rate or 0) }}%</td>
+        <td class="text-right">{{ "{:,.0f}".format(item.drawn_hra_amount or 0) }}</td>
+        <td>{{ "{:,.0f}".format(item.drawn_da_rate or 0) }}%</td>
+        <td class="text-right">{{ "{:,.0f}".format(item.drawn_da_amount or 0) }}</td>
+        <td class="text-right">{{ "{:,.0f}".format(item.drawn_tpt_allowance or 0) }}</td>
+        <td class="text-right">{{ "{:,.0f}".format(item.drawn_da_on_tpt or 0) }}</td>
+        <td class="text-right"><b>{{ "{:,.0f}".format(item.drawn_total_pna or 0) }}</b></td>
+        <td class="text-right">{{ "{:,.0f}".format(item.drawn_nps_amount or 0) }}</td>
+
+        <!-- Differences -->
+        <td class="text-right"><b>{{ "{:,.0f}".format(item.diff_pna or 0) }}</b></td>
+        <td class="text-right"><b>{{ "{:,.0f}".format(item.diff_nps or 0) }}</b></td>
+      </tr>
+      {% endfor %}
+    </tbody>
+    <tfoot>
+      <tr style="font-weight: bold; background-color: #f5f5f5;">
+        <td>Total</td>
+        <td colspan="7"></td>
+        <td class="text-right">{{ "{:,.0f}".format(doc.items | sum(attribute='due_total_pna')) }}</td>
+        <td class="text-right">{{ "{:,.0f}".format(doc.items | sum(attribute='due_nps_amount')) }}</td>
+        <td colspan="7"></td>
+        <td class="text-right">{{ "{:,.0f}".format(doc.items | sum(attribute='drawn_total_pna')) }}</td>
+        <td class="text-right">{{ "{:,.0f}".format(doc.items | sum(attribute='drawn_nps_amount')) }}</td>
+        <td class="text-right"><b>{{ "{:,.0f}".format(doc.total_diff_pna or 0) }}</b></td>
+        <td class="text-right"><b>{{ "{:,.0f}".format(doc.total_diff_nps or 0) }}</b></td>
+      </tr>
+    </tfoot>
+  </table>
+
+  <div class="footer-summary">
+    Total = Diff of P&A (₹{{ "{:,.0f}".format(doc.total_diff_pna or 0) }}) - Diff of NPS (₹{{ "{:,.0f}".format(doc.total_diff_nps or 0) }}) = Net Pay ₹{{ "{:,.0f}".format(doc.net_arrear_payable or 0) }}/-
+  </div>
+</div>

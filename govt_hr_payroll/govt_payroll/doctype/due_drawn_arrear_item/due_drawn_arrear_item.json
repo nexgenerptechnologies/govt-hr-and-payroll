@@ -1,0 +1,195 @@
+{
+ "actions": [],
+ "creation": "2026-11-09 23:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "month_year",
+  "section_break_due",
+  "due_basic_pay",
+  "due_da_rate",
+  "due_da_amount",
+  "due_hra_rate",
+  "due_hra_amount",
+  "due_tpt_allowance",
+  "due_da_on_tpt",
+  "due_total_pna",
+  "due_nps_amount",
+  "section_break_drawn",
+  "drawn_basic_pay",
+  "drawn_hra_rate",
+  "drawn_hra_amount",
+  "drawn_da_rate",
+  "drawn_da_amount",
+  "drawn_tpt_allowance",
+  "drawn_da_on_tpt",
+  "drawn_total_pna",
+  "drawn_nps_amount",
+  "section_break_diff",
+  "diff_pna",
+  "diff_nps",
+  "net_arrear"
+ ],
+ "fields": [
+  {
+   "fieldname": "month_year",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Month",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_due",
+   "fieldtype": "Section Break",
+   "label": "Due Details"
+  },
+  {
+   "fieldname": "due_basic_pay",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Due Basic Pay (Band Pay) (₹)"
+  },
+  {
+   "fieldname": "due_da_rate",
+   "fieldtype": "Percent",
+   "label": "Due DA Rate (%)"
+  },
+  {
+   "fieldname": "due_da_amount",
+   "fieldtype": "Currency",
+   "label": "Due DA (₹)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "due_hra_rate",
+   "fieldtype": "Percent",
+   "label": "Due HRA Rate (%)"
+  },
+  {
+   "fieldname": "due_hra_amount",
+   "fieldtype": "Currency",
+   "label": "Due HRA (₹)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "due_tpt_allowance",
+   "fieldtype": "Currency",
+   "label": "Due TPT (₹)"
+  },
+  {
+   "fieldname": "due_da_on_tpt",
+   "fieldtype": "Currency",
+   "label": "Due DA on TPT (₹)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "due_total_pna",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Due Total P&A (₹)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "due_nps_amount",
+   "fieldtype": "Currency",
+   "label": "Due NPS (10%) (₹)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_drawn",
+   "fieldtype": "Section Break",
+   "label": "Drawn Details"
+  },
+  {
+   "fieldname": "drawn_basic_pay",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Drawn Basic Pay (₹)"
+  },
+  {
+   "fieldname": "drawn_hra_rate",
+   "fieldtype": "Percent",
+   "label": "Drawn HRA Rate (%)"
+  },
+  {
+   "fieldname": "drawn_hra_amount",
+   "fieldtype": "Currency",
+   "label": "Drawn HRA (₹)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "drawn_da_rate",
+   "fieldtype": "Percent",
+   "label": "Drawn DA Rate (%)"
+  },
+  {
+   "fieldname": "drawn_da_amount",
+   "fieldtype": "Currency",
+   "label": "Drawn DA (₹)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "drawn_tpt_allowance",
+   "fieldtype": "Currency",
+   "label": "Drawn TPT (₹)"
+  },
+  {
+   "fieldname": "drawn_da_on_tpt",
+   "fieldtype": "Currency",
+   "label": "Drawn DA on TPT (₹)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "drawn_total_pna",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Drawn Total P&A (₹)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "drawn_nps_amount",
+   "fieldtype": "Currency",
+   "label": "Drawn NPS (10%) (₹)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_diff",
+   "fieldtype": "Section Break",
+   "label": "Arrear Differences"
+  },
+  {
+   "fieldname": "diff_pna",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Diff of P&A (₹)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "diff_nps",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Diff of NPS (₹)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "net_arrear",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Net Arrear Payable (₹)",
+   "read_only": 1
+  }
+ ],
+ "istable": 1,
+ "links": [],
+ "modified": "2026-11-09 23:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Govt Payroll",
+ "name": "Due Drawn Arrear Item",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "idx",
+ "sort_order": "ASC",
+ "states": [],
+ "track_changes": 1
+}

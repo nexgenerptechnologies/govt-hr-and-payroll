@@ -1,0 +1,146 @@
+<style>
+  @page {
+    size: A4 portrait;
+    margin: 15mm;
+  }
+  .leave-form-container {
+    font-family: Arial, sans-serif;
+    font-size: 9.5pt;
+    line-height: 1.6;
+    color: #000;
+  }
+  .leave-form-title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 12pt;
+    text-decoration: underline;
+    margin-bottom: 20px;
+  }
+  .form-row {
+    display: flex;
+    margin-bottom: 10px;
+    border-bottom: 1px dotted #ccc;
+    padding-bottom: 4px;
+  }
+  .form-label {
+    width: 50%;
+    font-weight: 500;
+  }
+  .form-value {
+    width: 50%;
+    font-weight: bold;
+  }
+  .signature-section {
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .sig-box {
+    text-align: center;
+    width: 45%;
+  }
+</style>
+
+<div class="leave-form-container">
+  <div class="leave-form-title">
+    APPLICATION FOR LEAVE OR FOR EXTENSION OF LEAVE<br>
+    <small style="font-size: 9pt; font-weight: normal;">(Under Central Civil Services (Leave) Rules, 1972)</small>
+  </div>
+
+  <div class="form-row">
+    <div class="form-label">1. Type of Leave applied for :</div>
+    <div class="form-value">{{ doc.leave_type }}</div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-label">2. Employee ID / No :</div>
+    <div class="form-value">{{ doc.employee }}</div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-label">3. Name of Applicant :</div>
+    <div class="form-value">{{ doc.employee_name }}</div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-label">4. Designation :</div>
+    <div class="form-value">{{ doc.designation }}</div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-label">5. Department / Office / Section :</div>
+    <div class="form-value">{{ doc.office_unit }}</div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-label">6. Period of Leave :</div>
+    <div class="form-value">
+      From {{ frappe.format_date(doc.from_date) }} to {{ frappe.format_date(doc.to_date) }} ({{ doc.total_days }} days)
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-label">7. Prefix / Suffix of holidays :</div>
+    <div class="form-value">
+      Prefix: {{ doc.prefix_holidays or "Nil" }} | Suffix: {{ doc.suffix_holidays or "Nil" }}
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-label">8. Reason for Leave applied for :</div>
+    <div class="form-value">{{ doc.reason_for_leave }}</div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-label">9. Permission to leave station required :</div>
+    <div class="form-value">
+      {{ "Yes" if doc.permission_to_leave_station else "No" }}
+      {% if doc.permission_to_leave_station %}
+        <br><small>Address: {{ doc.station_leave_address }}</small>
+      {% endif %}
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-label">10. Whether LTC is being availed during leave :</div>
+    <div class="form-value">
+      {{ "Yes (" + (doc.ltc_block_year or "") + ")" if doc.is_ltc_availed else "No" }}
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-label">11. Whether Leave Encashment is sought :</div>
+    <div class="form-value">
+      {{ ("Yes (" + doc.encashment_days|string + " days)") if doc.is_leave_encashment_sought else "No" }}
+    </div>
+  </div>
+
+  <div class="signature-section">
+    <div class="sig-box">
+      Date: {{ frappe.format_date(doc.creation) }}
+    </div>
+    <div class="sig-box">
+      <br><br>
+      <b>Signature of Applicant</b><br>
+      {{ doc.employee_name }}
+    </div>
+  </div>
+
+  <hr style="margin-top: 30px; border-top: 1px solid #000;">
+
+  <div style="margin-top: 15px;">
+    <b>Remarks / Recommendation of Reporting Officer:</b><br>
+    Recommended / Forwarded for sanction.
+  </div>
+
+  <div class="signature-section" style="margin-top: 25px;">
+    <div class="sig-box">
+      <b>Dealing Assistant / Establishment</b><br>
+      Leave verified & balance checked
+    </div>
+    <div class="sig-box">
+      <b>Competent Authority</b><br>
+      Sanctioned / Not Sanctioned
+    </div>
+  </div>
+</div>
