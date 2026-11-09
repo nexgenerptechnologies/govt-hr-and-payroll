@@ -1,2 +1,1 @@
-# Frappe App Requirements
-frappe
+# App Python Requirements (leave empty if only using Frappe built-ins)

@@ -7,13 +7,14 @@ name = "govt_hr_payroll"
 authors = [
     { name = "NexGen ERP Technologies", email = "support@nexgenerptechnologies.com" }
 ]
-description = "Comprehensive 7th Central Pay Commission (7th CPC) Government HR & Payroll System for Frappe Framework v16"
+description = "Comprehensive 7th Central Pay Commission (7th CPC) Government HR & Payroll System for Frappe Framework"
 readme = "README.md"
 dynamic = ["version"]
-dependencies = [
-    "frappe"
-]
+dependencies = []
 
 [project.urls]
 Homepage = "https://github.com/nexgenerptechnologies/govt-hr-and-payroll"
 Repository = "https://github.com/nexgenerptechnologies/govt-hr-and-payroll.git"
+
+[tool.bench.frappe-dependencies]
+frappe = ">=15.0.0,<17.0.0"
