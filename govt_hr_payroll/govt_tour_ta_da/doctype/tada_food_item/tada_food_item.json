@@ -1,0 +1,70 @@
+{
+ "actions": [],
+ "creation": "2026-11-09 23:30:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "claim_date",
+  "absence_hours",
+  "slab_percentage",
+  "daily_food_limit",
+  "food_amount_claimed",
+  "food_amount_passed"
+ ],
+ "fields": [
+  {
+   "fieldname": "claim_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Date",
+   "reqd": 1
+  },
+  {
+   "default": "12",
+   "fieldname": "absence_hours",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Absence Hours"
+  },
+  {
+   "default": "100% (> 12 hrs)",
+   "fieldname": "slab_percentage",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Slab %",
+   "options": "30% (< 6 hrs)\n70% (6 to 12 hrs)\n100% (> 12 hrs)"
+  },
+  {
+   "fieldname": "daily_food_limit",
+   "fieldtype": "Currency",
+   "label": "Daily Food Limit (₹)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "food_amount_claimed",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Food Claimed (₹)",
+   "reqd": 1
+  },
+  {
+   "fieldname": "food_amount_passed",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Food Passed (₹)"
+  }
+ ],
+ "istable": 1,
+ "links": [],
+ "modified": "2026-11-09 23:30:00.000000",
+ "modified_by": "Administrator",
+ "module": "Govt Tour TA DA",
+ "name": "TADA Food Item",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "idx",
+ "sort_order": "ASC",
+ "states": [],
+ "track_changes": 1
+}

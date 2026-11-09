@@ -1,0 +1,318 @@
+{
+ "actions": [],
+ "autoname": "naming_series:",
+ "creation": "2026-11-09 23:30:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "employee",
+  "employee_name",
+  "designation",
+  "office_unit",
+  "pay_matrix_level",
+  "pran_gpf_no",
+  "column_break_tour_header",
+  "movement_order",
+  "station_from",
+  "station_to",
+  "dep_date",
+  "return_date",
+  "status",
+  "section_break_journey",
+  "journey_items",
+  "section_break_hotel",
+  "hotel_items",
+  "section_break_food",
+  "food_items",
+  "section_break_claim_totals",
+  "total_fare_claimed",
+  "total_hotel_claimed",
+  "total_food_claimed",
+  "total_amount_claimed",
+  "column_break_advance_settlement",
+  "advance_amount_received",
+  "balance_amount_claimed",
+  "section_break_pcda",
+  "total_passed_amount",
+  "net_payable_or_refundable",
+  "column_break_pcda2",
+  "passed_by_pcda_hq",
+  "disbursement_voucher_no",
+  "disbursement_date",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "default": "TA-.YYYY.-.#####",
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "TA-.YYYY.-.#####",
+   "reqd": 1
+  },
+  {
+   "fieldname": "employee",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Claimant Employee",
+   "options": "Govt Employee",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "employee.employee_name",
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Name of Claimant",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee.designation",
+   "fieldname": "designation",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Designation",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee.office_unit",
+   "fieldname": "office_unit",
+   "fieldtype": "Link",
+   "label": "Office / Unit",
+   "options": "Govt Office Unit",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee.pay_matrix_level",
+   "fieldname": "pay_matrix_level",
+   "fieldtype": "Link",
+   "label": "Pay Matrix Level",
+   "options": "CPC Pay Level",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee.pran_no",
+   "fieldname": "pran_gpf_no",
+   "fieldtype": "Data",
+   "label": "PRAN / GPF No",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_tour_header",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "movement_order",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Movement Order Reference",
+   "options": "Tour Movement Order"
+  },
+  {
+   "default": "Delhi",
+   "fieldname": "station_from",
+   "fieldtype": "Data",
+   "label": "Station From",
+   "reqd": 1
+  },
+  {
+   "fieldname": "station_to",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Station To",
+   "reqd": 1
+  },
+  {
+   "fieldname": "dep_date",
+   "fieldtype": "Date",
+   "label": "Departure Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "return_date",
+   "fieldtype": "Date",
+   "label": "Return Date",
+   "reqd": 1
+  },
+  {
+   "default": "Submitted by Claimant",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Claim Status",
+   "options": "Draft\nSubmitted by Claimant\nVerified by Controlling Officer\nPassed by PCDA HQ\nDisbursed\nRejected",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_journey",
+   "fieldtype": "Section Break",
+   "label": "1. Journey Details (Onward & Return Journey)"
+  },
+  {
+   "fieldname": "journey_items",
+   "fieldtype": "Table",
+   "label": "Journey Details",
+   "options": "TADA Journey Item"
+  },
+  {
+   "fieldname": "section_break_hotel",
+   "fieldtype": "Section Break",
+   "label": "2. Hotel Accommodation / Guest House Charges"
+  },
+  {
+   "fieldname": "hotel_items",
+   "fieldtype": "Table",
+   "label": "Hotel Stays",
+   "options": "TADA Hotel Item"
+  },
+  {
+   "fieldname": "section_break_food",
+   "fieldtype": "Section Break",
+   "label": "3. Daily Food Allowance (DA on Tour)"
+  },
+  {
+   "fieldname": "food_items",
+   "fieldtype": "Table",
+   "label": "Daily Food Entries",
+   "options": "TADA Food Item"
+  },
+  {
+   "fieldname": "section_break_claim_totals",
+   "fieldtype": "Section Break",
+   "label": "Claim Amounts Summary"
+  },
+  {
+   "fieldname": "total_fare_claimed",
+   "fieldtype": "Currency",
+   "label": "Total Fare Claimed (₹)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_hotel_claimed",
+   "fieldtype": "Currency",
+   "label": "Total Hotel Claimed (₹)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_food_claimed",
+   "fieldtype": "Currency",
+   "label": "Total Food Claimed (₹)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_amount_claimed",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Total Claimed Amount (₹)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_advance_settlement",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "advance_amount_received",
+   "fieldtype": "Currency",
+   "label": "TA Advance Received (₹)"
+  },
+  {
+   "fieldname": "balance_amount_claimed",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Balance Amount Claimed (₹)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_pcda",
+   "fieldtype": "Section Break",
+   "label": "PCDA HQ / Accounts Passing & Settlement"
+  },
+  {
+   "fieldname": "total_passed_amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Passed Amount by PCDA HQ (₹)"
+  },
+  {
+   "fieldname": "net_payable_or_refundable",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Net Amount Payable / (Refundable) (₹)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_pcda2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "passed_by_pcda_hq",
+   "fieldtype": "Data",
+   "label": "Passed By Officer Name / Designation"
+  },
+  {
+   "fieldname": "disbursement_voucher_no",
+   "fieldtype": "Data",
+   "label": "DV / Cheque / UTR No"
+  },
+  {
+   "fieldname": "disbursement_date",
+   "fieldtype": "Date",
+   "label": "Disbursement Date"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "TADA Final Claim",
+   "print_hide": 1,
+   "read_only": 1
+  }
+ ],
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2026-11-09 23:30:00.000000",
+ "modified_by": "Administrator",
+ "module": "Govt Tour TA DA",
+ "name": "TADA Final Claim",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "amend": 1,
+   "cancel": 0,
+   "create": 1,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "HR Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "search_fields": "name,employee,employee_name,station_to,movement_order",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

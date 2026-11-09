@@ -1,0 +1,357 @@
+{
+ "actions": [],
+ "autoname": "naming_series:",
+ "creation": "2026-11-09 23:30:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "employee",
+  "employee_name",
+  "designation",
+  "office_unit",
+  "pay_matrix_level",
+  "pran_gpf_no",
+  "cghs_card_no",
+  "ward_entitlement",
+  "status",
+  "column_break_cardholder",
+  "full_address",
+  "mobile_no",
+  "email_id",
+  "section_break_patient",
+  "patient_name",
+  "patient_cghs_id",
+  "patient_relationship",
+  "column_break_hospital",
+  "hospital_name",
+  "hospital_address",
+  "is_empanelled",
+  "is_emergency",
+  "prior_permission_taken",
+  "section_break_claim",
+  "opd_amount",
+  "test_investigations_amount",
+  "indoor_treatment_amount",
+  "total_amount_claimed",
+  "column_break_advance",
+  "medical_advance_taken",
+  "net_amount_claimed",
+  "sanctioned_amount",
+  "section_break_bank",
+  "bank_name",
+  "bank_branch",
+  "account_no",
+  "column_break_bank2",
+  "ifsc_code",
+  "micr_code",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "default": "MRC-.YYYY.-.#####",
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "MRC-.YYYY.-.#####",
+   "reqd": 1
+  },
+  {
+   "fieldname": "employee",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Employee ID",
+   "options": "Govt Employee",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "employee.employee_name",
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Name of Principal CGHS Card Holder",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee.designation",
+   "fieldname": "designation",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Designation",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee.office_unit",
+   "fieldname": "office_unit",
+   "fieldtype": "Link",
+   "label": "Office / Unit",
+   "options": "Govt Office Unit",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee.pay_matrix_level",
+   "fieldname": "pay_matrix_level",
+   "fieldtype": "Link",
+   "label": "Pay Matrix Level",
+   "options": "CPC Pay Level",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee.pran_no",
+   "fieldname": "pran_gpf_no",
+   "fieldtype": "Data",
+   "label": "PRAN / GPF No",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee.cghs_card_no",
+   "fieldname": "cghs_card_no",
+   "fieldtype": "Data",
+   "label": "CGHS Card / Ben ID No",
+   "read_only": 1
+  },
+  {
+   "default": "Semi-Private",
+   "fieldname": "ward_entitlement",
+   "fieldtype": "Select",
+   "label": "Ward Entitlement",
+   "options": "General\nSemi-Private\nPrivate"
+  },
+  {
+   "default": "Submitted",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Claim Status",
+   "options": "Draft\nSubmitted\nVerified by Dealing Assistant\nSanctioned by DDO\nRejected",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_cardholder",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "full_address",
+   "fieldtype": "Small Text",
+   "label": "Full Residential Address"
+  },
+  {
+   "fieldname": "mobile_no",
+   "fieldtype": "Data",
+   "label": "Mobile Phone No."
+  },
+  {
+   "fieldname": "email_id",
+   "fieldtype": "Data",
+   "label": "Email Address"
+  },
+  {
+   "fieldname": "section_break_patient",
+   "fieldtype": "Section Break",
+   "label": "Patient & Treatment Details"
+  },
+  {
+   "fieldname": "patient_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Patient's Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "patient_cghs_id",
+   "fieldtype": "Data",
+   "label": "Patient's CGHS Ben ID"
+  },
+  {
+   "default": "Self",
+   "fieldname": "patient_relationship",
+   "fieldtype": "Select",
+   "label": "Relationship with Principal Card Holder",
+   "options": "Self\nSpouse\nSon\nDaughter\nFather\nMother\nDependent",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_hospital",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "hospital_name",
+   "fieldtype": "Data",
+   "label": "Name of Hospital / Diagnostic Centre",
+   "reqd": 1
+  },
+  {
+   "fieldname": "hospital_address",
+   "fieldtype": "Small Text",
+   "label": "Hospital Address"
+  },
+  {
+   "default": "1",
+   "fieldname": "is_empanelled",
+   "fieldtype": "Check",
+   "label": "Hospital is Empanelled under CGHS"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_emergency",
+   "fieldtype": "Check",
+   "label": "Treatment taken in Emergency"
+  },
+  {
+   "default": "0",
+   "fieldname": "prior_permission_taken",
+   "fieldtype": "Check",
+   "label": "Prior Permission taken for treatment"
+  },
+  {
+   "fieldname": "section_break_claim",
+   "fieldtype": "Section Break",
+   "label": "Claim Expenses & Settlement"
+  },
+  {
+   "default": "0",
+   "fieldname": "opd_amount",
+   "fieldtype": "Currency",
+   "label": "(a) OPD Treatment (₹)"
+  },
+  {
+   "default": "0",
+   "fieldname": "test_investigations_amount",
+   "fieldtype": "Currency",
+   "label": "(b) Tests / Investigation (₹)"
+  },
+  {
+   "default": "0",
+   "fieldname": "indoor_treatment_amount",
+   "fieldtype": "Currency",
+   "label": "(c) Indoor Treatment / Hospitalization (₹)"
+  },
+  {
+   "fieldname": "total_amount_claimed",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Total Amount Claimed (₹)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_advance",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "medical_advance_taken",
+   "fieldtype": "Currency",
+   "label": "Details of Medical Advance Taken, if any (₹)"
+  },
+  {
+   "fieldname": "net_amount_claimed",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Net Amount Claimed (₹)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sanctioned_amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Amount Passed / Sanctioned by DDO (₹)"
+  },
+  {
+   "fieldname": "section_break_bank",
+   "fieldtype": "Section Break",
+   "label": "Bank Details for Electronic Transfer"
+  },
+  {
+   "fetch_from": "employee.bank_name",
+   "fieldname": "bank_name",
+   "fieldtype": "Data",
+   "label": "Bank Name",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee.bank_branch",
+   "fieldname": "bank_branch",
+   "fieldtype": "Data",
+   "label": "Branch Address",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee.account_no",
+   "fieldname": "account_no",
+   "fieldtype": "Data",
+   "label": "SB Account No",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_bank2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "employee.ifsc_code",
+   "fieldname": "ifsc_code",
+   "fieldtype": "Data",
+   "label": "IFSC Code",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee.micr_code",
+   "fieldname": "micr_code",
+   "fieldtype": "Data",
+   "label": "Branch MICR Code",
+   "read_only": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "CGHS Medical Claim",
+   "print_hide": 1,
+   "read_only": 1
+  }
+ ],
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2026-11-09 23:30:00.000000",
+ "modified_by": "Administrator",
+ "module": "Govt Claims",
+ "name": "CGHS Medical Claim",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "amend": 1,
+   "cancel": 0,
+   "create": 1,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "HR Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "search_fields": "name,employee,employee_name,patient_name,hospital_name",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

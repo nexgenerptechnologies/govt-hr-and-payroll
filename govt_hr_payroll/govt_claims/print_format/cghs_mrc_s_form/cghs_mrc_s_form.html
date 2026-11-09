@@ -1,0 +1,178 @@
+<style>
+  @page {
+    size: A4 portrait;
+    margin: 12mm;
+  }
+  .cghs-form {
+    font-family: Arial, sans-serif;
+    font-size: 8.5pt;
+    line-height: 1.45;
+    color: #000;
+  }
+  .cghs-header {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+  .cghs-header .main-title {
+    font-size: 11pt;
+  }
+  .cghs-header .sub-title {
+    font-size: 9.5pt;
+  }
+  .cghs-header .form-code {
+    font-size: 10pt;
+    text-decoration: underline;
+    margin-top: 3px;
+  }
+  .field-row {
+    margin-bottom: 6px;
+    display: flex;
+  }
+  .field-label {
+    width: 65%;
+  }
+  .field-val {
+    width: 35%;
+    font-weight: bold;
+  }
+  .table-section {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10px 0;
+  }
+  .table-section td {
+    border: 1px solid #000;
+    padding: 4px;
+    font-size: 8pt;
+  }
+  .text-right { text-align: right !important; }
+  .declaration {
+    margin-top: 15px;
+    font-size: 8pt;
+    text-align: justify;
+  }
+  .sig-row {
+    margin-top: 35px;
+    display: flex;
+    justify-content: space-between;
+  }
+</style>
+
+<div class="cghs-form">
+  <div class="cghs-header">
+    <div class="main-title">CENTRAL GOVERNMENT HEALTH SCHEME</div>
+    <div class="sub-title">MEDICAL REIMBURSEMENT CLAIM FORM (For serving employees)</div>
+    <div class="form-code">FORM - MRC (S)</div>
+    <div style="font-weight: normal; margin-top: 4px;">PRAN/GPF No.: <b>{{ doc.pran_gpf_no or "" }}</b></div>
+  </div>
+
+  <div style="font-style: italic; margin-bottom: 8px;">(To be filled up by the Principal Card holder in BLOCK LETTERS)</div>
+
+  <div class="field-row">
+    <div class="field-label">1. (a) Name of the Principal CGHS Card Holder:</div>
+    <div class="field-val">{{ (doc.employee_name or "") | upper }}</div>
+  </div>
+  <div class="field-row">
+    <div class="field-label">&nbsp;&nbsp;&nbsp;&nbsp;(b) CGHS Ben ID No.:</div>
+    <div class="field-val">{{ doc.cghs_card_no or "" }}</div>
+  </div>
+  <div class="field-row">
+    <div class="field-label">&nbsp;&nbsp;&nbsp;&nbsp;(c) Employee Code No.:</div>
+    <div class="field-val">{{ doc.employee }}</div>
+  </div>
+  <div class="field-row">
+    <div class="field-label">&nbsp;&nbsp;&nbsp;&nbsp;(d) Ward Entitlement (Matrix Pay/Level):</div>
+    <div class="field-val">{{ doc.ward_entitlement }} ({{ doc.pay_matrix_level or "" }})</div>
+  </div>
+  <div class="field-row">
+    <div class="field-label">&nbsp;&nbsp;&nbsp;&nbsp;(e) Full Address:</div>
+    <div class="field-val">{{ doc.full_address or "" }}</div>
+  </div>
+  <div class="field-row">
+    <div class="field-label">&nbsp;&nbsp;&nbsp;&nbsp;(f) Mobile telephone No. and e-mail address:</div>
+    <div class="field-val">{{ doc.mobile_no or "" }} | {{ doc.email_id or "" }}</div>
+  </div>
+
+  <div class="field-row">
+    <div class="field-label">2. (a) Patient's Name:</div>
+    <div class="field-val">{{ (doc.patient_name or "") | upper }}</div>
+  </div>
+  <div class="field-row">
+    <div class="field-label">&nbsp;&nbsp;&nbsp;&nbsp;(b) Patient's CGHS Ben ID No.:</div>
+    <div class="field-val">{{ doc.patient_cghs_id or "" }}</div>
+  </div>
+  <div class="field-row">
+    <div class="field-label">&nbsp;&nbsp;&nbsp;&nbsp;(c) Relationship with Principal CGHS card holder:</div>
+    <div class="field-val">{{ doc.patient_relationship }}</div>
+  </div>
+
+  <div class="field-row">
+    <div class="field-label">3. Name & Address of the hospital / diagnostic centre where treatment taken:</div>
+    <div class="field-val">{{ doc.hospital_name }}<br><small>{{ doc.hospital_address or "" }}</small></div>
+  </div>
+
+  <div class="field-row">
+    <div class="field-label">4. Whether the hospital/diagnostic centre is Empanelled under CGHS:</div>
+    <div class="field-val">{{ "Yes" if doc.is_empanelled else "No" }}</div>
+  </div>
+
+  <div class="field-row">
+    <div class="field-label">5. Treatment for which reimbursement claimed:</div>
+    <div class="field-val">
+      {% if doc.opd_amount %}OPD Treatment / Investigations<br>{% endif %}
+      {% if doc.indoor_treatment_amount %}Indoor Treatment / Surgery{% endif %}
+    </div>
+  </div>
+
+  <div class="field-row">
+    <div class="field-label">6. Whether treatment was taken in emergency:</div>
+    <div class="field-val">{{ "Yes" if doc.is_emergency else "No" }}</div>
+  </div>
+
+  <div class="field-row">
+    <div class="field-label">7. Whether prior permission was taken for the treatment:</div>
+    <div class="field-val">{{ "Yes" if doc.prior_permission_taken else "No" }}</div>
+  </div>
+
+  <div class="field-row">
+    <div class="field-label">8. Total amount claimed:</div>
+    <div class="field-val">
+      (a) OPD Treatment: ₹{{ "{:,.0f}".format(doc.opd_amount or 0) }}<br>
+      (b) Indoor Treatment: ₹{{ "{:,.0f}".format(doc.indoor_treatment_amount or 0) }}<br>
+      (c) Tests/Investigation: ₹{{ "{:,.0f}".format(doc.test_investigations_amount or 0) }}<br>
+      <b>Total: ₹{{ "{:,.0f}".format(doc.total_amount_claimed or 0) }}</b>
+    </div>
+  </div>
+
+  <div class="field-row">
+    <div class="field-label">9. Details of Medical Advance taken, if any:</div>
+    <div class="field-val">₹{{ "{:,.0f}".format(doc.medical_advance_taken or 0) }}</div>
+  </div>
+
+  <div class="field-row">
+    <div class="field-label">10. Net amount claimed (after deducting advance):</div>
+    <div class="field-val"><b>₹{{ "{:,.0f}".format(doc.net_amount_claimed or 0) }}</b></div>
+  </div>
+
+  <div class="field-row">
+    <div class="field-label">11. Bank Details: SB A/C No.: {{ doc.account_no }} | Bank: {{ doc.bank_name }}</div>
+    <div class="field-val">IFSC: {{ doc.ifsc_code }} | MICR: {{ doc.micr_code }}</div>
+  </div>
+
+  <div class="declaration">
+    <b>DECLARATION:</b><br>
+    I hereby declare that the statements made in the application are true to the best of my knowledge and belief and the person for whom medical expenses were incurred is wholly dependent on me. I am a CGHS beneficiary and the CGHS card was valid at the time of treatment. I agree for the reimbursement as is admissible under the rules.
+  </div>
+
+  <div class="sig-row">
+    <div>
+      Date: {{ frappe.format_date(doc.creation) }}<br>
+      Place:
+    </div>
+    <div style="text-align: center;">
+      <br><br>
+      <b>Signature of the Principal CGHS card holder</b>
+    </div>
+  </div>
+</div>

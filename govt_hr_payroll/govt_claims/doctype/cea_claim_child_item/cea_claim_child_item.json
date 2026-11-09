@@ -1,0 +1,103 @@
+{
+ "actions": [],
+ "creation": "2026-11-09 23:30:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "child_name",
+  "child_dob",
+  "class_standard",
+  "academic_year",
+  "school_name",
+  "school_affiliation_no",
+  "tuition_fee",
+  "books_notebooks_fee",
+  "uniform_fee",
+  "hostel_subsidy_claimed",
+  "total_claimed_child"
+ ],
+ "fields": [
+  {
+   "fieldname": "child_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Child Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "child_dob",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Date of Birth",
+   "reqd": 1
+  },
+  {
+   "fieldname": "class_standard",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Class / Standard",
+   "reqd": 1
+  },
+  {
+   "fieldname": "academic_year",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Academic Year",
+   "reqd": 1
+  },
+  {
+   "fieldname": "school_name",
+   "fieldtype": "Data",
+   "label": "School Name"
+  },
+  {
+   "fieldname": "school_affiliation_no",
+   "fieldtype": "Data",
+   "label": "School Reg / Affiliation No"
+  },
+  {
+   "default": "0",
+   "fieldname": "tuition_fee",
+   "fieldtype": "Currency",
+   "label": "Tuition Fee (₹)"
+  },
+  {
+   "default": "0",
+   "fieldname": "books_notebooks_fee",
+   "fieldtype": "Currency",
+   "label": "Books & Notebooks (₹)"
+  },
+  {
+   "default": "0",
+   "fieldname": "uniform_fee",
+   "fieldtype": "Currency",
+   "label": "Uniform & Shoes (₹)"
+  },
+  {
+   "default": "0",
+   "fieldname": "hostel_subsidy_claimed",
+   "fieldtype": "Currency",
+   "label": "Hostel Subsidy (₹)"
+  },
+  {
+   "fieldname": "total_claimed_child",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Total Claimed (₹)",
+   "read_only": 1
+  }
+ ],
+ "istable": 1,
+ "links": [],
+ "modified": "2026-11-09 23:30:00.000000",
+ "modified_by": "Administrator",
+ "module": "Govt Claims",
+ "name": "CEA Claim Child Item",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "idx",
+ "sort_order": "ASC",
+ "states": [],
+ "track_changes": 1
+}

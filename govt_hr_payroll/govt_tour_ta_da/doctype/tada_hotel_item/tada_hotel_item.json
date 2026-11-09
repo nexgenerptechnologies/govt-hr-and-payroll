@@ -1,0 +1,83 @@
+{
+ "actions": [],
+ "creation": "2026-11-09 23:30:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "hotel_name",
+  "from_date",
+  "to_date",
+  "no_of_days",
+  "daily_rate_claimed",
+  "daily_rate_admissible",
+  "total_hotel_claimed",
+  "total_hotel_passed"
+ ],
+ "fields": [
+  {
+   "fieldname": "hotel_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Hotel / Guest House Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "from_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "From Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "to_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "To Date",
+   "reqd": 1
+  },
+  {
+   "default": "1",
+   "fieldname": "no_of_days",
+   "fieldtype": "Float",
+   "label": "No of Days"
+  },
+  {
+   "fieldname": "daily_rate_claimed",
+   "fieldtype": "Currency",
+   "label": "Daily Rate Claimed (₹)",
+   "reqd": 1
+  },
+  {
+   "fieldname": "daily_rate_admissible",
+   "fieldtype": "Currency",
+   "label": "Daily Rate Admissible (₹)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_hotel_claimed",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Total Claimed (₹)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_hotel_passed",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Total Passed (₹)"
+  }
+ ],
+ "istable": 1,
+ "links": [],
+ "modified": "2026-11-09 23:30:00.000000",
+ "modified_by": "Administrator",
+ "module": "Govt Tour TA DA",
+ "name": "TADA Hotel Item",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "idx",
+ "sort_order": "ASC",
+ "states": [],
+ "track_changes": 1
+}

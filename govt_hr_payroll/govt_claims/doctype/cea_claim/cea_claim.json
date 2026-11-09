@@ -1,0 +1,232 @@
+{
+ "actions": [],
+ "autoname": "naming_series:",
+ "creation": "2026-11-09 23:30:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "employee",
+  "employee_name",
+  "designation",
+  "office_unit",
+  "pay_matrix_level",
+  "pran_gpf_no",
+  "column_break_cea_header",
+  "academic_year",
+  "no_of_children",
+  "status",
+  "spouse_is_govt_servant",
+  "spouse_undertaking",
+  "section_break_children",
+  "children",
+  "section_break_totals",
+  "total_amount_claimed",
+  "total_amount_admissible",
+  "total_amount_sanctioned",
+  "column_break_verification",
+  "sanction_order_ref",
+  "verification_remarks",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "default": "CEA-.YYYY.-.#####",
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "CEA-.YYYY.-.#####",
+   "reqd": 1
+  },
+  {
+   "fieldname": "employee",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Employee ID",
+   "options": "Govt Employee",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "employee.employee_name",
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Name of Official",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee.designation",
+   "fieldname": "designation",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Designation",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee.office_unit",
+   "fieldname": "office_unit",
+   "fieldtype": "Link",
+   "label": "Office / Unit",
+   "options": "Govt Office Unit",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee.pay_matrix_level",
+   "fieldname": "pay_matrix_level",
+   "fieldtype": "Link",
+   "label": "Pay Matrix Level",
+   "options": "CPC Pay Level",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee.pran_no",
+   "fieldname": "pran_gpf_no",
+   "fieldtype": "Data",
+   "label": "PRAN / GPF No",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_cea_header",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "2026-2027",
+   "fieldname": "academic_year",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Academic Year",
+   "reqd": 1
+  },
+  {
+   "default": "1",
+   "fieldname": "no_of_children",
+   "fieldtype": "Int",
+   "label": "Number of Surviving Children Claimed",
+   "reqd": 1
+  },
+  {
+   "default": "Submitted by Individual",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Claim Status",
+   "options": "Draft\nSubmitted by Individual\nVerified by Dealing Clerk\nSanctioned by DDO\nRejected",
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "spouse_is_govt_servant",
+   "fieldtype": "Check",
+   "label": "Is Spouse a Government Servant?"
+  },
+  {
+   "default": "1",
+   "fieldname": "spouse_undertaking",
+   "fieldtype": "Check",
+   "label": "Undertaking: Spouse has not claimed CEA / Hostel Subsidy",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_children",
+   "fieldtype": "Section Break",
+   "label": "Children Details & Expenses"
+  },
+  {
+   "fieldname": "children",
+   "fieldtype": "Table",
+   "label": "Children Claims",
+   "options": "CEA Claim Child Item"
+  },
+  {
+   "fieldname": "section_break_totals",
+   "fieldtype": "Section Break",
+   "label": "Claim Amount & Sanction"
+  },
+  {
+   "fieldname": "total_amount_claimed",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Total Amount Claimed (₹)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_amount_admissible",
+   "fieldtype": "Currency",
+   "label": "Total Amount Admissible (₹)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_amount_sanctioned",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Total Amount Sanctioned by DDO (₹)"
+  },
+  {
+   "fieldname": "column_break_verification",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "sanction_order_ref",
+   "fieldtype": "Data",
+   "label": "DDO Sanction Order Ref"
+  },
+  {
+   "fieldname": "verification_remarks",
+   "fieldtype": "Small Text",
+   "label": "Dealing Assistant Verification Remarks"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "CEA Claim",
+   "print_hide": 1,
+   "read_only": 1
+  }
+ ],
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2026-11-09 23:30:00.000000",
+ "modified_by": "Administrator",
+ "module": "Govt Claims",
+ "name": "CEA Claim",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "amend": 1,
+   "cancel": 0,
+   "create": 1,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "HR Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "search_fields": "name,employee,employee_name,academic_year",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

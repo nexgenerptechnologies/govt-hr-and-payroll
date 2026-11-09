@@ -6,7 +6,7 @@ Built as a single standalone Frappe app (`govt_hr_payroll`) that can be deployed
 
 ---
 
-## 🌟 Key Modules & Features
+## 🌟 Complete System Modules
 
 ### 1. 7th CPC Masters & Foundation (`Govt Masters`)
 * **7th CPC Pay Matrix**: Pre-configured Levels 1 to 18 with complete 40-cell salary progressions (~3% statutory increments).
@@ -58,6 +58,31 @@ Built as a single standalone Frappe app (`govt_hr_payroll`) that can be deployed
   * Captures Station Leave permission, address during absence, LTC block year, and leave encashment details.
 * **Daily Order Part II (DO Part II)**:
   * Automatic generation of DO Part II / Sanction Order for service book entry upon leave approval.
+
+### 5. Claims & Reimbursements: CEA & Medical (`Govt Claims`)
+* **Children Education Allowance (CEA)**:
+  * Covers Tuition fee, Books/Notebooks, Uniform, and Hostel Subsidy.
+  * Enforces statutory 2-child limit and 7th CPC annual ceilings (₹33,750/year per child for CEA; ₹1,01,250/year for Hostel Subsidy).
+  * Verification by Dealing Clerk, Spouse Non-Claim Undertaking, and Sanction by DDO.
+  * Print Format: Official **CEA Claim Form Proforma**.
+* **CGHS Medical Reimbursement (Form MRC-S)**:
+  * Formal medical reimbursement for serving government employees.
+  * Captures Principal CGHS Card Holder details, Ward Entitlement (General, Semi-Private, Private), Patient CGHS Ben ID, Hospital Empanelment status, Emergency treatment certification, and Advance adjustment.
+  * Print Format: Official **CGHS FORM - MRC (S)**.
+
+### 6. Tour TA/DA & Travelling Entitlements (`Govt Tour TA DA`)
+* **Tour Movement Order**:
+  * Authorized movement order with sanctioned travel mode and advance sanction.
+* **7th CPC TA/DA Entitlements Engine**:
+  * **Hotel Accommodation Limits**: Level 14+ (₹9,375/day) down to Level 5 (₹562.50/day).
+  * **Food Reimbursement Limits**: Level 14+ (₹1,500/day) down to Level 5 (₹625/day).
+  * **Food Slabs by Absence Duration**: <6 hrs = 30%, 6–12 hrs = 70%, >12 hrs = 100%.
+  * **Journey Fares & Mileage**: Air, Train classes, Taxi/Road mileage entitlements.
+* **TA/DA Final Settlement Claim**:
+  * Calculates Fare, Hotel, and Food sub-totals.
+  * Adjusts TA Advance received and computes Net Payable / (Refundable).
+  * Official Passing and settlement by PCDA HQ / Drawing & Disbursing Officer.
+  * Print Format: Official **TADA Final Claim Bill**.
 
 ---
 

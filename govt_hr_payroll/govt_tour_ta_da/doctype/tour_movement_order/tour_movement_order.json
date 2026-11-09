@@ -1,0 +1,200 @@
+{
+ "actions": [],
+ "autoname": "naming_series:",
+ "creation": "2026-11-09 23:30:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "order_no",
+  "order_date",
+  "employee",
+  "employee_name",
+  "designation",
+  "office_unit",
+  "pay_matrix_level",
+  "column_break_duty",
+  "station_from",
+  "station_to",
+  "purpose_of_duty",
+  "departure_date",
+  "return_date",
+  "sanctioned_travel_mode",
+  "ta_advance_sanctioned",
+  "status",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "default": "TMO-.YYYY.-.#####",
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "TMO-.YYYY.-.#####",
+   "reqd": 1
+  },
+  {
+   "fieldname": "order_no",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Movement Order No",
+   "reqd": 1
+  },
+  {
+   "default": "Today",
+   "fieldname": "order_date",
+   "fieldtype": "Date",
+   "label": "Order Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "employee",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Official Deputed",
+   "options": "Govt Employee",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "employee.employee_name",
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Employee Name",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee.designation",
+   "fieldname": "designation",
+   "fieldtype": "Data",
+   "label": "Designation",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee.office_unit",
+   "fieldname": "office_unit",
+   "fieldtype": "Link",
+   "label": "Office / Unit",
+   "options": "Govt Office Unit",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "employee.pay_matrix_level",
+   "fieldname": "pay_matrix_level",
+   "fieldtype": "Link",
+   "label": "Pay Matrix Level",
+   "options": "CPC Pay Level",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_duty",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Delhi",
+   "fieldname": "station_from",
+   "fieldtype": "Data",
+   "label": "From Station",
+   "reqd": 1
+  },
+  {
+   "fieldname": "station_to",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "To Station (Destination)",
+   "reqd": 1
+  },
+  {
+   "fieldname": "purpose_of_duty",
+   "fieldtype": "Small Text",
+   "label": "Purpose of Temporary Duty",
+   "reqd": 1
+  },
+  {
+   "fieldname": "departure_date",
+   "fieldtype": "Date",
+   "label": "Departure Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "return_date",
+   "fieldtype": "Date",
+   "label": "Anticipated Return Date",
+   "reqd": 1
+  },
+  {
+   "default": "Rail 2nd AC",
+   "fieldname": "sanctioned_travel_mode",
+   "fieldtype": "Select",
+   "label": "Sanctioned Travel Mode",
+   "options": "Air\nRail 1st AC\nRail 2nd AC\nRail 3rd AC\nAC Bus\nTaxi"
+  },
+  {
+   "default": "0",
+   "fieldname": "ta_advance_sanctioned",
+   "fieldtype": "Currency",
+   "label": "TA Advance Sanctioned (₹)"
+  },
+  {
+   "default": "Approved",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "Draft\nApproved\nCompleted\nCancelled"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Tour Movement Order",
+   "print_hide": 1,
+   "read_only": 1
+  }
+ ],
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2026-11-09 23:30:00.000000",
+ "modified_by": "Administrator",
+ "module": "Govt Tour TA DA",
+ "name": "Tour Movement Order",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "amend": 1,
+   "cancel": 0,
+   "create": 1,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "HR Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "search_fields": "name,order_no,employee_name,station_to",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

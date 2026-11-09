@@ -1,0 +1,95 @@
+{
+ "actions": [],
+ "creation": "2026-11-09 23:30:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "station_from",
+  "station_to",
+  "travel_mode",
+  "dep_datetime",
+  "arr_datetime",
+  "ticket_no",
+  "distance_km",
+  "amount_claimed",
+  "amount_passed",
+  "remarks"
+ ],
+ "fields": [
+  {
+   "fieldname": "station_from",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "From Station",
+   "reqd": 1
+  },
+  {
+   "fieldname": "station_to",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "To Station",
+   "reqd": 1
+  },
+  {
+   "default": "Rail 2nd AC",
+   "fieldname": "travel_mode",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Mode of Travel",
+   "options": "Air\nRail 1st AC\nRail 2nd AC\nRail 3rd AC\nAC Bus\nTaxi\nAuto/Own Scooter\nOther",
+   "reqd": 1
+  },
+  {
+   "fieldname": "dep_datetime",
+   "fieldtype": "Datetime",
+   "label": "Departure Date & Time"
+  },
+  {
+   "fieldname": "arr_datetime",
+   "fieldtype": "Datetime",
+   "label": "Arrival Date & Time"
+  },
+  {
+   "fieldname": "ticket_no",
+   "fieldtype": "Data",
+   "label": "Ticket / PNR No"
+  },
+  {
+   "default": "0",
+   "fieldname": "distance_km",
+   "fieldtype": "Float",
+   "label": "Distance (KM)"
+  },
+  {
+   "fieldname": "amount_claimed",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Fare Claimed (₹)",
+   "reqd": 1
+  },
+  {
+   "fieldname": "amount_passed",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Fare Passed (₹)"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "Remarks"
+  }
+ ],
+ "istable": 1,
+ "links": [],
+ "modified": "2026-11-09 23:30:00.000000",
+ "modified_by": "Administrator",
+ "module": "Govt Tour TA DA",
+ "name": "TADA Journey Item",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "idx",
+ "sort_order": "ASC",
+ "states": [],
+ "track_changes": 1
+}
