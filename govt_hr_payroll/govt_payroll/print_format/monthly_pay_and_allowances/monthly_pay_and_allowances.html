@@ -1,0 +1,172 @@
+<style>
+  @page {
+    size: A4 landscape;
+    margin: 6mm;
+  }
+  .govt-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+    font-size: 8pt;
+    color: #000;
+  }
+  .govt-table th, .govt-table td {
+    border: 1px solid #000;
+    padding: 3px 2px;
+    text-align: center;
+    vertical-align: middle;
+  }
+  .govt-table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+    font-size: 7.5pt;
+  }
+  .text-left { text-align: left !important; }
+  .text-right { text-align: right !important; }
+  .emp-info {
+    line-height: 1.25;
+    font-size: 7.5pt;
+  }
+  .footer-note {
+    font-size: 7pt;
+    font-style: italic;
+    margin-top: 5px;
+  }
+  .title-header {
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    font-size: 11pt;
+    margin-bottom: 6px;
+  }
+</style>
+
+<div class="title-header">
+  Monthly Pay and Allowances - {{ doc.month }} {{ doc.year }} ({{ doc.office_unit }})
+</div>
+
+<table class="govt-table">
+  <thead>
+    <tr>
+      <th rowspan="2">PC No.</th>
+      <th rowspan="2" style="min-width: 130px;">Name & Designation</th>
+      <th rowspan="2">Level in Pay Matrix</th>
+      <th rowspan="2">Basic Pay</th>
+      <th rowspan="2">*(-)<br>Pension</th>
+      <th rowspan="2">DA</th>
+      <th rowspan="2">HRA</th>
+      <th rowspan="2">TPT</th>
+      <th rowspan="2">DA on TPT</th>
+      <th rowspan="2">DA & TPT Arrear</th>
+      <th rowspan="2">Misc</th>
+      <th rowspan="2">Remarks</th>
+      <th rowspan="2">Gross Pay</th>
+      <th colspan="7">PRAN / GPF</th>
+      <th colspan="7">Other Deductions</th>
+      <th rowspan="2">Total Deduction</th>
+      <th rowspan="2">Net Pay</th>
+    </tr>
+    <tr>
+      <!-- PRAN/GPF sub-headers -->
+      <th>PRAN/ GPF No</th>
+      <th>Cont by Emp.</th>
+      <th>Emp Arrear</th>
+      <th>Cont by Govt</th>
+      <th>Govt Arrear</th>
+      <th>Total by Emp</th>
+      <th>Total by Govt</th>
+      <!-- Other deductions sub-headers -->
+      <th>CGHS</th>
+      <th>L/Fee</th>
+      <th>CGEGIS</th>
+      <th>I Tax</th>
+      <th>Edu Cess</th>
+      <th>Misc</th>
+      <th>Remarks</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for item in doc.items %}
+    <tr>
+      <td>{{ item.pc_no }}</td>
+      <td class="text-left emp-info">
+        <b>{{ item.employee_name }}</b><br>
+        {{ item.designation or "" }}<br>
+        Emp ID: {{ item.employee }}<br>
+        DNI: {{ item.dni or "" }}<br>
+        PAN: {{ item.pan or "" }}<br>
+        DOB: {{ frappe.format_date(item.dob) if item.dob else "" }}<br>
+        A/C: {{ item.bank_account_no or "" }}<br>
+        Bank: {{ item.bank_name or "" }}<br>
+        IFSC: {{ item.ifsc_code or "" }}
+      </td>
+      <td>{{ item.pay_matrix_level or "" }}</td>
+      <td class="text-right">{{ "{:,.0f}".format(item.basic_pay or 0) }}</td>
+      <td class="text-right">{{ "{:,.0f}".format(item.pension_deduction or 0) if item.pension_deduction else "" }}</td>
+      <td class="text-right">{{ "{:,.0f}".format(item.da_amount or 0) }}</td>
+      <td class="text-right">{{ "{:,.0f}".format(item.hra_amount or 0) }}</td>
+      <td class="text-right">{{ "{:,.0f}".format(item.tpt_allowance or 0) }}</td>
+      <td class="text-right">{{ "{:,.0f}".format(item.da_on_tpt or 0) }}</td>
+      <td class="text-right">{{ "{:,.0f}".format(item.da_tpt_arrear or 0) if item.da_tpt_arrear else "" }}</td>
+      <td class="text-right">{{ "{:,.0f}".format(item.misc_allowance or 0) if item.misc_allowance else "" }}</td>
+      <td>{{ item.remarks or "" }}</td>
+      <td class="text-right"><b>{{ "{:,.0f}".format(item.gross_pay or 0) }}</b></td>
+      
+      <!-- PRAN/GPF -->
+      <td>{{ item.pran_gpf_no or "" }}</td>
+      <td class="text-right">{{ "{:,.0f}".format(item.pran_emp_contrib or item.gpf_subscription or 0) }}</td>
+      <td class="text-right">{{ "{:,.0f}".format(item.pran_emp_arrear or 0) if item.pran_emp_arrear else "" }}</td>
+      <td class="text-right">{{ "{:,.0f}".format(item.pran_govt_contrib or 0) }}</td>
+      <td class="text-right">{{ "{:,.0f}".format(item.pran_govt_arrear or 0) if item.pran_govt_arrear else "" }}</td>
+      <td class="text-right">{{ "{:,.0f}".format(item.pran_total_emp or item.gpf_total or 0) }}</td>
+      <td class="text-right">{{ "{:,.0f}".format(item.pran_total_govt or 0) }}</td>
+
+      <!-- Other Deductions -->
+      <td class="text-right">{{ "{:,.0f}".format(item.cghs_amount or 0) if item.cghs_amount else "0" }}</td>
+      <td class="text-right">{{ "{:,.0f}".format(item.license_fee or 0) if item.license_fee else "0" }}</td>
+      <td class="text-right">{{ "{:,.0f}".format(item.cgegis_amount or 0) if item.cgegis_amount else "0" }}</td>
+      <td class="text-right">{{ "{:,.0f}".format(item.income_tax or 0) if item.income_tax else "0" }}</td>
+      <td class="text-right">{{ "{:,.0f}".format(item.edu_cess or 0) if item.edu_cess else "0" }}</td>
+      <td class="text-right">{{ "{:,.0f}".format(item.misc_deduction or 0) if item.misc_deduction else "" }}</td>
+      <td></td>
+
+      <td class="text-right"><b>{{ "{:,.0f}".format(item.total_deduction or 0) }}</b></td>
+      <td class="text-right"><b>{{ "{:,.0f}".format(item.net_pay or 0) }}</b></td>
+    </tr>
+    {% endfor %}
+  </tbody>
+  <tfoot>
+    <tr style="font-weight: bold; background-color: #f9f9f9;">
+      <td colspan="3">Grand Total</td>
+      <td class="text-right">{{ "{:,.0f}".format(doc.total_basic_pay or 0) }}</td>
+      <td class="text-right"></td>
+      <td class="text-right">{{ "{:,.0f}".format(doc.total_da or 0) }}</td>
+      <td class="text-right">{{ "{:,.0f}".format(doc.total_hra or 0) }}</td>
+      <td class="text-right">{{ "{:,.0f}".format(doc.total_tpt or 0) }}</td>
+      <td class="text-right">{{ "{:,.0f}".format(doc.total_da_on_tpt or 0) }}</td>
+      <td class="text-right">{{ "{:,.0f}".format(doc.total_misc_allowance or 0) }}</td>
+      <td></td>
+      <td></td>
+      <td class="text-right">{{ "{:,.0f}".format(doc.total_gross_pay or 0) }}</td>
+      <td></td>
+      <td class="text-right">{{ "{:,.0f}".format(doc.total_pran_emp + doc.total_gpf) }}</td>
+      <td></td>
+      <td class="text-right">{{ "{:,.0f}".format(doc.total_pran_govt or 0) }}</td>
+      <td></td>
+      <td class="text-right">{{ "{:,.0f}".format(doc.total_pran_emp + doc.total_gpf) }}</td>
+      <td class="text-right">{{ "{:,.0f}".format(doc.total_pran_govt or 0) }}</td>
+      <td class="text-right">{{ "{:,.0f}".format(doc.total_cghs or 0) }}</td>
+      <td class="text-right">{{ "{:,.0f}".format(doc.total_license_fee or 0) }}</td>
+      <td class="text-right">{{ "{:,.0f}".format(doc.total_cgegis or 0) }}</td>
+      <td class="text-right">{{ "{:,.0f}".format(doc.total_income_tax or 0) }}</td>
+      <td class="text-right">{{ "{:,.0f}".format(doc.total_edu_cess or 0) }}</td>
+      <td class="text-right">{{ "{:,.0f}".format(doc.total_misc_deduction or 0) }}</td>
+      <td></td>
+      <td class="text-right">{{ "{:,.0f}".format(doc.total_deductions or 0) }}</td>
+      <td class="text-right">{{ "{:,.0f}".format(doc.total_net_pay or 0) }}</td>
+    </tr>
+  </tfoot>
+</table>
+
+<div class="footer-note">
+  *in case of re-employment the amount of pensionary benefit will be deducted from Actual Pay
+</div>

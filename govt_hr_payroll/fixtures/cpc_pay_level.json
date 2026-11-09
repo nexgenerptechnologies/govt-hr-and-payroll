@@ -1,0 +1,2873 @@
+[
+  {
+    "doctype": "CPC Pay Level",
+    "pay_level": "Level-1",
+    "grade_pay": 1800,
+    "entry_pay": 18000,
+    "maximum_pay": 56900,
+    "cells": [
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 1,
+        "basic_pay": 18000
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 2,
+        "basic_pay": 18500
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 3,
+        "basic_pay": 19100
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 4,
+        "basic_pay": 19700
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 5,
+        "basic_pay": 20300
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 6,
+        "basic_pay": 20900
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 7,
+        "basic_pay": 21500
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 8,
+        "basic_pay": 22100
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 9,
+        "basic_pay": 22800
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 10,
+        "basic_pay": 23500
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 11,
+        "basic_pay": 24200
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 12,
+        "basic_pay": 24900
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 13,
+        "basic_pay": 25600
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 14,
+        "basic_pay": 26400
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 15,
+        "basic_pay": 27200
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 16,
+        "basic_pay": 28000
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 17,
+        "basic_pay": 28800
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 18,
+        "basic_pay": 29700
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 19,
+        "basic_pay": 30600
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 20,
+        "basic_pay": 31500
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 21,
+        "basic_pay": 32400
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 22,
+        "basic_pay": 33400
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 23,
+        "basic_pay": 34400
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 24,
+        "basic_pay": 35400
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 25,
+        "basic_pay": 36500
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 26,
+        "basic_pay": 37600
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 27,
+        "basic_pay": 38700
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 28,
+        "basic_pay": 39900
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 29,
+        "basic_pay": 41100
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 30,
+        "basic_pay": 42300
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 31,
+        "basic_pay": 43600
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 32,
+        "basic_pay": 44900
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 33,
+        "basic_pay": 46200
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 34,
+        "basic_pay": 47600
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 35,
+        "basic_pay": 49000
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 36,
+        "basic_pay": 50500
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 37,
+        "basic_pay": 52000
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 38,
+        "basic_pay": 53600
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 39,
+        "basic_pay": 55200
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 40,
+        "basic_pay": 56900
+      }
+    ]
+  },
+  {
+    "doctype": "CPC Pay Level",
+    "pay_level": "Level-2",
+    "grade_pay": 1900,
+    "entry_pay": 19900,
+    "maximum_pay": 63100,
+    "cells": [
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 1,
+        "basic_pay": 19900
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 2,
+        "basic_pay": 20500
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 3,
+        "basic_pay": 21100
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 4,
+        "basic_pay": 21700
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 5,
+        "basic_pay": 22400
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 6,
+        "basic_pay": 23100
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 7,
+        "basic_pay": 23800
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 8,
+        "basic_pay": 24500
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 9,
+        "basic_pay": 25200
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 10,
+        "basic_pay": 26000
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 11,
+        "basic_pay": 26800
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 12,
+        "basic_pay": 27600
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 13,
+        "basic_pay": 28400
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 14,
+        "basic_pay": 29300
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 15,
+        "basic_pay": 30200
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 16,
+        "basic_pay": 31100
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 17,
+        "basic_pay": 32000
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 18,
+        "basic_pay": 33000
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 19,
+        "basic_pay": 34000
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 20,
+        "basic_pay": 35000
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 21,
+        "basic_pay": 36000
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 22,
+        "basic_pay": 37100
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 23,
+        "basic_pay": 38200
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 24,
+        "basic_pay": 39300
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 25,
+        "basic_pay": 40500
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 26,
+        "basic_pay": 41700
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 27,
+        "basic_pay": 43000
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 28,
+        "basic_pay": 44300
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 29,
+        "basic_pay": 45600
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 30,
+        "basic_pay": 47000
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 31,
+        "basic_pay": 48400
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 32,
+        "basic_pay": 49900
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 33,
+        "basic_pay": 51400
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 34,
+        "basic_pay": 52900
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 35,
+        "basic_pay": 54500
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 36,
+        "basic_pay": 56100
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 37,
+        "basic_pay": 57800
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 38,
+        "basic_pay": 59500
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 39,
+        "basic_pay": 61300
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 40,
+        "basic_pay": 63100
+      }
+    ]
+  },
+  {
+    "doctype": "CPC Pay Level",
+    "pay_level": "Level-3",
+    "grade_pay": 2000,
+    "entry_pay": 21700,
+    "maximum_pay": 69000,
+    "cells": [
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 1,
+        "basic_pay": 21700
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 2,
+        "basic_pay": 22400
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 3,
+        "basic_pay": 23100
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 4,
+        "basic_pay": 23800
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 5,
+        "basic_pay": 24500
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 6,
+        "basic_pay": 25200
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 7,
+        "basic_pay": 26000
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 8,
+        "basic_pay": 26800
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 9,
+        "basic_pay": 27600
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 10,
+        "basic_pay": 28400
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 11,
+        "basic_pay": 29300
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 12,
+        "basic_pay": 30200
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 13,
+        "basic_pay": 31100
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 14,
+        "basic_pay": 32000
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 15,
+        "basic_pay": 33000
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 16,
+        "basic_pay": 34000
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 17,
+        "basic_pay": 35000
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 18,
+        "basic_pay": 36000
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 19,
+        "basic_pay": 37100
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 20,
+        "basic_pay": 38200
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 21,
+        "basic_pay": 39300
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 22,
+        "basic_pay": 40500
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 23,
+        "basic_pay": 41700
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 24,
+        "basic_pay": 43000
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 25,
+        "basic_pay": 44300
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 26,
+        "basic_pay": 45600
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 27,
+        "basic_pay": 47000
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 28,
+        "basic_pay": 48400
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 29,
+        "basic_pay": 49900
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 30,
+        "basic_pay": 51400
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 31,
+        "basic_pay": 52900
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 32,
+        "basic_pay": 54500
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 33,
+        "basic_pay": 56100
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 34,
+        "basic_pay": 57800
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 35,
+        "basic_pay": 59500
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 36,
+        "basic_pay": 61300
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 37,
+        "basic_pay": 63100
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 38,
+        "basic_pay": 65000
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 39,
+        "basic_pay": 67000
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 40,
+        "basic_pay": 69000
+      }
+    ]
+  },
+  {
+    "doctype": "CPC Pay Level",
+    "pay_level": "Level-4",
+    "grade_pay": 2400,
+    "entry_pay": 25500,
+    "maximum_pay": 81100,
+    "cells": [
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 1,
+        "basic_pay": 25500
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 2,
+        "basic_pay": 26300
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 3,
+        "basic_pay": 27100
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 4,
+        "basic_pay": 27900
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 5,
+        "basic_pay": 28700
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 6,
+        "basic_pay": 29600
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 7,
+        "basic_pay": 30500
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 8,
+        "basic_pay": 31400
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 9,
+        "basic_pay": 32300
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 10,
+        "basic_pay": 33300
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 11,
+        "basic_pay": 34300
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 12,
+        "basic_pay": 35300
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 13,
+        "basic_pay": 36400
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 14,
+        "basic_pay": 37500
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 15,
+        "basic_pay": 38600
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 16,
+        "basic_pay": 39800
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 17,
+        "basic_pay": 41000
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 18,
+        "basic_pay": 42200
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 19,
+        "basic_pay": 43500
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 20,
+        "basic_pay": 44800
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 21,
+        "basic_pay": 46100
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 22,
+        "basic_pay": 47500
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 23,
+        "basic_pay": 48900
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 24,
+        "basic_pay": 50400
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 25,
+        "basic_pay": 51900
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 26,
+        "basic_pay": 53500
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 27,
+        "basic_pay": 55100
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 28,
+        "basic_pay": 56800
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 29,
+        "basic_pay": 58500
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 30,
+        "basic_pay": 60300
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 31,
+        "basic_pay": 62100
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 32,
+        "basic_pay": 64000
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 33,
+        "basic_pay": 65900
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 34,
+        "basic_pay": 67900
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 35,
+        "basic_pay": 69900
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 36,
+        "basic_pay": 72000
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 37,
+        "basic_pay": 74200
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 38,
+        "basic_pay": 76400
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 39,
+        "basic_pay": 78700
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 40,
+        "basic_pay": 81100
+      }
+    ]
+  },
+  {
+    "doctype": "CPC Pay Level",
+    "pay_level": "Level-5",
+    "grade_pay": 2800,
+    "entry_pay": 29200,
+    "maximum_pay": 92200,
+    "cells": [
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 1,
+        "basic_pay": 29200
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 2,
+        "basic_pay": 30100
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 3,
+        "basic_pay": 31000
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 4,
+        "basic_pay": 31900
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 5,
+        "basic_pay": 32900
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 6,
+        "basic_pay": 33900
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 7,
+        "basic_pay": 34900
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 8,
+        "basic_pay": 35900
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 9,
+        "basic_pay": 37000
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 10,
+        "basic_pay": 38100
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 11,
+        "basic_pay": 39200
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 12,
+        "basic_pay": 40400
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 13,
+        "basic_pay": 41600
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 14,
+        "basic_pay": 42800
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 15,
+        "basic_pay": 44100
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 16,
+        "basic_pay": 45400
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 17,
+        "basic_pay": 46800
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 18,
+        "basic_pay": 48200
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 19,
+        "basic_pay": 49600
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 20,
+        "basic_pay": 51100
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 21,
+        "basic_pay": 52600
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 22,
+        "basic_pay": 54200
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 23,
+        "basic_pay": 55800
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 24,
+        "basic_pay": 57500
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 25,
+        "basic_pay": 59200
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 26,
+        "basic_pay": 61000
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 27,
+        "basic_pay": 62800
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 28,
+        "basic_pay": 64700
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 29,
+        "basic_pay": 66600
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 30,
+        "basic_pay": 68600
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 31,
+        "basic_pay": 70700
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 32,
+        "basic_pay": 72800
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 33,
+        "basic_pay": 75000
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 34,
+        "basic_pay": 77200
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 35,
+        "basic_pay": 79500
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 36,
+        "basic_pay": 81900
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 37,
+        "basic_pay": 84400
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 38,
+        "basic_pay": 86900
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 39,
+        "basic_pay": 89500
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 40,
+        "basic_pay": 92200
+      }
+    ]
+  },
+  {
+    "doctype": "CPC Pay Level",
+    "pay_level": "Level-6",
+    "grade_pay": 4200,
+    "entry_pay": 35400,
+    "maximum_pay": 112400,
+    "cells": [
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 1,
+        "basic_pay": 35400
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 2,
+        "basic_pay": 36500
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 3,
+        "basic_pay": 37600
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 4,
+        "basic_pay": 38700
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 5,
+        "basic_pay": 39900
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 6,
+        "basic_pay": 41100
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 7,
+        "basic_pay": 42300
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 8,
+        "basic_pay": 43600
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 9,
+        "basic_pay": 44900
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 10,
+        "basic_pay": 46200
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 11,
+        "basic_pay": 47600
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 12,
+        "basic_pay": 49000
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 13,
+        "basic_pay": 50500
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 14,
+        "basic_pay": 52000
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 15,
+        "basic_pay": 53600
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 16,
+        "basic_pay": 55200
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 17,
+        "basic_pay": 56900
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 18,
+        "basic_pay": 58600
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 19,
+        "basic_pay": 60400
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 20,
+        "basic_pay": 62200
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 21,
+        "basic_pay": 64100
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 22,
+        "basic_pay": 66000
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 23,
+        "basic_pay": 68000
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 24,
+        "basic_pay": 70000
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 25,
+        "basic_pay": 72100
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 26,
+        "basic_pay": 74300
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 27,
+        "basic_pay": 76500
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 28,
+        "basic_pay": 78800
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 29,
+        "basic_pay": 81200
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 30,
+        "basic_pay": 83600
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 31,
+        "basic_pay": 86100
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 32,
+        "basic_pay": 88700
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 33,
+        "basic_pay": 91400
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 34,
+        "basic_pay": 94100
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 35,
+        "basic_pay": 96900
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 36,
+        "basic_pay": 99800
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 37,
+        "basic_pay": 102800
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 38,
+        "basic_pay": 105900
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 39,
+        "basic_pay": 109100
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 40,
+        "basic_pay": 112400
+      }
+    ]
+  },
+  {
+    "doctype": "CPC Pay Level",
+    "pay_level": "Level-7",
+    "grade_pay": 4600,
+    "entry_pay": 44900,
+    "maximum_pay": 142400,
+    "cells": [
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 1,
+        "basic_pay": 44900
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 2,
+        "basic_pay": 46200
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 3,
+        "basic_pay": 47600
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 4,
+        "basic_pay": 49000
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 5,
+        "basic_pay": 50500
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 6,
+        "basic_pay": 52000
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 7,
+        "basic_pay": 53600
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 8,
+        "basic_pay": 55200
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 9,
+        "basic_pay": 56900
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 10,
+        "basic_pay": 58600
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 11,
+        "basic_pay": 60400
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 12,
+        "basic_pay": 62200
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 13,
+        "basic_pay": 64100
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 14,
+        "basic_pay": 66000
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 15,
+        "basic_pay": 68000
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 16,
+        "basic_pay": 70000
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 17,
+        "basic_pay": 72100
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 18,
+        "basic_pay": 74300
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 19,
+        "basic_pay": 76500
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 20,
+        "basic_pay": 78800
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 21,
+        "basic_pay": 81200
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 22,
+        "basic_pay": 83600
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 23,
+        "basic_pay": 86100
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 24,
+        "basic_pay": 88700
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 25,
+        "basic_pay": 91400
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 26,
+        "basic_pay": 94100
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 27,
+        "basic_pay": 96900
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 28,
+        "basic_pay": 99800
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 29,
+        "basic_pay": 102800
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 30,
+        "basic_pay": 105900
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 31,
+        "basic_pay": 109100
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 32,
+        "basic_pay": 112400
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 33,
+        "basic_pay": 115800
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 34,
+        "basic_pay": 119300
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 35,
+        "basic_pay": 122900
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 36,
+        "basic_pay": 126600
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 37,
+        "basic_pay": 130400
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 38,
+        "basic_pay": 134300
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 39,
+        "basic_pay": 138300
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 40,
+        "basic_pay": 142400
+      }
+    ]
+  },
+  {
+    "doctype": "CPC Pay Level",
+    "pay_level": "Level-8",
+    "grade_pay": 4800,
+    "entry_pay": 47600,
+    "maximum_pay": 151100,
+    "cells": [
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 1,
+        "basic_pay": 47600
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 2,
+        "basic_pay": 49000
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 3,
+        "basic_pay": 50500
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 4,
+        "basic_pay": 52000
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 5,
+        "basic_pay": 53600
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 6,
+        "basic_pay": 55200
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 7,
+        "basic_pay": 56900
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 8,
+        "basic_pay": 58600
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 9,
+        "basic_pay": 60400
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 10,
+        "basic_pay": 62200
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 11,
+        "basic_pay": 64100
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 12,
+        "basic_pay": 66000
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 13,
+        "basic_pay": 68000
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 14,
+        "basic_pay": 70000
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 15,
+        "basic_pay": 72100
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 16,
+        "basic_pay": 74300
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 17,
+        "basic_pay": 76500
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 18,
+        "basic_pay": 78800
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 19,
+        "basic_pay": 81200
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 20,
+        "basic_pay": 83600
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 21,
+        "basic_pay": 86100
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 22,
+        "basic_pay": 88700
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 23,
+        "basic_pay": 91400
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 24,
+        "basic_pay": 94100
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 25,
+        "basic_pay": 96900
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 26,
+        "basic_pay": 99800
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 27,
+        "basic_pay": 102800
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 28,
+        "basic_pay": 105900
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 29,
+        "basic_pay": 109100
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 30,
+        "basic_pay": 112400
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 31,
+        "basic_pay": 115800
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 32,
+        "basic_pay": 119300
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 33,
+        "basic_pay": 122900
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 34,
+        "basic_pay": 126600
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 35,
+        "basic_pay": 130400
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 36,
+        "basic_pay": 134300
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 37,
+        "basic_pay": 138300
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 38,
+        "basic_pay": 142400
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 39,
+        "basic_pay": 146700
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 40,
+        "basic_pay": 151100
+      }
+    ]
+  },
+  {
+    "doctype": "CPC Pay Level",
+    "pay_level": "Level-9",
+    "grade_pay": 5400,
+    "entry_pay": 53100,
+    "maximum_pay": 167800,
+    "cells": [
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 1,
+        "basic_pay": 53100
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 2,
+        "basic_pay": 54700
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 3,
+        "basic_pay": 56300
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 4,
+        "basic_pay": 58000
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 5,
+        "basic_pay": 59700
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 6,
+        "basic_pay": 61500
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 7,
+        "basic_pay": 63300
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 8,
+        "basic_pay": 65200
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 9,
+        "basic_pay": 67200
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 10,
+        "basic_pay": 69200
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 11,
+        "basic_pay": 71300
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 12,
+        "basic_pay": 73400
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 13,
+        "basic_pay": 75600
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 14,
+        "basic_pay": 77900
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 15,
+        "basic_pay": 80200
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 16,
+        "basic_pay": 82600
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 17,
+        "basic_pay": 85100
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 18,
+        "basic_pay": 87700
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 19,
+        "basic_pay": 90300
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 20,
+        "basic_pay": 93000
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 21,
+        "basic_pay": 95800
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 22,
+        "basic_pay": 98700
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 23,
+        "basic_pay": 101700
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 24,
+        "basic_pay": 104800
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 25,
+        "basic_pay": 107900
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 26,
+        "basic_pay": 111100
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 27,
+        "basic_pay": 114400
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 28,
+        "basic_pay": 117800
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 29,
+        "basic_pay": 121300
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 30,
+        "basic_pay": 124900
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 31,
+        "basic_pay": 128600
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 32,
+        "basic_pay": 132500
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 33,
+        "basic_pay": 136500
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 34,
+        "basic_pay": 140600
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 35,
+        "basic_pay": 144800
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 36,
+        "basic_pay": 149100
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 37,
+        "basic_pay": 153600
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 38,
+        "basic_pay": 158200
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 39,
+        "basic_pay": 162900
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 40,
+        "basic_pay": 167800
+      }
+    ]
+  },
+  {
+    "doctype": "CPC Pay Level",
+    "pay_level": "Level-10",
+    "grade_pay": 5400,
+    "entry_pay": 56100,
+    "maximum_pay": 177500,
+    "cells": [
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 1,
+        "basic_pay": 56100
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 2,
+        "basic_pay": 57800
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 3,
+        "basic_pay": 59500
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 4,
+        "basic_pay": 61300
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 5,
+        "basic_pay": 63100
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 6,
+        "basic_pay": 65000
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 7,
+        "basic_pay": 67000
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 8,
+        "basic_pay": 69000
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 9,
+        "basic_pay": 71100
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 10,
+        "basic_pay": 73200
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 11,
+        "basic_pay": 75400
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 12,
+        "basic_pay": 77700
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 13,
+        "basic_pay": 80000
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 14,
+        "basic_pay": 82400
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 15,
+        "basic_pay": 84900
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 16,
+        "basic_pay": 87400
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 17,
+        "basic_pay": 90000
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 18,
+        "basic_pay": 92700
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 19,
+        "basic_pay": 95500
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 20,
+        "basic_pay": 98400
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 21,
+        "basic_pay": 101400
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 22,
+        "basic_pay": 104400
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 23,
+        "basic_pay": 107500
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 24,
+        "basic_pay": 110700
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 25,
+        "basic_pay": 114000
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 26,
+        "basic_pay": 117400
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 27,
+        "basic_pay": 120900
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 28,
+        "basic_pay": 124500
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 29,
+        "basic_pay": 128200
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 30,
+        "basic_pay": 132000
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 31,
+        "basic_pay": 136000
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 32,
+        "basic_pay": 140100
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 33,
+        "basic_pay": 144300
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 34,
+        "basic_pay": 148600
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 35,
+        "basic_pay": 153100
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 36,
+        "basic_pay": 157700
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 37,
+        "basic_pay": 162400
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 38,
+        "basic_pay": 167300
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 39,
+        "basic_pay": 172300
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 40,
+        "basic_pay": 177500
+      }
+    ]
+  },
+  {
+    "doctype": "CPC Pay Level",
+    "pay_level": "Level-11",
+    "grade_pay": 6600,
+    "entry_pay": 67700,
+    "maximum_pay": 208700,
+    "cells": [
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 1,
+        "basic_pay": 67700
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 2,
+        "basic_pay": 69700
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 3,
+        "basic_pay": 71800
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 4,
+        "basic_pay": 74000
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 5,
+        "basic_pay": 76200
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 6,
+        "basic_pay": 78500
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 7,
+        "basic_pay": 80900
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 8,
+        "basic_pay": 83300
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 9,
+        "basic_pay": 85800
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 10,
+        "basic_pay": 88400
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 11,
+        "basic_pay": 91100
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 12,
+        "basic_pay": 93800
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 13,
+        "basic_pay": 96600
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 14,
+        "basic_pay": 99500
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 15,
+        "basic_pay": 102500
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 16,
+        "basic_pay": 105600
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 17,
+        "basic_pay": 108800
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 18,
+        "basic_pay": 112100
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 19,
+        "basic_pay": 115500
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 20,
+        "basic_pay": 119000
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 21,
+        "basic_pay": 122600
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 22,
+        "basic_pay": 126300
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 23,
+        "basic_pay": 130100
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 24,
+        "basic_pay": 134000
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 25,
+        "basic_pay": 138000
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 26,
+        "basic_pay": 142100
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 27,
+        "basic_pay": 146400
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 28,
+        "basic_pay": 150800
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 29,
+        "basic_pay": 155300
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 30,
+        "basic_pay": 160000
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 31,
+        "basic_pay": 164800
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 32,
+        "basic_pay": 169700
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 33,
+        "basic_pay": 174800
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 34,
+        "basic_pay": 180000
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 35,
+        "basic_pay": 185400
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 36,
+        "basic_pay": 191000
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 37,
+        "basic_pay": 196700
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 38,
+        "basic_pay": 202600
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 39,
+        "basic_pay": 208700
+      }
+    ]
+  },
+  {
+    "doctype": "CPC Pay Level",
+    "pay_level": "Level-12",
+    "grade_pay": 7600,
+    "entry_pay": 78800,
+    "maximum_pay": 209200,
+    "cells": [
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 1,
+        "basic_pay": 78800
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 2,
+        "basic_pay": 81200
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 3,
+        "basic_pay": 83600
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 4,
+        "basic_pay": 86100
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 5,
+        "basic_pay": 88700
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 6,
+        "basic_pay": 91400
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 7,
+        "basic_pay": 94100
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 8,
+        "basic_pay": 96900
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 9,
+        "basic_pay": 99800
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 10,
+        "basic_pay": 102800
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 11,
+        "basic_pay": 105900
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 12,
+        "basic_pay": 109100
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 13,
+        "basic_pay": 112400
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 14,
+        "basic_pay": 115800
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 15,
+        "basic_pay": 119300
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 16,
+        "basic_pay": 122900
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 17,
+        "basic_pay": 126600
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 18,
+        "basic_pay": 130400
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 19,
+        "basic_pay": 134300
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 20,
+        "basic_pay": 138300
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 21,
+        "basic_pay": 142400
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 22,
+        "basic_pay": 146700
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 23,
+        "basic_pay": 151100
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 24,
+        "basic_pay": 155600
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 25,
+        "basic_pay": 160300
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 26,
+        "basic_pay": 165100
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 27,
+        "basic_pay": 170100
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 28,
+        "basic_pay": 175200
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 29,
+        "basic_pay": 180500
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 30,
+        "basic_pay": 185900
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 31,
+        "basic_pay": 191500
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 32,
+        "basic_pay": 197200
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 33,
+        "basic_pay": 203100
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 34,
+        "basic_pay": 209200
+      }
+    ]
+  },
+  {
+    "doctype": "CPC Pay Level",
+    "pay_level": "Level-13",
+    "grade_pay": 8700,
+    "entry_pay": 123100,
+    "maximum_pay": 215900,
+    "cells": [
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 1,
+        "basic_pay": 123100
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 2,
+        "basic_pay": 126800
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 3,
+        "basic_pay": 130600
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 4,
+        "basic_pay": 134500
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 5,
+        "basic_pay": 138500
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 6,
+        "basic_pay": 142700
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 7,
+        "basic_pay": 147000
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 8,
+        "basic_pay": 151400
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 9,
+        "basic_pay": 155900
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 10,
+        "basic_pay": 160600
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 11,
+        "basic_pay": 165400
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 12,
+        "basic_pay": 170400
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 13,
+        "basic_pay": 175500
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 14,
+        "basic_pay": 180800
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 15,
+        "basic_pay": 186200
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 16,
+        "basic_pay": 191800
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 17,
+        "basic_pay": 197600
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 18,
+        "basic_pay": 203500
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 19,
+        "basic_pay": 209600
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 20,
+        "basic_pay": 215900
+      }
+    ]
+  },
+  {
+    "doctype": "CPC Pay Level",
+    "pay_level": "Level-13A",
+    "grade_pay": 8900,
+    "entry_pay": 131100,
+    "maximum_pay": 216500,
+    "cells": [
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 1,
+        "basic_pay": 131100
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 2,
+        "basic_pay": 135000
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 3,
+        "basic_pay": 139000
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 4,
+        "basic_pay": 143200
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 5,
+        "basic_pay": 147500
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 6,
+        "basic_pay": 151900
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 7,
+        "basic_pay": 156500
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 8,
+        "basic_pay": 161200
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 9,
+        "basic_pay": 166000
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 10,
+        "basic_pay": 171000
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 11,
+        "basic_pay": 176100
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 12,
+        "basic_pay": 181400
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 13,
+        "basic_pay": 186800
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 14,
+        "basic_pay": 192400
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 15,
+        "basic_pay": 198200
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 16,
+        "basic_pay": 204100
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 17,
+        "basic_pay": 210200
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 18,
+        "basic_pay": 216500
+      }
+    ]
+  },
+  {
+    "doctype": "CPC Pay Level",
+    "pay_level": "Level-14",
+    "grade_pay": 10000,
+    "entry_pay": 144200,
+    "maximum_pay": 218200,
+    "cells": [
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 1,
+        "basic_pay": 144200
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 2,
+        "basic_pay": 148500
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 3,
+        "basic_pay": 153000
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 4,
+        "basic_pay": 157600
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 5,
+        "basic_pay": 162300
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 6,
+        "basic_pay": 167200
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 7,
+        "basic_pay": 172200
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 8,
+        "basic_pay": 177400
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 9,
+        "basic_pay": 182700
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 10,
+        "basic_pay": 188200
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 11,
+        "basic_pay": 193800
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 12,
+        "basic_pay": 199600
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 13,
+        "basic_pay": 205600
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 14,
+        "basic_pay": 211800
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 15,
+        "basic_pay": 218200
+      }
+    ]
+  },
+  {
+    "doctype": "CPC Pay Level",
+    "pay_level": "Level-15",
+    "grade_pay": 0,
+    "entry_pay": 182200,
+    "maximum_pay": 224100,
+    "cells": [
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 1,
+        "basic_pay": 182200
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 2,
+        "basic_pay": 187700
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 3,
+        "basic_pay": 193300
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 4,
+        "basic_pay": 199100
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 5,
+        "basic_pay": 205100
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 6,
+        "basic_pay": 211300
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 7,
+        "basic_pay": 217600
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 8,
+        "basic_pay": 224100
+      }
+    ]
+  },
+  {
+    "doctype": "CPC Pay Level",
+    "pay_level": "Level-16",
+    "grade_pay": 0,
+    "entry_pay": 205400,
+    "maximum_pay": 224400,
+    "cells": [
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 1,
+        "basic_pay": 205400
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 2,
+        "basic_pay": 211600
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 3,
+        "basic_pay": 217900
+      },
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 4,
+        "basic_pay": 224400
+      }
+    ]
+  },
+  {
+    "doctype": "CPC Pay Level",
+    "pay_level": "Level-17",
+    "grade_pay": 0,
+    "entry_pay": 225000,
+    "maximum_pay": 225000,
+    "cells": [
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 1,
+        "basic_pay": 225000
+      }
+    ]
+  },
+  {
+    "doctype": "CPC Pay Level",
+    "pay_level": "Level-18",
+    "grade_pay": 0,
+    "entry_pay": 250000,
+    "maximum_pay": 250000,
+    "cells": [
+      {
+        "doctype": "CPC Pay Cell",
+        "cell_no": 1,
+        "basic_pay": 250000
+      }
+    ]
+  }
+]

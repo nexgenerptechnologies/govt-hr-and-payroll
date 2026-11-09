@@ -1,0 +1,391 @@
+{
+ "actions": [],
+ "creation": "2026-11-09 21:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "pc_no",
+  "employee",
+  "employee_name",
+  "designation",
+  "pay_matrix_level",
+  "dni",
+  "pan",
+  "dob",
+  "pran_gpf_no",
+  "section_break_earnings",
+  "basic_pay",
+  "pension_deduction",
+  "effective_basic_pay",
+  "da_rate",
+  "da_amount",
+  "hra_rate",
+  "hra_amount",
+  "tpt_allowance",
+  "da_on_tpt",
+  "da_tpt_arrear",
+  "misc_allowance",
+  "gross_pay",
+  "section_break_pran",
+  "pran_emp_contrib",
+  "pran_emp_arrear",
+  "pran_govt_contrib",
+  "pran_govt_arrear",
+  "pran_total_emp",
+  "pran_total_govt",
+  "pran_grand_total",
+  "section_break_gpf",
+  "gpf_subscription",
+  "gpf_refund",
+  "gpf_total",
+  "section_break_other_deductions",
+  "cghs_amount",
+  "license_fee",
+  "cgegis_amount",
+  "income_tax",
+  "edu_cess",
+  "misc_deduction",
+  "total_deduction",
+  "net_pay",
+  "section_break_bank",
+  "bank_name",
+  "bank_branch",
+  "bank_account_no",
+  "ifsc_code",
+  "micr_code",
+  "quarter_no",
+  "quarter_type",
+  "quarter_floor",
+  "aan_no",
+  "remarks"
+ ],
+ "fields": [
+  {
+   "fieldname": "pc_no",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "PC No",
+   "reqd": 1
+  },
+  {
+   "fieldname": "employee",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Employee ID",
+   "options": "Govt Employee",
+   "reqd": 1
+  },
+  {
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "designation",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Designation",
+   "read_only": 1
+  },
+  {
+   "fieldname": "pay_matrix_level",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Level in Pay Matrix",
+   "options": "CPC Pay Level"
+  },
+  {
+   "fieldname": "dni",
+   "fieldtype": "Data",
+   "label": "DNI"
+  },
+  {
+   "fieldname": "pan",
+   "fieldtype": "Data",
+   "label": "PAN Card"
+  },
+  {
+   "fieldname": "dob",
+   "fieldtype": "Date",
+   "label": "DOB"
+  },
+  {
+   "fieldname": "pran_gpf_no",
+   "fieldtype": "Data",
+   "label": "PRAN / GPF No"
+  },
+  {
+   "fieldname": "section_break_earnings",
+   "fieldtype": "Section Break",
+   "label": "Monthly Pay & Allowances"
+  },
+  {
+   "fieldname": "basic_pay",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Basic Pay (₹)"
+  },
+  {
+   "default": "0",
+   "fieldname": "pension_deduction",
+   "fieldtype": "Currency",
+   "label": "*(-) Pension (₹)"
+  },
+  {
+   "fieldname": "effective_basic_pay",
+   "fieldtype": "Currency",
+   "label": "Actual Pay (₹)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "da_rate",
+   "fieldtype": "Percent",
+   "label": "DA Rate (%)"
+  },
+  {
+   "fieldname": "da_amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "DA (₹)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "hra_rate",
+   "fieldtype": "Percent",
+   "label": "HRA Rate (%)"
+  },
+  {
+   "fieldname": "hra_amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "HRA (₹)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "tpt_allowance",
+   "fieldtype": "Currency",
+   "label": "TPT (₹)"
+  },
+  {
+   "fieldname": "da_on_tpt",
+   "fieldtype": "Currency",
+   "label": "DA on TPT (₹)",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "da_tpt_arrear",
+   "fieldtype": "Currency",
+   "label": "DA & TPT Arrear (₹)"
+  },
+  {
+   "default": "0",
+   "fieldname": "misc_allowance",
+   "fieldtype": "Currency",
+   "label": "Misc Allowance (₹)"
+  },
+  {
+   "fieldname": "gross_pay",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Gross Pay (₹)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_pran",
+   "fieldtype": "Section Break",
+   "label": "PRAN / NPS Contributions"
+  },
+  {
+   "fieldname": "pran_emp_contrib",
+   "fieldtype": "Currency",
+   "label": "Cont by Emp (10%) (₹)",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "pran_emp_arrear",
+   "fieldtype": "Currency",
+   "label": "Emp Arrear (₹)"
+  },
+  {
+   "fieldname": "pran_govt_contrib",
+   "fieldtype": "Currency",
+   "label": "Cont by Govt (14%) (₹)",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "pran_govt_arrear",
+   "fieldtype": "Currency",
+   "label": "Govt Arrear (₹)"
+  },
+  {
+   "fieldname": "pran_total_emp",
+   "fieldtype": "Currency",
+   "label": "Total by Emp (₹)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "pran_total_govt",
+   "fieldtype": "Currency",
+   "label": "Total by Govt (₹)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "pran_grand_total",
+   "fieldtype": "Currency",
+   "label": "Grand Total NPS (₹)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_gpf",
+   "fieldtype": "Section Break",
+   "label": "GPF Contributions"
+  },
+  {
+   "default": "0",
+   "fieldname": "gpf_subscription",
+   "fieldtype": "Currency",
+   "label": "GPF Subscription (₹)"
+  },
+  {
+   "default": "0",
+   "fieldname": "gpf_refund",
+   "fieldtype": "Currency",
+   "label": "GPF Refund / Advance (₹)"
+  },
+  {
+   "fieldname": "gpf_total",
+   "fieldtype": "Currency",
+   "label": "Total GPF (₹)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_other_deductions",
+   "fieldtype": "Section Break",
+   "label": "Other Statutory & Voluntary Deductions"
+  },
+  {
+   "default": "0",
+   "fieldname": "cghs_amount",
+   "fieldtype": "Currency",
+   "label": "CGHS (₹)"
+  },
+  {
+   "default": "0",
+   "fieldname": "license_fee",
+   "fieldtype": "Currency",
+   "label": "L/Fee (License Fee) (₹)"
+  },
+  {
+   "default": "0",
+   "fieldname": "cgegis_amount",
+   "fieldtype": "Currency",
+   "label": "CGEGIS (₹)"
+  },
+  {
+   "default": "0",
+   "fieldname": "income_tax",
+   "fieldtype": "Currency",
+   "label": "I Tax (TDS) (₹)"
+  },
+  {
+   "default": "0",
+   "fieldname": "edu_cess",
+   "fieldtype": "Currency",
+   "label": "Edu Cess (4%) (₹)",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "misc_deduction",
+   "fieldtype": "Currency",
+   "label": "Misc Deduction (₹)"
+  },
+  {
+   "fieldname": "total_deduction",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Total Deduction (₹)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "net_pay",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Net Pay (₹)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_bank",
+   "fieldtype": "Section Break",
+   "label": "Disbursement & Accommodation Details"
+  },
+  {
+   "fieldname": "bank_name",
+   "fieldtype": "Data",
+   "label": "Bank Name"
+  },
+  {
+   "fieldname": "bank_branch",
+   "fieldtype": "Data",
+   "label": "Bank Address / Branch"
+  },
+  {
+   "fieldname": "bank_account_no",
+   "fieldtype": "Data",
+   "label": "Bank Account No"
+  },
+  {
+   "fieldname": "ifsc_code",
+   "fieldtype": "Data",
+   "label": "IFSC Code"
+  },
+  {
+   "fieldname": "micr_code",
+   "fieldtype": "Data",
+   "label": "MICR Code"
+  },
+  {
+   "fieldname": "quarter_no",
+   "fieldtype": "Data",
+   "label": "Quarter No"
+  },
+  {
+   "fieldname": "quarter_type",
+   "fieldtype": "Data",
+   "label": "Quarter Type"
+  },
+  {
+   "fieldname": "quarter_floor",
+   "fieldtype": "Data",
+   "label": "Quarter Floor"
+  },
+  {
+   "fieldname": "aan_no",
+   "fieldtype": "Data",
+   "label": "AAN No"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "Remarks"
+  }
+ ],
+ "istable": 1,
+ "links": [],
+ "modified": "2026-11-09 21:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Govt Payroll",
+ "name": "Govt Pay Bill Item",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "pc_no",
+ "sort_order": "ASC",
+ "states": [],
+ "track_changes": 1
+}

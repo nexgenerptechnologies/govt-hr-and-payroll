@@ -1,0 +1,142 @@
+{
+ "actions": [],
+ "autoname": "field:office_unit_name",
+ "creation": "2026-11-09 21:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "office_unit_name",
+  "ministry_dept",
+  "station_city",
+  "city_classification",
+  "column_break_gov_codes",
+  "ddo_id",
+  "ddo_unit_code",
+  "pao_code",
+  "cda_code",
+  "cda_name",
+  "dept_code",
+  "unit_code",
+  "section_break_address",
+  "address"
+ ],
+ "fields": [
+  {
+   "fieldname": "office_unit_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Office / Unit Name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "ministry_dept",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Ministry / Department",
+   "reqd": 1
+  },
+  {
+   "fieldname": "station_city",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Station / City"
+  },
+  {
+   "default": "X",
+   "fieldname": "city_classification",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "City Classification for HRA",
+   "options": "X\nY\nZ",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_gov_codes",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "ddo_id",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "DDO ID"
+  },
+  {
+   "fieldname": "ddo_unit_code",
+   "fieldtype": "Data",
+   "label": "DDO / Unit Code"
+  },
+  {
+   "fieldname": "pao_code",
+   "fieldtype": "Data",
+   "label": "PAO Code"
+  },
+  {
+   "fieldname": "cda_code",
+   "fieldtype": "Data",
+   "label": "CDA Code"
+  },
+  {
+   "fieldname": "cda_name",
+   "fieldtype": "Data",
+   "label": "CDA Office Name"
+  },
+  {
+   "fieldname": "dept_code",
+   "fieldtype": "Data",
+   "label": "Dept Code"
+  },
+  {
+   "fieldname": "unit_code",
+   "fieldtype": "Data",
+   "label": "Unit Code"
+  },
+  {
+   "fieldname": "section_break_address",
+   "fieldtype": "Section Break",
+   "label": "Address & Contact"
+  },
+  {
+   "fieldname": "address",
+   "fieldtype": "Small Text",
+   "label": "Office Address"
+  }
+ ],
+ "links": [],
+ "modified": "2026-11-09 21:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Govt Masters",
+ "name": "Govt Office Unit",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "HR Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "search_fields": "office_unit_name,ministry_dept,ddo_id,pao_code",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

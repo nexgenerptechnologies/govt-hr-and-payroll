@@ -1,0 +1,312 @@
+{
+ "actions": [],
+ "autoname": "naming_series:",
+ "creation": "2026-11-09 21:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "bill_type",
+  "office_unit",
+  "month",
+  "year",
+  "posting_date",
+  "column_break_header",
+  "financial_year",
+  "da_rate",
+  "get_employees_btn",
+  "calculate_bill_btn",
+  "section_break_items",
+  "items",
+  "section_break_summary",
+  "total_basic_pay",
+  "total_da",
+  "total_hra",
+  "total_tpt",
+  "total_da_on_tpt",
+  "total_misc_allowance",
+  "total_gross_pay",
+  "column_break_deductions_summary",
+  "total_pran_emp",
+  "total_pran_govt",
+  "total_pran_grand",
+  "total_gpf",
+  "total_cghs",
+  "total_license_fee",
+  "total_cgegis",
+  "total_income_tax",
+  "total_edu_cess",
+  "total_misc_deduction",
+  "total_deductions",
+  "total_net_pay",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "default": "PB-.YYYY.-.MM.-.#####",
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "PB-.YYYY.-.MM.-.#####\nSUPP-.YYYY.-.MM.-.#####",
+   "reqd": 1
+  },
+  {
+   "default": "Regular Monthly Bill",
+   "fieldname": "bill_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Bill Type",
+   "options": "Regular Monthly Bill\nSupplementary Bill",
+   "reqd": 1
+  },
+  {
+   "fieldname": "office_unit",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Office / Unit",
+   "options": "Govt Office Unit",
+   "reqd": 1
+  },
+  {
+   "default": "August",
+   "fieldname": "month",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Month",
+   "options": "January\nFebruary\nMarch\nApril\nMay\nJune\nJuly\nAugust\nSeptember\nOctober\nNovember\nDecember",
+   "reqd": 1
+  },
+  {
+   "default": "2026",
+   "fieldname": "year",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Year",
+   "reqd": 1
+  },
+  {
+   "default": "Today",
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "label": "Posting Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_header",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "2026-2027",
+   "fieldname": "financial_year",
+   "fieldtype": "Data",
+   "label": "Financial Year"
+  },
+  {
+   "default": "50.0",
+   "fieldname": "da_rate",
+   "fieldtype": "Percent",
+   "label": "Applicable DA Rate (%)",
+   "reqd": 1
+  },
+  {
+   "fieldname": "get_employees_btn",
+   "fieldtype": "Button",
+   "label": "Fetch Active Employees"
+  },
+  {
+   "fieldname": "calculate_bill_btn",
+   "fieldtype": "Button",
+   "label": "Recalculate Pay Bill"
+  },
+  {
+   "fieldname": "section_break_items",
+   "fieldtype": "Section Break",
+   "label": "Employee Pay Bill Line Items"
+  },
+  {
+   "fieldname": "items",
+   "fieldtype": "Table",
+   "label": "Pay Bill Details",
+   "options": "Govt Pay Bill Item"
+  },
+  {
+   "fieldname": "section_break_summary",
+   "fieldtype": "Section Break",
+   "label": "Pay Bill Summary / Totals (Gross Allowances)"
+  },
+  {
+   "fieldname": "total_basic_pay",
+   "fieldtype": "Currency",
+   "label": "Total Basic Pay (₹)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_da",
+   "fieldtype": "Currency",
+   "label": "Total DA (₹)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_hra",
+   "fieldtype": "Currency",
+   "label": "Total HRA (₹)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_tpt",
+   "fieldtype": "Currency",
+   "label": "Total TPT (₹)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_da_on_tpt",
+   "fieldtype": "Currency",
+   "label": "Total DA on TPT (₹)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_misc_allowance",
+   "fieldtype": "Currency",
+   "label": "Total Misc Allowance (₹)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_gross_pay",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Total Gross Pay (₹)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_deductions_summary",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total_pran_emp",
+   "fieldtype": "Currency",
+   "label": "Total PRAN (Cont by Emp) (₹)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_pran_govt",
+   "fieldtype": "Currency",
+   "label": "Total PRAN (Cont by Govt) (₹)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_pran_grand",
+   "fieldtype": "Currency",
+   "label": "Total PRAN Grand Total (₹)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_gpf",
+   "fieldtype": "Currency",
+   "label": "Total GPF (₹)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_cghs",
+   "fieldtype": "Currency",
+   "label": "Total CGHS (₹)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_license_fee",
+   "fieldtype": "Currency",
+   "label": "Total License Fee (L/Fee) (₹)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_cgegis",
+   "fieldtype": "Currency",
+   "label": "Total CGEGIS (₹)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_income_tax",
+   "fieldtype": "Currency",
+   "label": "Total Income Tax (TDS) (₹)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_edu_cess",
+   "fieldtype": "Currency",
+   "label": "Total Edu Cess (₹)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_misc_deduction",
+   "fieldtype": "Currency",
+   "label": "Total Misc Deductions (₹)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_deductions",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Total Deductions (₹)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_net_pay",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Total Net Pay (₹)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Govt Pay Bill",
+   "print_hide": 1,
+   "read_only": 1
+  }
+ ],
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2026-11-09 21:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Govt Payroll",
+ "name": "Govt Pay Bill",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "amend": 1,
+   "cancel": 0,
+   "create": 1,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "HR Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "search_fields": "name,office_unit,month,year,bill_type",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

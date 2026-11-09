@@ -1,0 +1,106 @@
+{% set unit = frappe.get_doc("Govt Office Unit", doc.office_unit) if doc.office_unit else None %}
+<style>
+  @page {
+    size: A4 portrait;
+    margin: 10mm;
+  }
+  .nps-container {
+    font-family: Arial, sans-serif;
+    font-size: 9pt;
+    color: #000;
+  }
+  .nps-title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 11pt;
+    text-decoration: underline;
+    margin-bottom: 12px;
+  }
+  .meta-table {
+    width: 100%;
+    margin-bottom: 10px;
+    font-size: 8.5pt;
+  }
+  .nps-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 8.5pt;
+  }
+  .nps-table th, .nps-table td {
+    border: 1px solid #000;
+    padding: 5px 4px;
+    text-align: center;
+  }
+  .nps-table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+  }
+  .text-left { text-align: left !important; }
+  .text-right { text-align: right !important; }
+</style>
+
+<div class="nps-container">
+  <div class="nps-title">
+    Monthly Contribution, ANNEXURE-II (New Pension Scheme) for the month of {{ doc.month }} {{ doc.year }}
+  </div>
+
+  <table class="meta-table">
+    <tr>
+      <td style="width: 50%; vertical-align: top;">
+        Dept_cd = "{{ unit.dept_code if unit else '2' }}"<br>
+        DDO/Unit Code - {{ unit.ddo_unit_code if unit else "" }}<br>
+        DV NO. : 
+      </td>
+      <td style="width: 50%; vertical-align: top; text-align: right;">
+        Nodal cd. : {{ unit.cda_code if unit else "16" }} ({{ unit.cda_name if unit else "CDA Nodal Office" }}), PAO CODE : {{ unit.pao_code if unit else "" }}<br>
+        Financial Year : {{ doc.financial_year }}<br>
+        Bill/DV Date : {{ frappe.format_date(doc.posting_date) }}<br>
+        <b>DA RATE: {{ doc.da_rate }}%</b>
+      </td>
+    </tr>
+  </table>
+
+  <table class="nps-table">
+    <thead>
+      <tr>
+        <th>PC No.</th>
+        <th>PPAN/PRAN</th>
+        <th>Name and Designation</th>
+        <th>Matrix Pay</th>
+        <th>DA</th>
+        <th>Cont by Emp.</th>
+        <th>Cont by Govt</th>
+        <th>Grand Total<br><small>(Total of tier 1)</small></th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for item in doc.items %}
+      {% if item.pran_emp_contrib or item.pran_gpf_no %}
+      <tr>
+        <td>{{ item.pc_no }}</td>
+        <td>{{ item.pran_gpf_no or "" }}</td>
+        <td class="text-left">
+          <b>{{ item.employee_name }}</b><br>
+          {{ item.designation or "" }}
+        </td>
+        <td class="text-right">{{ "{:,.0f}".format(item.effective_basic_pay or item.basic_pay or 0) }}</td>
+        <td class="text-right">{{ "{:,.0f}".format(item.da_amount or 0) }}</td>
+        <td class="text-right">{{ "{:,.0f}".format(item.pran_total_emp or 0) }}</td>
+        <td class="text-right">{{ "{:,.0f}".format(item.pran_total_govt or 0) }}</td>
+        <td class="text-right"><b>{{ "{:,.0f}".format(item.pran_grand_total or 0) }}</b></td>
+      </tr>
+      {% endif %}
+      {% endfor %}
+    </tbody>
+    <tfoot>
+      <tr style="font-weight: bold; background-color: #f5f5f5;">
+        <td colspan="3" class="text-left">TOTAL</td>
+        <td class="text-right">{{ "{:,.0f}".format(doc.total_basic_pay or 0) }}</td>
+        <td class="text-right">{{ "{:,.0f}".format(doc.total_da or 0) }}</td>
+        <td class="text-right">{{ "{:,.0f}".format(doc.total_pran_emp or 0) }}</td>
+        <td class="text-right">{{ "{:,.0f}".format(doc.total_pran_govt or 0) }}</td>
+        <td class="text-right">{{ "{:,.0f}".format(doc.total_pran_grand or 0) }}</td>
+      </tr>
+    </tfoot>
+  </table>
+</div>

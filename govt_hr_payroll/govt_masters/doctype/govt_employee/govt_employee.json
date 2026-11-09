@@ -1,0 +1,413 @@
+{
+ "actions": [],
+ "autoname": "field:employee_id",
+ "creation": "2026-11-09 21:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "basic_info_section",
+  "employee_id",
+  "first_name",
+  "last_name",
+  "employee_name",
+  "gender",
+  "status",
+  "column_break_office",
+  "office_unit",
+  "designation",
+  "dob",
+  "doj",
+  "dor",
+  "dni",
+  "pan",
+  "reemployed_section",
+  "is_reemployed",
+  "reemployed_pension_deduction",
+  "pay_matrix_section",
+  "pay_matrix_level",
+  "cell_no",
+  "basic_pay",
+  "column_break_allowances",
+  "hra_city_class",
+  "tpt_city_type",
+  "tpt_allowance",
+  "quarter_section",
+  "govt_quarters_availed",
+  "quarter_no",
+  "quarter_type",
+  "floor_no",
+  "aan_no",
+  "column_break_quarters",
+  "quarter_location",
+  "license_fee",
+  "pension_section",
+  "pension_scheme",
+  "pran_no",
+  "gpf_no",
+  "gpf_monthly_subscription",
+  "column_break_statutory",
+  "cghs_card_no",
+  "cghs_monthly_deduction",
+  "cgegis_group",
+  "cgegis_monthly_deduction",
+  "monthly_income_tax_tds",
+  "bank_section",
+  "bank_name",
+  "bank_branch",
+  "account_no",
+  "column_break_bank",
+  "ifsc_code",
+  "micr_code"
+ ],
+ "fields": [
+  {
+   "fieldname": "basic_info_section",
+   "fieldtype": "Section Break",
+   "label": "Basic Information"
+  },
+  {
+   "fieldname": "employee_id",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Employee ID / No",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "first_name",
+   "fieldtype": "Data",
+   "label": "First Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "last_name",
+   "fieldtype": "Data",
+   "label": "Last Name"
+  },
+  {
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Full Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "gender",
+   "fieldtype": "Select",
+   "label": "Gender",
+   "options": "Male\nFemale\nOther"
+  },
+  {
+   "default": "Active",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "Active\nRetired\nOn Leave\nSuspended",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_office",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "office_unit",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Office / Unit",
+   "options": "Govt Office Unit",
+   "reqd": 1
+  },
+  {
+   "fieldname": "designation",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Designation",
+   "reqd": 1
+  },
+  {
+   "fieldname": "dob",
+   "fieldtype": "Date",
+   "label": "Date of Birth (DOB)",
+   "reqd": 1
+  },
+  {
+   "fieldname": "doj",
+   "fieldtype": "Date",
+   "label": "Date of Joining (DOJ)",
+   "reqd": 1
+  },
+  {
+   "fieldname": "dor",
+   "fieldtype": "Date",
+   "label": "Date of Retirement (DOR)"
+  },
+  {
+   "default": "01-Jul",
+   "fieldname": "dni",
+   "fieldtype": "Select",
+   "label": "Date of Next Increment (DNI)",
+   "options": "01-Jan\n01-Jul"
+  },
+  {
+   "fieldname": "pan",
+   "fieldtype": "Data",
+   "label": "PAN Number"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "reemployed_section",
+   "fieldtype": "Section Break",
+   "label": "Re-Employment Details"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_reemployed",
+   "fieldtype": "Check",
+   "label": "Is Re-Employed Pensioner?"
+  },
+  {
+   "depends_on": "eval:doc.is_reemployed==1",
+   "fieldname": "reemployed_pension_deduction",
+   "fieldtype": "Currency",
+   "label": "Pensionary Benefit Deduction *( - ) Pension (₹)"
+  },
+  {
+   "fieldname": "pay_matrix_section",
+   "fieldtype": "Section Break",
+   "label": "7th CPC Pay & Allowances Profile"
+  },
+  {
+   "fieldname": "pay_matrix_level",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Pay Matrix Level",
+   "options": "CPC Pay Level",
+   "reqd": 1
+  },
+  {
+   "default": "1",
+   "fieldname": "cell_no",
+   "fieldtype": "Int",
+   "label": "Pay Matrix Cell No"
+  },
+  {
+   "fieldname": "basic_pay",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Current Basic Pay (₹)",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_allowances",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "X",
+   "fieldname": "hra_city_class",
+   "fieldtype": "Select",
+   "label": "HRA City Class",
+   "options": "X\nY\nZ"
+  },
+  {
+   "default": "Higher TPT City",
+   "fieldname": "tpt_city_type",
+   "fieldtype": "Select",
+   "label": "Transport Allowance (TPT) City Type",
+   "options": "Higher TPT City\nOther Places"
+  },
+  {
+   "default": "7200",
+   "fieldname": "tpt_allowance",
+   "fieldtype": "Currency",
+   "label": "Base TPT Allowance (₹)"
+  },
+  {
+   "fieldname": "quarter_section",
+   "fieldtype": "Section Break",
+   "label": "Government Accommodation / Quarters"
+  },
+  {
+   "default": "0",
+   "fieldname": "govt_quarters_availed",
+   "fieldtype": "Check",
+   "label": "Government Accommodation Availed (HRA will be ₹0)"
+  },
+  {
+   "depends_on": "eval:doc.govt_quarters_availed==1",
+   "fieldname": "quarter_no",
+   "fieldtype": "Data",
+   "label": "Quarter No"
+  },
+  {
+   "depends_on": "eval:doc.govt_quarters_availed==1",
+   "fieldname": "quarter_type",
+   "fieldtype": "Data",
+   "label": "Quarter Type (e.g. Type-4S)"
+  },
+  {
+   "depends_on": "eval:doc.govt_quarters_availed==1",
+   "fieldname": "floor_no",
+   "fieldtype": "Data",
+   "label": "Floor No"
+  },
+  {
+   "depends_on": "eval:doc.govt_quarters_availed==1",
+   "fieldname": "aan_no",
+   "fieldtype": "Data",
+   "label": "Allottee Account Number (AAN)"
+  },
+  {
+   "fieldname": "column_break_quarters",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.govt_quarters_availed==1",
+   "fieldname": "quarter_location",
+   "fieldtype": "Data",
+   "label": "Quarter Location / Sector"
+  },
+  {
+   "depends_on": "eval:doc.govt_quarters_availed==1",
+   "fieldname": "license_fee",
+   "fieldtype": "Currency",
+   "label": "Monthly License Fee Recovery (₹)"
+  },
+  {
+   "fieldname": "pension_section",
+   "fieldtype": "Section Break",
+   "label": "Pension, Group Insurance & Medical"
+  },
+  {
+   "default": "NPS",
+   "fieldname": "pension_scheme",
+   "fieldtype": "Select",
+   "label": "Pension Scheme",
+   "options": "NPS\nGPF\nNone"
+  },
+  {
+   "depends_on": "eval:doc.pension_scheme=='NPS'",
+   "fieldname": "pran_no",
+   "fieldtype": "Data",
+   "label": "PRAN / PPAN No"
+  },
+  {
+   "depends_on": "eval:doc.pension_scheme=='GPF'",
+   "fieldname": "gpf_no",
+   "fieldtype": "Data",
+   "label": "GPF Account No"
+  },
+  {
+   "depends_on": "eval:doc.pension_scheme=='GPF'",
+   "fieldname": "gpf_monthly_subscription",
+   "fieldtype": "Currency",
+   "label": "Monthly GPF Subscription (₹)"
+  },
+  {
+   "fieldname": "column_break_statutory",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "cghs_card_no",
+   "fieldtype": "Data",
+   "label": "CGHS Card No"
+  },
+  {
+   "default": "1000",
+   "fieldname": "cghs_monthly_deduction",
+   "fieldtype": "Currency",
+   "label": "Monthly CGHS Deduction (₹)"
+  },
+  {
+   "default": "Group A",
+   "fieldname": "cgegis_group",
+   "fieldtype": "Select",
+   "label": "CGEGIS Group",
+   "options": "Group A\nGroup B\nGroup C"
+  },
+  {
+   "default": "120",
+   "fieldname": "cgegis_monthly_deduction",
+   "fieldtype": "Currency",
+   "label": "Monthly CGEGIS Deduction (₹)"
+  },
+  {
+   "default": "0",
+   "fieldname": "monthly_income_tax_tds",
+   "fieldtype": "Currency",
+   "label": "Target Monthly Income Tax TDS (₹)"
+  },
+  {
+   "fieldname": "bank_section",
+   "fieldtype": "Section Break",
+   "label": "Bank & Disbursement Details"
+  },
+  {
+   "default": "State Bank of India",
+   "fieldname": "bank_name",
+   "fieldtype": "Data",
+   "label": "Bank Name"
+  },
+  {
+   "fieldname": "bank_branch",
+   "fieldtype": "Data",
+   "label": "Bank Branch / Address"
+  },
+  {
+   "fieldname": "account_no",
+   "fieldtype": "Data",
+   "label": "Bank Account No"
+  },
+  {
+   "fieldname": "column_break_bank",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "ifsc_code",
+   "fieldtype": "Data",
+   "label": "IFSC Code"
+  },
+  {
+   "fieldname": "micr_code",
+   "fieldtype": "Data",
+   "label": "MICR Code"
+  }
+ ],
+ "links": [],
+ "modified": "2026-11-09 21:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Govt Masters",
+ "name": "Govt Employee",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "HR Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "search_fields": "employee_id,employee_name,designation,office_unit,pan,pran_no",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

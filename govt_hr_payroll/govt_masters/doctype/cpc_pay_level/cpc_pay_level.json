@@ -1,0 +1,95 @@
+{
+ "actions": [],
+ "autoname": "field:pay_level",
+ "creation": "2026-11-09 21:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "pay_level",
+  "grade_pay",
+  "column_break_1",
+  "entry_pay",
+  "maximum_pay",
+  "section_break_cells",
+  "cells"
+ ],
+ "fields": [
+  {
+   "fieldname": "pay_level",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Pay Matrix Level",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "grade_pay",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Corresponding Grade Pay (₹)"
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "entry_pay",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Entry Pay (Cell 1) (₹)"
+  },
+  {
+   "fieldname": "maximum_pay",
+   "fieldtype": "Currency",
+   "label": "Maximum Pay (₹)"
+  },
+  {
+   "fieldname": "section_break_cells",
+   "fieldtype": "Section Break",
+   "label": "7th CPC Pay Matrix Cells"
+  },
+  {
+   "fieldname": "cells",
+   "fieldtype": "Table",
+   "label": "Cells",
+   "options": "CPC Pay Cell"
+  }
+ ],
+ "links": [],
+ "modified": "2026-11-09 21:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Govt Masters",
+ "name": "CPC Pay Level",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "HR Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "search_fields": "pay_level,entry_pay,grade_pay",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

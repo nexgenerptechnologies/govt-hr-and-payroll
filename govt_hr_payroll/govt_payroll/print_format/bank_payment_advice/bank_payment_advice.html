@@ -1,0 +1,79 @@
+<style>
+  @page {
+    size: A4 portrait;
+    margin: 10mm;
+  }
+  .bank-container {
+    font-family: Arial, sans-serif;
+    font-size: 9pt;
+    color: #000;
+  }
+  .bank-title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 10.5pt;
+    margin-bottom: 15px;
+    line-height: 1.4;
+  }
+  .bank-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 8.5pt;
+  }
+  .bank-table th, .bank-table td {
+    border: 1px solid #000;
+    padding: 6px 5px;
+    text-align: center;
+  }
+  .bank-table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+  }
+  .text-left { text-align: left !important; }
+  .text-right { text-align: right !important; }
+</style>
+
+<div class="bank-container">
+  <div class="bank-title">
+    DETAILS OF BANKERS WHERE PAYMENT OF PAY AND ALLOWANCE FOR THE MONTH OF {{ (doc.month or "") | upper }} {{ doc.year }} ARE TO BE MADE
+  </div>
+
+  <table class="bank-table">
+    <thead>
+      <tr>
+        <th style="width: 40px;">PC No.</th>
+        <th style="width: 170px;">Name & Designation</th>
+        <th style="width: 130px;">Account No.</th>
+        <th>Banker's Detail</th>
+        <th style="width: 95px;">IFSC Code</th>
+        <th style="width: 85px;">MICR</th>
+        <th style="width: 95px;">Amount (₹)</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for item in doc.items %}
+      <tr>
+        <td>{{ item.pc_no }}</td>
+        <td class="text-left">
+          <b>{{ item.employee_name }}</b><br>
+          {{ item.designation or "" }}
+        </td>
+        <td>{{ item.bank_account_no or "" }}</td>
+        <td class="text-left">
+          <b>{{ item.bank_name or "" }}</b><br>
+          {{ item.bank_branch or "" }}
+        </td>
+        <td>{{ item.ifsc_code or "" }}</td>
+        <td>{{ item.micr_code or "" }}</td>
+        <td class="text-right"><b>{{ "{:,.0f}".format(item.net_pay or 0) }}</b></td>
+      </tr>
+      {% endfor %}
+    </tbody>
+    <tfoot>
+      <tr style="font-weight: bold; background-color: #f5f5f5;">
+        <td colspan="6" class="text-left">Grand Total</td>
+        <td class="text-right">{{ "{:,.0f}".format(doc.total_net_pay or 0) }}</td>
+      </tr>
+    </tfoot>
+  </table>
+</div>

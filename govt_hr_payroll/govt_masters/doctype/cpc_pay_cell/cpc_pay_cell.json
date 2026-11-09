@@ -1,0 +1,39 @@
+{
+ "actions": [],
+ "creation": "2026-11-09 21:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "cell_no",
+  "basic_pay"
+ ],
+ "fields": [
+  {
+   "fieldname": "cell_no",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Cell Index",
+   "reqd": 1
+  },
+  {
+   "fieldname": "basic_pay",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Basic Pay (₹)",
+   "reqd": 1
+  }
+ ],
+ "istable": 1,
+ "links": [],
+ "modified": "2026-11-09 21:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Govt Masters",
+ "name": "CPC Pay Cell",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "cell_no",
+ "sort_order": "ASC",
+ "states": [],
+ "track_changes": 1
+}

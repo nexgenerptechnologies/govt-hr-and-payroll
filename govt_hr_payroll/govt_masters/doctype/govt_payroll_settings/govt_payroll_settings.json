@@ -1,0 +1,128 @@
+{
+ "actions": [],
+ "creation": "2026-11-09 21:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "general_section",
+  "current_financial_year",
+  "current_da_rate",
+  "column_break_rates",
+  "nps_emp_rate",
+  "nps_govt_rate",
+  "standard_edu_cess",
+  "section_hra",
+  "hra_x_rate",
+  "hra_y_rate",
+  "hra_z_rate"
+ ],
+ "fields": [
+  {
+   "fieldname": "general_section",
+   "fieldtype": "Section Break",
+   "label": "General Statutory Rates"
+  },
+  {
+   "default": "2026-2027",
+   "fieldname": "current_financial_year",
+   "fieldtype": "Data",
+   "label": "Current Financial Year",
+   "reqd": 1
+  },
+  {
+   "default": "50.0",
+   "fieldname": "current_da_rate",
+   "fieldtype": "Percent",
+   "label": "Current DA Rate (%)",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_rates",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "10.0",
+   "fieldname": "nps_emp_rate",
+   "fieldtype": "Percent",
+   "label": "NPS Employee Contribution (%)",
+   "reqd": 1
+  },
+  {
+   "default": "14.0",
+   "fieldname": "nps_govt_rate",
+   "fieldtype": "Percent",
+   "label": "NPS Govt Contribution (%)",
+   "reqd": 1
+  },
+  {
+   "default": "4.0",
+   "fieldname": "standard_edu_cess",
+   "fieldtype": "Percent",
+   "label": "Education Cess (%)",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_hra",
+   "fieldtype": "Section Break",
+   "label": "House Rent Allowance (HRA) Rates"
+  },
+  {
+   "default": "30.0",
+   "fieldname": "hra_x_rate",
+   "fieldtype": "Percent",
+   "label": "HRA Rate for X Category Cities (%)",
+   "reqd": 1
+  },
+  {
+   "default": "20.0",
+   "fieldname": "hra_y_rate",
+   "fieldtype": "Percent",
+   "label": "HRA Rate for Y Category Cities (%)",
+   "reqd": 1
+  },
+  {
+   "default": "10.0",
+   "fieldname": "hra_z_rate",
+   "fieldtype": "Percent",
+   "label": "HRA Rate for Z Category Cities (%)",
+   "reqd": 1
+  }
+ ],
+ "issingle": 1,
+ "links": [],
+ "modified": "2026-11-09 21:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Govt Masters",
+ "name": "Govt Payroll Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 0,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "HR Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

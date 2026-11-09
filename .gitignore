@@ -1,0 +1,22 @@
+# Git ignore for Govt HR & Payroll Frappe App
+*.pyc
+__pycache__/
+*.egg-info/
+dist/
+build/
+.cache/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Ignore local scanned reference files (kept safe on disk, excluded from git repo)
+*.pdf
+Merged pdf/
+New folder 1/
+New folder 2/
+New folder 3/
+New folder 4/
+New folder 5/
+New folder 6/
