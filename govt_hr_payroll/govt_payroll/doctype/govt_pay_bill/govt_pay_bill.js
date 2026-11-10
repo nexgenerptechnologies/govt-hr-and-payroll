@@ -6,10 +6,14 @@ frappe.ui.form.on("Govt Pay Bill", {
 		if (frm.doc.docstatus === 0) {
 			frm.add_custom_button(__("Fetch Active Employees"), function() {
 				frm.trigger("fetch_employees");
-			});
+			}).addClass("btn-primary");
 			frm.add_custom_button(__("Recalculate Totals"), function() {
 				frm.save();
 			});
+
+			if (!frm.doc.items || frm.doc.items.length === 0) {
+				frm.set_intro(__("Select the <b>Office / Unit</b>, <b>Month</b>, and <b>Year</b> above, then click the blue <b>'Fetch Active Employees'</b> button to automatically calculate statutory 7th CPC pay and deductions for all employees in this unit."), "blue");
+			}
 		}
 	},
 

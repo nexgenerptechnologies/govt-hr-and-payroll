@@ -1,0 +1,81 @@
+{
+ "charts": [],
+ "content": "[{\"type\": \"header\", \"data\": {\"text\": \"Govt Claims & Reimbursements (Folder 5)\", \"level\": 4, \"col\": 12}}, {\"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"CEA Claim\", \"col\": 6}}, {\"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"CGHS Medical Claim\", \"col\": 6}}, {\"type\": \"spacer\", \"data\": {\"col\": 12}}, {\"type\": \"card\", \"data\": {\"card_name\": \"Statutory Reimbursement Claims\", \"col\": 12}}]",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "milestone",
+ "indicator_color": "red",
+ "is_standard": 1,
+ "label": "Govt Claims",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Statutory Reimbursement Claims",
+   "link_count": 0,
+   "link_to": "CEA Claim",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "CEA Claim (Children Education Allowance)",
+   "link_count": 0,
+   "link_to": "CEA Claim",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "CGHS Medical Claim (Form MRC-S)",
+   "link_count": 0,
+   "link_to": "CGHS Medical Claim",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "module": "Govt Claims",
+ "name": "Govt Claims",
+ "parent_page": "",
+ "public": 1,
+ "restrict_to_domain": "",
+ "roles": [],
+ "sequence_id": 5.0,
+ "shortcuts": [
+  {
+   "color": "Red",
+   "doc_view": "List",
+   "icon": "",
+   "is_query_report": 0,
+   "label": "CEA Claim",
+   "link_to": "CEA Claim",
+   "link_type": "DocType",
+   "stats_filter": "",
+   "type": "DocType",
+   "url": ""
+  },
+  {
+   "color": "Blue",
+   "doc_view": "List",
+   "icon": "",
+   "is_query_report": 0,
+   "label": "CGHS Medical Claim",
+   "link_to": "CGHS Medical Claim",
+   "link_type": "DocType",
+   "stats_filter": "",
+   "type": "DocType",
+   "url": ""
+  }
+ ],
+ "title": "Govt Claims"
+}

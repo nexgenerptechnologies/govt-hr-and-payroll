@@ -55,6 +55,15 @@ def audit_file_structure(base_dir):
             ("govt_hr_payroll/govt_tour_ta_da/doctype/tada_food_item/tada_food_item.json", "TADA Food Item Table"),
             ("govt_hr_payroll/govt_tour_ta_da/doctype/tada_final_claim/tada_final_claim.json", "TADA Final Claim DocType"),
             ("govt_hr_payroll/govt_tour_ta_da/print_format/tada_final_claim_bill/tada_final_claim_bill.html", "TADA Final Claim Bill Print Format")
+        ],
+        "Workspaces & Sidebar Navigation (Desk Integration)": [
+            ("govt_hr_payroll/govt_payroll/workspace/govt_hr_and_payroll/govt_hr_and_payroll.json", "Govt HR & Payroll Master Workspace"),
+            ("govt_hr_payroll/govt_payroll/workspace/govt_payroll/govt_payroll.json", "Govt Payroll Workspace"),
+            ("govt_hr_payroll/govt_income_tax/workspace/govt_income_tax/govt_income_tax.json", "Govt Income Tax Workspace"),
+            ("govt_hr_payroll/govt_leave_management/workspace/govt_leave_management/govt_leave_management.json", "Govt Leave Management Workspace"),
+            ("govt_hr_payroll/govt_claims/workspace/govt_claims/govt_claims.json", "Govt Claims Workspace"),
+            ("govt_hr_payroll/govt_tour_ta_da/workspace/govt_tour_ta_da/govt_tour_ta_da.json", "Govt Tour TA DA Workspace"),
+            ("govt_hr_payroll/govt_masters/workspace/govt_masters/govt_masters.json", "Govt Masters Workspace")
         ]
     }
 

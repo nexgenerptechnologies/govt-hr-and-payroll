@@ -1,0 +1,69 @@
+{
+ "charts": [],
+ "content": "[{\"type\": \"header\", \"data\": {\"text\": \"Govt Income Tax (Folder 2)\", \"level\": 4, \"col\": 12}}, {\"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Income Tax Statement\", \"col\": 6}}, {\"type\": \"spacer\", \"data\": {\"col\": 12}}, {\"type\": \"card\", \"data\": {\"card_name\": \"Income Tax Calculations & Statements\", \"col\": 12}}]",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "calculator",
+ "indicator_color": "orange",
+ "is_standard": 1,
+ "label": "Govt Income Tax",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Income Tax Calculations & Statements",
+   "link_count": 0,
+   "link_to": "Govt Income Tax Statement",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Govt Income Tax Statement (12-Month Ledger)",
+   "link_count": 0,
+   "link_to": "Govt Income Tax Statement",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Govt Employee Profiles",
+   "link_count": 0,
+   "link_to": "Govt Employee",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "module": "Govt Income Tax",
+ "name": "Govt Income Tax",
+ "parent_page": "",
+ "public": 1,
+ "restrict_to_domain": "",
+ "roles": [],
+ "sequence_id": 3.0,
+ "shortcuts": [
+  {
+   "color": "Orange",
+   "doc_view": "List",
+   "icon": "",
+   "is_query_report": 0,
+   "label": "Income Tax Statement",
+   "link_to": "Govt Income Tax Statement",
+   "link_type": "DocType",
+   "stats_filter": "",
+   "type": "DocType",
+   "url": ""
+  }
+ ],
+ "title": "Govt Income Tax"
+}

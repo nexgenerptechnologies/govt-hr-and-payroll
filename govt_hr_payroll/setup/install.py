@@ -1,6 +1,8 @@
 # Copyright (c) 2026, NexGen ERP Technologies and contributors
 # For license information, please see license.txt
 
+import os
+import json
 import frappe
 from frappe.utils import flt, today
 
@@ -8,11 +10,69 @@ def after_install():
 	setup_cpc_pay_levels()
 	setup_payroll_settings()
 	setup_default_leave_types()
+	setup_workspaces()
 
 def after_migrate():
 	setup_cpc_pay_levels()
 	setup_payroll_settings()
 	setup_default_leave_types()
+	setup_workspaces()
+
+def setup_workspaces():
+	workspace_files = [
+		"govt_payroll/workspace/govt_hr_and_payroll/govt_hr_and_payroll.json",
+		"govt_payroll/workspace/govt_payroll/govt_payroll.json",
+		"govt_income_tax/workspace/govt_income_tax/govt_income_tax.json",
+		"govt_leave_management/workspace/govt_leave_management/govt_leave_management.json",
+		"govt_claims/workspace/govt_claims/govt_claims.json",
+		"govt_tour_ta_da/workspace/govt_tour_ta_da/govt_tour_ta_da.json",
+		"govt_masters/workspace/govt_masters/govt_masters.json"
+	]
+	app_path = frappe.get_app_path("govt_hr_payroll")
+	for rel_file in workspace_files:
+		full_path = os.path.join(app_path, rel_file)
+		if not os.path.exists(full_path):
+			continue
+		try:
+			with open(full_path, "r", encoding="utf-8") as f:
+				data = json.load(f)
+			ws_name = data.get("name")
+			if not ws_name:
+				continue
+			
+			if frappe.db.exists("Workspace", ws_name):
+				doc = frappe.get_doc("Workspace", ws_name)
+			else:
+				doc = frappe.new_doc("Workspace")
+				doc.name = ws_name
+			
+			doc.label = data.get("label", ws_name)
+			doc.title = data.get("title", ws_name)
+			doc.module = data.get("module")
+			doc.category = data.get("category", "Modules")
+			doc.icon = data.get("icon", "folder")
+			doc.indicator_color = data.get("indicator_color", "blue")
+			doc.is_standard = 1
+			doc.public = 1
+			doc.sequence_id = data.get("sequence_id", 1.0)
+			doc.content = data.get("content", "[]")
+			
+			# Reset and reload shortcuts and links
+			doc.shortcuts = []
+			for sc in data.get("shortcuts", []):
+				doc.append("shortcuts", sc)
+			
+			doc.links = []
+			for lk in data.get("links", []):
+				doc.append("links", lk)
+			
+			doc.flags.ignore_permissions = True
+			doc.flags.ignore_mandatory = True
+			doc.save()
+		except Exception as e:
+			frappe.log_error(f"Error loading workspace {rel_file}: {e}")
+	
+	frappe.db.commit()
 
 def setup_payroll_settings():
 	try:

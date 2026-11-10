@@ -1,0 +1,136 @@
+{
+ "charts": [],
+ "content": "[{\"type\": \"header\", \"data\": {\"text\": \"Govt Payroll (Folder 1 & Folder 3)\", \"level\": 4, \"col\": 12}}, {\"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Govt Pay Bill\", \"col\": 4}}, {\"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Supplementary Pay Bill\", \"col\": 4}}, {\"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Due Drawn Arrear\", \"col\": 4}}, {\"type\": \"spacer\", \"data\": {\"col\": 12}}, {\"type\": \"card\", \"data\": {\"card_name\": \"Monthly Pay Bills & Schedules\", \"col\": 6}}, {\"type\": \"card\", \"data\": {\"card_name\": \"Arrears & Supplementary Bills\", \"col\": 6}}]",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "payroll",
+ "indicator_color": "green",
+ "is_standard": 1,
+ "label": "Govt Payroll",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Monthly Pay Bills & Schedules",
+   "link_count": 0,
+   "link_to": "Govt Pay Bill",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Govt Pay Bill",
+   "link_count": 0,
+   "link_to": "Govt Pay Bill",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Govt Employee",
+   "link_count": 0,
+   "link_to": "Govt Employee",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Govt Payroll Settings",
+   "link_count": 0,
+   "link_to": "Govt Payroll Settings",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Arrears & Supplementary Bills",
+   "link_count": 0,
+   "link_to": "Due Drawn Arrear",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Due Drawn Arrear",
+   "link_count": 0,
+   "link_to": "Due Drawn Arrear",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Supplementary Pay Bill",
+   "link_count": 0,
+   "link_to": "Supplementary Pay Bill",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "module": "Govt Payroll",
+ "name": "Govt Payroll",
+ "parent_page": "",
+ "public": 1,
+ "restrict_to_domain": "",
+ "roles": [],
+ "sequence_id": 2.0,
+ "shortcuts": [
+  {
+   "color": "Blue",
+   "doc_view": "List",
+   "icon": "",
+   "is_query_report": 0,
+   "label": "Govt Pay Bill",
+   "link_to": "Govt Pay Bill",
+   "link_type": "DocType",
+   "stats_filter": "",
+   "type": "DocType",
+   "url": ""
+  },
+  {
+   "color": "Green",
+   "doc_view": "List",
+   "icon": "",
+   "is_query_report": 0,
+   "label": "Supplementary Pay Bill",
+   "link_to": "Supplementary Pay Bill",
+   "link_type": "DocType",
+   "stats_filter": "",
+   "type": "DocType",
+   "url": ""
+  },
+  {
+   "color": "Orange",
+   "doc_view": "List",
+   "icon": "",
+   "is_query_report": 0,
+   "label": "Due Drawn Arrear",
+   "link_to": "Due Drawn Arrear",
+   "link_type": "DocType",
+   "stats_filter": "",
+   "type": "DocType",
+   "url": ""
+  }
+ ],
+ "title": "Govt Payroll"
+}

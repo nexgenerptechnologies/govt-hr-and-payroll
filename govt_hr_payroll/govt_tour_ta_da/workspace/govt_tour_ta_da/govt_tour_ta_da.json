@@ -1,0 +1,81 @@
+{
+ "charts": [],
+ "content": "[{\"type\": \"header\", \"data\": {\"text\": \"Govt Tour TA/DA (Folder 6 - 7th CPC Rules)\", \"level\": 4, \"col\": 12}}, {\"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Tour Movement Order\", \"col\": 6}}, {\"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"TA/DA Claim\", \"col\": 6}}, {\"type\": \"spacer\", \"data\": {\"col\": 12}}, {\"type\": \"card\", \"data\": {\"card_name\": \"Tour Movements & TA/DA Claims\", \"col\": 12}}]",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "airplane",
+ "indicator_color": "blue",
+ "is_standard": 1,
+ "label": "Govt Tour TA DA",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Tour Movements & TA/DA Claims",
+   "link_count": 0,
+   "link_to": "Tour Movement Order",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Tour Movement Order",
+   "link_count": 0,
+   "link_to": "Tour Movement Order",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "TADA Final Claim",
+   "link_count": 0,
+   "link_to": "TADA Final Claim",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "module": "Govt Tour TA DA",
+ "name": "Govt Tour TA DA",
+ "parent_page": "",
+ "public": 1,
+ "restrict_to_domain": "",
+ "roles": [],
+ "sequence_id": 6.0,
+ "shortcuts": [
+  {
+   "color": "Green",
+   "doc_view": "List",
+   "icon": "",
+   "is_query_report": 0,
+   "label": "Tour Movement Order",
+   "link_to": "Tour Movement Order",
+   "link_type": "DocType",
+   "stats_filter": "",
+   "type": "DocType",
+   "url": ""
+  },
+  {
+   "color": "Blue",
+   "doc_view": "List",
+   "icon": "",
+   "is_query_report": 0,
+   "label": "TA/DA Claim",
+   "link_to": "TADA Final Claim",
+   "link_type": "DocType",
+   "stats_filter": "",
+   "type": "DocType",
+   "url": ""
+  }
+ ],
+ "title": "Govt Tour TA DA"
+}

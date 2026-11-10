@@ -1,0 +1,125 @@
+{
+ "charts": [],
+ "content": "[{\"type\": \"header\", \"data\": {\"text\": \"Govt Leave Management (Folder 4 - CCS Rules 1972)\", \"level\": 4, \"col\": 12}}, {\"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Leave Application\", \"col\": 4}}, {\"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"DO Part II Order\", \"col\": 4}}, {\"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Leave Ledger\", \"col\": 4}}, {\"type\": \"spacer\", \"data\": {\"col\": 12}}, {\"type\": \"card\", \"data\": {\"card_name\": \"Leave Applications & Orders\", \"col\": 6}}, {\"type\": \"card\", \"data\": {\"card_name\": \"Leave Accounting & Rules\", \"col\": 6}}]",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "calendar",
+ "indicator_color": "yellow",
+ "is_standard": 1,
+ "label": "Govt Leave Management",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Leave Applications & Orders",
+   "link_count": 0,
+   "link_to": "CCS Leave Application",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "CCS Leave Application",
+   "link_count": 0,
+   "link_to": "CCS Leave Application",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "DO Part Two Order",
+   "link_count": 0,
+   "link_to": "DO Part Two Order",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Leave Accounting & Rules",
+   "link_count": 0,
+   "link_to": "CCS Leave Ledger Entry",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "CCS Leave Ledger Entry",
+   "link_count": 0,
+   "link_to": "CCS Leave Ledger Entry",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "CCS Leave Type Master",
+   "link_count": 0,
+   "link_to": "CCS Leave Type",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "module": "Govt Leave Management",
+ "name": "Govt Leave Management",
+ "parent_page": "",
+ "public": 1,
+ "restrict_to_domain": "",
+ "roles": [],
+ "sequence_id": 4.0,
+ "shortcuts": [
+  {
+   "color": "Yellow",
+   "doc_view": "List",
+   "icon": "",
+   "is_query_report": 0,
+   "label": "Leave Application",
+   "link_to": "CCS Leave Application",
+   "link_type": "DocType",
+   "stats_filter": "",
+   "type": "DocType",
+   "url": ""
+  },
+  {
+   "color": "Cyan",
+   "doc_view": "List",
+   "icon": "",
+   "is_query_report": 0,
+   "label": "DO Part II Order",
+   "link_to": "DO Part Two Order",
+   "link_type": "DocType",
+   "stats_filter": "",
+   "type": "DocType",
+   "url": ""
+  },
+  {
+   "color": "Green",
+   "doc_view": "List",
+   "icon": "",
+   "is_query_report": 0,
+   "label": "Leave Ledger",
+   "link_to": "CCS Leave Ledger Entry",
+   "link_type": "DocType",
+   "stats_filter": "",
+   "type": "DocType",
+   "url": ""
+  }
+ ],
+ "title": "Govt Leave Management"
+}

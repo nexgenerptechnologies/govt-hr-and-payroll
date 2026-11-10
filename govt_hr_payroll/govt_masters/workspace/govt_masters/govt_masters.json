@@ -1,0 +1,125 @@
+{
+ "charts": [],
+ "content": "[{\"type\": \"header\", \"data\": {\"text\": \"Govt Masters & 7th CPC Setup\", \"level\": 4, \"col\": 12}}, {\"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Govt Employee\", \"col\": 4}}, {\"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"CPC Pay Level\", \"col\": 4}}, {\"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Govt Office Unit\", \"col\": 4}}, {\"type\": \"spacer\", \"data\": {\"col\": 12}}, {\"type\": \"card\", \"data\": {\"card_name\": \"Employee Masters & Setup\", \"col\": 6}}, {\"type\": \"card\", \"data\": {\"card_name\": \"Pay Matrix & Statutory Settings\", \"col\": 6}}]",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "users",
+ "indicator_color": "green",
+ "is_standard": 1,
+ "label": "Govt Masters",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Employee Masters & Setup",
+   "link_count": 0,
+   "link_to": "Govt Employee",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Govt Employee Master",
+   "link_count": 0,
+   "link_to": "Govt Employee",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Govt Office Unit (DDO / PAO / CDA)",
+   "link_count": 0,
+   "link_to": "Govt Office Unit",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Pay Matrix & Statutory Settings",
+   "link_count": 0,
+   "link_to": "CPC Pay Level",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "CPC Pay Level (7th CPC Levels 1-18)",
+   "link_count": 0,
+   "link_to": "CPC Pay Level",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Govt Payroll Settings",
+   "link_count": 0,
+   "link_to": "Govt Payroll Settings",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "module": "Govt Masters",
+ "name": "Govt Masters",
+ "parent_page": "",
+ "public": 1,
+ "restrict_to_domain": "",
+ "roles": [],
+ "sequence_id": 7.0,
+ "shortcuts": [
+  {
+   "color": "Green",
+   "doc_view": "List",
+   "icon": "",
+   "is_query_report": 0,
+   "label": "Govt Employee",
+   "link_to": "Govt Employee",
+   "link_type": "DocType",
+   "stats_filter": "",
+   "type": "DocType",
+   "url": ""
+  },
+  {
+   "color": "Blue",
+   "doc_view": "List",
+   "icon": "",
+   "is_query_report": 0,
+   "label": "CPC Pay Level",
+   "link_to": "CPC Pay Level",
+   "link_type": "DocType",
+   "stats_filter": "",
+   "type": "DocType",
+   "url": ""
+  },
+  {
+   "color": "Orange",
+   "doc_view": "List",
+   "icon": "",
+   "is_query_report": 0,
+   "label": "Govt Office Unit",
+   "link_to": "Govt Office Unit",
+   "link_type": "DocType",
+   "stats_filter": "",
+   "type": "DocType",
+   "url": ""
+  }
+ ],
+ "title": "Govt Masters"
+}

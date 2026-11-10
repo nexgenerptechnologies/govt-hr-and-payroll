@@ -3,6 +3,11 @@
 
 frappe.ui.form.on("Govt Employee", {
 	refresh(frm) {
+		if (!frm.is_new()) {
+			frm.add_custom_button(__("Create / View Monthly Pay Bill"), function() {
+				frappe.set_route("List", "Govt Pay Bill");
+			}, __("Payroll"));
+		}
 	},
 	first_name(frm) {
 		frm.trigger("set_full_name");
