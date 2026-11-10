@@ -10,7 +10,7 @@
   {
    "doctype": "Sidebar Item",
    "label": "Home",
-   "type": "Workspace",
+   "type": "Link",
    "link_type": "Workspace",
    "link_to": "Govt Masters",
    "icon": "home"
@@ -18,13 +18,12 @@
   {
    "doctype": "Sidebar Item",
    "label": "Modules",
-   "type": "Section",
-   "link_type": "Section"
+   "type": "Section Break"
   },
   {
    "doctype": "Sidebar Item",
    "label": "Payroll",
-   "type": "Workspace",
+   "type": "Link",
    "link_type": "Workspace",
    "link_to": "Govt Payroll",
    "icon": "payroll"
@@ -32,7 +31,7 @@
   {
    "doctype": "Sidebar Item",
    "label": "Income Tax",
-   "type": "Workspace",
+   "type": "Link",
    "link_type": "Workspace",
    "link_to": "Govt Income Tax",
    "icon": "calculator"
@@ -40,7 +39,7 @@
   {
    "doctype": "Sidebar Item",
    "label": "Leave Management",
-   "type": "Workspace",
+   "type": "Link",
    "link_type": "Workspace",
    "link_to": "Govt Leave Management",
    "icon": "calendar"
@@ -48,7 +47,7 @@
   {
    "doctype": "Sidebar Item",
    "label": "Claims & Reimbursements",
-   "type": "Workspace",
+   "type": "Link",
    "link_type": "Workspace",
    "link_to": "Govt Claims",
    "icon": "heart"
@@ -56,7 +55,7 @@
   {
    "doctype": "Sidebar Item",
    "label": "Tour TA & DA",
-   "type": "Workspace",
+   "type": "Link",
    "link_type": "Workspace",
    "link_to": "Govt Tour TA DA",
    "icon": "navigation"
@@ -64,7 +63,7 @@
   {
    "doctype": "Sidebar Item",
    "label": "Masters & Settings",
-   "type": "Workspace",
+   "type": "Link",
    "link_type": "Workspace",
    "link_to": "Govt Masters",
    "icon": "users"
@@ -72,13 +71,12 @@
   {
    "doctype": "Sidebar Item",
    "label": "Statutory DocTypes",
-   "type": "Section",
-   "link_type": "Section"
+   "type": "Section Break"
   },
   {
    "doctype": "Sidebar Item",
    "label": "Pay Bill (Monthly Payroll)",
-   "type": "DocType",
+   "type": "Link",
    "link_type": "DocType",
    "link_to": "Govt Pay Bill",
    "icon": "file-text"
@@ -86,7 +84,7 @@
   {
    "doctype": "Sidebar Item",
    "label": "Supplementary Pay Bill",
-   "type": "DocType",
+   "type": "Link",
    "link_type": "DocType",
    "link_to": "Supplementary Pay Bill",
    "icon": "file-plus"
@@ -94,7 +92,7 @@
   {
    "doctype": "Sidebar Item",
    "label": "Due-Drawn Arrears",
-   "type": "DocType",
+   "type": "Link",
    "link_type": "DocType",
    "link_to": "Due Drawn Arrear",
    "icon": "trending-up"
@@ -102,7 +100,7 @@
   {
    "doctype": "Sidebar Item",
    "label": "Income Tax Statement",
-   "type": "DocType",
+   "type": "Link",
    "link_type": "DocType",
    "link_to": "Govt Income Tax Statement",
    "icon": "calculator"
@@ -110,7 +108,7 @@
   {
    "doctype": "Sidebar Item",
    "label": "Leave Application",
-   "type": "DocType",
+   "type": "Link",
    "link_type": "DocType",
    "link_to": "CCS Leave Application",
    "icon": "calendar"
@@ -118,7 +116,7 @@
   {
    "doctype": "Sidebar Item",
    "label": "DO Part II Order",
-   "type": "DocType",
+   "type": "Link",
    "link_type": "DocType",
    "link_to": "DO Part Two Order",
    "icon": "award"
@@ -126,7 +124,7 @@
   {
    "doctype": "Sidebar Item",
    "label": "Leave Ledger",
-   "type": "DocType",
+   "type": "Link",
    "link_type": "DocType",
    "link_to": "CCS Leave Ledger Entry",
    "icon": "book"
@@ -134,7 +132,7 @@
   {
    "doctype": "Sidebar Item",
    "label": "CEA Claim",
-   "type": "DocType",
+   "type": "Link",
    "link_type": "DocType",
    "link_to": "CEA Claim",
    "icon": "heart"
@@ -142,7 +140,7 @@
   {
    "doctype": "Sidebar Item",
    "label": "Medical Claim (Form MRC-S)",
-   "type": "DocType",
+   "type": "Link",
    "link_type": "DocType",
    "link_to": "CGHS Medical Claim",
    "icon": "activity"
@@ -150,7 +148,7 @@
   {
    "doctype": "Sidebar Item",
    "label": "Tour Movement Order",
-   "type": "DocType",
+   "type": "Link",
    "link_type": "DocType",
    "link_to": "Tour Movement Order",
    "icon": "navigation"
@@ -158,7 +156,7 @@
   {
    "doctype": "Sidebar Item",
    "label": "TA/DA Final Claim",
-   "type": "DocType",
+   "type": "Link",
    "link_type": "DocType",
    "link_to": "TADA Final Claim",
    "icon": "dollar-sign"
@@ -166,7 +164,7 @@
   {
    "doctype": "Sidebar Item",
    "label": "Employee Master",
-   "type": "DocType",
+   "type": "Link",
    "link_type": "DocType",
    "link_to": "Govt Employee",
    "icon": "users"
@@ -174,7 +172,7 @@
   {
    "doctype": "Sidebar Item",
    "label": "CPC Pay Level (1-18)",
-   "type": "DocType",
+   "type": "Link",
    "link_type": "DocType",
    "link_to": "CPC Pay Level",
    "icon": "layers"
@@ -182,7 +180,7 @@
   {
    "doctype": "Sidebar Item",
    "label": "Office Unit (DDO/PAO)",
-   "type": "DocType",
+   "type": "Link",
    "link_type": "DocType",
    "link_to": "Govt Office Unit",
    "icon": "home"
@@ -190,7 +188,7 @@
   {
    "doctype": "Sidebar Item",
    "label": "Payroll Settings",
-   "type": "DocType",
+   "type": "Link",
    "link_type": "DocType",
    "link_to": "Govt Payroll Settings",
    "icon": "settings"
