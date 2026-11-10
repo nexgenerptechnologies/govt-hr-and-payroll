@@ -57,12 +57,12 @@ def setup_workspaces():
 			doc.sequence_id = data.get("sequence_id", 1.0)
 			doc.content = data.get("content", "[]")
 			
-			# Reset and reload shortcuts and links
-			doc.shortcuts = []
+			# Reset and reload shortcuts and links cleanly
+			doc.set("shortcuts", [])
 			for sc in data.get("shortcuts", []):
 				doc.append("shortcuts", sc)
 			
-			doc.links = []
+			doc.set("links", [])
 			for lk in data.get("links", []):
 				doc.append("links", lk)
 			

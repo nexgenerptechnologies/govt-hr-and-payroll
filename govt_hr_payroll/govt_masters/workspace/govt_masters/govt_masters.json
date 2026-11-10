@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"type\": \"header\", \"data\": {\"text\": \"Govt Masters & 7th CPC Setup\", \"level\": 4, \"col\": 12}}, {\"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Govt Employee\", \"col\": 4}}, {\"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"CPC Pay Level\", \"col\": 4}}, {\"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Govt Office Unit\", \"col\": 4}}, {\"type\": \"spacer\", \"data\": {\"col\": 12}}, {\"type\": \"card\", \"data\": {\"card_name\": \"Employee Masters & Setup\", \"col\": 6}}, {\"type\": \"card\", \"data\": {\"card_name\": \"Pay Matrix & Statutory Settings\", \"col\": 6}}]",
+ "content": "[{\"type\": \"header\", \"data\": {\"text\": \"Quick Actions (All 6 Folders)\", \"level\": 4, \"col\": 12}}, {\"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Govt Pay Bill\", \"col\": 3}}, {\"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Govt Employee\", \"col\": 3}}, {\"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Income Tax Statement\", \"col\": 3}}, {\"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Due Drawn Arrears\", \"col\": 3}}, {\"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Leave Application\", \"col\": 3}}, {\"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"DO Part II Order\", \"col\": 3}}, {\"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"CEA Claim\", \"col\": 3}}, {\"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"TA/DA Claim\", \"col\": 3}}, {\"type\": \"spacer\", \"data\": {\"col\": 12}}, {\"type\": \"header\", \"data\": {\"text\": \"Government HR & Payroll Modules (Folders 1 to 6)\", \"level\": 4, \"col\": 12}}, {\"type\": \"card\", \"data\": {\"card_name\": \"Folder 1: Monthly Pay Bill & 7th CPC Masters\", \"col\": 4}}, {\"type\": \"card\", \"data\": {\"card_name\": \"Folder 2: Income Tax FY 2026-27\", \"col\": 4}}, {\"type\": \"card\", \"data\": {\"card_name\": \"Folder 3: Due-Drawn Arrears Engine\", \"col\": 4}}, {\"type\": \"card\", \"data\": {\"card_name\": \"Folder 4: CCS Leave Rules 1972 & DO Part II\", \"col\": 4}}, {\"type\": \"card\", \"data\": {\"card_name\": \"Folder 5: Claims & Medical Reimbursements\", \"col\": 4}}, {\"type\": \"card\", \"data\": {\"card_name\": \"Folder 6: Tour TA/DA & Entitlements\", \"col\": 4}}]",
  "custom_blocks": [],
  "docstatus": 0,
  "doctype": "Workspace",
@@ -14,12 +14,34 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "Employee Masters & Setup",
+   "label": "Folder 1: Monthly Pay Bill & 7th CPC Masters",
    "link_count": 0,
-   "link_to": "Govt Employee",
+   "link_to": "Govt Pay Bill",
    "link_type": "DocType",
    "onboard": 0,
    "type": "Card Break"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Govt Pay Bill (Monthly Payroll)",
+   "link_count": 0,
+   "link_to": "Govt Pay Bill",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Supplementary Pay Bill",
+   "link_count": 0,
+   "link_to": "Supplementary Pay Bill",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
   },
   {
    "dependencies": "",
@@ -36,30 +58,20 @@
    "dependencies": "",
    "hidden": 0,
    "is_query_report": 0,
-   "label": "Govt Office Unit (DDO / PAO / CDA)",
+   "label": "CPC Pay Level (7th CPC Matrix 1-18)",
    "link_count": 0,
-   "link_to": "Govt Office Unit",
+   "link_to": "CPC Pay Level",
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
   },
   {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Pay Matrix & Statutory Settings",
-   "link_count": 0,
-   "link_to": "CPC Pay Level",
-   "link_type": "DocType",
-   "onboard": 0,
-   "type": "Card Break"
-  },
-  {
    "dependencies": "",
    "hidden": 0,
    "is_query_report": 0,
-   "label": "CPC Pay Level (7th CPC Levels 1-18)",
+   "label": "Govt Office Unit (DDO / PAO / CDA)",
    "link_count": 0,
-   "link_to": "CPC Pay Level",
+   "link_to": "Govt Office Unit",
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
@@ -74,6 +86,171 @@
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
+  },
+
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Folder 2: Income Tax FY 2026-27",
+   "link_count": 0,
+   "link_to": "Govt Income Tax Statement",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Govt Income Tax Statement (12 Months)",
+   "link_count": 0,
+   "link_to": "Govt Income Tax Statement",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Folder 3: Due-Drawn Arrears Engine",
+   "link_count": 0,
+   "link_to": "Due Drawn Arrear",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Due Drawn Arrear (Due vs Drawn)",
+   "link_count": 0,
+   "link_to": "Due Drawn Arrear",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Folder 4: CCS Leave Rules 1972 & DO Part II",
+   "link_count": 0,
+   "link_to": "CCS Leave Application",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "CCS Leave Application",
+   "link_count": 0,
+   "link_to": "CCS Leave Application",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "DO Part Two Order (Sanctions)",
+   "link_count": 0,
+   "link_to": "DO Part Two Order",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "CCS Leave Ledger Entry (300 Buffer)",
+   "link_count": 0,
+   "link_to": "CCS Leave Ledger Entry",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "CCS Leave Type Master",
+   "link_count": 0,
+   "link_to": "CCS Leave Type",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Folder 5: Claims & Medical Reimbursements",
+   "link_count": 0,
+   "link_to": "CEA Claim",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "CEA Claim (Children Education Allowance)",
+   "link_count": 0,
+   "link_to": "CEA Claim",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "CGHS Medical Claim (Form MRC-S)",
+   "link_count": 0,
+   "link_to": "CGHS Medical Claim",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Folder 6: Tour TA/DA & Entitlements",
+   "link_count": 0,
+   "link_to": "Tour Movement Order",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Tour Movement Order",
+   "link_count": 0,
+   "link_to": "Tour Movement Order",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "TADA Final Claim",
+   "link_count": 0,
+   "link_to": "TADA Final Claim",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
   }
  ],
  "module": "Govt Masters",
@@ -82,8 +259,20 @@
  "public": 1,
  "restrict_to_domain": "",
  "roles": [],
- "sequence_id": 7.0,
+ "sequence_id": 1.0,
  "shortcuts": [
+  {
+   "color": "Blue",
+   "doc_view": "List",
+   "icon": "",
+   "is_query_report": 0,
+   "label": "Govt Pay Bill",
+   "link_to": "Govt Pay Bill",
+   "link_type": "DocType",
+   "stats_filter": "",
+   "type": "DocType",
+   "url": ""
+  },
   {
    "color": "Green",
    "doc_view": "List",
@@ -97,29 +286,77 @@
    "url": ""
   },
   {
-   "color": "Blue",
+   "color": "Orange",
    "doc_view": "List",
    "icon": "",
    "is_query_report": 0,
-   "label": "CPC Pay Level",
-   "link_to": "CPC Pay Level",
+   "label": "Income Tax Statement",
+   "link_to": "Govt Income Tax Statement",
    "link_type": "DocType",
    "stats_filter": "",
    "type": "DocType",
    "url": ""
   },
   {
-   "color": "Orange",
+   "color": "Purple",
    "doc_view": "List",
    "icon": "",
    "is_query_report": 0,
-   "label": "Govt Office Unit",
-   "link_to": "Govt Office Unit",
+   "label": "Due Drawn Arrears",
+   "link_to": "Due Drawn Arrear",
+   "link_type": "DocType",
+   "stats_filter": "",
+   "type": "DocType",
+   "url": ""
+  },
+  {
+   "color": "Yellow",
+   "doc_view": "List",
+   "icon": "",
+   "is_query_report": 0,
+   "label": "Leave Application",
+   "link_to": "CCS Leave Application",
+   "link_type": "DocType",
+   "stats_filter": "",
+   "type": "DocType",
+   "url": ""
+  },
+  {
+   "color": "Cyan",
+   "doc_view": "List",
+   "icon": "",
+   "is_query_report": 0,
+   "label": "DO Part II Order",
+   "link_to": "DO Part Two Order",
+   "link_type": "DocType",
+   "stats_filter": "",
+   "type": "DocType",
+   "url": ""
+  },
+  {
+   "color": "Red",
+   "doc_view": "List",
+   "icon": "",
+   "is_query_report": 0,
+   "label": "CEA Claim",
+   "link_to": "CEA Claim",
+   "link_type": "DocType",
+   "stats_filter": "",
+   "type": "DocType",
+   "url": ""
+  },
+  {
+   "color": "Blue",
+   "doc_view": "List",
+   "icon": "",
+   "is_query_report": 0,
+   "label": "TA/DA Claim",
+   "link_to": "TADA Final Claim",
    "link_type": "DocType",
    "stats_filter": "",
    "type": "DocType",
    "url": ""
   }
  ],
- "title": "Govt Masters"
+ "title": "Govt HR & Payroll"
 }
