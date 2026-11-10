@@ -1,0 +1,143 @@
+{
+ "doctype": "Workspace Sidebar",
+ "items": [
+  {
+   "doctype": "Workspace Sidebar Item",
+   "hidden": 0,
+   "icon": "file-text",
+   "label": "Govt Pay Bill (Monthly Payroll)",
+   "link_to": "Govt Pay Bill",
+   "link_type": "DocType",
+   "type": "Link"
+  },
+  {
+   "doctype": "Workspace Sidebar Item",
+   "hidden": 0,
+   "icon": "file-plus",
+   "label": "Supplementary Pay Bill",
+   "link_to": "Supplementary Pay Bill",
+   "link_type": "DocType",
+   "type": "Link"
+  },
+  {
+   "doctype": "Workspace Sidebar Item",
+   "hidden": 0,
+   "icon": "trending-up",
+   "label": "Due Drawn Arrear (Folder 3)",
+   "link_to": "Due Drawn Arrear",
+   "link_type": "DocType",
+   "type": "Link"
+  },
+  {
+   "doctype": "Workspace Sidebar Item",
+   "hidden": 0,
+   "icon": "calculator",
+   "label": "Income Tax Statement (Folder 2)",
+   "link_to": "Govt Income Tax Statement",
+   "link_type": "DocType",
+   "type": "Link"
+  },
+  {
+   "doctype": "Workspace Sidebar Item",
+   "hidden": 0,
+   "icon": "calendar",
+   "label": "CCS Leave Application (Folder 4)",
+   "link_to": "CCS Leave Application",
+   "link_type": "DocType",
+   "type": "Link"
+  },
+  {
+   "doctype": "Workspace Sidebar Item",
+   "hidden": 0,
+   "icon": "award",
+   "label": "DO Part II Order (Sanctions)",
+   "link_to": "DO Part Two Order",
+   "link_type": "DocType",
+   "type": "Link"
+  },
+  {
+   "doctype": "Workspace Sidebar Item",
+   "hidden": 0,
+   "icon": "book",
+   "label": "CCS Leave Ledger",
+   "link_to": "CCS Leave Ledger Entry",
+   "link_type": "DocType",
+   "type": "Link"
+  },
+  {
+   "doctype": "Workspace Sidebar Item",
+   "hidden": 0,
+   "icon": "heart",
+   "label": "CEA Claim (Folder 5)",
+   "link_to": "CEA Claim",
+   "link_type": "DocType",
+   "type": "Link"
+  },
+  {
+   "doctype": "Workspace Sidebar Item",
+   "hidden": 0,
+   "icon": "activity",
+   "label": "CGHS Medical Claim (Form MRC-S)",
+   "link_to": "CGHS Medical Claim",
+   "link_type": "DocType",
+   "type": "Link"
+  },
+  {
+   "doctype": "Workspace Sidebar Item",
+   "hidden": 0,
+   "icon": "navigation",
+   "label": "Tour Movement Order (Folder 6)",
+   "link_to": "Tour Movement Order",
+   "link_type": "DocType",
+   "type": "Link"
+  },
+  {
+   "doctype": "Workspace Sidebar Item",
+   "hidden": 0,
+   "icon": "dollar-sign",
+   "label": "TA/DA Final Claim",
+   "link_to": "TADA Final Claim",
+   "link_type": "DocType",
+   "type": "Link"
+  },
+  {
+   "doctype": "Workspace Sidebar Item",
+   "hidden": 0,
+   "icon": "users",
+   "label": "Govt Employee Master",
+   "link_to": "Govt Employee",
+   "link_type": "DocType",
+   "type": "Link"
+  },
+  {
+   "doctype": "Workspace Sidebar Item",
+   "hidden": 0,
+   "icon": "layers",
+   "label": "CPC Pay Level (1-18)",
+   "link_to": "CPC Pay Level",
+   "link_type": "DocType",
+   "type": "Link"
+  },
+  {
+   "doctype": "Workspace Sidebar Item",
+   "hidden": 0,
+   "icon": "home",
+   "label": "Govt Office Unit (DDO/PAO)",
+   "link_to": "Govt Office Unit",
+   "link_type": "DocType",
+   "type": "Link"
+  },
+  {
+   "doctype": "Workspace Sidebar Item",
+   "hidden": 0,
+   "icon": "settings",
+   "label": "Govt Payroll Settings",
+   "link_to": "Govt Payroll Settings",
+   "link_type": "DocType",
+   "type": "Link"
+  }
+ ],
+ "module": "Govt Masters",
+ "name": "Govt Masters",
+ "sidebar_name": "Govt Masters"
+}

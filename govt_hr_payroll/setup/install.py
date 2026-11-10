@@ -11,12 +11,67 @@ def after_install():
 	setup_payroll_settings()
 	setup_default_leave_types()
 	setup_workspaces()
+	setup_sidebars()
 
 def after_migrate():
 	setup_cpc_pay_levels()
 	setup_payroll_settings()
 	setup_default_leave_types()
 	setup_workspaces()
+	setup_sidebars()
+
+def setup_sidebars():
+	items_data = [
+		{"type": "Link", "link_type": "DocType", "link_to": "Govt Pay Bill", "label": "Govt Pay Bill (Monthly Payroll)", "icon": "file-text"},
+		{"type": "Link", "link_type": "DocType", "link_to": "Supplementary Pay Bill", "label": "Supplementary Pay Bill", "icon": "file-plus"},
+		{"type": "Link", "link_type": "DocType", "link_to": "Due Drawn Arrear", "label": "Due Drawn Arrear (Folder 3)", "icon": "trending-up"},
+		{"type": "Link", "link_type": "DocType", "link_to": "Govt Income Tax Statement", "label": "Income Tax Statement (Folder 2)", "icon": "calculator"},
+		{"type": "Link", "link_type": "DocType", "link_to": "CCS Leave Application", "label": "CCS Leave Application (Folder 4)", "icon": "calendar"},
+		{"type": "Link", "link_type": "DocType", "link_to": "DO Part Two Order", "label": "DO Part II Order (Sanctions)", "icon": "award"},
+		{"type": "Link", "link_type": "DocType", "link_to": "CCS Leave Ledger Entry", "label": "CCS Leave Ledger", "icon": "book"},
+		{"type": "Link", "link_type": "DocType", "link_to": "CEA Claim", "label": "CEA Claim (Folder 5)", "icon": "heart"},
+		{"type": "Link", "link_type": "DocType", "link_to": "CGHS Medical Claim", "label": "CGHS Medical Claim (Form MRC-S)", "icon": "activity"},
+		{"type": "Link", "link_type": "DocType", "link_to": "Tour Movement Order", "label": "Tour Movement Order (Folder 6)", "icon": "navigation"},
+		{"type": "Link", "link_type": "DocType", "link_to": "TADA Final Claim", "label": "TA/DA Final Claim", "icon": "dollar-sign"},
+		{"type": "Link", "link_type": "DocType", "link_to": "Govt Employee", "label": "Govt Employee Master", "icon": "users"},
+		{"type": "Link", "link_type": "DocType", "link_to": "CPC Pay Level", "label": "CPC Pay Level (1-18)", "icon": "layers"},
+		{"type": "Link", "link_type": "DocType", "link_to": "Govt Office Unit", "label": "Govt Office Unit (DDO/PAO)", "icon": "home"},
+		{"type": "Link", "link_type": "DocType", "link_to": "Govt Payroll Settings", "label": "Govt Payroll Settings", "icon": "settings"}
+	]
+
+	try:
+		if frappe.db.exists("DocType", "Workspace Sidebar"):
+			target_sidebars = ["Govt Masters", "Govt HR & Payroll", "Govt Payroll"]
+			for sb_name in target_sidebars:
+				try:
+					if frappe.db.exists("Workspace Sidebar", sb_name):
+						sb_doc = frappe.get_doc("Workspace Sidebar", sb_name)
+					else:
+						sb_doc = frappe.new_doc("Workspace Sidebar")
+						sb_doc.name = sb_name
+						sb_doc.sidebar_name = sb_name
+						sb_doc.module = "Govt Masters" if sb_name == "Govt Masters" else "Govt Payroll"
+
+					sb_doc.set("items", [])
+					for itm in items_data:
+						sb_doc.append("items", {
+							"type": itm.get("type", "Link"),
+							"link_type": itm.get("link_type", "DocType"),
+							"link_to": itm.get("link_to"),
+							"label": itm.get("label"),
+							"icon": itm.get("icon", "file-text"),
+							"hidden": 0
+						})
+
+					sb_doc.flags.ignore_permissions = True
+					sb_doc.flags.ignore_mandatory = True
+					sb_doc.save()
+				except Exception as e:
+					frappe.log_error(f"Error updating Workspace Sidebar {sb_name}: {e}")
+
+			frappe.db.commit()
+	except Exception as e:
+		frappe.log_error(f"Error executing setup_sidebars: {e}")
 
 def setup_workspaces():
 	workspace_files = [
