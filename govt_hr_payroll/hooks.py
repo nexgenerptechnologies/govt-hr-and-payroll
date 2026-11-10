@@ -11,3 +11,14 @@ after_migrate = "govt_hr_payroll.setup.install.after_migrate"
 
 # Include client-side desk enhancement
 app_include_js = "/assets/govt_hr_payroll/js/govt_sidebar.js"
+
+# Frappe v16 Apps Launcher Screen
+add_to_apps_screen = [
+	{
+		"name": "govt_hr_payroll",
+		"logo": "/assets/govt_hr_payroll/images/govt_logo.svg",
+		"title": "Government HR & Payroll",
+		"route": "/desk/govt-masters",
+		"sequence_id": 1
+	}
+]
