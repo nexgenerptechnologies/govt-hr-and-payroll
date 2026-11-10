@@ -63,7 +63,10 @@ def audit_file_structure(base_dir):
             ("govt_hr_payroll/govt_leave_management/workspace/govt_leave_management/govt_leave_management.json", "Govt Leave Management Workspace"),
             ("govt_hr_payroll/govt_claims/workspace/govt_claims/govt_claims.json", "Govt Claims Workspace"),
             ("govt_hr_payroll/govt_tour_ta_da/workspace/govt_tour_ta_da/govt_tour_ta_da.json", "Govt Tour TA DA Workspace"),
-            ("govt_hr_payroll/govt_masters/workspace/govt_masters/govt_masters.json", "Govt Masters Workspace")
+            ("govt_hr_payroll/govt_masters/workspace/govt_masters/govt_masters.json", "Govt Masters Workspace"),
+            ("govt_hr_payroll/govt_masters/sidebar/govt_masters/govt_masters.json", "Govt Masters Sidebar (Frappe v16)"),
+            ("govt_hr_payroll/govt_payroll/sidebar/govt_payroll/govt_payroll.json", "Govt Payroll Sidebar (Frappe v16)"),
+            ("govt_hr_payroll/public/js/govt_sidebar.js", "Desk Navigation Script (app_include_js)")
         ]
     }
 

@@ -227,69 +227,120 @@ def setup_workflows():
 
 def setup_sidebars():
 	items_data = [
-		{"type": "Link", "link_type": "Workspace", "link_to": "Govt Payroll", "label": "Payroll", "icon": "payroll"},
-		{"type": "Link", "link_type": "Workspace", "link_to": "Govt Income Tax", "label": "Income Tax", "icon": "calculator"},
-		{"type": "Link", "link_type": "Workspace", "link_to": "Govt Leave Management", "label": "Leave Management", "icon": "calendar"},
-		{"type": "Link", "link_type": "Workspace", "link_to": "Govt Claims", "label": "Claims & Reimbursements", "icon": "heart"},
-		{"type": "Link", "link_type": "Workspace", "link_to": "Govt Tour TA DA", "label": "Tour TA & DA", "icon": "navigation"},
-		{"type": "Link", "link_type": "Workspace", "link_to": "Govt Masters", "label": "Masters & Settings", "icon": "users"},
-		{"type": "Link", "link_type": "DocType", "link_to": "Govt Pay Bill", "label": "Pay Bill (Monthly Payroll)", "icon": "file-text"},
-		{"type": "Link", "link_type": "DocType", "link_to": "Supplementary Pay Bill", "label": "Supplementary Pay Bill", "icon": "file-plus"},
-		{"type": "Link", "link_type": "DocType", "link_to": "Due Drawn Arrear", "label": "Due-Drawn Arrears", "icon": "trending-up"},
-		{"type": "Link", "link_type": "DocType", "link_to": "Govt Income Tax Statement", "label": "Income Tax Statement", "icon": "calculator"},
-		{"type": "Link", "link_type": "DocType", "link_to": "CCS Leave Application", "label": "Leave Application", "icon": "calendar"},
-		{"type": "Link", "link_type": "DocType", "link_to": "DO Part Two Order", "label": "DO Part II Order", "icon": "award"},
-		{"type": "Link", "link_type": "DocType", "link_to": "CCS Leave Ledger Entry", "label": "Leave Ledger", "icon": "book"},
-		{"type": "Link", "link_type": "DocType", "link_to": "CEA Claim", "label": "CEA Claim", "icon": "heart"},
-		{"type": "Link", "link_type": "DocType", "link_to": "CGHS Medical Claim", "label": "Medical Claim (MRC-S)", "icon": "activity"},
-		{"type": "Link", "link_type": "DocType", "link_to": "Tour Movement Order", "label": "Tour Movement Order", "icon": "navigation"},
-		{"type": "Link", "link_type": "DocType", "link_to": "TADA Final Claim", "label": "TA/DA Claim", "icon": "dollar-sign"},
-		{"type": "Link", "link_type": "DocType", "link_to": "Govt Employee", "label": "Employee Master", "icon": "users"},
-		{"type": "Link", "link_type": "DocType", "link_to": "CPC Pay Level", "label": "CPC Pay Level (1-18)", "icon": "layers"},
-		{"type": "Link", "link_type": "DocType", "link_to": "Govt Office Unit", "label": "Office Unit (DDO/PAO)", "icon": "home"},
-		{"type": "Link", "link_type": "DocType", "link_to": "Govt Payroll Settings", "label": "Payroll Settings", "icon": "settings"}
+		{"type": "Workspace", "link_type": "Workspace", "link_to": "Govt Masters", "label": "Home", "icon": "home"},
+		{"type": "Section", "link_type": "Section", "link_to": "", "label": "Modules", "icon": ""},
+		{"type": "Workspace", "link_type": "Workspace", "link_to": "Govt Payroll", "label": "Payroll", "icon": "payroll"},
+		{"type": "Workspace", "link_type": "Workspace", "link_to": "Govt Income Tax", "label": "Income Tax", "icon": "calculator"},
+		{"type": "Workspace", "link_type": "Workspace", "link_to": "Govt Leave Management", "label": "Leave Management", "icon": "calendar"},
+		{"type": "Workspace", "link_type": "Workspace", "link_to": "Govt Claims", "label": "Claims & Reimbursements", "icon": "heart"},
+		{"type": "Workspace", "link_type": "Workspace", "link_to": "Govt Tour TA DA", "label": "Tour TA & DA", "icon": "navigation"},
+		{"type": "Workspace", "link_type": "Workspace", "link_to": "Govt Masters", "label": "Masters & Settings", "icon": "users"},
+		{"type": "Section", "link_type": "Section", "link_to": "", "label": "Statutory DocTypes", "icon": ""},
+		{"type": "DocType", "link_type": "DocType", "link_to": "Govt Pay Bill", "label": "Pay Bill (Monthly Payroll)", "icon": "file-text"},
+		{"type": "DocType", "link_type": "DocType", "link_to": "Supplementary Pay Bill", "label": "Supplementary Pay Bill", "icon": "file-plus"},
+		{"type": "DocType", "link_type": "DocType", "link_to": "Due Drawn Arrear", "label": "Due-Drawn Arrears", "icon": "trending-up"},
+		{"type": "DocType", "link_type": "DocType", "link_to": "Govt Income Tax Statement", "label": "Income Tax Statement", "icon": "calculator"},
+		{"type": "DocType", "link_type": "DocType", "link_to": "CCS Leave Application", "label": "Leave Application", "icon": "calendar"},
+		{"type": "DocType", "link_type": "DocType", "link_to": "DO Part Two Order", "label": "DO Part II Order", "icon": "award"},
+		{"type": "DocType", "link_type": "DocType", "link_to": "CCS Leave Ledger Entry", "label": "Leave Ledger", "icon": "book"},
+		{"type": "DocType", "link_type": "DocType", "link_to": "CEA Claim", "label": "CEA Claim", "icon": "heart"},
+		{"type": "DocType", "link_type": "DocType", "link_to": "CGHS Medical Claim", "label": "Medical Claim (MRC-S)", "icon": "activity"},
+		{"type": "DocType", "link_type": "DocType", "link_to": "Tour Movement Order", "label": "Tour Movement Order", "icon": "navigation"},
+		{"type": "DocType", "link_type": "DocType", "link_to": "TADA Final Claim", "label": "TA/DA Claim", "icon": "dollar-sign"},
+		{"type": "DocType", "link_type": "DocType", "link_to": "Govt Employee", "label": "Employee Master", "icon": "users"},
+		{"type": "DocType", "link_type": "DocType", "link_to": "CPC Pay Level", "label": "CPC Pay Level (1-18)", "icon": "layers"},
+		{"type": "DocType", "link_type": "DocType", "link_to": "Govt Office Unit", "label": "Office Unit (DDO/PAO)", "icon": "home"},
+		{"type": "DocType", "link_type": "DocType", "link_to": "Govt Payroll Settings", "label": "Payroll Settings", "icon": "settings"}
+	]
+
+	target_names = [
+		("Govt Masters", "Masters & Settings"),
+		("Govt Payroll", "Payroll"),
+		("Govt Income Tax", "Income Tax"),
+		("Govt Leave Management", "Leave Management"),
+		("Govt Claims", "Claims & Reimbursements"),
+		("Govt Tour TA DA", "Tour TA & DA"),
+		("Govt HR & Payroll", "HR & Payroll"),
+		("Masters & Settings", "Masters & Settings"),
+		("HR & Payroll", "HR & Payroll")
 	]
 
 	try:
-		if frappe.db.exists("DocType", "Workspace Sidebar"):
-			existing = frappe.get_all("Workspace Sidebar", fields=["name"])
-			names = {s.name for s in existing}
-			target_names = ["Govt Masters", "Govt HR & Payroll", "Govt Payroll", "Masters", "HR & Payroll"]
-			names.update(target_names)
-
-			for sb_name in names:
+		# 1. Update Frappe v16 'Sidebar' DocType if present
+		if frappe.db.exists("DocType", "Sidebar"):
+			for sb_name, sb_title in target_names:
 				try:
-					if not frappe.db.exists("Workspace Sidebar", sb_name):
+					if frappe.db.exists("Sidebar", sb_name):
+						sb_doc = frappe.get_doc("Sidebar", sb_name)
+					else:
+						sb_doc = frappe.new_doc("Sidebar")
+						sb_doc.name = sb_name
+
+					sb_doc.title = sb_title
+					sb_doc.module = sb_name if frappe.db.exists("Module Def", sb_name) else "Govt Masters"
+					sb_doc.app = "govt_hr_payroll"
+					sb_doc.standard = 1
+					sb_doc.is_standard = 1
+
+					sb_doc.set("items", [])
+					for idx, itm in enumerate(items_data, 1):
+						sb_doc.append("items", {
+							"idx": idx,
+							"label": itm.get("label"),
+							"type": itm.get("type", "DocType"),
+							"link_type": itm.get("link_type", "DocType"),
+							"link_to": itm.get("link_to", ""),
+							"icon": itm.get("icon", "file-text"),
+							"hidden": 0
+						})
+
+					sb_doc.flags.ignore_permissions = True
+					sb_doc.flags.ignore_mandatory = True
+					sb_doc.save()
+				except Exception as e:
+					frappe.log_error(f"Error updating Sidebar {sb_name}: {e}")
+
+			# Remove user-customized override sidebars so standard sidebar takes precedence
+			try:
+				frappe.db.delete("Sidebar", {"standard": 0})
+			except Exception:
+				pass
+
+		# 2. Update 'Workspace Sidebar' DocType if present
+		if frappe.db.exists("DocType", "Workspace Sidebar"):
+			for sb_name, sb_title in target_names:
+				try:
+					if frappe.db.exists("Workspace Sidebar", sb_name):
+						sb_doc = frappe.get_doc("Workspace Sidebar", sb_name)
+					else:
 						sb_doc = frappe.new_doc("Workspace Sidebar")
 						sb_doc.name = sb_name
-						sb_doc.sidebar_name = sb_name
-						sb_doc.module = "Govt Masters"
-						sb_doc.flags.ignore_permissions = True
-						sb_doc.flags.ignore_mandatory = True
-						sb_doc.insert()
 
-					frappe.db.delete("Workspace Sidebar Item", {"parent": sb_name})
+					sb_doc.sidebar_name = sb_name
+					sb_doc.title = sb_title
+					sb_doc.module = sb_name if frappe.db.exists("Module Def", sb_name) else "Govt Masters"
+					sb_doc.is_standard = 1
 
+					sb_doc.set("items", [])
 					for idx, itm in enumerate(items_data, 1):
-						item_doc = frappe.new_doc("Workspace Sidebar Item")
-						item_doc.parent = sb_name
-						item_doc.parenttype = "Workspace Sidebar"
-						item_doc.parentfield = "items"
-						item_doc.idx = idx
-						item_doc.type = itm.get("type", "Link")
-						item_doc.link_type = itm.get("link_type", "DocType")
-						item_doc.link_to = itm.get("link_to")
-						item_doc.label = itm.get("label")
-						item_doc.icon = itm.get("icon", "file-text")
-						item_doc.hidden = 0
-						item_doc.flags.ignore_permissions = True
-						item_doc.flags.ignore_mandatory = True
-						item_doc.insert()
-				except Exception as e:
-					frappe.log_error(f"Error updating sidebar {sb_name}: {e}")
+						sb_doc.append("items", {
+							"idx": idx,
+							"label": itm.get("label"),
+							"type": itm.get("type", "DocType"),
+							"link_type": itm.get("link_type", "DocType"),
+							"link_to": itm.get("link_to", ""),
+							"icon": itm.get("icon", "file-text"),
+							"hidden": 0
+						})
 
-			frappe.db.commit()
-			frappe.clear_cache()
+					sb_doc.flags.ignore_permissions = True
+					sb_doc.flags.ignore_mandatory = True
+					sb_doc.save()
+				except Exception as e:
+					frappe.log_error(f"Error updating Workspace Sidebar {sb_name}: {e}")
+
+		frappe.db.commit()
+		frappe.clear_cache()
 	except Exception as e:
 		frappe.log_error(f"Error executing setup_sidebars: {e}")
 

@@ -1,197 +1,199 @@
 {
- "doctype": "Workspace Sidebar",
+ "doctype": "Sidebar",
+ "name": "Govt Masters",
+ "title": "Masters & Settings",
+ "module": "Govt Masters",
+ "app": "govt_hr_payroll",
+ "standard": 1,
+ "is_standard": 1,
  "items": [
   {
-   "doctype": "Workspace Sidebar Item",
-   "hidden": 0,
-   "icon": "payroll",
-   "label": "Payroll",
-   "link_to": "Govt Payroll",
+   "doctype": "Sidebar Item",
+   "label": "Home",
+   "type": "Workspace",
    "link_type": "Workspace",
-   "type": "Link"
-  },
-  {
-   "doctype": "Workspace Sidebar Item",
-   "hidden": 0,
-   "icon": "calculator",
-   "label": "Income Tax",
-   "link_to": "Govt Income Tax",
-   "link_type": "Workspace",
-   "type": "Link"
-  },
-  {
-   "doctype": "Workspace Sidebar Item",
-   "hidden": 0,
-   "icon": "calendar",
-   "label": "Leave Management",
-   "link_to": "Govt Leave Management",
-   "link_type": "Workspace",
-   "type": "Link"
-  },
-  {
-   "doctype": "Workspace Sidebar Item",
-   "hidden": 0,
-   "icon": "heart",
-   "label": "Claims & Reimbursements",
-   "link_to": "Govt Claims",
-   "link_type": "Workspace",
-   "type": "Link"
-  },
-  {
-   "doctype": "Workspace Sidebar Item",
-   "hidden": 0,
-   "icon": "navigation",
-   "label": "Tour TA & DA",
-   "link_to": "Govt Tour TA DA",
-   "link_type": "Workspace",
-   "type": "Link"
-  },
-  {
-   "doctype": "Workspace Sidebar Item",
-   "hidden": 0,
-   "icon": "users",
-   "label": "Masters & Settings",
    "link_to": "Govt Masters",
+   "icon": "home"
+  },
+  {
+   "doctype": "Sidebar Item",
+   "label": "Modules",
+   "type": "Section",
+   "link_type": "Section"
+  },
+  {
+   "doctype": "Sidebar Item",
+   "label": "Payroll",
+   "type": "Workspace",
    "link_type": "Workspace",
-   "type": "Link"
+   "link_to": "Govt Payroll",
+   "icon": "payroll"
   },
   {
-   "doctype": "Workspace Sidebar Item",
-   "hidden": 0,
-   "icon": "file-text",
+   "doctype": "Sidebar Item",
+   "label": "Income Tax",
+   "type": "Workspace",
+   "link_type": "Workspace",
+   "link_to": "Govt Income Tax",
+   "icon": "calculator"
+  },
+  {
+   "doctype": "Sidebar Item",
+   "label": "Leave Management",
+   "type": "Workspace",
+   "link_type": "Workspace",
+   "link_to": "Govt Leave Management",
+   "icon": "calendar"
+  },
+  {
+   "doctype": "Sidebar Item",
+   "label": "Claims & Reimbursements",
+   "type": "Workspace",
+   "link_type": "Workspace",
+   "link_to": "Govt Claims",
+   "icon": "heart"
+  },
+  {
+   "doctype": "Sidebar Item",
+   "label": "Tour TA & DA",
+   "type": "Workspace",
+   "link_type": "Workspace",
+   "link_to": "Govt Tour TA DA",
+   "icon": "navigation"
+  },
+  {
+   "doctype": "Sidebar Item",
+   "label": "Masters & Settings",
+   "type": "Workspace",
+   "link_type": "Workspace",
+   "link_to": "Govt Masters",
+   "icon": "users"
+  },
+  {
+   "doctype": "Sidebar Item",
+   "label": "Statutory DocTypes",
+   "type": "Section",
+   "link_type": "Section"
+  },
+  {
+   "doctype": "Sidebar Item",
    "label": "Pay Bill (Monthly Payroll)",
+   "type": "DocType",
+   "link_type": "DocType",
    "link_to": "Govt Pay Bill",
-   "link_type": "DocType",
-   "type": "Link"
+   "icon": "file-text"
   },
   {
-   "doctype": "Workspace Sidebar Item",
-   "hidden": 0,
-   "icon": "file-plus",
+   "doctype": "Sidebar Item",
    "label": "Supplementary Pay Bill",
+   "type": "DocType",
+   "link_type": "DocType",
    "link_to": "Supplementary Pay Bill",
-   "link_type": "DocType",
-   "type": "Link"
+   "icon": "file-plus"
   },
   {
-   "doctype": "Workspace Sidebar Item",
-   "hidden": 0,
-   "icon": "trending-up",
+   "doctype": "Sidebar Item",
    "label": "Due-Drawn Arrears",
+   "type": "DocType",
+   "link_type": "DocType",
    "link_to": "Due Drawn Arrear",
-   "link_type": "DocType",
-   "type": "Link"
+   "icon": "trending-up"
   },
   {
-   "doctype": "Workspace Sidebar Item",
-   "hidden": 0,
-   "icon": "calculator",
+   "doctype": "Sidebar Item",
    "label": "Income Tax Statement",
+   "type": "DocType",
+   "link_type": "DocType",
    "link_to": "Govt Income Tax Statement",
-   "link_type": "DocType",
-   "type": "Link"
+   "icon": "calculator"
   },
   {
-   "doctype": "Workspace Sidebar Item",
-   "hidden": 0,
-   "icon": "calendar",
+   "doctype": "Sidebar Item",
    "label": "Leave Application",
+   "type": "DocType",
+   "link_type": "DocType",
    "link_to": "CCS Leave Application",
-   "link_type": "DocType",
-   "type": "Link"
+   "icon": "calendar"
   },
   {
-   "doctype": "Workspace Sidebar Item",
-   "hidden": 0,
-   "icon": "award",
-   "label": "DO Part II Order (Sanctions)",
+   "doctype": "Sidebar Item",
+   "label": "DO Part II Order",
+   "type": "DocType",
+   "link_type": "DocType",
    "link_to": "DO Part Two Order",
-   "link_type": "DocType",
-   "type": "Link"
+   "icon": "award"
   },
   {
-   "doctype": "Workspace Sidebar Item",
-   "hidden": 0,
-   "icon": "book",
+   "doctype": "Sidebar Item",
    "label": "Leave Ledger",
+   "type": "DocType",
+   "link_type": "DocType",
    "link_to": "CCS Leave Ledger Entry",
-   "link_type": "DocType",
-   "type": "Link"
+   "icon": "book"
   },
   {
-   "doctype": "Workspace Sidebar Item",
-   "hidden": 0,
-   "icon": "heart",
+   "doctype": "Sidebar Item",
    "label": "CEA Claim",
+   "type": "DocType",
+   "link_type": "DocType",
    "link_to": "CEA Claim",
-   "link_type": "DocType",
-   "type": "Link"
+   "icon": "heart"
   },
   {
-   "doctype": "Workspace Sidebar Item",
-   "hidden": 0,
-   "icon": "activity",
+   "doctype": "Sidebar Item",
    "label": "Medical Claim (Form MRC-S)",
+   "type": "DocType",
+   "link_type": "DocType",
    "link_to": "CGHS Medical Claim",
-   "link_type": "DocType",
-   "type": "Link"
+   "icon": "activity"
   },
   {
-   "doctype": "Workspace Sidebar Item",
-   "hidden": 0,
-   "icon": "navigation",
+   "doctype": "Sidebar Item",
    "label": "Tour Movement Order",
+   "type": "DocType",
+   "link_type": "DocType",
    "link_to": "Tour Movement Order",
-   "link_type": "DocType",
-   "type": "Link"
+   "icon": "navigation"
   },
   {
-   "doctype": "Workspace Sidebar Item",
-   "hidden": 0,
-   "icon": "dollar-sign",
+   "doctype": "Sidebar Item",
    "label": "TA/DA Final Claim",
+   "type": "DocType",
+   "link_type": "DocType",
    "link_to": "TADA Final Claim",
-   "link_type": "DocType",
-   "type": "Link"
+   "icon": "dollar-sign"
   },
   {
-   "doctype": "Workspace Sidebar Item",
-   "hidden": 0,
-   "icon": "users",
+   "doctype": "Sidebar Item",
    "label": "Employee Master",
+   "type": "DocType",
+   "link_type": "DocType",
    "link_to": "Govt Employee",
-   "link_type": "DocType",
-   "type": "Link"
+   "icon": "users"
   },
   {
-   "doctype": "Workspace Sidebar Item",
-   "hidden": 0,
-   "icon": "layers",
+   "doctype": "Sidebar Item",
    "label": "CPC Pay Level (1-18)",
+   "type": "DocType",
+   "link_type": "DocType",
    "link_to": "CPC Pay Level",
-   "link_type": "DocType",
-   "type": "Link"
+   "icon": "layers"
   },
   {
-   "doctype": "Workspace Sidebar Item",
-   "hidden": 0,
-   "icon": "home",
+   "doctype": "Sidebar Item",
    "label": "Office Unit (DDO/PAO)",
-   "link_to": "Govt Office Unit",
+   "type": "DocType",
    "link_type": "DocType",
-   "type": "Link"
+   "link_to": "Govt Office Unit",
+   "icon": "home"
   },
   {
-   "doctype": "Workspace Sidebar Item",
-   "hidden": 0,
-   "icon": "settings",
+   "doctype": "Sidebar Item",
    "label": "Payroll Settings",
-   "link_to": "Govt Payroll Settings",
+   "type": "DocType",
    "link_type": "DocType",
-   "type": "Link"
+   "link_to": "Govt Payroll Settings",
+   "icon": "settings"
   }
- ],
- "module": "Govt Masters",
- "name": "Govt Masters",
- "sidebar_name": "Govt Masters"
+ ]
 }

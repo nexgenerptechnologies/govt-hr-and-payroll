@@ -1,0 +1,198 @@
+{
+ "doctype": "Workspace Sidebar",
+ "name": "Govt Tour TA DA",
+ "sidebar_name": "Govt Tour TA DA",
+ "title": "Tour TA & DA",
+ "module": "Govt Tour TA DA",
+ "is_standard": 1,
+ "items": [
+  {
+   "doctype": "Workspace Sidebar Item",
+   "label": "Home",
+   "type": "Workspace",
+   "link_type": "Workspace",
+   "link_to": "Govt Masters",
+   "icon": "home"
+  },
+  {
+   "doctype": "Workspace Sidebar Item",
+   "label": "Modules",
+   "type": "Section",
+   "link_type": "Section"
+  },
+  {
+   "doctype": "Workspace Sidebar Item",
+   "label": "Payroll",
+   "type": "Workspace",
+   "link_type": "Workspace",
+   "link_to": "Govt Payroll",
+   "icon": "payroll"
+  },
+  {
+   "doctype": "Workspace Sidebar Item",
+   "label": "Income Tax",
+   "type": "Workspace",
+   "link_type": "Workspace",
+   "link_to": "Govt Income Tax",
+   "icon": "calculator"
+  },
+  {
+   "doctype": "Workspace Sidebar Item",
+   "label": "Leave Management",
+   "type": "Workspace",
+   "link_type": "Workspace",
+   "link_to": "Govt Leave Management",
+   "icon": "calendar"
+  },
+  {
+   "doctype": "Workspace Sidebar Item",
+   "label": "Claims & Reimbursements",
+   "type": "Workspace",
+   "link_type": "Workspace",
+   "link_to": "Govt Claims",
+   "icon": "heart"
+  },
+  {
+   "doctype": "Workspace Sidebar Item",
+   "label": "Tour TA & DA",
+   "type": "Workspace",
+   "link_type": "Workspace",
+   "link_to": "Govt Tour TA DA",
+   "icon": "navigation"
+  },
+  {
+   "doctype": "Workspace Sidebar Item",
+   "label": "Masters & Settings",
+   "type": "Workspace",
+   "link_type": "Workspace",
+   "link_to": "Govt Masters",
+   "icon": "users"
+  },
+  {
+   "doctype": "Workspace Sidebar Item",
+   "label": "Statutory DocTypes",
+   "type": "Section",
+   "link_type": "Section"
+  },
+  {
+   "doctype": "Workspace Sidebar Item",
+   "label": "Pay Bill (Monthly Payroll)",
+   "type": "DocType",
+   "link_type": "DocType",
+   "link_to": "Govt Pay Bill",
+   "icon": "file-text"
+  },
+  {
+   "doctype": "Workspace Sidebar Item",
+   "label": "Supplementary Pay Bill",
+   "type": "DocType",
+   "link_type": "DocType",
+   "link_to": "Supplementary Pay Bill",
+   "icon": "file-plus"
+  },
+  {
+   "doctype": "Workspace Sidebar Item",
+   "label": "Due-Drawn Arrears",
+   "type": "DocType",
+   "link_type": "DocType",
+   "link_to": "Due Drawn Arrear",
+   "icon": "trending-up"
+  },
+  {
+   "doctype": "Workspace Sidebar Item",
+   "label": "Income Tax Statement",
+   "type": "DocType",
+   "link_type": "DocType",
+   "link_to": "Govt Income Tax Statement",
+   "icon": "calculator"
+  },
+  {
+   "doctype": "Workspace Sidebar Item",
+   "label": "Leave Application",
+   "type": "DocType",
+   "link_type": "DocType",
+   "link_to": "CCS Leave Application",
+   "icon": "calendar"
+  },
+  {
+   "doctype": "Workspace Sidebar Item",
+   "label": "DO Part II Order",
+   "type": "DocType",
+   "link_type": "DocType",
+   "link_to": "DO Part Two Order",
+   "icon": "award"
+  },
+  {
+   "doctype": "Workspace Sidebar Item",
+   "label": "Leave Ledger",
+   "type": "DocType",
+   "link_type": "DocType",
+   "link_to": "CCS Leave Ledger Entry",
+   "icon": "book"
+  },
+  {
+   "doctype": "Workspace Sidebar Item",
+   "label": "CEA Claim",
+   "type": "DocType",
+   "link_type": "DocType",
+   "link_to": "CEA Claim",
+   "icon": "heart"
+  },
+  {
+   "doctype": "Workspace Sidebar Item",
+   "label": "Medical Claim (Form MRC-S)",
+   "type": "DocType",
+   "link_type": "DocType",
+   "link_to": "CGHS Medical Claim",
+   "icon": "activity"
+  },
+  {
+   "doctype": "Workspace Sidebar Item",
+   "label": "Tour Movement Order",
+   "type": "DocType",
+   "link_type": "DocType",
+   "link_to": "Tour Movement Order",
+   "icon": "navigation"
+  },
+  {
+   "doctype": "Workspace Sidebar Item",
+   "label": "TA/DA Final Claim",
+   "type": "DocType",
+   "link_type": "DocType",
+   "link_to": "TADA Final Claim",
+   "icon": "dollar-sign"
+  },
+  {
+   "doctype": "Workspace Sidebar Item",
+   "label": "Employee Master",
+   "type": "DocType",
+   "link_type": "DocType",
+   "link_to": "Govt Employee",
+   "icon": "users"
+  },
+  {
+   "doctype": "Workspace Sidebar Item",
+   "label": "CPC Pay Level (1-18)",
+   "type": "DocType",
+   "link_type": "DocType",
+   "link_to": "CPC Pay Level",
+   "icon": "layers"
+  },
+  {
+   "doctype": "Workspace Sidebar Item",
+   "label": "Office Unit (DDO/PAO)",
+   "type": "DocType",
+   "link_type": "DocType",
+   "link_to": "Govt Office Unit",
+   "icon": "home"
+  },
+  {
+   "doctype": "Workspace Sidebar Item",
+   "label": "Payroll Settings",
+   "type": "DocType",
+   "link_type": "DocType",
+   "link_to": "Govt Payroll Settings",
+   "icon": "settings"
+  }
+ ]
+}
