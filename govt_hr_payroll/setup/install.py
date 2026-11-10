@@ -16,6 +16,7 @@ def after_install():
 	setup_default_leave_types()
 	setup_workspaces()
 	setup_sidebars()
+	assign_nitin_roles()
 
 def after_migrate():
 	setup_roles()
@@ -27,6 +28,56 @@ def after_migrate():
 	setup_default_leave_types()
 	setup_workspaces()
 	setup_sidebars()
+	assign_nitin_roles()
+
+def assign_nitin_roles():
+	"""
+	Automatically grants User 'Nitin' full operational access to the 
+	Government HR & Payroll system, while stripping unrelated ERP/stock/accounts roles.
+	"""
+	try:
+		users = frappe.get_all(
+			"User",
+			filters=[["name", "like", "%nitin%"]],
+			fields=["name"]
+		)
+		if not users:
+			users = frappe.get_all(
+				"User",
+				filters=[["first_name", "like", "%nitin%"]],
+				fields=["name"]
+			)
+		if not users:
+			users = frappe.get_all(
+				"User",
+				filters=[["email", "like", "%nitin%"]],
+				fields=["name"]
+			)
+
+		for u in users:
+			user_doc = frappe.get_doc("User", u.name)
+			existing_roles = {r.role for r in user_doc.roles}
+
+			# Ensure primary Government HR roles
+			target_roles = ["Govt HR Admin", "Dealing Assistant", "Section Officer", "Drawing and Disbursing Officer"]
+			for tr in target_roles:
+				if tr not in existing_roles:
+					user_doc.append("roles", {"role": tr})
+
+			# Strip other ERP module roles to isolate access to Govt HR & Payroll only
+			unwanted_roles = [
+				"Accounts User", "Accounts Manager", "Stock User", "Stock Manager",
+				"Purchase User", "Purchase Manager", "Sales User", "Sales Manager",
+				"Manufacturing User", "Manufacturing Manager", "Projects User"
+			]
+			user_doc.roles = [r for r in user_doc.roles if r.role not in unwanted_roles]
+
+			user_doc.flags.ignore_permissions = True
+			user_doc.save()
+
+		frappe.db.commit()
+	except Exception as e:
+		frappe.log_error(f"Error auto-assigning Govt HR roles to Nitin: {e}")
 
 def setup_roles():
 	roles = [
