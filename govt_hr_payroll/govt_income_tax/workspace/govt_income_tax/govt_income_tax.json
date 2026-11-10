@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"type\": \"header\", \"data\": {\"text\": \"Govt Income Tax (Folder 2)\", \"level\": 4, \"col\": 12}}, {\"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Income Tax Statement\", \"col\": 6}}, {\"type\": \"spacer\", \"data\": {\"col\": 12}}, {\"type\": \"card\", \"data\": {\"card_name\": \"Income Tax Calculations & Statements\", \"col\": 12}}]",
+ "content": "[{\"type\": \"header\", \"data\": {\"text\": \"Income Tax (FY 2026-27)\", \"level\": 4, \"col\": 12}}, {\"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Income Tax Statement\", \"col\": 6}}, {\"type\": \"spacer\", \"data\": {\"col\": 12}}, {\"type\": \"card\", \"data\": {\"card_name\": \"Income Tax Calculations & Statements\", \"col\": 12}}]",
  "custom_blocks": [],
  "docstatus": 0,
  "doctype": "Workspace",
@@ -9,7 +9,7 @@
  "icon": "calculator",
  "indicator_color": "orange",
  "is_standard": 1,
- "label": "Govt Income Tax",
+ "label": "Income Tax",
  "links": [
   {
    "hidden": 0,
@@ -25,7 +25,7 @@
    "dependencies": "",
    "hidden": 0,
    "is_query_report": 0,
-   "label": "Govt Income Tax Statement (12-Month Ledger)",
+   "label": "Income Tax Statement (12-Month Ledger)",
    "link_count": 0,
    "link_to": "Govt Income Tax Statement",
    "link_type": "DocType",
@@ -36,7 +36,7 @@
    "dependencies": "",
    "hidden": 0,
    "is_query_report": 0,
-   "label": "Govt Employee Profiles",
+   "label": "Employee Profiles",
    "link_count": 0,
    "link_to": "Govt Employee",
    "link_type": "DocType",
@@ -65,5 +65,5 @@
    "url": ""
   }
  ],
- "title": "Govt Income Tax"
+ "title": "Income Tax"
 }

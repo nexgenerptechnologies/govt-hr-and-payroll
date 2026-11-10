@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"type\": \"header\", \"data\": {\"text\": \"Govt Claims & Reimbursements (Folder 5)\", \"level\": 4, \"col\": 12}}, {\"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"CEA Claim\", \"col\": 6}}, {\"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"CGHS Medical Claim\", \"col\": 6}}, {\"type\": \"spacer\", \"data\": {\"col\": 12}}, {\"type\": \"card\", \"data\": {\"card_name\": \"Statutory Reimbursement Claims\", \"col\": 12}}]",
+ "content": "[{\"type\": \"header\", \"data\": {\"text\": \"Claims & Reimbursements\", \"level\": 4, \"col\": 12}}, {\"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"CEA Claim\", \"col\": 6}}, {\"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Medical Claim\", \"col\": 6}}, {\"type\": \"spacer\", \"data\": {\"col\": 12}}, {\"type\": \"card\", \"data\": {\"card_name\": \"Statutory Reimbursement Claims\", \"col\": 12}}]",
  "custom_blocks": [],
  "docstatus": 0,
  "doctype": "Workspace",
@@ -9,7 +9,7 @@
  "icon": "milestone",
  "indicator_color": "red",
  "is_standard": 1,
- "label": "Govt Claims",
+ "label": "Claims & Reimbursements",
  "links": [
   {
    "hidden": 0,
@@ -36,7 +36,7 @@
    "dependencies": "",
    "hidden": 0,
    "is_query_report": 0,
-   "label": "CGHS Medical Claim (Form MRC-S)",
+   "label": "Medical Claim (Form MRC-S)",
    "link_count": 0,
    "link_to": "CGHS Medical Claim",
    "link_type": "DocType",
@@ -69,7 +69,7 @@
    "doc_view": "List",
    "icon": "",
    "is_query_report": 0,
-   "label": "CGHS Medical Claim",
+   "label": "Medical Claim",
    "link_to": "CGHS Medical Claim",
    "link_type": "DocType",
    "stats_filter": "",
@@ -77,5 +77,5 @@
    "url": ""
   }
  ],
- "title": "Govt Claims"
+ "title": "Claims & Reimbursements"
 }

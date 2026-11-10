@@ -22,21 +22,27 @@ def after_migrate():
 
 def setup_sidebars():
 	items_data = [
-		{"type": "Link", "link_type": "DocType", "link_to": "Govt Pay Bill", "label": "Govt Pay Bill (Monthly Payroll)", "icon": "file-text"},
+		{"type": "Link", "link_type": "Workspace", "link_to": "Govt Payroll", "label": "Payroll", "icon": "payroll"},
+		{"type": "Link", "link_type": "Workspace", "link_to": "Govt Income Tax", "label": "Income Tax", "icon": "calculator"},
+		{"type": "Link", "link_type": "Workspace", "link_to": "Govt Leave Management", "label": "Leave Management", "icon": "calendar"},
+		{"type": "Link", "link_type": "Workspace", "link_to": "Govt Claims", "label": "Claims & Reimbursements", "icon": "heart"},
+		{"type": "Link", "link_type": "Workspace", "link_to": "Govt Tour TA DA", "label": "Tour TA & DA", "icon": "navigation"},
+		{"type": "Link", "link_type": "Workspace", "link_to": "Govt Masters", "label": "Masters & Settings", "icon": "users"},
+		{"type": "Link", "link_type": "DocType", "link_to": "Govt Pay Bill", "label": "Pay Bill (Monthly Payroll)", "icon": "file-text"},
 		{"type": "Link", "link_type": "DocType", "link_to": "Supplementary Pay Bill", "label": "Supplementary Pay Bill", "icon": "file-plus"},
-		{"type": "Link", "link_type": "DocType", "link_to": "Due Drawn Arrear", "label": "Due Drawn Arrear (Folder 3)", "icon": "trending-up"},
-		{"type": "Link", "link_type": "DocType", "link_to": "Govt Income Tax Statement", "label": "Income Tax Statement (Folder 2)", "icon": "calculator"},
-		{"type": "Link", "link_type": "DocType", "link_to": "CCS Leave Application", "label": "CCS Leave Application (Folder 4)", "icon": "calendar"},
-		{"type": "Link", "link_type": "DocType", "link_to": "DO Part Two Order", "label": "DO Part II Order (Sanctions)", "icon": "award"},
-		{"type": "Link", "link_type": "DocType", "link_to": "CCS Leave Ledger Entry", "label": "CCS Leave Ledger", "icon": "book"},
-		{"type": "Link", "link_type": "DocType", "link_to": "CEA Claim", "label": "CEA Claim (Folder 5)", "icon": "heart"},
-		{"type": "Link", "link_type": "DocType", "link_to": "CGHS Medical Claim", "label": "CGHS Medical Claim (Form MRC-S)", "icon": "activity"},
-		{"type": "Link", "link_type": "DocType", "link_to": "Tour Movement Order", "label": "Tour Movement Order (Folder 6)", "icon": "navigation"},
-		{"type": "Link", "link_type": "DocType", "link_to": "TADA Final Claim", "label": "TA/DA Final Claim", "icon": "dollar-sign"},
-		{"type": "Link", "link_type": "DocType", "link_to": "Govt Employee", "label": "Govt Employee Master", "icon": "users"},
+		{"type": "Link", "link_type": "DocType", "link_to": "Due Drawn Arrear", "label": "Due-Drawn Arrears", "icon": "trending-up"},
+		{"type": "Link", "link_type": "DocType", "link_to": "Govt Income Tax Statement", "label": "Income Tax Statement", "icon": "calculator"},
+		{"type": "Link", "link_type": "DocType", "link_to": "CCS Leave Application", "label": "Leave Application", "icon": "calendar"},
+		{"type": "Link", "link_type": "DocType", "link_to": "DO Part Two Order", "label": "DO Part II Order", "icon": "award"},
+		{"type": "Link", "link_type": "DocType", "link_to": "CCS Leave Ledger Entry", "label": "Leave Ledger", "icon": "book"},
+		{"type": "Link", "link_type": "DocType", "link_to": "CEA Claim", "label": "CEA Claim", "icon": "heart"},
+		{"type": "Link", "link_type": "DocType", "link_to": "CGHS Medical Claim", "label": "Medical Claim (MRC-S)", "icon": "activity"},
+		{"type": "Link", "link_type": "DocType", "link_to": "Tour Movement Order", "label": "Tour Movement Order", "icon": "navigation"},
+		{"type": "Link", "link_type": "DocType", "link_to": "TADA Final Claim", "label": "TA/DA Claim", "icon": "dollar-sign"},
+		{"type": "Link", "link_type": "DocType", "link_to": "Govt Employee", "label": "Employee Master", "icon": "users"},
 		{"type": "Link", "link_type": "DocType", "link_to": "CPC Pay Level", "label": "CPC Pay Level (1-18)", "icon": "layers"},
-		{"type": "Link", "link_type": "DocType", "link_to": "Govt Office Unit", "label": "Govt Office Unit (DDO/PAO)", "icon": "home"},
-		{"type": "Link", "link_type": "DocType", "link_to": "Govt Payroll Settings", "label": "Govt Payroll Settings", "icon": "settings"}
+		{"type": "Link", "link_type": "DocType", "link_to": "Govt Office Unit", "label": "Office Unit (DDO/PAO)", "icon": "home"},
+		{"type": "Link", "link_type": "DocType", "link_to": "Govt Payroll Settings", "label": "Payroll Settings", "icon": "settings"}
 	]
 
 	try:

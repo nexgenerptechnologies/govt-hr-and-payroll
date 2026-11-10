@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"type\": \"header\", \"data\": {\"text\": \"Govt Tour TA/DA (Folder 6 - 7th CPC Rules)\", \"level\": 4, \"col\": 12}}, {\"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Tour Movement Order\", \"col\": 6}}, {\"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"TA/DA Claim\", \"col\": 6}}, {\"type\": \"spacer\", \"data\": {\"col\": 12}}, {\"type\": \"card\", \"data\": {\"card_name\": \"Tour Movements & TA/DA Claims\", \"col\": 12}}]",
+ "content": "[{\"type\": \"header\", \"data\": {\"text\": \"Tour TA & DA\", \"level\": 4, \"col\": 12}}, {\"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Tour Movement Order\", \"col\": 6}}, {\"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"TA/DA Claim\", \"col\": 6}}, {\"type\": \"spacer\", \"data\": {\"col\": 12}}, {\"type\": \"card\", \"data\": {\"card_name\": \"Tour Movements & TA/DA Claims\", \"col\": 12}}]",
  "custom_blocks": [],
  "docstatus": 0,
  "doctype": "Workspace",
@@ -9,7 +9,7 @@
  "icon": "airplane",
  "indicator_color": "blue",
  "is_standard": 1,
- "label": "Govt Tour TA DA",
+ "label": "Tour TA & DA",
  "links": [
   {
    "hidden": 0,
@@ -36,7 +36,7 @@
    "dependencies": "",
    "hidden": 0,
    "is_query_report": 0,
-   "label": "TADA Final Claim",
+   "label": "TA/DA Final Claim",
    "link_count": 0,
    "link_to": "TADA Final Claim",
    "link_type": "DocType",
@@ -77,5 +77,5 @@
    "url": ""
   }
  ],
- "title": "Govt Tour TA DA"
+ "title": "Tour TA & DA"
 }
