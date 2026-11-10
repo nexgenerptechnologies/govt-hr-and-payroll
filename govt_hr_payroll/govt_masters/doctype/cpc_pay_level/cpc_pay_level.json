@@ -26,7 +26,7 @@
    "fieldname": "grade_pay",
    "fieldtype": "Currency",
    "in_list_view": 1,
-   "label": "Corresponding Grade Pay (₹)"
+   "label": "Corresponding Grade Pay (\u20b9)"
   },
   {
    "fieldname": "column_break_1",
@@ -36,12 +36,12 @@
    "fieldname": "entry_pay",
    "fieldtype": "Currency",
    "in_list_view": 1,
-   "label": "Entry Pay (Cell 1) (₹)"
+   "label": "Entry Pay (Cell 1) (\u20b9)"
   },
   {
    "fieldname": "maximum_pay",
    "fieldtype": "Currency",
-   "label": "Maximum Pay (₹)"
+   "label": "Maximum Pay (\u20b9)"
   },
   {
    "fieldname": "section_break_cells",
@@ -63,28 +63,90 @@
  "owner": "Administrator",
  "permissions": [
   {
-   "create": 1,
-   "delete": 1,
-   "email": 1,
-   "export": 1,
-   "print": 1,
-   "read": 1,
-   "report": 1,
    "role": "System Manager",
-   "share": 1,
-   "write": 1
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "submit": 0,
+   "cancel": 0,
+   "amend": 0,
+   "delete": 1,
+   "print": 1,
+   "email": 1,
+   "share": 1
   },
   {
-   "create": 1,
-   "delete": 0,
-   "email": 1,
-   "export": 1,
-   "print": 1,
+   "role": "Govt HR Admin",
    "read": 1,
-   "report": 1,
-   "role": "HR Manager",
-   "share": 1,
-   "write": 1
+   "write": 1,
+   "create": 1,
+   "submit": 0,
+   "cancel": 0,
+   "amend": 0,
+   "delete": 1,
+   "print": 1,
+   "email": 1,
+   "share": 1
+  },
+  {
+   "role": "Drawing and Disbursing Officer",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "submit": 0,
+   "cancel": 0,
+   "amend": 0,
+   "print": 1,
+   "email": 1,
+   "share": 1
+  },
+  {
+   "role": "Section Officer",
+   "read": 1,
+   "write": 0,
+   "create": 0,
+   "submit": 0,
+   "cancel": 0,
+   "amend": 0,
+   "print": 1,
+   "email": 1,
+   "share": 1
+  },
+  {
+   "role": "Dealing Assistant",
+   "read": 1,
+   "write": 0,
+   "create": 0,
+   "submit": 0,
+   "cancel": 0,
+   "amend": 0,
+   "print": 1,
+   "email": 1,
+   "share": 1
+  },
+  {
+   "role": "Pay and Accounts Officer",
+   "read": 1,
+   "write": 0,
+   "create": 0,
+   "submit": 0,
+   "cancel": 0,
+   "amend": 0,
+   "print": 1,
+   "email": 1,
+   "share": 1
+  },
+  {
+   "role": "Govt Employee",
+   "read": 1,
+   "write": 0,
+   "create": 0,
+   "submit": 0,
+   "cancel": 0,
+   "amend": 0,
+   "print": 1,
+   "email": 0,
+   "share": 0
   }
  ],
  "search_fields": "pay_level,entry_pay,grade_pay",

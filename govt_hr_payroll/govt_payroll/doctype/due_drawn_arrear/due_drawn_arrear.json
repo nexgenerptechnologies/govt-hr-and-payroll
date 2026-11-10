@@ -6,6 +6,7 @@
  "engine": "InnoDB",
  "field_order": [
   "naming_series",
+  "workflow_state",
   "employee",
   "employee_name",
   "designation",
@@ -34,6 +35,15 @@
    "label": "Series",
    "options": "ARR-.YYYY.-.#####",
    "reqd": 1
+  },
+  {
+   "fieldname": "workflow_state",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Approval Status",
+   "options": "Workflow State",
+   "read_only": 1
   },
   {
    "fieldname": "employee",
@@ -130,20 +140,20 @@
    "fieldname": "total_diff_pna",
    "fieldtype": "Currency",
    "in_list_view": 1,
-   "label": "Total Diff of Pay & Allowances (₹)",
+   "label": "Total Diff of Pay & Allowances (\u20b9)",
    "read_only": 1
   },
   {
    "fieldname": "total_diff_nps",
    "fieldtype": "Currency",
-   "label": "Total Diff of NPS (₹)",
+   "label": "Total Diff of NPS (\u20b9)",
    "read_only": 1
   },
   {
    "fieldname": "net_arrear_payable",
    "fieldtype": "Currency",
    "in_list_view": 1,
-   "label": "Net Arrear Payable (Diff P&A - Diff NPS) (₹)",
+   "label": "Net Arrear Payable (Diff P&A - Diff NPS) (\u20b9)",
    "read_only": 1
   },
   {
@@ -170,34 +180,90 @@
  "owner": "Administrator",
  "permissions": [
   {
-   "amend": 1,
-   "cancel": 1,
-   "create": 1,
-   "delete": 1,
-   "email": 1,
-   "export": 1,
-   "print": 1,
-   "read": 1,
-   "report": 1,
    "role": "System Manager",
-   "share": 1,
+   "read": 1,
+   "write": 1,
+   "create": 1,
    "submit": 1,
-   "write": 1
+   "cancel": 1,
+   "amend": 1,
+   "delete": 1,
+   "print": 1,
+   "email": 1,
+   "share": 1
   },
   {
-   "amend": 1,
-   "cancel": 0,
-   "create": 1,
-   "delete": 0,
-   "email": 1,
-   "export": 1,
-   "print": 1,
+   "role": "Govt HR Admin",
    "read": 1,
-   "report": 1,
-   "role": "HR Manager",
-   "share": 1,
+   "write": 1,
+   "create": 1,
    "submit": 1,
-   "write": 1
+   "cancel": 1,
+   "amend": 1,
+   "delete": 1,
+   "print": 1,
+   "email": 1,
+   "share": 1
+  },
+  {
+   "role": "Drawing and Disbursing Officer",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "submit": 1,
+   "cancel": 1,
+   "amend": 1,
+   "print": 1,
+   "email": 1,
+   "share": 1
+  },
+  {
+   "role": "Section Officer",
+   "read": 1,
+   "write": 1,
+   "create": 0,
+   "submit": 0,
+   "cancel": 0,
+   "amend": 0,
+   "print": 1,
+   "email": 1,
+   "share": 1
+  },
+  {
+   "role": "Dealing Assistant",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "submit": 0,
+   "cancel": 0,
+   "amend": 0,
+   "print": 1,
+   "email": 1,
+   "share": 1
+  },
+  {
+   "role": "Pay and Accounts Officer",
+   "read": 1,
+   "write": 0,
+   "create": 0,
+   "submit": 0,
+   "cancel": 0,
+   "amend": 0,
+   "print": 1,
+   "email": 1,
+   "share": 1
+  },
+  {
+   "role": "Govt Employee",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "submit": 0,
+   "cancel": 0,
+   "amend": 0,
+   "print": 1,
+   "email": 1,
+   "share": 0
   }
  ],
  "search_fields": "name,employee,employee_name,arrear_type",

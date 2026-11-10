@@ -170,7 +170,7 @@
    "depends_on": "eval:doc.is_reemployed==1",
    "fieldname": "reemployed_pension_deduction",
    "fieldtype": "Currency",
-   "label": "Pensionary Benefit Deduction *( - ) Pension (₹)"
+   "label": "Pensionary Benefit Deduction *( - ) Pension (\u20b9)"
   },
   {
    "fieldname": "pay_matrix_section",
@@ -195,7 +195,7 @@
    "fieldname": "basic_pay",
    "fieldtype": "Currency",
    "in_list_view": 1,
-   "label": "Current Basic Pay (₹)",
+   "label": "Current Basic Pay (\u20b9)",
    "reqd": 1
   },
   {
@@ -220,7 +220,7 @@
    "default": "7200",
    "fieldname": "tpt_allowance",
    "fieldtype": "Currency",
-   "label": "Base TPT Allowance (₹)"
+   "label": "Base TPT Allowance (\u20b9)"
   },
   {
    "fieldname": "quarter_section",
@@ -231,7 +231,7 @@
    "default": "0",
    "fieldname": "govt_quarters_availed",
    "fieldtype": "Check",
-   "label": "Government Accommodation Availed (HRA will be ₹0)"
+   "label": "Government Accommodation Availed (HRA will be \u20b90)"
   },
   {
    "depends_on": "eval:doc.govt_quarters_availed==1",
@@ -271,7 +271,7 @@
    "depends_on": "eval:doc.govt_quarters_availed==1",
    "fieldname": "license_fee",
    "fieldtype": "Currency",
-   "label": "Monthly License Fee Recovery (₹)"
+   "label": "Monthly License Fee Recovery (\u20b9)"
   },
   {
    "fieldname": "pension_section",
@@ -301,7 +301,7 @@
    "depends_on": "eval:doc.pension_scheme=='GPF'",
    "fieldname": "gpf_monthly_subscription",
    "fieldtype": "Currency",
-   "label": "Monthly GPF Subscription (₹)"
+   "label": "Monthly GPF Subscription (\u20b9)"
   },
   {
    "fieldname": "column_break_statutory",
@@ -316,7 +316,7 @@
    "default": "1000",
    "fieldname": "cghs_monthly_deduction",
    "fieldtype": "Currency",
-   "label": "Monthly CGHS Deduction (₹)"
+   "label": "Monthly CGHS Deduction (\u20b9)"
   },
   {
    "default": "Group A",
@@ -329,13 +329,13 @@
    "default": "120",
    "fieldname": "cgegis_monthly_deduction",
    "fieldtype": "Currency",
-   "label": "Monthly CGEGIS Deduction (₹)"
+   "label": "Monthly CGEGIS Deduction (\u20b9)"
   },
   {
    "default": "0",
    "fieldname": "monthly_income_tax_tds",
    "fieldtype": "Currency",
-   "label": "Target Monthly Income Tax TDS (₹)"
+   "label": "Target Monthly Income Tax TDS (\u20b9)"
   },
   {
    "fieldname": "bank_section",
@@ -381,28 +381,90 @@
  "owner": "Administrator",
  "permissions": [
   {
-   "create": 1,
-   "delete": 1,
-   "email": 1,
-   "export": 1,
-   "print": 1,
-   "read": 1,
-   "report": 1,
    "role": "System Manager",
-   "share": 1,
-   "write": 1
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "submit": 0,
+   "cancel": 0,
+   "amend": 0,
+   "delete": 1,
+   "print": 1,
+   "email": 1,
+   "share": 1
   },
   {
-   "create": 1,
-   "delete": 0,
-   "email": 1,
-   "export": 1,
-   "print": 1,
+   "role": "Govt HR Admin",
    "read": 1,
-   "report": 1,
-   "role": "HR Manager",
-   "share": 1,
-   "write": 1
+   "write": 1,
+   "create": 1,
+   "submit": 0,
+   "cancel": 0,
+   "amend": 0,
+   "delete": 1,
+   "print": 1,
+   "email": 1,
+   "share": 1
+  },
+  {
+   "role": "Drawing and Disbursing Officer",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "submit": 0,
+   "cancel": 0,
+   "amend": 0,
+   "print": 1,
+   "email": 1,
+   "share": 1
+  },
+  {
+   "role": "Section Officer",
+   "read": 1,
+   "write": 0,
+   "create": 0,
+   "submit": 0,
+   "cancel": 0,
+   "amend": 0,
+   "print": 1,
+   "email": 1,
+   "share": 1
+  },
+  {
+   "role": "Dealing Assistant",
+   "read": 1,
+   "write": 0,
+   "create": 0,
+   "submit": 0,
+   "cancel": 0,
+   "amend": 0,
+   "print": 1,
+   "email": 1,
+   "share": 1
+  },
+  {
+   "role": "Pay and Accounts Officer",
+   "read": 1,
+   "write": 0,
+   "create": 0,
+   "submit": 0,
+   "cancel": 0,
+   "amend": 0,
+   "print": 1,
+   "email": 1,
+   "share": 1
+  },
+  {
+   "role": "Govt Employee",
+   "read": 1,
+   "write": 0,
+   "create": 0,
+   "submit": 0,
+   "cancel": 0,
+   "amend": 0,
+   "print": 1,
+   "email": 0,
+   "share": 0
   }
  ],
  "search_fields": "employee_id,employee_name,designation,office_unit,pan,pran_no",

@@ -7,6 +7,10 @@ import frappe
 from frappe.utils import flt, today
 
 def after_install():
+	setup_roles()
+	setup_workflow_states()
+	setup_workflow_actions()
+	setup_workflows()
 	setup_cpc_pay_levels()
 	setup_payroll_settings()
 	setup_default_leave_types()
@@ -14,11 +18,212 @@ def after_install():
 	setup_sidebars()
 
 def after_migrate():
+	setup_roles()
+	setup_workflow_states()
+	setup_workflow_actions()
+	setup_workflows()
 	setup_cpc_pay_levels()
 	setup_payroll_settings()
 	setup_default_leave_types()
 	setup_workspaces()
 	setup_sidebars()
+
+def setup_roles():
+	roles = [
+		{"role_name": "Govt Employee", "desk_access": 1},
+		{"role_name": "Dealing Assistant", "desk_access": 1},
+		{"role_name": "Section Officer", "desk_access": 1},
+		{"role_name": "Drawing and Disbursing Officer", "desk_access": 1},
+		{"role_name": "Pay and Accounts Officer", "desk_access": 1},
+		{"role_name": "Govt HR Admin", "desk_access": 1}
+	]
+	for r in roles:
+		try:
+			if not frappe.db.exists("Role", r["role_name"]):
+				doc = frappe.new_doc("Role")
+				doc.role_name = r["role_name"]
+				doc.desk_access = r.get("desk_access", 1)
+				doc.flags.ignore_permissions = True
+				doc.insert()
+		except Exception as e:
+			frappe.log_error(f"Error creating role {r['role_name']}: {e}")
+	frappe.db.commit()
+
+def setup_workflow_states():
+	states = [
+		{"workflow_state_name": "Draft", "style": "Primary"},
+		{"workflow_state_name": "Under Verification", "style": "Warning"},
+		{"workflow_state_name": "Recommended for Sanction", "style": "Info"},
+		{"workflow_state_name": "Sanctioned & Passed", "style": "Success"},
+		{"workflow_state_name": "Returned to Maker", "style": "Danger"},
+		{"workflow_state_name": "Applied", "style": "Primary"},
+		{"workflow_state_name": "Scrutinized", "style": "Warning"},
+		{"workflow_state_name": "Recommended", "style": "Info"},
+		{"workflow_state_name": "Sanctioned", "style": "Success"},
+		{"workflow_state_name": "Rejected", "style": "Danger"},
+		{"workflow_state_name": "Claim Drafted", "style": "Primary"},
+		{"workflow_state_name": "Scrutinized by Office", "style": "Warning"},
+		{"workflow_state_name": "Recommended by SO", "style": "Info"},
+		{"workflow_state_name": "Sanctioned for Payment", "style": "Success"},
+		{"workflow_state_name": "Returned for Rectification", "style": "Danger"}
+	]
+	for s in states:
+		try:
+			if not frappe.db.exists("Workflow State", s["workflow_state_name"]):
+				doc = frappe.new_doc("Workflow State")
+				doc.workflow_state_name = s["workflow_state_name"]
+				doc.style = s.get("style", "Primary")
+				doc.flags.ignore_permissions = True
+				doc.insert()
+		except Exception as e:
+			frappe.log_error(f"Error creating workflow state {s['workflow_state_name']}: {e}")
+	frappe.db.commit()
+
+def setup_workflow_actions():
+	actions = [
+		"Submit for Verification",
+		"Verify & Recommend",
+		"Return with Queries",
+		"Re-submit for Verification",
+		"Sanction & Finalize",
+		"Return to SO",
+		"Forward for Scrutiny",
+		"Recommend Leave",
+		"Return to Employee",
+		"Sanction Leave",
+		"Reject Leave",
+		"Submit Claim",
+		"Verify Claim",
+		"Sanction Claim",
+		"Reject Claim",
+		"Submit Tour Bill",
+		"Audit Tour Claims",
+		"Sanction Travel Bill"
+	]
+	for a in actions:
+		try:
+			if not frappe.db.exists("Workflow Action Master", a):
+				doc = frappe.new_doc("Workflow Action Master")
+				doc.workflow_action_name = a
+				doc.flags.ignore_permissions = True
+				doc.insert()
+		except Exception as e:
+			frappe.log_error(f"Error creating workflow action {a}: {e}")
+	frappe.db.commit()
+
+def setup_workflows():
+	workflows_def = [
+		{
+			"workflow_name": "Govt Pay Bill Approval Matrix",
+			"document_type": "Govt Pay Bill",
+			"workflow_state_field": "workflow_state",
+			"is_active": 1,
+			"states": [
+				{"state": "Draft", "doc_status": "0", "allow_edit": "Dealing Assistant"},
+				{"state": "Under Verification", "doc_status": "0", "allow_edit": "Section Officer"},
+				{"state": "Recommended for Sanction", "doc_status": "0", "allow_edit": "Drawing and Disbursing Officer"},
+				{"state": "Sanctioned & Passed", "doc_status": "1", "allow_edit": "Drawing and Disbursing Officer"},
+				{"state": "Returned to Maker", "doc_status": "0", "allow_edit": "Dealing Assistant"}
+			],
+			"transitions": [
+				{"state": "Draft", "action": "Submit for Verification", "next_state": "Under Verification", "allowed": "Dealing Assistant"},
+				{"state": "Under Verification", "action": "Verify & Recommend", "next_state": "Recommended for Sanction", "allowed": "Section Officer"},
+				{"state": "Under Verification", "action": "Return with Queries", "next_state": "Returned to Maker", "allowed": "Section Officer"},
+				{"state": "Returned to Maker", "action": "Re-submit for Verification", "next_state": "Under Verification", "allowed": "Dealing Assistant"},
+				{"state": "Recommended for Sanction", "action": "Sanction & Finalize", "next_state": "Sanctioned & Passed", "allowed": "Drawing and Disbursing Officer"},
+				{"state": "Recommended for Sanction", "action": "Return to SO", "next_state": "Under Verification", "allowed": "Drawing and Disbursing Officer"}
+			]
+		},
+		{
+			"workflow_name": "CCS Leave Sanction Matrix",
+			"document_type": "CCS Leave Application",
+			"workflow_state_field": "workflow_state",
+			"is_active": 1,
+			"states": [
+				{"state": "Applied", "doc_status": "0", "allow_edit": "Govt Employee"},
+				{"state": "Scrutinized", "doc_status": "0", "allow_edit": "Dealing Assistant"},
+				{"state": "Recommended", "doc_status": "0", "allow_edit": "Section Officer"},
+				{"state": "Sanctioned", "doc_status": "1", "allow_edit": "Drawing and Disbursing Officer"},
+				{"state": "Rejected", "doc_status": "0", "allow_edit": "Drawing and Disbursing Officer"}
+			],
+			"transitions": [
+				{"state": "Applied", "action": "Forward for Scrutiny", "next_state": "Scrutinized", "allowed": "Govt Employee"},
+				{"state": "Scrutinized", "action": "Recommend Leave", "next_state": "Recommended", "allowed": "Dealing Assistant"},
+				{"state": "Scrutinized", "action": "Return to Employee", "next_state": "Applied", "allowed": "Dealing Assistant"},
+				{"state": "Recommended", "action": "Sanction Leave", "next_state": "Sanctioned", "allowed": "Drawing and Disbursing Officer"},
+				{"state": "Recommended", "action": "Reject Leave", "next_state": "Rejected", "allowed": "Drawing and Disbursing Officer"}
+			]
+		},
+		{
+			"workflow_name": "CEA Claim Sanction Matrix",
+			"document_type": "CEA Claim",
+			"workflow_state_field": "workflow_state",
+			"is_active": 1,
+			"states": [
+				{"state": "Claim Drafted", "doc_status": "0", "allow_edit": "Govt Employee"},
+				{"state": "Scrutinized by Office", "doc_status": "0", "allow_edit": "Dealing Assistant"},
+				{"state": "Recommended by SO", "doc_status": "0", "allow_edit": "Section Officer"},
+				{"state": "Sanctioned for Payment", "doc_status": "1", "allow_edit": "Drawing and Disbursing Officer"},
+				{"state": "Returned for Rectification", "doc_status": "0", "allow_edit": "Dealing Assistant"}
+			],
+			"transitions": [
+				{"state": "Claim Drafted", "action": "Submit Claim", "next_state": "Scrutinized by Office", "allowed": "Govt Employee"},
+				{"state": "Scrutinized by Office", "action": "Verify Claim", "next_state": "Recommended by SO", "allowed": "Dealing Assistant"},
+				{"state": "Scrutinized by Office", "action": "Return to Employee", "next_state": "Claim Drafted", "allowed": "Dealing Assistant"},
+				{"state": "Recommended by SO", "action": "Sanction Claim", "next_state": "Sanctioned for Payment", "allowed": "Drawing and Disbursing Officer"},
+				{"state": "Recommended by SO", "action": "Return with Queries", "next_state": "Returned for Rectification", "allowed": "Drawing and Disbursing Officer"}
+			]
+		},
+		{
+			"workflow_name": "Tour TADA Sanction Matrix",
+			"document_type": "TADA Final Claim",
+			"workflow_state_field": "workflow_state",
+			"is_active": 1,
+			"states": [
+				{"state": "Claim Drafted", "doc_status": "0", "allow_edit": "Govt Employee"},
+				{"state": "Scrutinized by Office", "doc_status": "0", "allow_edit": "Dealing Assistant"},
+				{"state": "Recommended by SO", "doc_status": "0", "allow_edit": "Section Officer"},
+				{"state": "Sanctioned for Payment", "doc_status": "1", "allow_edit": "Drawing and Disbursing Officer"},
+				{"state": "Returned for Rectification", "doc_status": "0", "allow_edit": "Dealing Assistant"}
+			],
+			"transitions": [
+				{"state": "Claim Drafted", "action": "Submit Tour Bill", "next_state": "Scrutinized by Office", "allowed": "Govt Employee"},
+				{"state": "Scrutinized by Office", "action": "Audit Tour Claims", "next_state": "Recommended by SO", "allowed": "Dealing Assistant"},
+				{"state": "Recommended by SO", "action": "Sanction Travel Bill", "next_state": "Sanctioned for Payment", "allowed": "Drawing and Disbursing Officer"},
+				{"state": "Recommended by SO", "action": "Return with Queries", "next_state": "Returned for Rectification", "allowed": "Drawing and Disbursing Officer"}
+			]
+		}
+	]
+
+	for wf in workflows_def:
+		try:
+			name = wf["workflow_name"]
+			if frappe.db.exists("Workflow", name):
+				doc = frappe.get_doc("Workflow", name)
+			else:
+				doc = frappe.new_doc("Workflow")
+				doc.workflow_name = name
+
+			doc.document_type = wf["document_type"]
+			doc.workflow_state_field = wf.get("workflow_state_field", "workflow_state")
+			doc.is_active = 1
+			doc.send_email_alert = 0
+
+			doc.set("states", [])
+			for s in wf["states"]:
+				doc.append("states", s)
+
+			doc.set("transitions", [])
+			for t in wf["transitions"]:
+				doc.append("transitions", t)
+
+			doc.flags.ignore_permissions = True
+			doc.flags.ignore_mandatory = True
+			doc.save()
+		except Exception as e:
+			frappe.log_error(f"Error setting up workflow {wf['workflow_name']}: {e}")
+
+	frappe.db.commit()
 
 def setup_sidebars():
 	items_data = [

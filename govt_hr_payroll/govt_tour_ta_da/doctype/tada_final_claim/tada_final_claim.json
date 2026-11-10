@@ -6,6 +6,7 @@
  "engine": "InnoDB",
  "field_order": [
   "naming_series",
+  "workflow_state",
   "employee",
   "employee_name",
   "designation",
@@ -50,6 +51,15 @@
    "label": "Series",
    "options": "TA-.YYYY.-.#####",
    "reqd": 1
+  },
+  {
+   "fieldname": "workflow_state",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Approval Status",
+   "options": "Workflow State",
+   "read_only": 1
   },
   {
    "fieldname": "employee",
@@ -185,26 +195,26 @@
   {
    "fieldname": "total_fare_claimed",
    "fieldtype": "Currency",
-   "label": "Total Fare Claimed (₹)",
+   "label": "Total Fare Claimed (\u20b9)",
    "read_only": 1
   },
   {
    "fieldname": "total_hotel_claimed",
    "fieldtype": "Currency",
-   "label": "Total Hotel Claimed (₹)",
+   "label": "Total Hotel Claimed (\u20b9)",
    "read_only": 1
   },
   {
    "fieldname": "total_food_claimed",
    "fieldtype": "Currency",
-   "label": "Total Food Claimed (₹)",
+   "label": "Total Food Claimed (\u20b9)",
    "read_only": 1
   },
   {
    "fieldname": "total_amount_claimed",
    "fieldtype": "Currency",
    "in_list_view": 1,
-   "label": "Total Claimed Amount (₹)",
+   "label": "Total Claimed Amount (\u20b9)",
    "read_only": 1
   },
   {
@@ -215,13 +225,13 @@
    "default": "0",
    "fieldname": "advance_amount_received",
    "fieldtype": "Currency",
-   "label": "TA Advance Received (₹)"
+   "label": "TA Advance Received (\u20b9)"
   },
   {
    "fieldname": "balance_amount_claimed",
    "fieldtype": "Currency",
    "in_list_view": 1,
-   "label": "Balance Amount Claimed (₹)",
+   "label": "Balance Amount Claimed (\u20b9)",
    "read_only": 1
   },
   {
@@ -233,13 +243,13 @@
    "fieldname": "total_passed_amount",
    "fieldtype": "Currency",
    "in_list_view": 1,
-   "label": "Passed Amount by PCDA HQ (₹)"
+   "label": "Passed Amount by PCDA HQ (\u20b9)"
   },
   {
    "fieldname": "net_payable_or_refundable",
    "fieldtype": "Currency",
    "in_list_view": 1,
-   "label": "Net Amount Payable / (Refundable) (₹)",
+   "label": "Net Amount Payable / (Refundable) (\u20b9)",
    "read_only": 1
   },
   {
@@ -280,34 +290,90 @@
  "owner": "Administrator",
  "permissions": [
   {
-   "amend": 1,
-   "cancel": 1,
-   "create": 1,
-   "delete": 1,
-   "email": 1,
-   "export": 1,
-   "print": 1,
-   "read": 1,
-   "report": 1,
    "role": "System Manager",
-   "share": 1,
+   "read": 1,
+   "write": 1,
+   "create": 1,
    "submit": 1,
-   "write": 1
+   "cancel": 1,
+   "amend": 1,
+   "delete": 1,
+   "print": 1,
+   "email": 1,
+   "share": 1
   },
   {
-   "amend": 1,
-   "cancel": 0,
-   "create": 1,
-   "delete": 0,
-   "email": 1,
-   "export": 1,
-   "print": 1,
+   "role": "Govt HR Admin",
    "read": 1,
-   "report": 1,
-   "role": "HR Manager",
-   "share": 1,
+   "write": 1,
+   "create": 1,
    "submit": 1,
-   "write": 1
+   "cancel": 1,
+   "amend": 1,
+   "delete": 1,
+   "print": 1,
+   "email": 1,
+   "share": 1
+  },
+  {
+   "role": "Drawing and Disbursing Officer",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "submit": 1,
+   "cancel": 1,
+   "amend": 1,
+   "print": 1,
+   "email": 1,
+   "share": 1
+  },
+  {
+   "role": "Section Officer",
+   "read": 1,
+   "write": 1,
+   "create": 0,
+   "submit": 0,
+   "cancel": 0,
+   "amend": 0,
+   "print": 1,
+   "email": 1,
+   "share": 1
+  },
+  {
+   "role": "Dealing Assistant",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "submit": 0,
+   "cancel": 0,
+   "amend": 0,
+   "print": 1,
+   "email": 1,
+   "share": 1
+  },
+  {
+   "role": "Pay and Accounts Officer",
+   "read": 1,
+   "write": 0,
+   "create": 0,
+   "submit": 0,
+   "cancel": 0,
+   "amend": 0,
+   "print": 1,
+   "email": 1,
+   "share": 1
+  },
+  {
+   "role": "Govt Employee",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "submit": 0,
+   "cancel": 0,
+   "amend": 0,
+   "print": 1,
+   "email": 1,
+   "share": 0
   }
  ],
  "search_fields": "name,employee,employee_name,station_to,movement_order",

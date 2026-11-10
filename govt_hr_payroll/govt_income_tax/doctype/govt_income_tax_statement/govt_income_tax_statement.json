@@ -6,6 +6,7 @@
  "engine": "InnoDB",
  "field_order": [
   "naming_series",
+  "workflow_state",
   "employee",
   "employee_name",
   "designation",
@@ -63,6 +64,15 @@
    "label": "Series",
    "options": "IT-.YYYY.-.#####",
    "reqd": 1
+  },
+  {
+   "fieldname": "workflow_state",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Approval Status",
+   "options": "Workflow State",
+   "read_only": 1
   },
   {
    "fieldname": "employee",
@@ -164,7 +174,7 @@
    "fieldname": "total_gross_salary",
    "fieldtype": "Currency",
    "in_list_view": 1,
-   "label": "1. Total Emoluments / Gross Salary (₹)",
+   "label": "1. Total Emoluments / Gross Salary (\u20b9)",
    "read_only": 1
   },
   {
@@ -177,43 +187,43 @@
    "depends_on": "eval:doc.hra_rebate_claimed==1",
    "fieldname": "annual_rent_paid",
    "fieldtype": "Currency",
-   "label": "Total Rent Paid During Year (₹)"
+   "label": "Total Rent Paid During Year (\u20b9)"
   },
   {
    "fieldname": "hra_exemption_u_s_10",
    "fieldtype": "Currency",
-   "label": "3. Exemption of HRA u/s 10 (₹)",
+   "label": "3. Exemption of HRA u/s 10 (\u20b9)",
    "read_only": 1
   },
   {
    "fieldname": "income_under_salaries",
    "fieldtype": "Currency",
-   "label": "4. Income Chargeable under Salaries (1-3) (₹)",
+   "label": "4. Income Chargeable under Salaries (1-3) (\u20b9)",
    "read_only": 1
   },
   {
    "default": "75000",
    "fieldname": "standard_deduction",
    "fieldtype": "Currency",
-   "label": "Standard Deduction (₹75,000 New / ₹50,000 Old) (₹)"
+   "label": "Standard Deduction (\u20b975,000 New / \u20b950,000 Old) (\u20b9)"
   },
   {
    "default": "0",
    "fieldname": "income_loss_house_property",
    "fieldtype": "Currency",
-   "label": "5. Income / (Loss) from House Property (HBA) (₹)"
+   "label": "5. Income / (Loss) from House Property (HBA) (\u20b9)"
   },
   {
    "default": "0",
    "fieldname": "income_other_sources",
    "fieldtype": "Currency",
-   "label": "6. Income from Other Sources (₹)"
+   "label": "6. Income from Other Sources (\u20b9)"
   },
   {
    "fieldname": "gross_total_income",
    "fieldtype": "Currency",
    "in_list_view": 1,
-   "label": "7. Gross Total Income (4 - Std Ded + 5 + 6) (₹)",
+   "label": "7. Gross Total Income (4 - Std Ded + 5 + 6) (\u20b9)",
    "read_only": 1
   },
   {
@@ -224,78 +234,78 @@
    "default": "0",
    "fieldname": "sec_80c_gpf",
    "fieldtype": "Currency",
-   "label": "80C (a) GPF Subscription (₹)"
+   "label": "80C (a) GPF Subscription (\u20b9)"
   },
   {
    "default": "0",
    "fieldname": "sec_80c_cgegis",
    "fieldtype": "Currency",
-   "label": "80C (b) CGEGIS Subscription (₹)"
+   "label": "80C (b) CGEGIS Subscription (\u20b9)"
   },
   {
    "default": "0",
    "fieldname": "sec_80c_hba_principal",
    "fieldtype": "Currency",
-   "label": "80C (c) HBA Housing Loan Principal (₹)"
+   "label": "80C (c) HBA Housing Loan Principal (\u20b9)"
   },
   {
    "default": "0",
    "fieldname": "sec_80c_cea",
    "fieldtype": "Currency",
-   "label": "80C (d) Tuition Fee / CEA (₹)"
+   "label": "80C (d) Tuition Fee / CEA (\u20b9)"
   },
   {
    "default": "0",
    "fieldname": "sec_80c_ppf_nsc",
    "fieldtype": "Currency",
-   "label": "80C (e) NSC / PPF (₹)"
+   "label": "80C (e) NSC / PPF (\u20b9)"
   },
   {
    "default": "0",
    "fieldname": "sec_80c_lic",
    "fieldtype": "Currency",
-   "label": "80C (f) LIC / PLI Premium (₹)"
+   "label": "80C (f) LIC / PLI Premium (\u20b9)"
   },
   {
    "fieldname": "sec_80c_total_claimed",
    "fieldtype": "Currency",
-   "label": "80C Total Claimed (₹)",
+   "label": "80C Total Claimed (\u20b9)",
    "read_only": 1
   },
   {
    "fieldname": "sec_80c_admissible",
    "fieldtype": "Currency",
-   "label": "80C Admissible (Max ₹1.5 Lakh) (₹)",
+   "label": "80C Admissible (Max \u20b91.5 Lakh) (\u20b9)",
    "read_only": 1
   },
   {
    "default": "0",
    "fieldname": "sec_80ccd_1b_nps",
    "fieldtype": "Currency",
-   "label": "80CCD(1B) Individual NPS (Max ₹50,000) (₹)"
+   "label": "80CCD(1B) Individual NPS (Max \u20b950,000) (\u20b9)"
   },
   {
    "fieldname": "sec_80ccd_2_govt_nps",
    "fieldtype": "Currency",
-   "label": "80CCD(2) Govt Contribution to NPS (14%) (₹)",
+   "label": "80CCD(2) Govt Contribution to NPS (14%) (\u20b9)",
    "read_only": 1
   },
   {
    "default": "0",
    "fieldname": "sec_80d_mediclaim_cghs",
    "fieldtype": "Currency",
-   "label": "80D Mediclaim / CGHS Contribution (₹)"
+   "label": "80D Mediclaim / CGHS Contribution (\u20b9)"
   },
   {
    "default": "0",
    "fieldname": "sec_80g_donations",
    "fieldtype": "Currency",
-   "label": "80G Approved Donations (₹)"
+   "label": "80G Approved Donations (\u20b9)"
   },
   {
    "fieldname": "total_chapter_vi_a",
    "fieldtype": "Currency",
-   "label": "11. Total Deductions under Chapter VI-A (₹)",
+   "label": "11. Total Deductions under Chapter VI-A (\u20b9)",
    "read_only": 1
   },
   {
@@ -307,25 +317,25 @@
    "fieldname": "net_taxable_income",
    "fieldtype": "Currency",
    "in_list_view": 1,
-   "label": "12. Net Taxable Income (₹)",
+   "label": "12. Net Taxable Income (\u20b9)",
    "read_only": 1
   },
   {
    "fieldname": "tax_on_income",
    "fieldtype": "Currency",
-   "label": "14. Tax on Total Taxable Income (₹)",
+   "label": "14. Tax on Total Taxable Income (\u20b9)",
    "read_only": 1
   },
   {
    "fieldname": "rebate_u_s_87a",
    "fieldtype": "Currency",
-   "label": "Rebate u/s 87A (₹)",
+   "label": "Rebate u/s 87A (\u20b9)",
    "read_only": 1
   },
   {
    "fieldname": "net_tax_payable",
    "fieldtype": "Currency",
-   "label": "Net Tax Payable (₹)",
+   "label": "Net Tax Payable (\u20b9)",
    "read_only": 1
   },
   {
@@ -335,27 +345,27 @@
   {
    "fieldname": "educational_cess",
    "fieldtype": "Currency",
-   "label": "16. Educational Cess (4%) (₹)",
+   "label": "16. Educational Cess (4%) (\u20b9)",
    "read_only": 1
   },
   {
    "fieldname": "total_tax_and_cess",
    "fieldtype": "Currency",
    "in_list_view": 1,
-   "label": "17. Total Tax + Cess (₹)",
+   "label": "17. Total Tax + Cess (\u20b9)",
    "read_only": 1
   },
   {
    "fieldname": "tax_deducted_at_source",
    "fieldtype": "Currency",
-   "label": "18. Less: Tax Deducted at Source (TDS) (₹)",
+   "label": "18. Less: Tax Deducted at Source (TDS) (\u20b9)",
    "read_only": 1
   },
   {
    "fieldname": "tax_balance_payable_or_refundable",
    "fieldtype": "Currency",
    "in_list_view": 1,
-   "label": "19. Tax Balance Payable / (Refundable) (₹)",
+   "label": "19. Tax Balance Payable / (Refundable) (\u20b9)",
    "read_only": 1
   },
   {
@@ -377,34 +387,90 @@
  "owner": "Administrator",
  "permissions": [
   {
-   "amend": 1,
-   "cancel": 1,
-   "create": 1,
-   "delete": 1,
-   "email": 1,
-   "export": 1,
-   "print": 1,
-   "read": 1,
-   "report": 1,
    "role": "System Manager",
-   "share": 1,
+   "read": 1,
+   "write": 1,
+   "create": 1,
    "submit": 1,
-   "write": 1
+   "cancel": 1,
+   "amend": 1,
+   "delete": 1,
+   "print": 1,
+   "email": 1,
+   "share": 1
   },
   {
-   "amend": 1,
-   "cancel": 0,
-   "create": 1,
-   "delete": 0,
-   "email": 1,
-   "export": 1,
-   "print": 1,
+   "role": "Govt HR Admin",
    "read": 1,
-   "report": 1,
-   "role": "HR Manager",
-   "share": 1,
+   "write": 1,
+   "create": 1,
    "submit": 1,
-   "write": 1
+   "cancel": 1,
+   "amend": 1,
+   "delete": 1,
+   "print": 1,
+   "email": 1,
+   "share": 1
+  },
+  {
+   "role": "Drawing and Disbursing Officer",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "submit": 1,
+   "cancel": 1,
+   "amend": 1,
+   "print": 1,
+   "email": 1,
+   "share": 1
+  },
+  {
+   "role": "Section Officer",
+   "read": 1,
+   "write": 1,
+   "create": 0,
+   "submit": 0,
+   "cancel": 0,
+   "amend": 0,
+   "print": 1,
+   "email": 1,
+   "share": 1
+  },
+  {
+   "role": "Dealing Assistant",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "submit": 0,
+   "cancel": 0,
+   "amend": 0,
+   "print": 1,
+   "email": 1,
+   "share": 1
+  },
+  {
+   "role": "Pay and Accounts Officer",
+   "read": 1,
+   "write": 0,
+   "create": 0,
+   "submit": 0,
+   "cancel": 0,
+   "amend": 0,
+   "print": 1,
+   "email": 1,
+   "share": 1
+  },
+  {
+   "role": "Govt Employee",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "submit": 0,
+   "cancel": 0,
+   "amend": 0,
+   "print": 1,
+   "email": 1,
+   "share": 0
   }
  ],
  "search_fields": "name,employee,employee_name,financial_year",

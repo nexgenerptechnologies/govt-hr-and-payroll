@@ -6,6 +6,7 @@
  "engine": "InnoDB",
  "field_order": [
   "naming_series",
+  "workflow_state",
   "office_unit",
   "month",
   "year",
@@ -48,6 +49,15 @@
    "label": "Series",
    "options": "SUPP-.YYYY.-.#####",
    "reqd": 1
+  },
+  {
+   "fieldname": "workflow_state",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Approval Status",
+   "options": "Workflow State",
+   "read_only": 1
   },
   {
    "fieldname": "office_unit",
@@ -127,43 +137,43 @@
   {
    "fieldname": "total_basic_pay",
    "fieldtype": "Currency",
-   "label": "Total Basic Pay (₹)",
+   "label": "Total Basic Pay (\u20b9)",
    "read_only": 1
   },
   {
    "fieldname": "total_da",
    "fieldtype": "Currency",
-   "label": "Total DA (₹)",
+   "label": "Total DA (\u20b9)",
    "read_only": 1
   },
   {
    "fieldname": "total_hra",
    "fieldtype": "Currency",
-   "label": "Total HRA (₹)",
+   "label": "Total HRA (\u20b9)",
    "read_only": 1
   },
   {
    "fieldname": "total_tpt",
    "fieldtype": "Currency",
-   "label": "Total TPT (₹)",
+   "label": "Total TPT (\u20b9)",
    "read_only": 1
   },
   {
    "fieldname": "total_da_on_tpt",
    "fieldtype": "Currency",
-   "label": "Total DA on TPT (₹)",
+   "label": "Total DA on TPT (\u20b9)",
    "read_only": 1
   },
   {
    "fieldname": "total_misc_allowance",
    "fieldtype": "Currency",
-   "label": "Total Misc Allowance (₹)",
+   "label": "Total Misc Allowance (\u20b9)",
    "read_only": 1
   },
   {
    "fieldname": "total_gross_pay",
    "fieldtype": "Currency",
-   "label": "Total Gross Pay (₹)",
+   "label": "Total Gross Pay (\u20b9)",
    "read_only": 1
   },
   {
@@ -173,73 +183,73 @@
   {
    "fieldname": "total_pran_emp",
    "fieldtype": "Currency",
-   "label": "Total PRAN (Cont by Emp) (₹)",
+   "label": "Total PRAN (Cont by Emp) (\u20b9)",
    "read_only": 1
   },
   {
    "fieldname": "total_pran_govt",
    "fieldtype": "Currency",
-   "label": "Total PRAN (Cont by Govt) (₹)",
+   "label": "Total PRAN (Cont by Govt) (\u20b9)",
    "read_only": 1
   },
   {
    "fieldname": "total_pran_grand",
    "fieldtype": "Currency",
-   "label": "Total PRAN Grand Total (₹)",
+   "label": "Total PRAN Grand Total (\u20b9)",
    "read_only": 1
   },
   {
    "fieldname": "total_gpf",
    "fieldtype": "Currency",
-   "label": "Total GPF (₹)",
+   "label": "Total GPF (\u20b9)",
    "read_only": 1
   },
   {
    "fieldname": "total_cghs",
    "fieldtype": "Currency",
-   "label": "Total CGHS (₹)",
+   "label": "Total CGHS (\u20b9)",
    "read_only": 1
   },
   {
    "fieldname": "total_license_fee",
    "fieldtype": "Currency",
-   "label": "Total License Fee (L/Fee) (₹)",
+   "label": "Total License Fee (L/Fee) (\u20b9)",
    "read_only": 1
   },
   {
    "fieldname": "total_cgegis",
    "fieldtype": "Currency",
-   "label": "Total CGEGIS (₹)",
+   "label": "Total CGEGIS (\u20b9)",
    "read_only": 1
   },
   {
    "fieldname": "total_income_tax",
    "fieldtype": "Currency",
-   "label": "Total Income Tax (TDS) (₹)",
+   "label": "Total Income Tax (TDS) (\u20b9)",
    "read_only": 1
   },
   {
    "fieldname": "total_edu_cess",
    "fieldtype": "Currency",
-   "label": "Total Edu Cess (₹)",
+   "label": "Total Edu Cess (\u20b9)",
    "read_only": 1
   },
   {
    "fieldname": "total_misc_deduction",
    "fieldtype": "Currency",
-   "label": "Total Misc Deductions (₹)",
+   "label": "Total Misc Deductions (\u20b9)",
    "read_only": 1
   },
   {
    "fieldname": "total_deductions",
    "fieldtype": "Currency",
-   "label": "Total Deductions (₹)",
+   "label": "Total Deductions (\u20b9)",
    "read_only": 1
   },
   {
    "fieldname": "total_net_pay",
    "fieldtype": "Currency",
-   "label": "Total Net Pay (₹)",
+   "label": "Total Net Pay (\u20b9)",
    "read_only": 1
   },
   {
@@ -261,34 +271,90 @@
  "owner": "Administrator",
  "permissions": [
   {
-   "amend": 1,
-   "cancel": 1,
-   "create": 1,
-   "delete": 1,
-   "email": 1,
-   "export": 1,
-   "print": 1,
-   "read": 1,
-   "report": 1,
    "role": "System Manager",
-   "share": 1,
+   "read": 1,
+   "write": 1,
+   "create": 1,
    "submit": 1,
-   "write": 1
+   "cancel": 1,
+   "amend": 1,
+   "delete": 1,
+   "print": 1,
+   "email": 1,
+   "share": 1
   },
   {
-   "amend": 1,
-   "cancel": 0,
-   "create": 1,
-   "delete": 0,
-   "email": 1,
-   "export": 1,
-   "print": 1,
+   "role": "Govt HR Admin",
    "read": 1,
-   "report": 1,
-   "role": "HR Manager",
-   "share": 1,
+   "write": 1,
+   "create": 1,
    "submit": 1,
-   "write": 1
+   "cancel": 1,
+   "amend": 1,
+   "delete": 1,
+   "print": 1,
+   "email": 1,
+   "share": 1
+  },
+  {
+   "role": "Drawing and Disbursing Officer",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "submit": 1,
+   "cancel": 1,
+   "amend": 1,
+   "print": 1,
+   "email": 1,
+   "share": 1
+  },
+  {
+   "role": "Section Officer",
+   "read": 1,
+   "write": 1,
+   "create": 0,
+   "submit": 0,
+   "cancel": 0,
+   "amend": 0,
+   "print": 1,
+   "email": 1,
+   "share": 1
+  },
+  {
+   "role": "Dealing Assistant",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "submit": 0,
+   "cancel": 0,
+   "amend": 0,
+   "print": 1,
+   "email": 1,
+   "share": 1
+  },
+  {
+   "role": "Pay and Accounts Officer",
+   "read": 1,
+   "write": 0,
+   "create": 0,
+   "submit": 0,
+   "cancel": 0,
+   "amend": 0,
+   "print": 1,
+   "email": 1,
+   "share": 1
+  },
+  {
+   "role": "Govt Employee",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "submit": 0,
+   "cancel": 0,
+   "amend": 0,
+   "print": 1,
+   "email": 1,
+   "share": 0
   }
  ],
  "search_fields": "name,office_unit,month,year",

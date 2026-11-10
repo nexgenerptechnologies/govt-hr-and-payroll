@@ -189,6 +189,48 @@ def audit_mathematical_rules():
 
     return tests_passed == total_tests, tests_passed, total_tests
 
+def audit_roles_and_workflows(base_dir):
+    print("\n" + "=" * 75)
+    print("STAGE 3: ROLES, PERMISSIONS & APPROVAL MATRICES AUDIT")
+    print("=" * 75)
+
+    submittable_doctypes = [
+        "govt_payroll/doctype/govt_pay_bill/govt_pay_bill.json",
+        "govt_payroll/doctype/supplementary_pay_bill/supplementary_pay_bill.json",
+        "govt_payroll/doctype/due_drawn_arrear/due_drawn_arrear.json",
+        "govt_leave_management/doctype/ccs_leave_application/ccs_leave_application.json",
+        "govt_leave_management/doctype/do_part_two_order/do_part_two_order.json",
+        "govt_claims/doctype/cea_claim/cea_claim.json",
+        "govt_claims/doctype/cghs_medical_claim/cghs_medical_claim.json",
+        "govt_tour_ta_da/doctype/tour_movement_order/tour_movement_order.json",
+        "govt_tour_ta_da/doctype/tada_final_claim/tada_final_claim.json",
+        "govt_income_tax/doctype/govt_income_tax_statement/govt_income_tax_statement.json"
+    ]
+
+    all_ok = True
+    passed = 0
+    total = len(submittable_doctypes)
+
+    print("\n[+] Checking Approval Status (workflow_state) & Submittable flags:")
+    for rel in submittable_doctypes:
+        full_p = os.path.join(base_dir, "govt_hr_payroll", rel)
+        with open(full_p, "r", encoding="utf-8") as f:
+            data = json.load(f)
+
+        has_wf = "workflow_state" in data.get("field_order", [])
+        is_sub = data.get("is_submittable") == 1
+        has_ddo = any(p.get("role") == "Drawing and Disbursing Officer" for p in data.get("permissions", []))
+
+        doc_name = os.path.splitext(os.path.basename(rel))[0]
+        if has_wf and is_sub and has_ddo:
+            passed += 1
+            print(f"  [PASS] {doc_name:<32} -> workflow_state: OK | Submittable: OK | RBAC: OK")
+        else:
+            all_ok = False
+            print(f"  [FAIL] {doc_name:<32} -> wf:{has_wf}, sub:{is_sub}, ddo:{has_ddo}")
+
+    return all_ok, passed, total
+
 def run_audit():
     base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     print("=" * 75)
@@ -198,11 +240,13 @@ def run_audit():
 
     f_ok, f_pass, f_tot = audit_file_structure(base_dir)
     m_ok, m_pass, m_tot = audit_mathematical_rules()
+    r_ok, r_pass, r_tot = audit_roles_and_workflows(base_dir)
 
     print("\n" + "=" * 75)
     print(f"FINAL AUDIT RESULT:")
     print(f"  -> DocType & Print Format Files : {f_pass}/{f_tot} Verified ({round(f_pass/f_tot*100)}%)")
     print(f"  -> Statutory Rules & Math Logic  : {m_pass}/{m_tot} Verified ({round(m_pass/m_tot*100)}%)")
+    print(f"  -> Roles & Approval Matrices     : {r_pass}/{r_tot} Verified ({round(r_pass/r_tot*100)}%)")
     print(f"  -> Overall System Status         : 100% COMPLIANT & READY FOR PRODUCTION")
     print("=" * 75)
 
