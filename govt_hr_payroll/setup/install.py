@@ -8,6 +8,7 @@ from frappe.utils import flt, today
 
 def after_install():
 	setup_roles()
+	setup_page_workspace_permissions()
 	setup_workflow_states()
 	setup_workflow_actions()
 	setup_workflows()
@@ -20,6 +21,7 @@ def after_install():
 
 def after_migrate():
 	setup_roles()
+	setup_page_workspace_permissions()
 	setup_workflow_states()
 	setup_workflow_actions()
 	setup_workflows()
@@ -29,6 +31,29 @@ def after_migrate():
 	setup_workspaces()
 	setup_sidebars()
 	assign_nitin_roles()
+
+def setup_page_workspace_permissions():
+	"""
+	Grants Read access to standard 'Page' and 'Workspace' doctypes for Govt HR roles
+	so restricted desk users don't encounter 'No permission for Page' error.
+	"""
+	roles = ["Govt HR Admin", "Dealing Assistant", "Section Officer", "Drawing and Disbursing Officer", "Govt Employee"]
+	for doctype in ["Page", "Workspace"]:
+		for role in roles:
+			try:
+				if not frappe.db.exists("Custom DocPerm", {"parent": doctype, "role": role, "permlevel": 0}):
+					p = frappe.new_doc("Custom DocPerm")
+					p.parent = doctype
+					p.parenttype = "DocType"
+					p.parentfield = "permissions"
+					p.role = role
+					p.permlevel = 0
+					p.read = 1
+					p.flags.ignore_permissions = True
+					p.insert()
+			except Exception as e:
+				frappe.log_error(f"Error setting {doctype} permission for {role}: {e}")
+	frappe.db.commit()
 
 def assign_nitin_roles():
 	"""
@@ -58,8 +83,14 @@ def assign_nitin_roles():
 			user_doc = frappe.get_doc("User", u.name)
 			existing_roles = {r.role for r in user_doc.roles}
 
-			# Ensure primary Government HR roles
-			target_roles = ["Govt HR Admin", "Dealing Assistant", "Section Officer", "Drawing and Disbursing Officer"]
+			# Ensure primary Government HR roles and Workspace Manager
+			target_roles = [
+				"Govt HR Admin",
+				"Dealing Assistant",
+				"Section Officer",
+				"Drawing and Disbursing Officer",
+				"Workspace Manager"
+			]
 			for tr in target_roles:
 				if tr not in existing_roles:
 					user_doc.append("roles", {"role": tr})
