@@ -47,35 +47,44 @@ def setup_sidebars():
 
 	try:
 		if frappe.db.exists("DocType", "Workspace Sidebar"):
-			target_sidebars = ["Govt Masters", "Govt HR & Payroll", "Govt Payroll"]
-			for sb_name in target_sidebars:
+			existing = frappe.get_all("Workspace Sidebar", fields=["name"])
+			names = {s.name for s in existing}
+			target_names = ["Govt Masters", "Govt HR & Payroll", "Govt Payroll", "Masters", "HR & Payroll"]
+			names.update(target_names)
+
+			for sb_name in names:
 				try:
-					if frappe.db.exists("Workspace Sidebar", sb_name):
-						sb_doc = frappe.get_doc("Workspace Sidebar", sb_name)
-					else:
+					if not frappe.db.exists("Workspace Sidebar", sb_name):
 						sb_doc = frappe.new_doc("Workspace Sidebar")
 						sb_doc.name = sb_name
 						sb_doc.sidebar_name = sb_name
-						sb_doc.module = "Govt Masters" if sb_name == "Govt Masters" else "Govt Payroll"
+						sb_doc.module = "Govt Masters"
+						sb_doc.flags.ignore_permissions = True
+						sb_doc.flags.ignore_mandatory = True
+						sb_doc.insert()
 
-					sb_doc.set("items", [])
-					for itm in items_data:
-						sb_doc.append("items", {
-							"type": itm.get("type", "Link"),
-							"link_type": itm.get("link_type", "DocType"),
-							"link_to": itm.get("link_to"),
-							"label": itm.get("label"),
-							"icon": itm.get("icon", "file-text"),
-							"hidden": 0
-						})
+					frappe.db.delete("Workspace Sidebar Item", {"parent": sb_name})
 
-					sb_doc.flags.ignore_permissions = True
-					sb_doc.flags.ignore_mandatory = True
-					sb_doc.save()
+					for idx, itm in enumerate(items_data, 1):
+						item_doc = frappe.new_doc("Workspace Sidebar Item")
+						item_doc.parent = sb_name
+						item_doc.parenttype = "Workspace Sidebar"
+						item_doc.parentfield = "items"
+						item_doc.idx = idx
+						item_doc.type = itm.get("type", "Link")
+						item_doc.link_type = itm.get("link_type", "DocType")
+						item_doc.link_to = itm.get("link_to")
+						item_doc.label = itm.get("label")
+						item_doc.icon = itm.get("icon", "file-text")
+						item_doc.hidden = 0
+						item_doc.flags.ignore_permissions = True
+						item_doc.flags.ignore_mandatory = True
+						item_doc.insert()
 				except Exception as e:
-					frappe.log_error(f"Error updating Workspace Sidebar {sb_name}: {e}")
+					frappe.log_error(f"Error updating sidebar {sb_name}: {e}")
 
 			frappe.db.commit()
+			frappe.clear_cache()
 	except Exception as e:
 		frappe.log_error(f"Error executing setup_sidebars: {e}")
 
@@ -130,6 +139,9 @@ def setup_workspaces():
 			doc.flags.ignore_permissions = True
 			doc.flags.ignore_mandatory = True
 			doc.save()
+
+			frappe.db.set_value("Workspace", ws_name, "label", doc.label)
+			frappe.db.set_value("Workspace", ws_name, "title", doc.title)
 		except Exception as e:
 			frappe.log_error(f"Error loading workspace {rel_file}: {e}")
 	
