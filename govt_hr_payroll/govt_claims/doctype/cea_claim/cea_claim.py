@@ -12,8 +12,12 @@ class CEAClaim(Document):
 		self.calculate_claim_totals()
 
 	def validate_children_limit(self):
-		if len(self.children) > 2 and self.no_of_children <= 2:
-			frappe.msgprint(_("Central Govt CEA rules normally restrict claims to the two oldest surviving children."))
+		if flt(self.no_of_children) > 3:
+			frappe.throw(_("Number of Surviving Children Claimed cannot be more than 3. You entered {0}.").format(self.no_of_children))
+		if len(self.children or []) > 3:
+			frappe.throw(_("Cannot claim CEA for more than 3 children in a single claim. Found {0} children in table.").format(len(self.children)))
+		if len(self.children or []) > 2 and flt(self.no_of_children) <= 2:
+			frappe.msgprint(_("Central Govt CEA rules normally restrict claims to the two oldest surviving children, unless twins/triplets born in second birth."))
 
 	def calculate_claim_totals(self):
 		tot_claimed = 0.0

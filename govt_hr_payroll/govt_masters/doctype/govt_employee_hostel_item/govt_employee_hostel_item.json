@@ -1,0 +1,111 @@
+{
+ "actions": [],
+ "creation": "2026-11-11 14:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "child_name",
+  "hostel_name",
+  "child_type",
+  "education_stage",
+  "pursuing_course",
+  "amount",
+  "academic_year",
+  "distance_from_hq_km",
+  "hostel_address",
+  "institution_receipt_no",
+  "remarks"
+ ],
+ "fields": [
+  {
+   "fieldname": "child_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Child Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "hostel_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Hostel / Residential Institution Name",
+   "reqd": 1
+  },
+  {
+   "default": "Normal Child",
+   "fieldname": "child_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Type of Child",
+   "options": "Normal Child\nDisabled / Divyang Child",
+   "reqd": 1
+  },
+  {
+   "default": "Pursuing after 10th (Diploma / Polytechnic / ITI)",
+   "fieldname": "education_stage",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Education Stage",
+   "options": "School Education (Up to 10th)\nPursuing after 10th (Diploma / Polytechnic / ITI)\nPursuing after 12th (Undergraduate / Degree / Professional Course)",
+   "reqd": 1
+  },
+  {
+   "fieldname": "pursuing_course",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Pursuing Course / Specialization",
+   "reqd": 1
+  },
+  {
+   "default": "101250",
+   "description": "7th CPC Statutory Ceiling (₹1,01,250/yr for Normal Child, ₹2,02,500/yr for Divyang Child)",
+   "fieldname": "amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Annual Hostel Subsidy Amount (₹)",
+   "reqd": 1
+  },
+  {
+   "default": "2026-2027",
+   "fieldname": "academic_year",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Academic Year"
+  },
+  {
+   "default": "50.0",
+   "description": "Government rule requires residential institution to be at least 50 km from station/HQ",
+   "fieldname": "distance_from_hq_km",
+   "fieldtype": "Float",
+   "label": "Distance from Station/HQ (Km)"
+  },
+  {
+   "fieldname": "hostel_address",
+   "fieldtype": "Data",
+   "label": "Hostel Address / Location"
+  },
+  {
+   "fieldname": "institution_receipt_no",
+   "fieldtype": "Data",
+   "label": "Bonafide Certificate / Receipt No"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Data",
+   "label": "Remarks / Boarding Details"
+  }
+ ],
+ "istable": 1,
+ "links": [],
+ "modified": "2026-11-11 14:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Govt Masters",
+ "name": "Govt Employee Hostel Item",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

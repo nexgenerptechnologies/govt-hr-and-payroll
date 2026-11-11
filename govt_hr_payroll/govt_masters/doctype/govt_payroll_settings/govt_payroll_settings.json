@@ -7,10 +7,14 @@
   "general_section",
   "current_financial_year",
   "current_da_rate",
+  "standard_edu_cess",
   "column_break_rates",
+  "section_pension",
   "nps_emp_rate",
   "nps_govt_rate",
-  "standard_edu_cess",
+  "column_break_ups",
+  "ups_emp_rate",
+  "ups_govt_rate",
   "section_hra",
   "hra_x_rate",
   "hra_y_rate",
@@ -37,11 +41,24 @@
    "reqd": 1
   },
   {
+   "default": "4.0",
+   "fieldname": "standard_edu_cess",
+   "fieldtype": "Percent",
+   "label": "Education Cess (%)",
+   "reqd": 1
+  },
+  {
    "fieldname": "column_break_rates",
    "fieldtype": "Column Break"
   },
   {
+   "fieldname": "section_pension",
+   "fieldtype": "Section Break",
+   "label": "Pension Schemes Contribution Rates (NPS & UPS)"
+  },
+  {
    "default": "10.0",
+   "description": "Statutory Central Government NPS Employee rate (10% of BP + DA)",
    "fieldname": "nps_emp_rate",
    "fieldtype": "Percent",
    "label": "NPS Employee Contribution (%)",
@@ -49,16 +66,30 @@
   },
   {
    "default": "14.0",
+   "description": "Statutory Central Government NPS Govt rate (14% of BP + DA)",
    "fieldname": "nps_govt_rate",
    "fieldtype": "Percent",
    "label": "NPS Govt Contribution (%)",
    "reqd": 1
   },
   {
-   "default": "4.0",
-   "fieldname": "standard_edu_cess",
+   "fieldname": "column_break_ups",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "10.0",
+   "description": "Unified Pension Scheme (UPS) Employee contribution - typed manually if revised",
+   "fieldname": "ups_emp_rate",
    "fieldtype": "Percent",
-   "label": "Education Cess (%)",
+   "label": "UPS Employee Contribution (%)",
+   "reqd": 1
+  },
+  {
+   "default": "10.0",
+   "description": "Unified Pension Scheme (UPS) Govt contribution - typed manually if revised",
+   "fieldname": "ups_govt_rate",
+   "fieldtype": "Percent",
+   "label": "UPS Govt Contribution (%)",
    "reqd": 1
   },
   {

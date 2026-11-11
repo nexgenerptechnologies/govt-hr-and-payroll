@@ -57,7 +57,19 @@
   "account_no",
   "column_break_bank",
   "ifsc_code",
-  "micr_code"
+  "micr_code",
+  "children_section",
+  "children_details",
+  "hostel_subsidies",
+  "tax_estimation_section",
+  "annual_regular_gross",
+  "leave_encashment_taxable",
+  "arrears_taxable",
+  "column_break_tax_extra",
+  "bonus_taxable",
+  "cea_received_taxable",
+  "other_taxable_earnings",
+  "total_annual_gross_salary"
  ],
  "fields": [
   {
@@ -283,13 +295,13 @@
    "fieldname": "pension_scheme",
    "fieldtype": "Select",
    "label": "Pension Scheme",
-   "options": "NPS\nGPF\nNone"
+   "options": "NPS\nUPS\nGPF\nNone"
   },
   {
-   "depends_on": "eval:doc.pension_scheme=='NPS'",
+   "depends_on": "eval:doc.pension_scheme=='NPS' || doc.pension_scheme=='UPS'",
    "fieldname": "pran_no",
    "fieldtype": "Data",
-   "label": "PRAN / PPAN No"
+   "label": "PRAN / PPAN / UPS Account No"
   },
   {
    "depends_on": "eval:doc.pension_scheme=='GPF'",
@@ -323,7 +335,7 @@
    "fieldname": "cgegis_group",
    "fieldtype": "Select",
    "label": "CGEGIS Group",
-   "options": "Group A\nGroup B\nGroup C"
+   "options": "Group A\nGroup B\nGroup C\nGroup D"
   },
   {
    "default": "120",
@@ -371,6 +383,82 @@
    "fieldname": "micr_code",
    "fieldtype": "Data",
    "label": "MICR Code"
+  },
+  {
+   "fieldname": "children_section",
+   "fieldtype": "Section Break",
+   "label": "Children Details & Educational Subsidies"
+  },
+  {
+   "fieldname": "children_details",
+   "fieldtype": "Table",
+   "label": "Children Details (Schooling & Academic Record)",
+   "options": "Govt Employee Child Item"
+  },
+  {
+   "fieldname": "hostel_subsidies",
+   "fieldtype": "Table",
+   "label": "Children Hostel Subsidy Details (Higher / Technical Education)",
+   "options": "Govt Employee Hostel Item"
+  },
+  {
+   "fieldname": "tax_estimation_section",
+   "fieldtype": "Section Break",
+   "label": "Annual Gross Salary & Tax Assessment Components (FY Assessment)"
+  },
+  {
+   "fieldname": "annual_regular_gross",
+   "fieldtype": "Currency",
+   "label": "Estimated Annual Regular Salary (Basic + DA + TPT) (\u20b9)",
+   "description": "Estimated regular salary paid in the financial year"
+  },
+  {
+   "default": "0",
+   "fieldname": "leave_encashment_taxable",
+   "fieldtype": "Currency",
+   "label": "Leave Encashment (LTC / Service) (\u20b9)",
+   "description": "Leave encashment received during the financial year"
+  },
+  {
+   "default": "0",
+   "fieldname": "arrears_taxable",
+   "fieldtype": "Currency",
+   "label": "Arrears Received in Year (\u20b9)",
+   "description": "Retrospective pay / DA arrears received in the financial year"
+  },
+  {
+   "fieldname": "column_break_tax_extra",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "bonus_taxable",
+   "fieldtype": "Currency",
+   "label": "Bonus (Non-PLB / Ad-hoc / PLB) (\u20b9)",
+   "description": "Annual statutory / productivity linked bonus"
+  },
+  {
+   "default": "0",
+   "fieldname": "cea_received_taxable",
+   "fieldtype": "Currency",
+   "label": "Children Education Allowance Received (\u20b9)",
+   "description": "Reimbursement received for CEA & Hostel subsidy"
+  },
+  {
+   "default": "0",
+   "fieldname": "other_taxable_earnings",
+   "fieldtype": "Currency",
+   "label": "Other Taxable Allowances / Honorarium (\u20b9)",
+   "description": "Any other taxable honorarium or special pay"
+  },
+  {
+   "default": "0",
+   "fieldname": "total_annual_gross_salary",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Total Annual Gross Salary for Tax (\u20b9)",
+   "read_only": 1,
+   "description": "Total Paid in Year = Regular Salary + Leave Encashment + Arrears + Bonus + CEA + Other"
   }
  ],
  "links": [],

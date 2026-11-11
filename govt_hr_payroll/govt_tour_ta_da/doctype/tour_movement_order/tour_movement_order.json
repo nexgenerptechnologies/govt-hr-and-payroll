@@ -17,6 +17,7 @@
   "column_break_duty",
   "station_from",
   "station_to",
+  "places_to_visit",
   "purpose_of_duty",
   "departure_date",
   "return_date",
@@ -137,7 +138,7 @@
    "fieldname": "sanctioned_travel_mode",
    "fieldtype": "Select",
    "label": "Sanctioned Travel Mode",
-   "options": "Air\nRail 1st AC\nRail 2nd AC\nRail 3rd AC\nAC Bus\nTaxi"
+   "options": "Air Economy\nAir Business\nRail 1st AC\nRail 2nd AC\nRail 3rd AC\nAC Bus\nTaxi\nAuto\nAir\nOther"
   },
   {
    "default": "0",
@@ -161,6 +162,13 @@
    "options": "Tour Movement Order",
    "print_hide": 1,
    "read_only": 1
+  },
+  {
+   "fieldname": "places_to_visit",
+   "fieldtype": "Table",
+   "label": "Places / Stations to Visit (Up to 10 Places)",
+   "options": "Tour Destination Item",
+   "description": "Add multiple places (supports 4 to 10 places of visit during this tour)"
   }
  ],
  "is_submittable": 1,

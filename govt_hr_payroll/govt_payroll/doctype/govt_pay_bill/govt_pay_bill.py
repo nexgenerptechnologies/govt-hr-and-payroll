@@ -15,6 +15,8 @@ class GovtPayBill(Document):
 		da_rate = flt(self.da_rate or settings.current_da_rate or 50.0)
 		nps_emp_rate = flt(settings.nps_emp_rate or 10.0)
 		nps_govt_rate = flt(settings.nps_govt_rate or 14.0)
+		ups_emp_rate = flt(settings.ups_emp_rate or 10.0)
+		ups_govt_rate = flt(settings.ups_govt_rate or 10.0)
 
 		# Totals accumulators
 		tot_bp = 0.0
@@ -63,9 +65,16 @@ class GovtPayBill(Document):
 
 			item.gross_pay = eff_bp + item.da_amount + item.hra_amount + tpt + item.da_on_tpt + da_tpt_arr + misc_allow
 
-			# 2. NPS Contributions
+			# 2. NPS / UPS Contributions
 			pran_base = eff_bp + item.da_amount
-			if item.pran_gpf_no and not item.gpf_subscription:
+			p_scheme = getattr(item, "pension_scheme", None) or ("GPF" if item.gpf_subscription else "NPS")
+			if p_scheme == "UPS" and item.pran_gpf_no:
+				item.pran_emp_contrib = round(pran_base * (ups_emp_rate / 100.0))
+				item.pran_govt_contrib = round(pran_base * (ups_govt_rate / 100.0))
+				item.pran_total_emp = item.pran_emp_contrib + flt(item.pran_emp_arrear)
+				item.pran_total_govt = item.pran_govt_contrib + flt(item.pran_govt_arrear)
+				item.pran_grand_total = item.pran_total_emp + item.pran_total_govt
+			elif item.pran_gpf_no and not item.gpf_subscription and p_scheme != "GPF":
 				item.pran_emp_contrib = round(pran_base * (nps_emp_rate / 100.0))
 				item.pran_govt_contrib = round(pran_base * (nps_govt_rate / 100.0))
 				item.pran_total_emp = item.pran_emp_contrib + flt(item.pran_emp_arrear)
@@ -183,12 +192,13 @@ class GovtPayBill(Document):
 			item.dob = emp.dob
 
 			# Pension scheme identifier
-			if emp.pension_scheme == "NPS":
+			item.pension_scheme = emp.pension_scheme or ("NPS" if emp.pran_no else ("GPF" if emp.gpf_no else "None"))
+			if emp.pension_scheme in ["NPS", "UPS"]:
 				item.pran_gpf_no = emp.pran_no
 			elif emp.pension_scheme == "GPF":
 				item.pran_gpf_no = emp.gpf_no
 			else:
-				item.pran_gpf_no = ""
+				item.pran_gpf_no = emp.pran_no or emp.gpf_no or ""
 
 			item.basic_pay = flt(emp.basic_pay)
 			if emp.is_reemployed:

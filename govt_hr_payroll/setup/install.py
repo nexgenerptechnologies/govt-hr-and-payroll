@@ -493,6 +493,8 @@ def setup_payroll_settings():
 			settings.current_da_rate = 50.0
 			settings.nps_emp_rate = 10.0
 			settings.nps_govt_rate = 14.0
+			settings.ups_emp_rate = 10.0
+			settings.ups_govt_rate = 10.0
 			settings.standard_edu_cess = 4.0
 			settings.hra_x_rate = 30.0
 			settings.hra_y_rate = 20.0
@@ -500,6 +502,14 @@ def setup_payroll_settings():
 			settings.flags.ignore_permissions = True
 			settings.flags.ignore_mandatory = True
 			settings.insert()
+			frappe.db.commit()
+		else:
+			# Update existing settings if UPS rates not set
+			settings = frappe.get_doc("Govt Payroll Settings", "Govt Payroll Settings")
+			if not hasattr(settings, "ups_emp_rate") or not settings.ups_emp_rate:
+				frappe.db.set_value("Govt Payroll Settings", "Govt Payroll Settings", "ups_emp_rate", 10.0)
+			if not hasattr(settings, "ups_govt_rate") or not settings.ups_govt_rate:
+				frappe.db.set_value("Govt Payroll Settings", "Govt Payroll Settings", "ups_govt_rate", 10.0)
 			frappe.db.commit()
 	except Exception as e:
 		frappe.log_error(f"Error initializing Govt Payroll Settings: {e}")

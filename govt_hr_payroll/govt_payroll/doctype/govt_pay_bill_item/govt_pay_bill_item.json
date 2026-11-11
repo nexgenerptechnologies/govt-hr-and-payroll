@@ -14,6 +14,7 @@
   "pan",
   "dob",
   "pran_gpf_no",
+  "pension_scheme",
   "section_break_earnings",
   "basic_pay",
   "pension_deduction",
@@ -126,18 +127,18 @@
    "fieldname": "basic_pay",
    "fieldtype": "Currency",
    "in_list_view": 1,
-   "label": "Basic Pay (₹)"
+   "label": "Basic Pay (\u20b9)"
   },
   {
    "default": "0",
    "fieldname": "pension_deduction",
    "fieldtype": "Currency",
-   "label": "*(-) Pension (₹)"
+   "label": "*(-) Pension (\u20b9)"
   },
   {
    "fieldname": "effective_basic_pay",
    "fieldtype": "Currency",
-   "label": "Actual Pay (₹)",
+   "label": "Actual Pay (\u20b9)",
    "read_only": 1
   },
   {
@@ -149,7 +150,7 @@
    "fieldname": "da_amount",
    "fieldtype": "Currency",
    "in_list_view": 1,
-   "label": "DA (₹)",
+   "label": "DA (\u20b9)",
    "read_only": 1
   },
   {
@@ -161,37 +162,37 @@
    "fieldname": "hra_amount",
    "fieldtype": "Currency",
    "in_list_view": 1,
-   "label": "HRA (₹)",
+   "label": "HRA (\u20b9)",
    "read_only": 1
   },
   {
    "fieldname": "tpt_allowance",
    "fieldtype": "Currency",
-   "label": "TPT (₹)"
+   "label": "TPT (\u20b9)"
   },
   {
    "fieldname": "da_on_tpt",
    "fieldtype": "Currency",
-   "label": "DA on TPT (₹)",
+   "label": "DA on TPT (\u20b9)",
    "read_only": 1
   },
   {
    "default": "0",
    "fieldname": "da_tpt_arrear",
    "fieldtype": "Currency",
-   "label": "DA & TPT Arrear (₹)"
+   "label": "DA & TPT Arrear (\u20b9)"
   },
   {
    "default": "0",
    "fieldname": "misc_allowance",
    "fieldtype": "Currency",
-   "label": "Misc Allowance (₹)"
+   "label": "Misc Allowance (\u20b9)"
   },
   {
    "fieldname": "gross_pay",
    "fieldtype": "Currency",
    "in_list_view": 1,
-   "label": "Gross Pay (₹)",
+   "label": "Gross Pay (\u20b9)",
    "read_only": 1
   },
   {
@@ -202,43 +203,43 @@
   {
    "fieldname": "pran_emp_contrib",
    "fieldtype": "Currency",
-   "label": "Cont by Emp (10%) (₹)",
+   "label": "Cont by Emp (10%) (\u20b9)",
    "read_only": 1
   },
   {
    "default": "0",
    "fieldname": "pran_emp_arrear",
    "fieldtype": "Currency",
-   "label": "Emp Arrear (₹)"
+   "label": "Emp Arrear (\u20b9)"
   },
   {
    "fieldname": "pran_govt_contrib",
    "fieldtype": "Currency",
-   "label": "Cont by Govt (14%) (₹)",
+   "label": "Cont by Govt (14%) (\u20b9)",
    "read_only": 1
   },
   {
    "default": "0",
    "fieldname": "pran_govt_arrear",
    "fieldtype": "Currency",
-   "label": "Govt Arrear (₹)"
+   "label": "Govt Arrear (\u20b9)"
   },
   {
    "fieldname": "pran_total_emp",
    "fieldtype": "Currency",
-   "label": "Total by Emp (₹)",
+   "label": "Total by Emp (\u20b9)",
    "read_only": 1
   },
   {
    "fieldname": "pran_total_govt",
    "fieldtype": "Currency",
-   "label": "Total by Govt (₹)",
+   "label": "Total by Govt (\u20b9)",
    "read_only": 1
   },
   {
    "fieldname": "pran_grand_total",
    "fieldtype": "Currency",
-   "label": "Grand Total NPS (₹)",
+   "label": "Grand Total NPS (\u20b9)",
    "read_only": 1
   },
   {
@@ -250,18 +251,18 @@
    "default": "0",
    "fieldname": "gpf_subscription",
    "fieldtype": "Currency",
-   "label": "GPF Subscription (₹)"
+   "label": "GPF Subscription (\u20b9)"
   },
   {
    "default": "0",
    "fieldname": "gpf_refund",
    "fieldtype": "Currency",
-   "label": "GPF Refund / Advance (₹)"
+   "label": "GPF Refund / Advance (\u20b9)"
   },
   {
    "fieldname": "gpf_total",
    "fieldtype": "Currency",
-   "label": "Total GPF (₹)",
+   "label": "Total GPF (\u20b9)",
    "read_only": 1
   },
   {
@@ -273,51 +274,51 @@
    "default": "0",
    "fieldname": "cghs_amount",
    "fieldtype": "Currency",
-   "label": "CGHS (₹)"
+   "label": "CGHS (\u20b9)"
   },
   {
    "default": "0",
    "fieldname": "license_fee",
    "fieldtype": "Currency",
-   "label": "L/Fee (License Fee) (₹)"
+   "label": "L/Fee (License Fee) (\u20b9)"
   },
   {
    "default": "0",
    "fieldname": "cgegis_amount",
    "fieldtype": "Currency",
-   "label": "CGEGIS (₹)"
+   "label": "CGEGIS (\u20b9)"
   },
   {
    "default": "0",
    "fieldname": "income_tax",
    "fieldtype": "Currency",
-   "label": "I Tax (TDS) (₹)"
+   "label": "I Tax (TDS) (\u20b9)"
   },
   {
    "default": "0",
    "fieldname": "edu_cess",
    "fieldtype": "Currency",
-   "label": "Edu Cess (4%) (₹)",
+   "label": "Edu Cess (4%) (\u20b9)",
    "read_only": 1
   },
   {
    "default": "0",
    "fieldname": "misc_deduction",
    "fieldtype": "Currency",
-   "label": "Misc Deduction (₹)"
+   "label": "Misc Deduction (\u20b9)"
   },
   {
    "fieldname": "total_deduction",
    "fieldtype": "Currency",
    "in_list_view": 1,
-   "label": "Total Deduction (₹)",
+   "label": "Total Deduction (\u20b9)",
    "read_only": 1
   },
   {
    "fieldname": "net_pay",
    "fieldtype": "Currency",
    "in_list_view": 1,
-   "label": "Net Pay (₹)",
+   "label": "Net Pay (\u20b9)",
    "read_only": 1
   },
   {
@@ -374,6 +375,14 @@
    "fieldname": "remarks",
    "fieldtype": "Small Text",
    "label": "Remarks"
+  },
+  {
+   "default": "NPS",
+   "fieldname": "pension_scheme",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Pension Scheme",
+   "options": "NPS\nUPS\nGPF\nNone"
   }
  ],
  "istable": 1,

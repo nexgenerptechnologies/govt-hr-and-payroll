@@ -37,7 +37,7 @@
    "fieldtype": "Select",
    "in_list_view": 1,
    "label": "Mode of Travel",
-   "options": "Air\nRail 1st AC\nRail 2nd AC\nRail 3rd AC\nAC Bus\nTaxi\nAuto/Own Scooter\nOther",
+   "options": "Air Economy\nAir Business\nRail 1st AC\nRail 2nd AC\nRail 3rd AC\nAC Bus\nTaxi\nAuto\nAir\nOther",
    "reqd": 1
   },
   {
@@ -65,14 +65,14 @@
    "fieldname": "amount_claimed",
    "fieldtype": "Currency",
    "in_list_view": 1,
-   "label": "Fare Claimed (₹)",
+   "label": "Fare Claimed (\u20b9)",
    "reqd": 1
   },
   {
    "fieldname": "amount_passed",
    "fieldtype": "Currency",
    "in_list_view": 1,
-   "label": "Fare Passed (₹)"
+   "label": "Fare Passed (\u20b9)"
   },
   {
    "fieldname": "remarks",
