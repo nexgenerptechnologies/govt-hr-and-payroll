@@ -620,6 +620,24 @@ def setup_default_leave_types():
 			"description": "Admissible up to 730 days during entire service."
 		},
 		{
+			"leave_type_name": "Casual Leave",
+			"leave_code": "CL",
+			"max_days_at_a_time": 8,
+			"max_accumulation": 8,
+			"is_commuted": 0,
+			"requires_medical_certificate": 0,
+			"description": "Annual quota 8 days. Sundays/holidays not counted."
+		},
+		{
+			"leave_type_name": "Restricted Holiday",
+			"leave_code": "RH",
+			"max_days_at_a_time": 2,
+			"max_accumulation": 2,
+			"is_commuted": 0,
+			"requires_medical_certificate": 0,
+			"description": "Annual quota 2 days from notified list."
+		},
+		{
 			"leave_type_name": "Extraordinary Leave",
 			"leave_code": "EOL",
 			"max_days_at_a_time": 365,

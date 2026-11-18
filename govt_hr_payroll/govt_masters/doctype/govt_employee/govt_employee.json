@@ -7,6 +7,7 @@
  "field_order": [
   "basic_info_section",
   "employee_id",
+  "user_id",
   "first_name",
   "last_name",
   "employee_name",
@@ -84,6 +85,12 @@
    "label": "Employee ID / No",
    "reqd": 1,
    "unique": 1
+  },
+  {
+   "fieldname": "user_id",
+   "fieldtype": "Link",
+   "label": "User ID (Login Account)",
+   "options": "User"
   },
   {
    "fieldname": "first_name",

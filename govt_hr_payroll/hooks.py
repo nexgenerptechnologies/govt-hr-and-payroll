@@ -11,6 +11,7 @@ after_migrate = "govt_hr_payroll.setup.install.after_migrate"
 
 # Include client-side desk enhancement
 app_include_js = "/assets/govt_hr_payroll/js/govt_sidebar.js"
+app_include_css = "/assets/govt_hr_payroll/css/govt_desk.css"
 
 # Frappe v16 Apps Launcher Screen
 add_to_apps_screen = [
