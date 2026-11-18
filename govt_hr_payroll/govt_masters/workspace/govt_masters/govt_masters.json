@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"type\": \"header\", \"data\": {\"text\": \"Quick Actions\", \"level\": 4, \"col\": 12}}, {\"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Pay Bill\", \"col\": 3}}, {\"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Employee Master\", \"col\": 3}}, {\"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Income Tax Statement\", \"col\": 3}}, {\"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Due Drawn Arrears\", \"col\": 3}}, {\"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Leave Application\", \"col\": 3}}, {\"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"DO Part II Order\", \"col\": 3}}, {\"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"CEA Claim\", \"col\": 3}}, {\"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"TA/DA Claim\", \"col\": 3}}, {\"type\": \"spacer\", \"data\": {\"col\": 12}}, {\"type\": \"header\", \"data\": {\"text\": \"HR & Payroll Modules\", \"level\": 4, \"col\": 12}}, {\"type\": \"card\", \"data\": {\"card_name\": \"Monthly Pay Bill & Pay Matrix\", \"col\": 4}}, {\"type\": \"card\", \"data\": {\"card_name\": \"Income Tax (FY 2026-27)\", \"col\": 4}}, {\"type\": \"card\", \"data\": {\"card_name\": \"Due-Drawn Arrears\", \"col\": 4}}, {\"type\": \"card\", \"data\": {\"card_name\": \"Leave Rules (CCS 1972) & DO Part II\", \"col\": 4}}, {\"type\": \"card\", \"data\": {\"card_name\": \"Claims & Medical Reimbursements\", \"col\": 4}}, {\"type\": \"card\", \"data\": {\"card_name\": \"Tour TA/DA & Entitlements\", \"col\": 4}}]",
+ "content": "[{\"type\": \"header\", \"data\": {\"text\": \"Leave Entitlements & Real-Time Account (CCS 1972)\", \"level\": 4, \"col\": 12}}, {\"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Earned Leave (EL)\", \"col\": 2}}, {\"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Casual Leave (CL)\", \"col\": 2}}, {\"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Half Pay Leave (HPL)\", \"col\": 2}}, {\"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Commuted Leave\", \"col\": 2}}, {\"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Child Care Leave (CCL)\", \"col\": 2}}, {\"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Restricted Holiday (RH)\", \"col\": 2}}, {\"type\": \"spacer\", \"data\": {\"col\": 12}}, {\"type\": \"header\", \"data\": {\"text\": \"Quick Actions\", \"level\": 4, \"col\": 12}}, {\"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Pay Bill\", \"col\": 3}}, {\"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Employee Master\", \"col\": 3}}, {\"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Income Tax Statement\", \"col\": 3}}, {\"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Due Drawn Arrears\", \"col\": 3}}, {\"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Leave Application\", \"col\": 3}}, {\"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"DO Part II Order\", \"col\": 3}}, {\"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"CEA Claim\", \"col\": 3}}, {\"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"TA/DA Claim\", \"col\": 3}}, {\"type\": \"spacer\", \"data\": {\"col\": 12}}, {\"type\": \"header\", \"data\": {\"text\": \"HR & Payroll Modules\", \"level\": 4, \"col\": 12}}, {\"type\": \"card\", \"data\": {\"card_name\": \"Monthly Pay Bill & Pay Matrix\", \"col\": 4}}, {\"type\": \"card\", \"data\": {\"card_name\": \"Income Tax (FY 2026-27)\", \"col\": 4}}, {\"type\": \"card\", \"data\": {\"card_name\": \"Due-Drawn Arrears\", \"col\": 4}}, {\"type\": \"card\", \"data\": {\"card_name\": \"Leave Rules (CCS 1972) & DO Part II\", \"col\": 4}}, {\"type\": \"card\", \"data\": {\"card_name\": \"Claims & Medical Reimbursements\", \"col\": 4}}, {\"type\": \"card\", \"data\": {\"card_name\": \"Tour TA/DA & Entitlements\", \"col\": 4}}]",
  "custom_blocks": [],
  "docstatus": 0,
  "doctype": "Workspace",
@@ -87,7 +87,6 @@
    "onboard": 0,
    "type": "Link"
   },
-
   {
    "hidden": 0,
    "is_query_report": 0,
@@ -109,7 +108,6 @@
    "onboard": 0,
    "type": "Link"
   },
-
   {
    "hidden": 0,
    "is_query_report": 0,
@@ -131,7 +129,6 @@
    "onboard": 0,
    "type": "Link"
   },
-
   {
    "hidden": 0,
    "is_query_report": 0,
@@ -186,7 +183,6 @@
    "onboard": 0,
    "type": "Link"
   },
-
   {
    "hidden": 0,
    "is_query_report": 0,
@@ -219,7 +215,6 @@
    "onboard": 0,
    "type": "Link"
   },
-
   {
    "hidden": 0,
    "is_query_report": 0,
@@ -356,6 +351,66 @@
    "stats_filter": "",
    "type": "DocType",
    "url": ""
+  },
+  {
+   "color": "Red",
+   "doc_view": "List",
+   "icon": "calendar",
+   "is_query_report": 0,
+   "label": "Earned Leave (EL)",
+   "link_to": "CCS Leave Application",
+   "link_type": "DocType",
+   "type": "DocType"
+  },
+  {
+   "color": "Cyan",
+   "doc_view": "List",
+   "icon": "clock",
+   "is_query_report": 0,
+   "label": "Casual Leave (CL)",
+   "link_to": "CCS Leave Application",
+   "link_type": "DocType",
+   "type": "DocType"
+  },
+  {
+   "color": "Orange",
+   "doc_view": "List",
+   "icon": "book",
+   "is_query_report": 0,
+   "label": "Half Pay Leave (HPL)",
+   "link_to": "CCS Leave Application",
+   "link_type": "DocType",
+   "type": "DocType"
+  },
+  {
+   "color": "Green",
+   "doc_view": "List",
+   "icon": "plus",
+   "is_query_report": 0,
+   "label": "Commuted Leave",
+   "link_to": "CCS Leave Application",
+   "link_type": "DocType",
+   "type": "DocType"
+  },
+  {
+   "color": "Purple",
+   "doc_view": "List",
+   "icon": "users",
+   "is_query_report": 0,
+   "label": "Child Care Leave (CCL)",
+   "link_to": "CCS Leave Application",
+   "link_type": "DocType",
+   "type": "DocType"
+  },
+  {
+   "color": "Yellow",
+   "doc_view": "List",
+   "icon": "star",
+   "is_query_report": 0,
+   "label": "Restricted Holiday (RH)",
+   "link_to": "CCS Leave Application",
+   "link_type": "DocType",
+   "type": "DocType"
   }
  ],
  "title": "HR & Payroll"
