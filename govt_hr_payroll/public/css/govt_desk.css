@@ -1,183 +1,261 @@
 /* Copyright (c) 2026, NexGen ERP Technologies
-   Vibrant Government HR & Payroll Theme for Frappe Desk & Leave Cards */
+   High-Precision e-HRMS Card Architecture & Enhanced Desk Sidebar Theme */
 
 /* ==========================================================================
-   1. COLORED LEFT SIDEBAR MENU STYLING
+   1. SUPERIOR DESK SIDEBAR STYLING
    ========================================================================== */
 
-/* Base styling for Frappe v16 Desk Sidebar */
+/* Fix sidebar width so that no words are cut off or truncated with ... */
+.layout-side-section,
+.desk-sidebar {
+	width: 265px !important;
+	min-width: 265px !important;
+	flex: 0 0 265px !important;
+	background: #ffffff !important;
+	border-right: 1px solid #e2e8f0 !important;
+	padding-right: 6px !important;
+}
+
+/* Sidebar navigation item base */
 .desk-sidebar .sidebar-items .sidebar-item,
 .layout-side-section .sidebar-item,
 .standard-sidebar-item {
-	transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
-	border-radius: 8px !important;
-	margin: 2px 6px !important;
-	padding: 8px 12px !important;
+	display: flex !important;
+	align-items: center !important;
+	padding: 9px 12px !important;
+	margin: 3px 6px !important;
+	border-radius: 9px !important;
+	text-decoration: none !important;
+	color: #1e293b !important;
 	font-weight: 500 !important;
+	font-size: 13.5px !important;
+	line-height: 1.3 !important;
 	border-left: 3px solid transparent !important;
+	transition: all 0.18s cubic-bezier(0.4, 0, 0.2, 1) !important;
 }
 
-/* Module Section Headers */
+/* Allow full labels without ugly truncation */
+.desk-sidebar .sidebar-item-label,
+.layout-side-section .sidebar-item-label {
+	white-space: normal !important;
+	overflow: visible !important;
+	text-overflow: clip !important;
+	word-break: normal !important;
+	font-weight: 500 !important;
+	color: #1e293b !important;
+}
+
+/* Modern Rounded Icon Badges */
+.desk-sidebar .sidebar-item-icon,
+.layout-side-section .sidebar-item-icon {
+	width: 28px !important;
+	height: 28px !important;
+	min-width: 28px !important;
+	border-radius: 7px !important;
+	display: inline-flex !important;
+	align-items: center !important;
+	justify-content: center !important;
+	margin-right: 11px !important;
+	flex-shrink: 0 !important;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06) !important;
+}
+
+.desk-sidebar .sidebar-item-icon svg,
+.layout-side-section .sidebar-item-icon svg {
+	width: 16px !important;
+	height: 16px !important;
+}
+
+/* Sidebar Section Headers */
 .desk-sidebar .sidebar-section-header,
-.standard-sidebar-section .sidebar-section-header {
+.layout-side-section .sidebar-section-header {
 	font-size: 11px !important;
 	font-weight: 700 !important;
 	text-transform: uppercase !important;
-	letter-spacing: 0.05em !important;
+	letter-spacing: 0.06em !important;
 	color: #1e3a8a !important;
-	padding: 8px 12px 4px 12px !important;
-	margin-top: 10px !important;
-	border-bottom: 1px solid rgba(226, 232, 240, 0.8) !important;
+	padding: 10px 12px 4px 12px !important;
+	margin-top: 8px !important;
+	border-bottom: 1px solid #f1f5f9 !important;
+	display: flex !important;
+	align-items: center !important;
+	justify-content: space-between !important;
 }
 
-/* Module-Specific Distinct Colors for Icons & Active Accents */
+/* Module Specific Color Themes on Sidebar */
 
-/* A. Payroll & Pay Bill (Royal Blue) */
+/* Payroll & Pay Bill (Royal Blue) */
 [data-sidebar-id*="payroll" i] .sidebar-item-icon,
-a[href*="govt-payroll" i] .sidebar-item-icon,
+a[href*="payroll" i] .sidebar-item-icon,
 a[href*="pay-bill" i] .sidebar-item-icon,
 .govt-sidebar-payroll .sidebar-item-icon {
+	background: #eff6ff !important;
 	color: #2563eb !important;
-	background: rgba(37, 99, 235, 0.12) !important;
-	padding: 4px !important;
-	border-radius: 6px !important;
+	border: 1px solid #bfdbfe !important;
 }
 [data-sidebar-id*="payroll" i]:hover,
-a[href*="govt-payroll" i]:hover,
-a[href*="pay-bill" i]:hover {
-	background: rgba(37, 99, 235, 0.08) !important;
+a[href*="payroll" i]:hover,
+a[href*="pay-bill" i]:hover,
+.govt-sidebar-payroll:hover {
+	background: #f0f7ff !important;
 	color: #1d4ed8 !important;
 	border-left-color: #2563eb !important;
 }
 
-/* B. Income Tax (Emerald Green) */
+/* Income Tax (Emerald Green) */
 [data-sidebar-id*="tax" i] .sidebar-item-icon,
-a[href*="income-tax" i] .sidebar-item-icon,
+a[href*="tax" i] .sidebar-item-icon,
 .govt-sidebar-tax .sidebar-item-icon {
+	background: #ecfdf5 !important;
 	color: #059669 !important;
-	background: rgba(5, 150, 105, 0.12) !important;
-	padding: 4px !important;
-	border-radius: 6px !important;
+	border: 1px solid #a7f3d0 !important;
 }
 [data-sidebar-id*="tax" i]:hover,
-a[href*="income-tax" i]:hover {
-	background: rgba(5, 150, 105, 0.08) !important;
+a[href*="tax" i]:hover,
+.govt-sidebar-tax:hover {
+	background: #f0fdf4 !important;
 	color: #047857 !important;
 	border-left-color: #059669 !important;
 }
 
-/* C. Leave Management (Teal / Cyan) */
+/* Leave Management (Rose Pink) */
 [data-sidebar-id*="leave" i] .sidebar-item-icon,
 a[href*="leave" i] .sidebar-item-icon,
 .govt-sidebar-leave .sidebar-item-icon {
-	color: #0d9488 !important;
-	background: rgba(13, 148, 136, 0.12) !important;
-	padding: 4px !important;
-	border-radius: 6px !important;
+	background: #fff1f2 !important;
+	color: #e11d48 !important;
+	border: 1px solid #fecdd3 !important;
 }
 [data-sidebar-id*="leave" i]:hover,
-a[href*="leave" i]:hover {
-	background: rgba(13, 148, 136, 0.08) !important;
-	color: #0f766e !important;
-	border-left-color: #0d9488 !important;
+a[href*="leave" i]:hover,
+.govt-sidebar-leave:hover {
+	background: #fff1f2 !important;
+	color: #be123c !important;
+	border-left-color: #e11d48 !important;
 }
 
-/* D. Claims & Reimbursements (Royal Purple) */
+/* Claims & Reimbursements (Purple) */
 [data-sidebar-id*="claim" i] .sidebar-item-icon,
 a[href*="claim" i] .sidebar-item-icon,
 .govt-sidebar-claim .sidebar-item-icon {
+	background: #faf5ff !important;
 	color: #7c3aed !important;
-	background: rgba(124, 58, 237, 0.12) !important;
-	padding: 4px !important;
-	border-radius: 6px !important;
+	border: 1px solid #e9d5ff !important;
 }
 [data-sidebar-id*="claim" i]:hover,
-a[href*="claim" i]:hover {
-	background: rgba(124, 58, 237, 0.08) !important;
+a[href*="claim" i]:hover,
+.govt-sidebar-claim:hover {
+	background: #faf5ff !important;
 	color: #6d28d9 !important;
 	border-left-color: #7c3aed !important;
 }
 
-/* E. Tour TA & DA (Sunset Orange / Coral) */
+/* Tour TA & DA (Sunset Orange) */
 [data-sidebar-id*="tour" i] .sidebar-item-icon,
 a[href*="tour" i] .sidebar-item-icon,
 .govt-sidebar-tour .sidebar-item-icon {
+	background: #fff7ed !important;
 	color: #ea580c !important;
-	background: rgba(234, 88, 12, 0.12) !important;
-	padding: 4px !important;
-	border-radius: 6px !important;
+	border: 1px solid #fed7aa !important;
 }
 [data-sidebar-id*="tour" i]:hover,
-a[href*="tour" i]:hover {
-	background: rgba(234, 88, 12, 0.08) !important;
+a[href*="tour" i]:hover,
+.govt-sidebar-tour:hover {
+	background: #fff7ed !important;
 	color: #c2410c !important;
 	border-left-color: #ea580c !important;
 }
 
-/* F. Masters & Settings (Indigo / Blue) */
+/* Masters & Settings (Indigo / Blue) */
 [data-sidebar-id*="master" i] .sidebar-item-icon,
 a[href*="master" i] .sidebar-item-icon,
 a[href*="employee" i] .sidebar-item-icon,
 .govt-sidebar-master .sidebar-item-icon {
+	background: #eef2ff !important;
 	color: #4f46e5 !important;
-	background: rgba(79, 70, 229, 0.12) !important;
-	padding: 4px !important;
-	border-radius: 6px !important;
+	border: 1px solid #c7d2fe !important;
 }
 [data-sidebar-id*="master" i]:hover,
 a[href*="master" i]:hover,
-a[href*="employee" i]:hover {
-	background: rgba(79, 70, 229, 0.08) !important;
+a[href*="employee" i]:hover,
+.govt-sidebar-master:hover {
+	background: #eef2ff !important;
 	color: #4338ca !important;
 	border-left-color: #4f46e5 !important;
 }
 
+/* Selected / Active Item State */
+.desk-sidebar .sidebar-item.selected,
+.desk-sidebar .sidebar-item.active,
+.layout-side-section .sidebar-item.active {
+	background: #f1f5f9 !important;
+	color: #0f172a !important;
+	font-weight: 700 !important;
+	border-left: 4px solid #1e3a8a !important;
+}
+
 /* ==========================================================================
-   2. LEAVE DASHBOARD CARDS STYLING (VIBRANT & RESPONSIVE)
+   2. e-HRMS STYLE COLORED CARDS ARCHITECTURE (MATCHING IMAGE 3)
    ========================================================================== */
 
-.govt-leave-dashboard-wrapper {
+.govt-ehrms-dashboard-wrapper {
 	background: #ffffff;
 	border: 1px solid #e2e8f0;
-	border-radius: 14px;
-	padding: 20px 24px;
+	border-radius: 16px;
+	padding: 18px 20px;
 	margin-bottom: 24px;
 	box-shadow: 0 4px 18px rgba(0, 0, 0, 0.04);
 }
 
-.govt-leave-dashboard-header {
+.govt-ehrms-top-bar {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 	flex-wrap: wrap;
 	gap: 12px;
-	padding-bottom: 16px;
-	margin-bottom: 18px;
+	padding-bottom: 14px;
+	margin-bottom: 16px;
 	border-bottom: 1px solid #f1f5f9;
 }
 
-.govt-leave-header-title {
-	font-size: 17px;
-	font-weight: 700;
+.govt-ehrms-title-group {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	flex-wrap: wrap;
+}
+
+.govt-ehrms-title {
+	font-size: 16.5px;
+	font-weight: 800;
 	color: #0f172a;
+	letter-spacing: -0.01em;
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+
+.govt-ehrms-emp-pill {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	background: #f1f5f9;
+	color: #334155;
+	padding: 4px 14px;
+	border-radius: 20px;
+	font-size: 13px;
+	font-weight: 600;
+	border: 1px solid #e2e8f0;
+}
+
+.govt-ehrms-controls {
 	display: flex;
 	align-items: center;
 	gap: 10px;
 }
 
-.govt-leave-emp-badge {
-	display: inline-flex;
-	align-items: center;
-	background: #f1f5f9;
-	color: #334155;
-	padding: 4px 12px;
-	border-radius: 20px;
-	font-size: 13px;
-	font-weight: 600;
-}
-
-.govt-leave-emp-select {
-	border: 1px solid #cbd5e1;
+.govt-ehrms-select {
+	border: 1.5px solid #cbd5e1;
 	border-radius: 8px;
 	padding: 6px 12px;
 	font-size: 13px;
@@ -188,132 +266,90 @@ a[href*="employee" i]:hover {
 	cursor: pointer;
 }
 
-.govt-leave-emp-select:focus {
+.govt-ehrms-select:focus {
 	border-color: #2563eb;
 	box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
 }
 
-.govt-leave-cards-grid {
+/* Horizontal Responsive Cards Row (Exact Image 3 Layout) */
+.govt-ehrms-cards-container {
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-	gap: 16px;
+	grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+	gap: 14px;
+	width: 100%;
 }
 
-/* Individual Leave Card */
-.govt-leave-card {
-	position: relative;
-	border-radius: 12px;
-	padding: 16px 18px;
-	color: #ffffff;
-	overflow: hidden;
-	box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
-	transition: transform 0.2s ease, box-shadow 0.2s ease;
+/* Exact Card Architecture matching Image 3 */
+.govt-ehrms-card {
+	background: #ffffff;
+	border-radius: 16px;
+	padding: 22px 14px 18px 14px;
 	display: flex;
 	flex-direction: column;
-	justify-content: space-between;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	cursor: pointer;
+	position: relative;
+	box-shadow: 0 3px 10px rgba(0, 0, 0, 0.03);
+	transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.govt-leave-card:hover {
-	transform: translateY(-3px);
-	box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+.govt-ehrms-card:hover {
+	transform: translateY(-4px);
+	box-shadow: 0 10px 24px rgba(0, 0, 0, 0.09);
 }
 
-.govt-leave-card-top {
-	display: flex;
-	align-items: flex-start;
-	justify-content: space-between;
-	margin-bottom: 12px;
-}
-
-.govt-leave-card-title {
-	font-size: 14.5px;
-	font-weight: 700;
-	letter-spacing: 0.02em;
+/* Solid Colored Circle with Centered White Icon (Image 3) */
+.govt-ehrms-card-circle {
+	width: 52px;
+	height: 52px;
+	border-radius: 50%;
 	display: flex;
 	align-items: center;
-	gap: 8px;
-	text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+	justify-content: center;
+	margin-bottom: 12px;
+	flex-shrink: 0;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
 }
 
-.govt-leave-card-badge {
-	font-size: 11px;
+.govt-ehrms-card-circle svg {
+	width: 24px;
+	height: 24px;
+	stroke: #ffffff;
+}
+
+/* Card Title (Centered, Gray, Crisp) */
+.govt-ehrms-card-title {
+	font-size: 13px;
 	font-weight: 600;
-	background: rgba(255, 255, 255, 0.22);
-	backdrop-filter: blur(4px);
-	padding: 2px 8px;
-	border-radius: 12px;
-	white-space: nowrap;
+	color: #475569;
+	margin-bottom: 6px;
+	line-height: 1.3;
+	min-height: 32px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
-.govt-leave-card-metrics {
-	margin-bottom: 14px;
-}
-
-.govt-leave-available-val {
-	font-size: 28px;
+/* Big Bold Number (Centered, Dark, Prominent - Image 3) */
+.govt-ehrms-card-number {
+	font-size: 26px;
 	font-weight: 800;
+	color: #0f172a;
 	line-height: 1.1;
-	text-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
-}
-
-.govt-leave-available-lbl {
-	font-size: 12px;
-	opacity: 0.9;
-	font-weight: 500;
-	text-transform: uppercase;
-	letter-spacing: 0.04em;
+	letter-spacing: -0.02em;
 	margin-bottom: 6px;
 }
 
-.govt-leave-taken-val {
-	font-size: 12.5px;
-	opacity: 0.95;
+/* Sub-text / Caption Pill */
+.govt-ehrms-card-caption {
+	font-size: 11px;
 	font-weight: 600;
-	display: flex;
-	align-items: center;
-	gap: 6px;
-}
-
-.govt-leave-progress-bg {
-	width: 100%;
-	height: 5px;
-	background: rgba(255, 255, 255, 0.25);
-	border-radius: 4px;
-	margin-top: 8px;
-	overflow: hidden;
-}
-
-.govt-leave-progress-bar {
-	height: 100%;
-	background: #ffffff;
-	border-radius: 4px;
-}
-
-.govt-leave-card-footer {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	padding-top: 10px;
-	border-top: 1px solid rgba(255, 255, 255, 0.18);
-}
-
-.govt-leave-btn-apply {
-	background: rgba(255, 255, 255, 0.95);
-	color: #0f172a !important;
-	border: none;
-	border-radius: 6px;
-	padding: 5px 12px;
-	font-size: 12px;
-	font-weight: 700;
-	cursor: pointer;
-	text-decoration: none !important;
-	transition: background 0.15s ease, transform 0.15s ease;
-	display: inline-flex;
-	align-items: center;
-	gap: 4px;
-}
-
-.govt-leave-btn-apply:hover {
-	background: #ffffff;
-	transform: scale(1.04);
+	color: #64748b;
+	background: #f8fafc;
+	border: 1px solid #e2e8f0;
+	border-radius: 20px;
+	padding: 2px 10px;
+	white-space: nowrap;
 }

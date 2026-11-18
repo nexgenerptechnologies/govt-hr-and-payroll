@@ -8,17 +8,18 @@ from frappe.utils import flt, nowdate, getdate
 @frappe.whitelist()
 def get_employee_leave_dashboard(employee=None):
 	"""
-	Returns real-time leave dashboard metrics for an employee:
-	- Available balance at credit
-	- Taken / availed leave days
-	- Statutory ceilings & buffer credit details
-	- Color gradient themes & quick-apply links
+	Returns real-time leave dashboard metrics for an employee formatted
+	exactly as per the e-HRMS colored card specification:
+	- Solid colored circular icon top
+	- Centered title
+	- Large bold number
+	- Colored outer border
+	- Available and taken breakdown
 	"""
 	user = frappe.session.user
 
 	# 1. Determine Target Employee
 	if not employee:
-		# Check if user matches user_id on Govt Employee
 		try:
 			emp_by_user = frappe.db.get_value("Govt Employee", {"user_id": user, "status": "Active"}, "employee_id")
 			if emp_by_user:
@@ -26,7 +27,6 @@ def get_employee_leave_dashboard(employee=None):
 		except Exception:
 			pass
 
-		# If still not found, check if user matches employee_id or email
 		if not employee:
 			try:
 				emp_by_id = frappe.db.get_value("Govt Employee", {"employee_id": user, "status": "Active"}, "employee_id")
@@ -35,7 +35,6 @@ def get_employee_leave_dashboard(employee=None):
 			except Exception:
 				pass
 
-		# Fallback to first active employee
 		if not employee:
 			first_emp = frappe.get_all("Govt Employee", filters={"status": "Active"}, fields=["employee_id"], limit=1)
 			if first_emp:
@@ -82,7 +81,6 @@ def get_employee_leave_dashboard(employee=None):
 	hpl_taken = hpl_debits
 
 	# --- C. Commuted Leave (Medical) ---
-	# Rule: Debits 2x HPL. Available = HPL balance / 2
 	commuted_available = int(hpl_available // 2)
 	commuted_apps = frappe.get_all(
 		"CCS Leave Application",
@@ -92,7 +90,6 @@ def get_employee_leave_dashboard(employee=None):
 	commuted_taken = sum([flt(a.total_days) for a in commuted_apps])
 
 	# --- D. Casual Leave (CL) ---
-	# Annual quota: 8 days
 	cl_apps = frappe.get_all(
 		"CCS Leave Application",
 		filters={"employee": employee, "leave_type": "Casual Leave", "status": "Sanctioned by Competent Authority"},
@@ -102,7 +99,6 @@ def get_employee_leave_dashboard(employee=None):
 	cl_available = max(0.0, 8.0 - cl_taken)
 
 	# --- E. Restricted Holiday (RH) ---
-	# Annual quota: 2 days
 	rh_apps = frappe.get_all(
 		"CCS Leave Application",
 		filters={"employee": employee, "leave_type": "Restricted Holiday", "status": "Sanctioned by Competent Authority"},
@@ -112,7 +108,6 @@ def get_employee_leave_dashboard(employee=None):
 	rh_available = max(0.0, 2.0 - rh_taken)
 
 	# --- F. Child Care Leave (CCL) ---
-	# Lifetime ceiling: 730 days
 	ccl_apps = frappe.get_all(
 		"CCS Leave Application",
 		filters={"employee": employee, "leave_type": "Child Care Leave", "status": "Sanctioned by Competent Authority"},
@@ -121,7 +116,7 @@ def get_employee_leave_dashboard(employee=None):
 	ccl_taken = sum([flt(a.total_days) for a in ccl_apps])
 	ccl_available = max(0.0, 730.0 - ccl_taken)
 
-	# --- G. Maternity Leave (180 Days) ---
+	# --- G. Maternity / Paternity Leave ---
 	mat_apps = frappe.get_all(
 		"CCS Leave Application",
 		filters={"employee": employee, "leave_type": "Maternity Leave", "status": "Sanctioned by Competent Authority"},
@@ -130,7 +125,6 @@ def get_employee_leave_dashboard(employee=None):
 	mat_taken = sum([flt(a.total_days) for a in mat_apps])
 	mat_available = max(0.0, 180.0 - mat_taken)
 
-	# --- H. Paternity Leave (15 Days) ---
 	pat_apps = frappe.get_all(
 		"CCS Leave Application",
 		filters={"employee": employee, "leave_type": "Paternity Leave", "status": "Sanctioned by Competent Authority"},
@@ -139,132 +133,162 @@ def get_employee_leave_dashboard(employee=None):
 	pat_taken = sum([flt(a.total_days) for a in pat_apps])
 	pat_available = max(0.0, 15.0 - pat_taken)
 
+	# --- H. Claims from Folder 5 (CEA & CGHS MRC-S) ---
+	cea_records = frappe.get_all(
+		"CEA Claim",
+		filters={"employee": employee, "docstatus": ["!=", 2]},
+		fields=["total_amount_sanctioned", "total_amount_claimed"]
+	)
+	total_cea = sum([flt(c.total_amount_sanctioned or c.total_amount_claimed) for c in cea_records])
+
+	med_records = frappe.get_all(
+		"CGHS Medical Claim",
+		filters={"employee": employee, "docstatus": ["!=", 2]},
+		fields=["amount_sanctioned", "total_claimed"]
+	)
+	total_med = sum([flt(m.amount_sanctioned or m.total_claimed) for m in med_records])
+
+	# Total Leaves Applied
+	total_leaves_applied_count = frappe.db.count("CCS Leave Application", {"employee": employee})
+
+	# Format integer vs float cleanly
+	def fmt(val):
+		if val is None:
+			return "0"
+		return str(int(val)) if val == int(val) else f"{val:.1f}"
+
+	# BUILD THE CARDS MATCHING IMAGE 3
 	cards = [
 		{
-			"leave_code": "EL",
-			"leave_name": "Earned Leave (EL)",
+			"id": "el",
+			"title": "Earned Leave (EL)",
 			"leave_type": "Earned Leave",
-			"available": el_available,
-			"taken": el_taken,
-			"max_ceiling": 300,
+			"value": fmt(el_available),
 			"unit": "Days",
-			"theme": "blue",
-			"gradient": "linear-gradient(135deg, #1e3a8a 0%, #2563eb 50%, #3b82f6 100%)",
-			"accent_color": "#2563eb",
-			"icon": "📘",
-			"note": f"Buffer Credit: {el_buffer_available}d" if el_buffer_available > 0 else "Ceiling: 300d (15d Jan/Jul)",
+			"sub_text": f"Available | Taken: {fmt(el_taken)}d",
+			"note": f"Buffer: {fmt(el_buffer_available)}d" if el_buffer_available > 0 else "Max: 300 Days",
+			"color": "#e11d48",           # Pink (Image 3 Card 1 style)
+			"icon_type": "calendar",
 			"can_apply": True
 		},
 		{
-			"leave_code": "HPL",
-			"leave_name": "Half Pay Leave (HPL)",
-			"leave_type": "Half Pay Leave",
-			"available": hpl_available,
-			"taken": hpl_taken,
-			"max_ceiling": 300,
-			"unit": "Days",
-			"theme": "emerald",
-			"gradient": "linear-gradient(135deg, #065f46 0%, #059669 50%, #10b981 100%)",
-			"accent_color": "#059669",
-			"icon": "📗",
-			"note": "10d Advance Credit Jan/Jul",
-			"can_apply": True
-		},
-		{
-			"leave_code": "COMMUTED",
-			"leave_name": "Commuted Leave",
-			"leave_type": "Commuted Leave",
-			"available": commuted_available,
-			"taken": commuted_taken,
-			"max_ceiling": 150,
-			"unit": "Days",
-			"theme": "purple",
-			"gradient": "linear-gradient(135deg, #581c87 0%, #7c3aed 50%, #8b5cf6 100%)",
-			"accent_color": "#7c3aed",
-			"icon": "🟣",
-			"note": "Full Pay (Debits 2x HPL)",
-			"can_apply": True
-		},
-		{
-			"leave_code": "CL",
-			"leave_name": "Casual Leave (CL)",
+			"id": "cl",
+			"title": "Casual Leave (CL)",
 			"leave_type": "Casual Leave",
-			"available": cl_available,
-			"taken": cl_taken,
-			"max_ceiling": 8,
+			"value": fmt(cl_available),
 			"unit": "Days",
-			"theme": "amber",
-			"gradient": "linear-gradient(135deg, #9a3412 0%, #ea580c 50%, #f59e0b 100%)",
-			"accent_color": "#ea580c",
-			"icon": "📙",
-			"note": "Annual Quota: 8 Days",
+			"sub_text": f"Available | Taken: {fmt(cl_taken)}d",
+			"note": "Quota: 8 Days/Year",
+			"color": "#0284c7",           # Sky Blue (Image 3 Card 2 style)
+			"icon_type": "clock",
 			"can_apply": True
 		},
 		{
-			"leave_code": "RH",
-			"leave_name": "Restricted Holiday (RH)",
-			"leave_type": "Restricted Holiday",
-			"available": rh_available,
-			"taken": rh_taken,
-			"max_ceiling": 2,
+			"id": "hpl",
+			"title": "Half Pay Leave (HPL)",
+			"leave_type": "Half Pay Leave",
+			"value": fmt(hpl_available),
 			"unit": "Days",
-			"theme": "teal",
-			"gradient": "linear-gradient(135deg, #115e59 0%, #0d9488 50%, #14b8a6 100%)",
-			"accent_color": "#0d9488",
-			"icon": "🌴",
-			"note": "Annual Quota: 2 Days",
+			"sub_text": f"Available | Taken: {fmt(hpl_taken)}d",
+			"note": "10d Advance Jan/Jul",
+			"color": "#ea580c",           # Sunset Orange (Image 3 Card 3 style)
+			"icon_type": "book",
 			"can_apply": True
 		},
 		{
-			"leave_code": "CCL",
-			"leave_name": "Child Care Leave (CCL)",
+			"id": "commuted",
+			"title": "Commuted Leave",
+			"leave_type": "Commuted Leave",
+			"value": fmt(commuted_available),
+			"unit": "Days",
+			"sub_text": f"Available | Taken: {fmt(commuted_taken)}d",
+			"note": "Full Pay (Debits 2x HPL)",
+			"color": "#16a34a",           # Emerald Green (Image 3 Card 4 style)
+			"icon_type": "medical_cross",
+			"can_apply": True
+		},
+		{
+			"id": "ccl",
+			"title": "Child Care Leave (CCL)",
 			"leave_type": "Child Care Leave",
-			"available": ccl_available,
-			"taken": ccl_taken,
-			"max_ceiling": 730,
+			"value": fmt(ccl_available),
 			"unit": "Days",
-			"theme": "pink",
-			"gradient": "linear-gradient(135deg, #9d174d 0%, #db2777 50%, #ec4899 100%)",
-			"accent_color": "#db2777",
-			"icon": "👶",
-			"note": "Lifetime Cap: 730d (<18 yrs)",
+			"sub_text": f"Available | Taken: {fmt(ccl_taken)}d",
+			"note": "Lifetime: 730 Days",
+			"color": "#dc2626",           # Red/Crimson (Image 3 Card 5 style)
+			"icon_type": "family",
 			"can_apply": emp_doc.gender in ["Female", "Other"]
+		},
+		{
+			"id": "rh",
+			"title": "Restricted Holiday (RH)",
+			"leave_type": "Restricted Holiday",
+			"value": fmt(rh_available),
+			"unit": "Days",
+			"sub_text": f"Available | Taken: {fmt(rh_taken)}d",
+			"note": "Quota: 2 Days/Year",
+			"color": "#9333ea",           # Purple
+			"icon_type": "star",
+			"can_apply": True
 		}
 	]
 
-	# Add gender specific card
+	# Add Maternity / Paternity
 	if emp_doc.gender in ["Female", "Other"]:
 		cards.append({
-			"leave_code": "MAT",
-			"leave_name": "Maternity Leave",
+			"id": "mat",
+			"title": "Maternity Leave",
 			"leave_type": "Maternity Leave",
-			"available": mat_available,
-			"taken": mat_taken,
-			"max_ceiling": 180,
+			"value": fmt(mat_available),
 			"unit": "Days",
-			"theme": "indigo",
-			"gradient": "linear-gradient(135deg, #312e81 0%, #4f46e5 50%, #6366f1 100%)",
-			"accent_color": "#4f46e5",
-			"icon": "🤱",
-			"note": "180 Days (Full Pay)",
+			"sub_text": f"Entitlement | Taken: {fmt(mat_taken)}d",
+			"note": "180 Days Full Pay",
+			"color": "#7c3aed",
+			"icon_type": "maternity",
 			"can_apply": True
 		})
 	else:
 		cards.append({
-			"leave_code": "PAT",
-			"leave_name": "Paternity Leave",
+			"id": "pat",
+			"title": "Paternity Leave",
 			"leave_type": "Paternity Leave",
-			"available": pat_available,
-			"taken": pat_taken,
-			"max_ceiling": 15,
+			"value": fmt(pat_available),
 			"unit": "Days",
-			"theme": "indigo",
-			"gradient": "linear-gradient(135deg, #312e81 0%, #4f46e5 50%, #6366f1 100%)",
-			"accent_color": "#4f46e5",
-			"icon": "👨‍👧",
-			"note": "15 Days (Confinement)",
+			"sub_text": f"Entitlement | Taken: {fmt(pat_taken)}d",
+			"note": "15 Days Confinement",
+			"color": "#4f46e5",
+			"icon_type": "paternity",
 			"can_apply": True
 		})
+
+	# Add Folder 5 Claims: CEA & Medical CGHS
+	cards.append({
+		"id": "cea",
+		"title": "Child Education (CEA)",
+		"leave_type": None,
+		"value": f"₹{int(total_cea):,}" if total_cea > 0 else "₹0",
+		"unit": "",
+		"sub_text": "Sanctioned / Claimed",
+		"note": "Max: ₹33,750/Child",
+		"color": "#0d9488",              # Teal
+		"icon_type": "academic",
+		"is_claim": True,
+		"doctype": "CEA Claim"
+	})
+
+	cards.append({
+		"id": "cghs",
+		"title": "Medical Claim (MRC-S)",
+		"leave_type": None,
+		"value": f"₹{int(total_med):,}" if total_med > 0 else "₹0",
+		"unit": "",
+		"sub_text": "Sanctioned / Claimed",
+		"note": "CGHS Form MRC-S",
+		"color": "#0284c7",              # Sky Blue
+		"icon_type": "hospital",
+		"is_claim": True,
+		"doctype": "CGHS Medical Claim"
+	})
 
 	return {
 		"employee": {
@@ -272,7 +296,8 @@ def get_employee_leave_dashboard(employee=None):
 			"employee_name": emp_doc.employee_name,
 			"designation": emp_doc.designation,
 			"office_unit": emp_doc.office_unit,
-			"gender": emp_doc.gender
+			"gender": emp_doc.gender,
+			"total_leaves_applied": total_leaves_applied_count
 		},
 		"all_employees": all_employees,
 		"leave_cards": cards
