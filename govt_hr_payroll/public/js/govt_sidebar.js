@@ -4,23 +4,52 @@
 (function () {
 	"use strict";
 
-	// 1. INJECT INLINE STYLESHEET TO GUARANTEE ZERO CACHE OR 404 ISSUES
+	// 1. INJECT INLINE STYLESHEET (GUARANTEES 100% RELIABILITY REGARDLESS OF ASSET BUILDS)
 	function injectGovtStyles() {
-		if (document.getElementById("govt-desk-custom-theme")) return;
+		let styleEl = document.getElementById("govt-desk-custom-theme");
+		if (!styleEl) {
+			styleEl = document.createElement("style");
+			styleEl.id = "govt-desk-custom-theme";
+			document.head.appendChild(styleEl);
+		}
 
-		const styleEl = document.createElement("style");
-		styleEl.id = "govt-desk-custom-theme";
 		styleEl.textContent = `
+			/* Hide Frappe Flow (v16 Native AI Assistant) */
+			[data-sidebar-id="flow"],
+			.desk-sidebar [data-sidebar-id="flow"],
+			.layout-side-section [data-sidebar-id="flow"],
+			.sidebar-item[data-action="flow"],
+			.desk-sidebar [data-label="Flow"],
+			.desk-sidebar a[href*="flow"],
+			.sidebar-item:has(svg.es-icon-flow),
+			.standard-sidebar-item[data-title="Flow"],
+			.search-dialog-entry:has(svg.es-icon-flow),
+			.flow-sidebar,
+			.frappe-flow-panel,
+			.flow-chat-container,
+			[data-shortcut-name="Flow"],
+			a[href*="/desk#flow"],
+			a[href*="/desk#Flow"] {
+				display: none !important;
+				visibility: hidden !important;
+				pointer-events: none !important;
+				height: 0 !important;
+				margin: 0 !important;
+				padding: 0 !important;
+				border: none !important;
+			}
+
 			/* Desk Sidebar Widening & No Truncation */
 			.layout-side-section,
 			.desk-sidebar,
 			[data-page-route] .layout-side-section,
 			.body-sidebar,
+			.page-container .layout-side-section,
 			.standard-sidebar-section {
-				width: 270px !important;
-				min-width: 270px !important;
-				max-width: 270px !important;
-				flex: 0 0 270px !important;
+				width: 275px !important;
+				min-width: 275px !important;
+				max-width: 275px !important;
+				flex: 0 0 275px !important;
 				background: #ffffff !important;
 				border-right: 1px solid #e2e8f0 !important;
 				padding-right: 6px !important;
@@ -48,7 +77,8 @@
 			.desk-sidebar .ellipsis,
 			.layout-side-section .ellipsis,
 			.desk-sidebar span.ellipsis,
-			.layout-side-section span.ellipsis {
+			.layout-side-section span.ellipsis,
+			.standard-sidebar-section .ellipsis {
 				white-space: normal !important;
 				overflow: visible !important;
 				text-overflow: clip !important;
@@ -105,7 +135,7 @@
 
 			/* e-HRMS Cards Architecture */
 			.govt-ehrms-dashboard-wrapper {
-				margin: 12px 0 24px 0 !important;
+				margin: 10px 0 24px 0 !important;
 				padding: 16px 20px 20px 20px !important;
 				background: #ffffff !important;
 				border: 1px solid #e2e8f0 !important;
@@ -113,6 +143,8 @@
 				box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04) !important;
 				display: block !important;
 				clear: both !important;
+				width: 100% !important;
+				box-sizing: border-box !important;
 			}
 			.govt-ehrms-top-bar {
 				display: flex !important;
@@ -168,14 +200,14 @@
 			}
 			.govt-ehrms-cards-container {
 				display: grid !important;
-				grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)) !important;
-				gap: 16px !important;
+				grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)) !important;
+				gap: 14px !important;
 				width: 100% !important;
 			}
 			.govt-ehrms-card {
 				background: #ffffff !important;
 				border-radius: 12px !important;
-				padding: 20px 14px 16px 14px !important;
+				padding: 18px 12px 14px 12px !important;
 				display: flex !important;
 				flex-direction: column !important;
 				align-items: center !important;
@@ -184,21 +216,22 @@
 				box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04) !important;
 				transition: transform 0.16s ease, box-shadow 0.16s ease !important;
 				cursor: pointer !important;
-				min-height: 160px !important;
+				min-height: 155px !important;
+				box-sizing: border-box !important;
 			}
 			.govt-ehrms-card:hover {
 				transform: translateY(-3px) !important;
 				box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08) !important;
 			}
 			.govt-ehrms-card-circle {
-				width: 48px !important;
-				height: 48px !important;
+				width: 46px !important;
+				height: 46px !important;
 				border-radius: 50% !important;
 				display: flex !important;
 				align-items: center !important;
 				justify-content: center !important;
 				color: #ffffff !important;
-				margin-bottom: 12px !important;
+				margin-bottom: 10px !important;
 				box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12) !important;
 				flex-shrink: 0 !important;
 			}
@@ -207,10 +240,10 @@
 				height: 22px !important;
 			}
 			.govt-ehrms-card-title {
-				font-size: 13px !important;
+				font-size: 12.5px !important;
 				font-weight: 500 !important;
 				color: #475569 !important;
-				margin-bottom: 6px !important;
+				margin-bottom: 5px !important;
 				line-height: 1.25 !important;
 				text-align: center !important;
 				min-height: 32px !important;
@@ -219,15 +252,15 @@
 				justify-content: center !important;
 			}
 			.govt-ehrms-card-number {
-				font-size: 26px !important;
+				font-size: 24px !important;
 				font-weight: 800 !important;
 				color: #0f172a !important;
-				margin-bottom: 6px !important;
+				margin-bottom: 5px !important;
 				letter-spacing: -0.5px !important;
 				line-height: 1.1 !important;
 			}
 			.govt-ehrms-card-caption {
-				font-size: 11px !important;
+				font-size: 10.5px !important;
 				font-weight: 600 !important;
 				color: #64748b !important;
 				background: #f1f5f9 !important;
@@ -240,7 +273,6 @@
 				display: inline-block !important;
 			}
 		`;
-		document.head.appendChild(styleEl);
 	}
 
 	// SVG Icons
@@ -255,7 +287,7 @@
 		hospital: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>`
 	};
 
-	// 2. DEFAULT CARDS DATA (IMMEDIATE RENDER, ZERO DELAY)
+	// Default Cards Data
 	const defaultCardsData = [
 		{ id: "leaves_app", title: "Leaves Applied", value: "0", sub_text: "Total Applications", color: "#f43f5e", icon_type: "calendar", doctype: "CCS Leave Application" },
 		{ id: "el", title: "Earned Leave (EL)", value: "300", sub_text: "Available | Max 300d", color: "#0ea5e9", icon_type: "calendar", leave_type: "Earned Leave" },
@@ -269,10 +301,24 @@
 
 	let currentDashboardEmployee = null;
 	let isFetching = false;
+	let cachedDashboardData = null;
 
-	// 3. ENHANCE SIDEBAR (NO TRUNCATION, VIBRANT COLORS)
+	// 2. ENHANCE SIDEBAR (HIDE FLOW, COLOR MODULES, WIDEN SIDEBAR)
 	function enhanceGovtSidebar() {
 		injectGovtStyles();
+
+		// Hide Flow tab in sidebar
+		document.querySelectorAll(".desk-sidebar .sidebar-item, .layout-side-section .sidebar-item, .standard-sidebar-item, .sidebar-section a, .desk-sidebar a").forEach(function (el) {
+			const text = (el.innerText || "").trim().toLowerCase();
+			const action = (el.getAttribute("data-action") || "").toLowerCase();
+			const id = (el.getAttribute("data-sidebar-id") || "").toLowerCase();
+			if (text.startsWith("flow") || action === "flow" || id === "flow" || text.includes("flow\nctrl+i")) {
+				el.style.display = "none";
+				el.setAttribute("hidden", "true");
+			}
+		});
+
+		// Apply module coloring
 		const sidebarItems = document.querySelectorAll(".desk-sidebar a, .layout-side-section a, .standard-sidebar-item");
 		if (!sidebarItems || sidebarItems.length === 0) return;
 
@@ -296,7 +342,7 @@
 		});
 	}
 
-	// 4. RENDER e-HRMS DASHBOARD CARDS
+	// 3. RENDER e-HRMS DASHBOARD CARDS
 	function renderCardsMarkup(container, employeeInfo, cardsList, allEmployees) {
 		let empTitle = employeeInfo ? `${employeeInfo.employee_name || employeeInfo.employee_id} (${employeeInfo.designation || 'Staff'})` : "Government Official";
 
@@ -387,20 +433,53 @@
 		}
 	}
 
+	// 4. FIND THE ACTIVE VISIBLE WORKSPACE CONTAINER
+	function getActiveWorkspaceMainSection() {
+		// Look inside visible .desk-page
+		const visiblePages = Array.from(document.querySelectorAll(".desk-page")).filter(function (p) {
+			const s = window.getComputedStyle(p);
+			return s.display !== "none" && s.visibility !== "hidden";
+		});
+
+		for (let i = 0; i < visiblePages.length; i++) {
+			const sec = visiblePages[i].querySelector(".layout-main-section, .workspace-page, .codex-editor");
+			if (sec) return sec;
+		}
+
+		// Fallback to visible .layout-main-section
+		const allMain = Array.from(document.querySelectorAll(".layout-main-section, .workspace-page")).filter(function (el) {
+			return el.offsetParent !== null;
+		});
+
+		if (allMain.length > 0) return allMain[0];
+
+		return document.querySelector(".layout-main-section");
+	}
+
+	// 5. MOUNT OR MOVE DASHBOARD TO THE ACTIVE WORKSPACE (UPPER SIDE AS PER IMAGE 2)
 	function mountOrUpdateDashboard() {
 		injectGovtStyles();
 
 		const curRoute = frappe.get_route_str ? frappe.get_route_str() : "";
-		// Do not show on List or Form routes
-		if (curRoute.includes("List/") || curRoute.includes("Form/") || curRoute.includes("printview")) {
+
+		// If user is at root /desk (apps launcher), automatically navigate to the main workspace!
+		if (!curRoute || curRoute === "apps" || curRoute === "desk") {
+			if (frappe.set_route) {
+				frappe.set_route("masters-and-settings", "govt-masters");
+				return;
+			}
+		}
+
+		// Do not show on List view, Form view, Printview, etc.
+		if (curRoute.includes("List/") || curRoute.includes("Form/") || curRoute.includes("printview") || curRoute.includes("Report/")) {
 			const existing = document.getElementById("govt-ehrms-dashboard-section");
 			if (existing) existing.remove();
 			return;
 		}
 
-		// Locate target workspace main container
-		const mainSection = document.querySelector(".layout-main-section, .workspace-page, .desk-page .page-content, .layout-main");
-		if (!mainSection) return;
+		// Find the active visible workspace
+		const activeMain = getActiveWorkspaceMainSection();
+		if (!activeMain) return;
 
 		let dashboardWrap = document.getElementById("govt-ehrms-dashboard-section");
 		if (!dashboardWrap) {
@@ -408,13 +487,17 @@
 			dashboardWrap.id = "govt-ehrms-dashboard-section";
 			dashboardWrap.className = "govt-ehrms-dashboard-wrapper";
 
-			// Insert right at the top of workspace
-			mainSection.insertBefore(dashboardWrap, mainSection.firstChild);
+			if (cachedDashboardData) {
+				renderCardsMarkup(dashboardWrap, cachedDashboardData.employee, cachedDashboardData.leave_cards, cachedDashboardData.all_employees);
+			} else {
+				renderCardsMarkup(dashboardWrap, null, defaultCardsData, []);
+				fetchDashboardData();
+			}
+		}
 
-			// Immediately render default statutory cards so there is ZERO blank delay
-			renderCardsMarkup(dashboardWrap, null, defaultCardsData, []);
-			// Then fetch live metrics
-			fetchDashboardData();
+		// ENSURE it is mounted as the FIRST CHILD of the ACTIVE visible mainSection (upper side!)
+		if (dashboardWrap.parentElement !== activeMain) {
+			activeMain.insertBefore(dashboardWrap, activeMain.firstChild);
 		}
 	}
 
@@ -427,13 +510,14 @@
 			args: { employee: empId || currentDashboardEmployee },
 			callback: function (r) {
 				isFetching = false;
-				const dashboardWrap = document.getElementById("govt-ehrms-dashboard-section");
-				if (!dashboardWrap) return;
-
 				if (r && r.message && r.message.leave_cards) {
-					const data = r.message;
-					currentDashboardEmployee = data.employee ? data.employee.employee_id : null;
-					renderCardsMarkup(dashboardWrap, data.employee, data.leave_cards, data.all_employees);
+					cachedDashboardData = r.message;
+					currentDashboardEmployee = r.message.employee ? r.message.employee.employee_id : null;
+
+					const dashboardWrap = document.getElementById("govt-ehrms-dashboard-section");
+					if (dashboardWrap) {
+						renderCardsMarkup(dashboardWrap, r.message.employee, r.message.leave_cards, r.message.all_employees);
+					}
 				}
 			},
 			error: function () {
@@ -442,27 +526,25 @@
 		});
 	}
 
-	// 5. INITIALIZE AND BIND ROUTE LISTENERS
+	// 6. INITIALIZE AND ATTACH EVENT HANDLERS
 	$(document).ready(function () {
 		injectGovtStyles();
-		setTimeout(enhanceGovtSidebar, 300);
-		setTimeout(mountOrUpdateDashboard, 400);
+		setTimeout(enhanceGovtSidebar, 200);
+		setTimeout(mountOrUpdateDashboard, 300);
 
 		$(document).on("page-change", function () {
 			injectGovtStyles();
-			setTimeout(enhanceGovtSidebar, 300);
-			setTimeout(mountOrUpdateDashboard, 400);
+			setTimeout(enhanceGovtSidebar, 200);
+			setTimeout(mountOrUpdateDashboard, 300);
 		});
 
-		// Continuous observer to handle Desk dynamic DOM redraws
+		// Continuous observer to ensure cards remain at top of active workspace and Flow stays hidden
 		setInterval(function () {
 			const curRoute = frappe.get_route_str ? frappe.get_route_str() : "";
 			if (!curRoute.includes("List/") && !curRoute.includes("Form/")) {
 				enhanceGovtSidebar();
-				if (!document.getElementById("govt-ehrms-dashboard-section")) {
-					mountOrUpdateDashboard();
-				}
+				mountOrUpdateDashboard();
 			}
-		}, 2000);
+		}, 1500);
 	});
 })();

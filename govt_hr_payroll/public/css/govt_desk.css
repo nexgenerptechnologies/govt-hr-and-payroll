@@ -2,7 +2,34 @@
    High-Precision e-HRMS Card Architecture & Enhanced Desk Sidebar Theme */
 
 /* ==========================================================================
-   1. SUPERIOR DESK SIDEBAR STYLING (WIDER, VIBRANT, NO TRUNCATION)
+   1. HIDE FRAPPE FLOW (NATIVE AI ASSISTANT IN FRAPPE v16)
+   ========================================================================== */
+[data-sidebar-id="flow"],
+.desk-sidebar [data-sidebar-id="flow"],
+.layout-side-section [data-sidebar-id="flow"],
+.sidebar-item[data-action="flow"],
+.desk-sidebar [data-label="Flow"],
+.desk-sidebar a[href*="flow"],
+.sidebar-item:has(svg.es-icon-flow),
+.standard-sidebar-item[data-title="Flow"],
+.search-dialog-entry:has(svg.es-icon-flow),
+.flow-sidebar,
+.frappe-flow-panel,
+.flow-chat-container,
+[data-shortcut-name="Flow"],
+a[href*="/desk#flow"],
+a[href*="/desk#Flow"] {
+	display: none !important;
+	visibility: hidden !important;
+	pointer-events: none !important;
+	height: 0 !important;
+	margin: 0 !important;
+	padding: 0 !important;
+	border: none !important;
+}
+
+/* ==========================================================================
+   2. SUPERIOR DESK SIDEBAR STYLING (WIDER 275px, VIBRANT, NO TRUNCATION)
    ========================================================================== */
 
 /* Fix sidebar width so that no words are cut off or truncated with ... */
@@ -10,11 +37,12 @@
 .desk-sidebar,
 [data-page-route] .layout-side-section,
 .body-sidebar,
+.page-container .layout-side-section,
 .standard-sidebar-section {
-	width: 270px !important;
-	min-width: 270px !important;
-	max-width: 270px !important;
-	flex: 0 0 270px !important;
+	width: 275px !important;
+	min-width: 275px !important;
+	max-width: 275px !important;
+	flex: 0 0 275px !important;
 	background: #ffffff !important;
 	border-right: 1px solid #e2e8f0 !important;
 	padding-right: 6px !important;
@@ -46,7 +74,8 @@
 .desk-sidebar .ellipsis,
 .layout-side-section .ellipsis,
 .desk-sidebar span.ellipsis,
-.layout-side-section span.ellipsis {
+.layout-side-section span.ellipsis,
+.standard-sidebar-section .ellipsis {
 	white-space: normal !important;
 	overflow: visible !important;
 	text-overflow: clip !important;
@@ -215,16 +244,16 @@ a[href*="setting" i]:hover,
 
 
 /* ==========================================================================
-   2. e-HRMS EXACT COLORED CARDS ARCHITECTURE (MATCHING IMAGE 3)
+   3. e-HRMS EXACT COLORED CARDS ARCHITECTURE (MATCHING IMAGE 3)
    ========================================================================== */
 
 .govt-ehrms-dashboard-wrapper {
 	margin: 0 0 24px 0 !important;
 	padding: 16px 20px 20px 20px !important;
-	background: #f8fafc !important;
+	background: #ffffff !important;
 	border: 1px solid #e2e8f0 !important;
 	border-radius: 14px !important;
-	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05) !important;
+	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04) !important;
 	display: block !important;
 	clear: both !important;
 }
@@ -238,7 +267,7 @@ a[href*="setting" i]:hover,
 	gap: 12px !important;
 	margin-bottom: 16px !important;
 	padding-bottom: 12px !important;
-	border-bottom: 1px solid #e2e8f0 !important;
+	border-bottom: 1px solid #f1f5f9 !important;
 }
 
 .govt-ehrms-title-group {
@@ -263,7 +292,7 @@ a[href*="setting" i]:hover,
 	align-items: center !important;
 	gap: 6px !important;
 	padding: 4px 12px !important;
-	background: #ffffff !important;
+	background: #f8fafc !important;
 	border: 1px solid #cbd5e1 !important;
 	border-radius: 20px !important;
 	font-size: 12px !important;
@@ -300,7 +329,7 @@ a[href*="setting" i]:hover,
 /* Cards Grid Container */
 .govt-ehrms-cards-container {
 	display: grid !important;
-	grid-template-columns: repeat(auto-fit, minmax(175px, 1fr)) !important;
+	grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)) !important;
 	gap: 16px !important;
 	width: 100% !important;
 }
