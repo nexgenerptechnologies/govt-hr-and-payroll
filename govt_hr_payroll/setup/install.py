@@ -34,11 +34,11 @@ def after_migrate():
 
 def setup_page_workspace_permissions():
 	"""
-	Grants Read access to standard 'Page' and 'Workspace' doctypes for Govt HR roles
+	Grants Read access to standard 'Page', 'Workspace' and 'CCS Leave Ledger Entry' doctypes for Govt HR roles
 	so restricted desk users don't encounter 'No permission for Page' error.
 	"""
 	roles = ["System Manager", "Desk User", "Govt HR Admin", "Dealing Assistant", "Section Officer", "Drawing and Disbursing Officer", "Govt Employee"]
-	for doctype in ["Page", "Workspace"]:
+	for doctype in ["Page", "Workspace", "CCS Leave Ledger Entry"]:
 		for role in roles:
 			try:
 				if not frappe.db.exists("Custom DocPerm", {"parent": doctype, "role": role, "permlevel": 0}):
@@ -104,6 +104,7 @@ def assign_nitin_roles():
 				"Manufacturing User", "Manufacturing Manager", "Projects User"
 			]
 			user_doc.roles = [r for r in user_doc.roles if r.role not in unwanted_roles]
+			user_doc.block_modules = []
 
 			user_doc.flags.ignore_permissions = True
 			user_doc.save()

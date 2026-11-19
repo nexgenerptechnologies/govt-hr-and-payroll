@@ -1,10 +1,10 @@
 // Copyright (c) 2026, NexGen ERP Technologies and contributors
-// Provides high-precision e-HRMS cards and vibrant, expanded sidebar on Frappe Desk
+// High-Performance e-HRMS Cards & Desk Navigation Engine (Zero-Flicker, Fully Cached)
 
 (function () {
 	"use strict";
 
-	// 1. INJECT INLINE STYLESHEET (GUARANTEES 100% RELIABILITY REGARDLESS OF ASSET BUILDS)
+	// 1. INJECT INLINE STYLESHEET (GUARANTEES IMMEDIATE APPLICATION WITH ZERO ASSET CACHING ISSUES)
 	function injectGovtStyles() {
 		let styleEl = document.getElementById("govt-desk-custom-theme");
 		if (!styleEl) {
@@ -14,11 +14,14 @@
 		}
 
 		styleEl.textContent = `
-			/* Hide Frappe Flow (v16 Native AI Assistant) */
+			/* Hide Frappe Flow AI Assistant completely */
+			[data-flow-toggle],
+			flow-launcher,
 			[data-sidebar-id="flow"],
 			.desk-sidebar [data-sidebar-id="flow"],
 			.layout-side-section [data-sidebar-id="flow"],
 			.sidebar-item[data-action="flow"],
+			.sidebar-item[data-flow-toggle],
 			.desk-sidebar [data-label="Flow"],
 			.desk-sidebar a[href*="flow"],
 			.sidebar-item:has(svg.es-icon-flow),
@@ -34,9 +37,11 @@
 				visibility: hidden !important;
 				pointer-events: none !important;
 				height: 0 !important;
+				width: 0 !important;
 				margin: 0 !important;
 				padding: 0 !important;
 				border: none !important;
+				opacity: 0 !important;
 			}
 
 			/* Desk Sidebar Widening & No Truncation */
@@ -135,7 +140,7 @@
 
 			/* e-HRMS Cards Architecture */
 			.govt-ehrms-dashboard-wrapper {
-				margin: 10px 0 24px 0 !important;
+				margin: 0 0 24px 0 !important;
 				padding: 16px 20px 20px 20px !important;
 				background: #ffffff !important;
 				border: 1px solid #e2e8f0 !important;
@@ -275,7 +280,7 @@
 		`;
 	}
 
-	// SVG Icons
+	// SVG Icons Library
 	const svgIcons = {
 		calendar: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>`,
 		clock: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>`,
@@ -290,32 +295,30 @@
 	// Default Cards Data
 	const defaultCardsData = [
 		{ id: "leaves_app", title: "Leaves Applied", value: "0", sub_text: "Total Applications", color: "#f43f5e", icon_type: "calendar", doctype: "CCS Leave Application" },
-		{ id: "el", title: "Earned Leave (EL)", value: "300", sub_text: "Available | Max 300d", color: "#0ea5e9", icon_type: "calendar", leave_type: "Earned Leave" },
-		{ id: "cl", title: "Casual Leave (CL)", value: "8", sub_text: "Available | Quota 8d", color: "#06b6d4", icon_type: "clock", leave_type: "Casual Leave" },
-		{ id: "hpl", title: "Half Pay Leave (HPL)", value: "300", sub_text: "Available | Advance 10d", color: "#f97316", icon_type: "book", leave_type: "Half Pay Leave" },
-		{ id: "commuted", title: "Commuted Leave", value: "150", sub_text: "Medical (2x HPL)", color: "#22c55e", icon_type: "medical_cross", leave_type: "Commuted Leave" },
-		{ id: "ccl", title: "Child Care Leave (CCL)", value: "730", sub_text: "Lifetime: 730 Days", color: "#8b5cf6", icon_type: "family", leave_type: "Child Care Leave" },
-		{ id: "cea", title: "Child Education (CEA)", value: "₹33,750", sub_text: "Sanctioned / Claimed", color: "#ef4444", icon_type: "academic", doctype: "CEA Claim" },
-		{ id: "cghs", title: "Medical Claim (MRC-S)", value: "₹0", sub_text: "Sanctioned / Claimed", color: "#14b8a6", icon_type: "hospital", doctype: "CGHS Medical Claim" }
+		{ id: "el", title: "Earned Leave (EL)", value: "300", sub_text: "Available | Max 300d", color: "#e11d48", icon_type: "calendar", leave_type: "Earned Leave" },
+		{ id: "cl", title: "Casual Leave (CL)", value: "8", sub_text: "Available | Quota 8d", color: "#0284c7", icon_type: "clock", leave_type: "Casual Leave" },
+		{ id: "hpl", title: "Half Pay Leave (HPL)", value: "300", sub_text: "Available | Advance 10d", color: "#ea580c", icon_type: "book", leave_type: "Half Pay Leave" },
+		{ id: "commuted", title: "Commuted Leave", value: "150", sub_text: "Medical (2x HPL)", color: "#16a34a", icon_type: "medical_cross", leave_type: "Commuted Leave" },
+		{ id: "ccl", title: "Child Care Leave (CCL)", value: "730", sub_text: "Lifetime: 730 Days", color: "#dc2626", icon_type: "family", leave_type: "Child Care Leave" },
+		{ id: "rh", title: "Restricted Holiday (RH)", value: "2", sub_text: "Available | Quota 2d", color: "#9333ea", icon_type: "star", leave_type: "Restricted Holiday" },
+		{ id: "pat", title: "Paternity Leave", value: "15", sub_text: "Entitlement | Taken: 0d", color: "#4f46e5", icon_type: "family", leave_type: "Paternity Leave" },
+		{ id: "cea", title: "Child Education (CEA)", value: "₹0", sub_text: "Sanctioned / Claimed", color: "#0d9488", icon_type: "academic", doctype: "CEA Claim" },
+		{ id: "cghs", title: "Medical Claim (MRC-S)", value: "₹0", sub_text: "Sanctioned / Claimed", color: "#0284c7", icon_type: "hospital", doctype: "CGHS Medical Claim" }
 	];
 
+	// IN-MEMORY CACHE TO PREVENT UNNECESSARY BACKEND REQUESTS
+	window._govt_leave_cache = window._govt_leave_cache || null;
 	let currentDashboardEmployee = null;
 	let isFetching = false;
-	let cachedDashboardData = null;
 
 	// 2. ENHANCE SIDEBAR (HIDE FLOW, COLOR MODULES, WIDEN SIDEBAR)
 	function enhanceGovtSidebar() {
 		injectGovtStyles();
 
-		// Hide Flow tab in sidebar
-		document.querySelectorAll(".desk-sidebar .sidebar-item, .layout-side-section .sidebar-item, .standard-sidebar-item, .sidebar-section a, .desk-sidebar a").forEach(function (el) {
-			const text = (el.innerText || "").trim().toLowerCase();
-			const action = (el.getAttribute("data-action") || "").toLowerCase();
-			const id = (el.getAttribute("data-sidebar-id") || "").toLowerCase();
-			if (text.startsWith("flow") || action === "flow" || id === "flow" || text.includes("flow\nctrl+i")) {
-				el.style.display = "none";
-				el.setAttribute("hidden", "true");
-			}
+		// Remove/hide Frappe Flow buttons
+		const flowElements = document.querySelectorAll('[data-flow-toggle], flow-launcher, [data-sidebar-id="flow"], .sidebar-item[data-action="flow"]');
+		flowElements.forEach(function (el) {
+			el.remove ? el.remove() : (el.style.display = "none");
 		});
 
 		// Apply module coloring
@@ -325,6 +328,11 @@
 		sidebarItems.forEach(function (el) {
 			const text = (el.innerText || "").toLowerCase();
 			const href = (el.getAttribute("href") || "").toLowerCase();
+
+			if (text.includes("flow")) {
+				el.style.display = "none";
+				return;
+			}
 
 			if (text.includes("payroll") || text.includes("pay bill") || href.includes("payroll") || href.includes("pay-bill")) {
 				el.classList.add("govt-sidebar-payroll");
@@ -414,13 +422,13 @@
 		const sel = container.querySelector("#govt-ehrms-emp-select");
 		if (sel) {
 			sel.addEventListener("change", function () {
-				fetchDashboardData(this.value);
+				fetchDashboardData(this.value, true);
 			});
 		}
 		const refBtn = container.querySelector("#govt-ehrms-refresh-btn");
 		if (refBtn) {
 			refBtn.addEventListener("click", function () {
-				fetchDashboardData(sel ? sel.value : null);
+				fetchDashboardData(sel ? sel.value : null, true);
 			});
 		}
 		const applyBtn = container.querySelector("#govt-ehrms-apply-btn");
@@ -433,7 +441,7 @@
 		}
 	}
 
-	// 4. FIND THE ACTIVE VISIBLE WORKSPACE CONTAINER
+	// 4. FIND ACTIVE VISIBLE WORKSPACE CONTAINER
 	function getActiveWorkspaceMainSection() {
 		// Look inside visible .desk-page
 		const visiblePages = Array.from(document.querySelectorAll(".desk-page")).filter(function (p) {
@@ -456,13 +464,13 @@
 		return document.querySelector(".layout-main-section");
 	}
 
-	// 5. MOUNT OR MOVE DASHBOARD TO THE ACTIVE WORKSPACE (UPPER SIDE AS PER IMAGE 2)
+	// 5. MOUNT ONCE WITH ZERO FLICKER (NO INTERVAL POLLING)
 	function mountOrUpdateDashboard() {
 		injectGovtStyles();
 
 		const curRoute = frappe.get_route_str ? frappe.get_route_str() : "";
 
-		// If user is at root /desk (apps launcher), automatically navigate to the main workspace!
+		// If user is at root /desk (apps launcher), automatically route to the main workspace!
 		if (!curRoute || curRoute === "apps" || curRoute === "desk") {
 			if (frappe.set_route) {
 				frappe.set_route("masters-and-settings", "govt-masters");
@@ -477,32 +485,40 @@
 			return;
 		}
 
-		// Find the active visible workspace
 		const activeMain = getActiveWorkspaceMainSection();
 		if (!activeMain) return;
 
 		let dashboardWrap = document.getElementById("govt-ehrms-dashboard-section");
+
+		// If already mounted as first child of activeMain, DO NOT TOUCH IT! (Prevents any flicker)
+		if (dashboardWrap && dashboardWrap.parentElement === activeMain) {
+			return;
+		}
+
 		if (!dashboardWrap) {
 			dashboardWrap = document.createElement("div");
 			dashboardWrap.id = "govt-ehrms-dashboard-section";
 			dashboardWrap.className = "govt-ehrms-dashboard-wrapper";
 
-			if (cachedDashboardData) {
-				renderCardsMarkup(dashboardWrap, cachedDashboardData.employee, cachedDashboardData.leave_cards, cachedDashboardData.all_employees);
+			// Use memory cache if available, otherwise render statutory defaults immediately
+			if (window._govt_leave_cache) {
+				renderCardsMarkup(dashboardWrap, window._govt_leave_cache.employee, window._govt_leave_cache.leave_cards, window._govt_leave_cache.all_employees);
 			} else {
 				renderCardsMarkup(dashboardWrap, null, defaultCardsData, []);
-				fetchDashboardData();
+				fetchDashboardData(null, false);
 			}
 		}
 
-		// ENSURE it is mounted as the FIRST CHILD of the ACTIVE visible mainSection (upper side!)
-		if (dashboardWrap.parentElement !== activeMain) {
-			activeMain.insertBefore(dashboardWrap, activeMain.firstChild);
-		}
+		// Place at the very top of active workspace (upper side!)
+		activeMain.insertBefore(dashboardWrap, activeMain.firstChild);
 	}
 
-	function fetchDashboardData(empId) {
+	function fetchDashboardData(empId, forceRefresh) {
 		if (isFetching) return;
+		if (!forceRefresh && window._govt_leave_cache && (!empId || (window._govt_leave_cache.employee && window._govt_leave_cache.employee.employee_id === empId))) {
+			return;
+		}
+
 		isFetching = true;
 
 		frappe.call({
@@ -511,7 +527,7 @@
 			callback: function (r) {
 				isFetching = false;
 				if (r && r.message && r.message.leave_cards) {
-					cachedDashboardData = r.message;
+					window._govt_leave_cache = r.message;
 					currentDashboardEmployee = r.message.employee ? r.message.employee.employee_id : null;
 
 					const dashboardWrap = document.getElementById("govt-ehrms-dashboard-section");
@@ -526,25 +542,25 @@
 		});
 	}
 
-	// 6. INITIALIZE AND ATTACH EVENT HANDLERS
+	// 6. INITIALIZE AND ATTACH PURE EVENT LISTENERS (ZERO POLLING, MAXIMUM SPEED)
 	$(document).ready(function () {
 		injectGovtStyles();
 		setTimeout(enhanceGovtSidebar, 200);
 		setTimeout(mountOrUpdateDashboard, 300);
 
+		// Trigger ONLY on Frappe route/page change (No CPU-hogging polling timers)
 		$(document).on("page-change", function () {
 			injectGovtStyles();
-			setTimeout(enhanceGovtSidebar, 200);
-			setTimeout(mountOrUpdateDashboard, 300);
+			setTimeout(enhanceGovtSidebar, 150);
+			setTimeout(mountOrUpdateDashboard, 250);
 		});
 
-		// Continuous observer to ensure cards remain at top of active workspace and Flow stays hidden
-		setInterval(function () {
-			const curRoute = frappe.get_route_str ? frappe.get_route_str() : "";
-			if (!curRoute.includes("List/") && !curRoute.includes("Form/")) {
-				enhanceGovtSidebar();
-				mountOrUpdateDashboard();
+		// Block Ctrl+I for Flow globally
+		document.addEventListener("keydown", function (e) {
+			if ((e.ctrlKey || e.metaKey) && (e.key === "i" || e.key === "I")) {
+				e.preventDefault();
+				e.stopPropagation();
 			}
-		}, 1500);
+		}, true);
 	});
 })();

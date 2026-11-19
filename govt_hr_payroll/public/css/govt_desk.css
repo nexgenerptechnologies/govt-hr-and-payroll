@@ -4,10 +4,13 @@
 /* ==========================================================================
    1. HIDE FRAPPE FLOW (NATIVE AI ASSISTANT IN FRAPPE v16)
    ========================================================================== */
+[data-flow-toggle],
+flow-launcher,
 [data-sidebar-id="flow"],
 .desk-sidebar [data-sidebar-id="flow"],
 .layout-side-section [data-sidebar-id="flow"],
 .sidebar-item[data-action="flow"],
+.sidebar-item[data-flow-toggle],
 .desk-sidebar [data-label="Flow"],
 .desk-sidebar a[href*="flow"],
 .sidebar-item:has(svg.es-icon-flow),
@@ -23,9 +26,11 @@ a[href*="/desk#Flow"] {
 	visibility: hidden !important;
 	pointer-events: none !important;
 	height: 0 !important;
+	width: 0 !important;
 	margin: 0 !important;
 	padding: 0 !important;
 	border: none !important;
+	opacity: 0 !important;
 }
 
 /* ==========================================================================
@@ -256,6 +261,8 @@ a[href*="setting" i]:hover,
 	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04) !important;
 	display: block !important;
 	clear: both !important;
+	width: 100% !important;
+	box-sizing: border-box !important;
 }
 
 /* Top Bar: Portal Title + Employee Selector + Quick Action */
@@ -329,8 +336,8 @@ a[href*="setting" i]:hover,
 /* Cards Grid Container */
 .govt-ehrms-cards-container {
 	display: grid !important;
-	grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)) !important;
-	gap: 16px !important;
+	grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)) !important;
+	gap: 14px !important;
 	width: 100% !important;
 }
 
@@ -338,7 +345,7 @@ a[href*="setting" i]:hover,
 .govt-ehrms-card {
 	background: #ffffff !important;
 	border-radius: 12px !important;
-	padding: 20px 14px 16px 14px !important;
+	padding: 18px 12px 14px 12px !important;
 	display: flex !important;
 	flex-direction: column !important;
 	align-items: center !important;
@@ -348,7 +355,8 @@ a[href*="setting" i]:hover,
 	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04) !important;
 	transition: transform 0.16s ease, box-shadow 0.16s ease !important;
 	cursor: pointer !important;
-	min-height: 160px !important;
+	min-height: 155px !important;
+	box-sizing: border-box !important;
 }
 
 .govt-ehrms-card:hover {
@@ -358,14 +366,14 @@ a[href*="setting" i]:hover,
 
 /* Top Centered Circular Icon Badge */
 .govt-ehrms-card-circle {
-	width: 48px !important;
-	height: 48px !important;
+	width: 46px !important;
+	height: 46px !important;
 	border-radius: 50% !important;
 	display: flex !important;
 	align-items: center !important;
 	justify-content: center !important;
 	color: #ffffff !important;
-	margin-bottom: 12px !important;
+	margin-bottom: 10px !important;
 	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12) !important;
 	flex-shrink: 0 !important;
 }
@@ -377,10 +385,10 @@ a[href*="setting" i]:hover,
 
 /* Centered Card Title */
 .govt-ehrms-card-title {
-	font-size: 13px !important;
+	font-size: 12.5px !important;
 	font-weight: 500 !important;
 	color: #475569 !important;
-	margin-bottom: 6px !important;
+	margin-bottom: 5px !important;
 	line-height: 1.25 !important;
 	text-align: center !important;
 	min-height: 32px !important;
@@ -391,17 +399,17 @@ a[href*="setting" i]:hover,
 
 /* Large Bold Metric Number */
 .govt-ehrms-card-number {
-	font-size: 26px !important;
+	font-size: 24px !important;
 	font-weight: 800 !important;
 	color: #0f172a !important;
-	margin-bottom: 6px !important;
+	margin-bottom: 5px !important;
 	letter-spacing: -0.5px !important;
 	line-height: 1.1 !important;
 }
 
 /* Caption / Status Pill */
 .govt-ehrms-card-caption {
-	font-size: 11px !important;
+	font-size: 10.5px !important;
 	font-weight: 600 !important;
 	color: #64748b !important;
 	background: #f1f5f9 !important;
