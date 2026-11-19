@@ -37,7 +37,7 @@ def setup_page_workspace_permissions():
 	Grants Read access to standard 'Page' and 'Workspace' doctypes for Govt HR roles
 	so restricted desk users don't encounter 'No permission for Page' error.
 	"""
-	roles = ["Govt HR Admin", "Dealing Assistant", "Section Officer", "Drawing and Disbursing Officer", "Govt Employee"]
+	roles = ["System Manager", "Desk User", "Govt HR Admin", "Dealing Assistant", "Section Officer", "Drawing and Disbursing Officer", "Govt Employee"]
 	for doctype in ["Page", "Workspace"]:
 		for role in roles:
 			try:
@@ -85,6 +85,8 @@ def assign_nitin_roles():
 
 			# Ensure primary Government HR roles and Workspace Manager
 			target_roles = [
+				"System Manager",
+				"Desk User",
 				"Govt HR Admin",
 				"Dealing Assistant",
 				"Section Officer",
