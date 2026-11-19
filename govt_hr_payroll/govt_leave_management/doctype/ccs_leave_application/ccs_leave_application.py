@@ -15,12 +15,13 @@ class CCSLeaveApplication(Document):
 		self.set_current_balance()
 
 	def calculate_total_days(self):
-		# Support for Half Day Leave (0.5 days - e.g. Half Day Casual Leave)
-		if getattr(self, "half_day", False):
-			if not getattr(self, "half_day_date", None):
-				frappe.throw(_("Please select the Half Day Date for Half Day Leave."))
-			self.from_date = self.half_day_date
-			self.to_date = self.half_day_date
+		# Support for Half Day Leave (0.5 days)
+		if getattr(self, "half_day", False) or flt(getattr(self, "total_days", 0)) == 0.5:
+			if getattr(self, "half_day_date", None):
+				self.from_date = self.half_day_date
+				self.to_date = self.half_day_date
+			elif self.from_date:
+				self.to_date = self.from_date
 			self.total_days = 0.5
 			return
 

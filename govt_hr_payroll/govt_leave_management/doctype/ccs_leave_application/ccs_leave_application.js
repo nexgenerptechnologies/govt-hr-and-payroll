@@ -4,6 +4,41 @@
 frappe.ui.form.on("CCS Leave Application", {
 	refresh(frm) {
 		frm.trigger("toggle_half_day_fields");
+		frm.trigger("add_half_day_button");
+	},
+
+	add_half_day_button(frm) {
+		// Custom Action Button to apply 0.5 Day Leave easily
+		frm.add_custom_button(__("Apply Half Day (0.5d)"), function () {
+			frappe.prompt([
+				{
+					fieldname: "leave_date",
+					fieldtype: "Date",
+					label: __("Half Day Leave Date"),
+					reqd: 1,
+					default: frm.doc.from_date || frappe.datetime.get_today()
+				},
+				{
+					fieldname: "session",
+					fieldtype: "Select",
+					label: __("Session"),
+					options: "First Half (Morning Session)\nSecond Half (Afternoon Session)",
+					default: "First Half (Morning Session)",
+					reqd: 1
+				}
+			], function (vals) {
+				frm.set_value("half_day", 1);
+				frm.set_value("half_day_date", vals.leave_date);
+				frm.set_value("half_day_session", vals.session.includes("First") ? "First Half" : "Second Half");
+				frm.set_value("from_date", vals.leave_date);
+				frm.set_value("to_date", vals.leave_date);
+				frm.set_value("total_days", 0.5);
+				frappe.show_alert({
+					message: __("Half Day Leave applied: 0.5 Day on {0} ({1})").format(vals.leave_date, vals.session),
+					indicator: "green"
+				}, 6);
+			}, __("Apply Half Day Leave (0.5 Day)"), __("Set 0.5 Day"));
+		}, __("Actions"));
 	},
 
 	employee(frm) {
@@ -22,17 +57,11 @@ frappe.ui.form.on("CCS Leave Application", {
 	half_day(frm) {
 		frm.trigger("toggle_half_day_fields");
 		if (frm.doc.half_day) {
-			if (frm.doc.half_day_date) {
-				frm.set_value("from_date", frm.doc.half_day_date);
-				frm.set_value("to_date", frm.doc.half_day_date);
-				frm.set_value("total_days", 0.5);
-			} else if (frm.doc.from_date) {
-				frm.set_value("half_day_date", frm.doc.from_date);
-				frm.set_value("to_date", frm.doc.from_date);
-				frm.set_value("total_days", 0.5);
-			} else {
-				frm.set_value("total_days", 0.5);
-			}
+			const date = frm.doc.half_day_date || frm.doc.from_date || frappe.datetime.get_today();
+			frm.set_value("half_day_date", date);
+			frm.set_value("from_date", date);
+			frm.set_value("to_date", date);
+			frm.set_value("total_days", 0.5);
 		} else {
 			frm.trigger("calculate_days");
 		}
@@ -48,12 +77,22 @@ frappe.ui.form.on("CCS Leave Application", {
 
 	toggle_half_day_fields(frm) {
 		const is_hd = frm.doc.half_day ? true : false;
-		frm.toggle_display(["half_day_date", "half_day_session"], is_hd);
-		frm.toggle_reqd("half_day_date", is_hd);
+		if (frm.fields_dict.half_day_date) {
+			frm.toggle_display(["half_day_date", "half_day_session"], is_hd);
+			frm.toggle_reqd("half_day_date", is_hd);
+		}
 	},
 
 	leave_type(frm) {
 		if (!frm.doc.leave_type) return;
+
+		// Clarification on Half Pay Leave (HPL) vs Half Day Leave
+		if (frm.doc.leave_type === "Half Pay Leave") {
+			frappe.show_alert({
+				message: __("ℹ️ Note: 'Half Pay Leave' (HPL) is statutory leave with half salary for a FULL day (1 full day absence = 1 day count). If you want half-day absence (0.5 day), click 'Actions' -> 'Apply Half Day (0.5d)'."),
+				indicator: "blue"
+			}, 7);
+		}
 
 		// Friendly Rule Guidance on Gender
 		if (frm.doc.employee) {
@@ -111,7 +150,7 @@ frappe.ui.form.on("CCS Leave Application", {
 	},
 
 	calculate_days(frm) {
-		if (frm.doc.half_day) {
+		if (frm.doc.half_day || frm.doc.total_days === 0.5) {
 			frm.set_value("total_days", 0.5);
 			return;
 		}
