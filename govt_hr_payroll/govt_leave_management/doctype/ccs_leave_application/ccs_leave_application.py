@@ -15,6 +15,15 @@ class CCSLeaveApplication(Document):
 		self.set_current_balance()
 
 	def calculate_total_days(self):
+		# Support for Half Day Leave (0.5 days - e.g. Half Day Casual Leave)
+		if getattr(self, "half_day", False):
+			if not getattr(self, "half_day_date", None):
+				frappe.throw(_("Please select the Half Day Date for Half Day Leave."))
+			self.from_date = self.half_day_date
+			self.to_date = self.half_day_date
+			self.total_days = 0.5
+			return
+
 		if self.from_date and self.to_date:
 			if getdate(self.from_date) > getdate(self.to_date):
 				frappe.throw(_("To Date cannot be before From Date."))
@@ -54,11 +63,24 @@ class CCSLeaveApplication(Document):
 		# Rule 43-C: Child Care Leave (CCL) - Female & Single Male only
 		if leave_code == "CCL" or "child care" in leave_name:
 			if gender == "Male":
-				marital_status = frappe.db.get_value("Govt Employee", self.employee, "marital_status")
+				marital_status = None
+				try:
+					if frappe.db.has_column("Govt Employee", "marital_status"):
+						marital_status = frappe.db.get_value("Govt Employee", self.employee, "marital_status")
+				except Exception:
+					pass
+
 				if marital_status and marital_status.lower() == "married":
 					frappe.throw(
-						_("Under CCS Leave Rules (Rule 43-C), Child Care Leave is admissible to Female Government servants and Single Male employees (unmarried, widower, or legally divorced). Married male employees are not eligible for Child Care Leave."),
+						_("Under CCS Leave Rules (Rule 43-C) & DoPT guidelines, Child Care Leave is admissible to Female Government servants and Single Male employees (unmarried, widower, or legally divorced). Married male employees are not eligible for Child Care Leave."),
 						title=_("CCL Admissibility Restriction - Rule 43-C")
+					)
+				elif not marital_status or marital_status.lower() not in ["unmarried", "widower", "divorced"]:
+					frappe.throw(
+						_("Under CCS Leave Rules (Rule 43-C), Child Care Leave is admissible only to Female employees and Single Male employees (unmarried, widower, or legally divorced). Employee '{0}' is registered as Male with Marital Status '{1}'. Please update employee Marital Status in Employee Master to confirm Single Male eligibility.").format(
+							self.employee_name or self.employee, marital_status or "Not Specified"
+						),
+						title=_("Single Male Status Verification Required")
 					)
 
 	def validate_ccs_rules(self):
@@ -66,6 +88,32 @@ class CCSLeaveApplication(Document):
 		leave_code = (leave_type_doc.leave_code or "").upper()
 		leave_name = (self.leave_type or "").lower()
 		current_year = getdate(self.from_date or nowdate()).year
+
+		# Rule 12: Absolute maximum continuous period of any leave is 5 years (1,825 days)
+		if self.total_days > 1825:
+			frappe.throw(
+				_("Under CCS Leave Rule 12, no Government servant shall be granted leave of any kind for a continuous period exceeding five years (1,825 days)."),
+				title=_("Rule 12 Continuous Absence Limit Exceeded")
+			)
+
+		# Rule 32: Extraordinary Leave (EOL) - Max 365 days (1 year) single spell
+		if leave_code == "EOL" or "extraordinary" in leave_name or "extra ordinary" in leave_name:
+			if self.total_days > 365:
+				frappe.throw(
+					_("Under Central Civil Services (Leave) Rules, 1972 (Rule 32), Extraordinary Leave (EOL) cannot exceed 365 days (1 year) in a single spell. You applied for {0} days. Absence beyond 1 year requires prior approval of the Cadre Controlling Authority / Ministry.").format(self.total_days),
+					title=_("EOL Spell Ceiling Exceeded - Rule 32")
+				)
+			if not self.reason_for_leave:
+				frappe.throw(
+					_("Under CCS Rule 32, a specific written reason / justification is mandatory when applying for Extraordinary Leave (EOL)."),
+					title=_("Reason Mandatory for EOL")
+				)
+			if self.total_days > 90 and not self.medical_certificate_attached:
+				frappe.msgprint(
+					_("Notice: Under CCS Rule 32, Extraordinary Leave exceeding 90 days generally requires a Registered Medical Practitioner certificate or approval for certified higher studies."),
+					indicator="orange",
+					title=_("Medical Certificate Recommended")
+				)
 
 		# Rule 26: Earned Leave (EL) can be availed up to 180 days at a time
 		if leave_code == "EL" or "earned" in leave_name:
@@ -240,7 +288,7 @@ class CCSLeaveApplication(Document):
 				)
 			return
 
-		# For other ledger-based leave types (excluding quota-based leaves which are validated in validate_ccs_rules)
+		# For other ledger-based leave types (excluding quota-based leaves and EOL which are without pay)
 		if leave_code not in ["CL", "RH", "EOL", "MAT", "PAT", "CCL"]:
 			bal = get_leave_balance(self.employee, self.leave_type)
 			if bal is not None and self.total_days > bal:

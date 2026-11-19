@@ -108,6 +108,27 @@
    "reqd": 1
   },
   {
+   "default": "0",
+   "fieldname": "half_day",
+   "fieldtype": "Check",
+   "label": "Half Day Leave?"
+  },
+  {
+   "depends_on": "eval:doc.half_day == 1",
+   "fieldname": "half_day_date",
+   "fieldtype": "Date",
+   "label": "Half Day Date",
+   "mandatory_depends_on": "eval:doc.half_day == 1"
+  },
+  {
+   "default": "First Half",
+   "depends_on": "eval:doc.half_day == 1",
+   "fieldname": "half_day_session",
+   "fieldtype": "Select",
+   "label": "Half Day Session",
+   "options": "First Half\nSecond Half"
+  },
+  {
    "fieldname": "from_date",
    "fieldtype": "Date",
    "in_list_view": 1,
@@ -326,7 +347,7 @@
    "share": 0
   }
  ],
- "search_fields": "name,employee,employee_name,leave_type,status",
+ "search_fields": "employee,employee_name,leave_type,status",
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": [],

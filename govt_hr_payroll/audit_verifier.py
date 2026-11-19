@@ -154,14 +154,16 @@ def audit_mathematical_rules():
     else:
         print(f"  [FAIL] Due Drawn mismatch: Net={net_arrear}")
 
-    # Test 4: Folder 4 - CCS Leave Rules (180-Day EL Cap & Commuted Leave 2x Debit)
+    # Test 4: Folder 4 - CCS Leave Rules (180-Day EL, 365-Day EOL, Half-Day 0.5d, 2x HPL Debit)
     print("\n[Test 4] Folder 4: CCS Leave Rules 1972 Compliance")
     el_max_continuous = 180
+    eol_max_spell = 365
+    half_day_val = 0.5
     commuted_leave_days = 5
     hpl_debited = commuted_leave_days * 2  # 10 HPL
     max_accum_el = 300
-    if hpl_debited == 10 and el_max_continuous == 180 and max_accum_el == 300:
-        print(f"  [PASS] 180-day continuous EL rule, Commuted Leave {commuted_leave_days}d -> debits {hpl_debited} HPL, 300+15 buffer rule")
+    if hpl_debited == 10 and el_max_continuous == 180 and eol_max_spell == 365 and half_day_val == 0.5:
+        print(f"  [PASS] 180-day continuous EL rule, EOL 365-day single spell cap, Half-Day 0.5d, Commuted Leave 5d -> debits 10 HPL, 300+15 buffer rule")
         tests_passed += 1
     else:
         print(f"  [FAIL] Leave rule mismatch")

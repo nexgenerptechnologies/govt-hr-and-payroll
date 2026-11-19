@@ -117,6 +117,12 @@
    "options": "Male\nFemale\nOther"
   },
   {
+   "fieldname": "marital_status",
+   "fieldtype": "Select",
+   "label": "Marital Status",
+   "options": "Unmarried\nMarried\nWidower\nDivorced"
+  },
+  {
    "default": "Active",
    "fieldname": "status",
    "fieldtype": "Select",
