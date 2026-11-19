@@ -1,10 +1,10 @@
 // Copyright (c) 2026, NexGen ERP Technologies and contributors
-// High-Performance e-HRMS Cards & Desk Navigation Engine (Zero-Flicker, Fully Cached)
+// High-Performance e-HRMS Cards & Desk Navigation Engine (Zero-Flicker, Fully Cached, Mutation-Driven)
 
 (function () {
 	"use strict";
 
-	// 1. INJECT INLINE STYLESHEET (GUARANTEES IMMEDIATE APPLICATION WITH ZERO ASSET CACHING ISSUES)
+	// 1. INJECT INLINE STYLESHEET (GUARANTEES IMMEDIATE APPLICATION ACROSS ALL VIEWS)
 	function injectGovtStyles() {
 		let styleEl = document.getElementById("govt-desk-custom-theme");
 		if (!styleEl) {
@@ -15,6 +15,7 @@
 
 		styleEl.textContent = `
 			/* Hide Frappe Flow AI Assistant completely */
+			.sidebar-flow,
 			[data-flow-toggle],
 			flow-launcher,
 			[data-sidebar-id="flow"],
@@ -47,8 +48,9 @@
 			/* Desk Sidebar Widening & No Truncation */
 			.layout-side-section,
 			.desk-sidebar,
-			[data-page-route] .layout-side-section,
+			.standard-sidebar,
 			.body-sidebar,
+			[data-page-route] .layout-side-section,
 			.page-container .layout-side-section,
 			.standard-sidebar-section {
 				width: 275px !important;
@@ -63,7 +65,8 @@
 			.layout-side-section .sidebar-item,
 			.layout-side-section .sidebar-item-container,
 			.layout-side-section .item-anchor,
-			.desk-sidebar .standard-sidebar-item {
+			.desk-sidebar .standard-sidebar-item,
+			.standard-sidebar .standard-sidebar-item {
 				display: flex !important;
 				align-items: center !important;
 				padding: 8px 12px !important;
@@ -77,23 +80,28 @@
 				border-left: 3px solid transparent !important;
 				transition: all 0.18s ease !important;
 			}
+			.standard-sidebar .standard-sidebar-item .sidebar-item-label,
+			.standard-sidebar-item .sidebar-item-label,
 			.desk-sidebar .sidebar-item-label,
 			.layout-side-section .sidebar-item-label,
 			.desk-sidebar .ellipsis,
 			.layout-side-section .ellipsis,
 			.desk-sidebar span.ellipsis,
 			.layout-side-section span.ellipsis,
-			.standard-sidebar-section .ellipsis {
-				white-space: normal !important;
+			.standard-sidebar-section .ellipsis,
+			.sidebar-item-label {
+				min-width: 0 !important;
 				overflow: visible !important;
+				white-space: normal !important;
 				text-overflow: clip !important;
 				word-break: normal !important;
 				font-weight: 500 !important;
 				color: #1e293b !important;
-				line-height: 1.3 !important;
+				line-height: 1.35 !important;
 			}
 			.desk-sidebar .sidebar-item-icon,
 			.layout-side-section .sidebar-item-icon,
+			.standard-sidebar .sidebar-item-icon,
 			.sidebar-item-icon {
 				width: 28px !important;
 				height: 28px !important;
@@ -107,7 +115,8 @@
 				box-shadow: 0 1px 3px rgba(0,0,0,0.06) !important;
 			}
 			.desk-sidebar .sidebar-section-header,
-			.layout-side-section .sidebar-section-header {
+			.layout-side-section .sidebar-section-header,
+			.standard-sidebar-section .sidebar-section-header {
 				font-size: 11px !important;
 				font-weight: 700 !important;
 				text-transform: uppercase !important;
@@ -282,14 +291,14 @@
 
 	// SVG Icons Library
 	const svgIcons = {
-		calendar: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>`,
-		clock: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>`,
-		book: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>`,
-		medical_cross: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>`,
-		family: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>`,
-		star: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>`,
-		academic: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>`,
-		hospital: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>`
+		calendar: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:22px;height:22px;"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>`,
+		clock: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:22px;height:22px;"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>`,
+		book: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:22px;height:22px;"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>`,
+		medical_cross: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:22px;height:22px;"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>`,
+		family: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:22px;height:22px;"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>`,
+		star: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:22px;height:22px;"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>`,
+		academic: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:22px;height:22px;"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>`,
+		hospital: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:22px;height:22px;"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>`
 	};
 
 	// Default Cards Data
@@ -306,7 +315,7 @@
 		{ id: "cghs", title: "Medical Claim (MRC-S)", value: "₹0", sub_text: "Sanctioned / Claimed", color: "#0284c7", icon_type: "hospital", doctype: "CGHS Medical Claim" }
 	];
 
-	// IN-MEMORY CACHE TO PREVENT UNNECESSARY BACKEND REQUESTS
+	// IN-MEMORY CACHE
 	window._govt_leave_cache = window._govt_leave_cache || null;
 	let currentDashboardEmployee = null;
 	let isFetching = false;
@@ -316,13 +325,13 @@
 		injectGovtStyles();
 
 		// Remove/hide Frappe Flow buttons
-		const flowElements = document.querySelectorAll('[data-flow-toggle], flow-launcher, [data-sidebar-id="flow"], .sidebar-item[data-action="flow"]');
+		const flowElements = document.querySelectorAll('.sidebar-flow, [data-flow-toggle], flow-launcher, [data-sidebar-id="flow"], .sidebar-item[data-action="flow"]');
 		flowElements.forEach(function (el) {
 			el.remove ? el.remove() : (el.style.display = "none");
 		});
 
 		// Apply module coloring
-		const sidebarItems = document.querySelectorAll(".desk-sidebar a, .layout-side-section a, .standard-sidebar-item");
+		const sidebarItems = document.querySelectorAll(".desk-sidebar a, .layout-side-section a, .standard-sidebar-item, .sidebar-item");
 		if (!sidebarItems || sidebarItems.length === 0) return;
 
 		sidebarItems.forEach(function (el) {
@@ -443,23 +452,12 @@
 
 	// 4. FIND ACTIVE VISIBLE WORKSPACE CONTAINER
 	function getActiveWorkspaceMainSection() {
-		// Look inside visible .desk-page
-		const visiblePages = Array.from(document.querySelectorAll(".desk-page")).filter(function (p) {
-			const s = window.getComputedStyle(p);
-			return s.display !== "none" && s.visibility !== "hidden";
+		// Look for visible layout-main-section or editor-js-container
+		const editorContainers = Array.from(document.querySelectorAll(".editor-js-container, .layout-main-section, .workspace-page")).filter(function (el) {
+			return el.offsetParent !== null && !el.closest('[style*="display: none"]');
 		});
 
-		for (let i = 0; i < visiblePages.length; i++) {
-			const sec = visiblePages[i].querySelector(".layout-main-section, .workspace-page, .codex-editor");
-			if (sec) return sec;
-		}
-
-		// Fallback to visible .layout-main-section
-		const allMain = Array.from(document.querySelectorAll(".layout-main-section, .workspace-page")).filter(function (el) {
-			return el.offsetParent !== null;
-		});
-
-		if (allMain.length > 0) return allMain[0];
+		if (editorContainers.length > 0) return editorContainers[0];
 
 		return document.querySelector(".layout-main-section");
 	}
@@ -542,17 +540,33 @@
 		});
 	}
 
-	// 6. INITIALIZE AND ATTACH PURE EVENT LISTENERS (ZERO POLLING, MAXIMUM SPEED)
+	// 6. INITIALIZE OBSERVER AND ATTACH EVENT HANDLERS (ZERO POLLING, LIGHTNING FAST)
 	$(document).ready(function () {
 		injectGovtStyles();
-		setTimeout(enhanceGovtSidebar, 200);
-		setTimeout(mountOrUpdateDashboard, 300);
+		enhanceGovtSidebar();
+		mountOrUpdateDashboard();
 
-		// Trigger ONLY on Frappe route/page change (No CPU-hogging polling timers)
+		// Fast MutationObserver to catch workspace mount the microsecond it appears
+		const observer = new MutationObserver(function () {
+			enhanceGovtSidebar();
+			mountOrUpdateDashboard();
+		});
+
+		observer.observe(document.body, { childList: true, subtree: true });
+
+		// Route change listener
+		if (frappe.router && frappe.router.on) {
+			frappe.router.on("change", function () {
+				injectGovtStyles();
+				setTimeout(enhanceGovtSidebar, 50);
+				setTimeout(mountOrUpdateDashboard, 100);
+			});
+		}
+
 		$(document).on("page-change", function () {
 			injectGovtStyles();
-			setTimeout(enhanceGovtSidebar, 150);
-			setTimeout(mountOrUpdateDashboard, 250);
+			setTimeout(enhanceGovtSidebar, 50);
+			setTimeout(mountOrUpdateDashboard, 100);
 		});
 
 		// Block Ctrl+I for Flow globally

@@ -16,6 +16,7 @@ def after_install():
 	setup_payroll_settings()
 	setup_default_leave_types()
 	setup_workspaces()
+	setup_custom_blocks()
 	setup_sidebars()
 	assign_nitin_roles()
 
@@ -29,6 +30,7 @@ def after_migrate():
 	setup_payroll_settings()
 	setup_default_leave_types()
 	setup_workspaces()
+	setup_custom_blocks()
 	setup_sidebars()
 	assign_nitin_roles()
 
@@ -722,3 +724,157 @@ def credit_half_yearly_el_and_hpl():
 
 	frappe.db.commit()
 	return {"credited_employees": count}
+
+def setup_custom_blocks():
+	"""
+	Sets up the native Custom HTML Block 'Govt Leave Dashboard' in Frappe v16.
+	"""
+	try:
+		if not frappe.db.exists("DocType", "Custom HTML Block"):
+			return
+
+		if not frappe.db.exists("Custom HTML Block", "Govt Leave Dashboard"):
+			doc = frappe.new_doc("Custom HTML Block")
+			doc.name = "Govt Leave Dashboard"
+		else:
+			doc = frappe.get_doc("Custom HTML Block", "Govt Leave Dashboard")
+
+		doc.html = """<div class="govt-ehrms-dashboard-wrapper" id="govt-ehrms-dashboard-section">
+	<div class="govt-ehrms-top-bar">
+		<div class="govt-ehrms-title-group">
+			<span class="govt-ehrms-title">🏛️ Central Civil Services (CCS) Leave & Entitlement Portal</span>
+			<span class="govt-ehrms-emp-pill" id="govt-ehrms-emp-badge">👤 Loading Official...</span>
+		</div>
+		<div class="govt-ehrms-controls">
+			<label style="font-size:12px;font-weight:600;color:#64748b;margin:0;">Official:</label>
+			<select class="govt-ehrms-select" id="govt-ehrms-emp-select"></select>
+			<button class="btn btn-xs btn-default" id="govt-ehrms-refresh-btn" style="border-radius:6px;font-weight:600;padding:5px 10px;">🔄 Refresh</button>
+			<button class="btn btn-xs btn-primary" id="govt-ehrms-apply-btn" style="border-radius:6px;font-weight:600;padding:5px 12px;background:#2563eb;color:#fff;">➕ Apply Leave</button>
+		</div>
+	</div>
+	<div class="govt-ehrms-cards-container" id="govt-ehrms-cards-grid"></div>
+</div>"""
+
+		doc.style = """.govt-ehrms-dashboard-wrapper { margin: 0 0 24px 0 !important; padding: 16px 20px 20px 20px !important; background: #ffffff !important; border: 1px solid #e2e8f0 !important; border-radius: 14px !important; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04) !important; display: block !important; width: 100% !important; box-sizing: border-box !important; }
+.govt-ehrms-top-bar { display: flex !important; align-items: center !important; justify-content: space-between !important; flex-wrap: wrap !important; gap: 12px !important; margin-bottom: 16px !important; padding-bottom: 12px !important; border-bottom: 1px solid #f1f5f9 !important; }
+.govt-ehrms-title-group { display: flex !important; align-items: center !important; gap: 12px !important; flex-wrap: wrap !important; }
+.govt-ehrms-title { font-size: 15px !important; font-weight: 700 !important; color: #0f172a !important; display: flex !important; align-items: center !important; gap: 8px !important; }
+.govt-ehrms-emp-pill { display: inline-flex !important; align-items: center !important; gap: 6px !important; padding: 4px 12px !important; background: #f8fafc !important; border: 1px solid #cbd5e1 !important; border-radius: 20px !important; font-size: 12px !important; font-weight: 600 !important; color: #1e3a8a !important; }
+.govt-ehrms-controls { display: flex !important; align-items: center !important; gap: 8px !important; flex-wrap: wrap !important; }
+.govt-ehrms-select { padding: 5px 12px !important; border-radius: 8px !important; border: 1px solid #cbd5e1 !important; background: #ffffff !important; font-size: 12px !important; font-weight: 600 !important; color: #334155 !important; cursor: pointer !important; }
+.govt-ehrms-cards-container { display: grid !important; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)) !important; gap: 14px !important; width: 100% !important; }
+.govt-ehrms-card { background: #ffffff !important; border-radius: 12px !important; padding: 18px 12px 14px 12px !important; display: flex !important; flex-direction: column !important; align-items: center !important; justify-content: center !important; text-align: center !important; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04) !important; transition: transform 0.16s ease, box-shadow 0.16s ease !important; cursor: pointer !important; min-height: 155px !important; box-sizing: border-box !important; }
+.govt-ehrms-card:hover { transform: translateY(-3px) !important; box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08) !important; }
+.govt-ehrms-card-circle { width: 46px !important; height: 46px !important; border-radius: 50% !important; display: flex !important; align-items: center !important; justify-content: center !important; color: #ffffff !important; margin-bottom: 10px !important; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12) !important; flex-shrink: 0 !important; }
+.govt-ehrms-card-title { font-size: 12.5px !important; font-weight: 500 !important; color: #475569 !important; margin-bottom: 5px !important; line-height: 1.25 !important; text-align: center !important; min-height: 32px !important; display: flex !important; align-items: center !important; justify-content: center !important; }
+.govt-ehrms-card-number { font-size: 24px !important; font-weight: 800 !important; color: #0f172a !important; margin-bottom: 5px !important; letter-spacing: -0.5px !important; line-height: 1.1 !important; }
+.govt-ehrms-card-caption { font-size: 10.5px !important; font-weight: 600 !important; color: #64748b !important; background: #f1f5f9 !important; padding: 3px 8px !important; border-radius: 12px !important; max-width: 95% !important; overflow: hidden !important; text-overflow: ellipsis !important; white-space: nowrap !important; display: inline-block !important; }"""
+
+		doc.script = """(function(root) {
+	if (!root) return;
+	const grid = root.querySelector('#govt-ehrms-cards-grid');
+	const badge = root.querySelector('#govt-ehrms-emp-badge');
+	const select = root.querySelector('#govt-ehrms-emp-select');
+	const refBtn = root.querySelector('#govt-ehrms-refresh-btn');
+	const applyBtn = root.querySelector('#govt-ehrms-apply-btn');
+
+	let selectedEmp = null;
+
+	const svgs = {
+		calendar: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:22px;height:22px;"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>`,
+		clock: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:22px;height:22px;"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>`,
+		book: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:22px;height:22px;"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>`,
+		medical_cross: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:22px;height:22px;"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>`,
+		family: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:22px;height:22px;"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>`,
+		star: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:22px;height:22px;"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>`,
+		academic: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:22px;height:22px;"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>`,
+		hospital: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:22px;height:22px;"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>`
+	};
+
+	function loadData(emp) {
+		frappe.call({
+			method: 'govt_hr_payroll.govt_leave_management.leave_dashboard.get_employee_leave_dashboard',
+			args: { employee: emp || selectedEmp },
+			callback: function(r) {
+				if (!r || !r.message) return;
+				const data = r.message;
+				selectedEmp = data.employee ? data.employee.employee_id : null;
+
+				if (badge && data.employee) {
+					badge.textContent = '👤 ' + data.employee.employee_name + ' (' + (data.employee.designation || 'Staff') + ')';
+				}
+
+				if (select && data.all_employees && select.options.length === 0) {
+					data.all_employees.forEach(function(e) {
+						const opt = document.createElement('option');
+						opt.value = e.employee_id;
+						opt.textContent = e.employee_id + ' - ' + e.employee_name + ' (' + (e.designation || 'Staff') + ')';
+						if (selectedEmp === e.employee_id) opt.selected = true;
+						select.appendChild(opt);
+					});
+				}
+
+				if (grid && data.leave_cards) {
+					let html = '';
+					data.leave_cards.forEach(function(c) {
+						const color = c.color || '#0ea5e9';
+						const svg = svgs[c.icon_type] || svgs.calendar;
+						html += `
+							<div class="govt-ehrms-card" data-leave="${c.leave_type || ''}" data-doctype="${c.doctype || ''}" style="border: 2px solid ${color};">
+								<div class="govt-ehrms-card-circle" style="background-color: ${color};">
+									${svg}
+								</div>
+								<div class="govt-ehrms-card-title">${c.title}</div>
+								<div class="govt-ehrms-card-number">${c.value}</div>
+								<div class="govt-ehrms-card-caption">${c.sub_text}</div>
+							</div>
+						`;
+					});
+					grid.innerHTML = html;
+
+					grid.querySelectorAll('.govt-ehrms-card').forEach(function(card) {
+						card.addEventListener('click', function() {
+							const leaveType = this.getAttribute('data-leave');
+							const docType = this.getAttribute('data-doctype');
+							if (docType) {
+								frappe.set_route('List', docType);
+							} else if (leaveType) {
+								frappe.new_doc('CCS Leave Application', {
+									employee: selectedEmp || '',
+									leave_type: leaveType
+								});
+							} else {
+								frappe.set_route('List', 'CCS Leave Application');
+							}
+						});
+					});
+				}
+			}
+		});
+	}
+
+	if (select) {
+		select.addEventListener('change', function() {
+			loadData(this.value);
+		});
+	}
+	if (refBtn) {
+		refBtn.addEventListener('click', function() {
+			loadData(select ? select.value : null);
+		});
+	}
+	if (applyBtn) {
+		applyBtn.addEventListener('click', function() {
+			frappe.new_doc('CCS Leave Application', { employee: selectedEmp || '' });
+		});
+	}
+
+	loadData();
+})(root_element);"""
+
+		doc.private = 0
+		doc.flags.ignore_permissions = True
+		doc.save()
+		frappe.db.commit()
+	except Exception as e:
+		frappe.log_error(f"Error creating Custom HTML Block Govt Leave Dashboard: {e}")
