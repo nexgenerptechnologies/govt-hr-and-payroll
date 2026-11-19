@@ -184,7 +184,7 @@ def get_employee_leave_dashboard(employee=None):
 				"leave_type": "Earned Leave",
 				"value": fmt(el_available),
 				"unit": "Days",
-				"sub_text": f"Available | Taken: {fmt(el_taken)}d",
+				"sub_text": f"Avail: {fmt(el_available)} | Taken: {fmt(el_taken)}d",
 				"color": "#e11d48",           # Pink (Image 3 Card 1)
 				"icon_type": "calendar",
 				"can_apply": True
@@ -195,7 +195,7 @@ def get_employee_leave_dashboard(employee=None):
 				"leave_type": "Casual Leave",
 				"value": fmt(cl_available),
 				"unit": "Days",
-				"sub_text": f"Available | Taken: {fmt(cl_taken)}d",
+				"sub_text": f"Avail: {fmt(cl_available)} | Taken: {fmt(cl_taken)}d",
 				"color": "#0284c7",           # Sky Blue (Image 3 Card 2)
 				"icon_type": "clock",
 				"can_apply": True
@@ -206,7 +206,7 @@ def get_employee_leave_dashboard(employee=None):
 				"leave_type": "Half Pay Leave",
 				"value": fmt(hpl_available),
 				"unit": "Days",
-				"sub_text": f"Available | Taken: {fmt(hpl_taken)}d",
+				"sub_text": f"Avail: {fmt(hpl_available)} | Taken: {fmt(hpl_taken)}d",
 				"color": "#ea580c",           # Sunset Orange (Image 3 Card 3)
 				"icon_type": "book",
 				"can_apply": True
@@ -217,7 +217,7 @@ def get_employee_leave_dashboard(employee=None):
 				"leave_type": "Commuted Leave",
 				"value": fmt(commuted_available),
 				"unit": "Days",
-				"sub_text": f"Available | Taken: {fmt(commuted_taken)}d",
+				"sub_text": f"Avail: {fmt(commuted_available)} | Taken: {fmt(commuted_taken)}d",
 				"color": "#16a34a",           # Emerald Green (Image 3 Card 4)
 				"icon_type": "medical_cross",
 				"can_apply": True
@@ -228,7 +228,7 @@ def get_employee_leave_dashboard(employee=None):
 				"leave_type": "Child Care Leave",
 				"value": fmt(ccl_available),
 				"unit": "Days",
-				"sub_text": f"Available | Taken: {fmt(ccl_taken)}d",
+				"sub_text": f"Avail: {fmt(ccl_available)} | Taken: {fmt(ccl_taken)}d",
 				"color": "#dc2626",           # Red/Crimson (Image 3 Card 5)
 				"icon_type": "family",
 				"can_apply": True
@@ -239,7 +239,7 @@ def get_employee_leave_dashboard(employee=None):
 				"leave_type": "Restricted Holiday",
 				"value": fmt(rh_available),
 				"unit": "Days",
-				"sub_text": f"Available | Taken: {fmt(rh_taken)}d",
+				"sub_text": f"Avail: {fmt(rh_available)} | Taken: {fmt(rh_taken)}d",
 				"color": "#9333ea",           # Purple
 				"icon_type": "star",
 				"can_apply": True
@@ -253,7 +253,7 @@ def get_employee_leave_dashboard(employee=None):
 				"leave_type": "Maternity Leave",
 				"value": fmt(mat_available),
 				"unit": "Days",
-				"sub_text": f"Entitlement | Taken: {fmt(mat_taken)}d",
+				"sub_text": f"Quota: 180d | Taken: {fmt(mat_taken)}d",
 				"color": "#7c3aed",
 				"icon_type": "family",
 				"can_apply": True
@@ -265,7 +265,7 @@ def get_employee_leave_dashboard(employee=None):
 				"leave_type": "Paternity Leave",
 				"value": fmt(pat_available),
 				"unit": "Days",
-				"sub_text": f"Entitlement | Taken: {fmt(pat_taken)}d",
+				"sub_text": f"Quota: 15d | Taken: {fmt(pat_taken)}d",
 				"color": "#4f46e5",
 				"icon_type": "family",
 				"can_apply": True

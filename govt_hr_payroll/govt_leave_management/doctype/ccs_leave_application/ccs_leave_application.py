@@ -4,12 +4,14 @@
 import frappe
 from frappe import _
 from frappe.model.document import Document
-from frappe.utils import date_diff, getdate, flt
+from frappe.utils import date_diff, getdate, flt, nowdate
 
 class CCSLeaveApplication(Document):
 	def validate(self):
 		self.calculate_total_days()
+		self.validate_gender_admissibility()
 		self.validate_ccs_rules()
+		self.validate_leave_balance()
 		self.set_current_balance()
 
 	def calculate_total_days(self):
@@ -17,18 +19,237 @@ class CCSLeaveApplication(Document):
 			if getdate(self.from_date) > getdate(self.to_date):
 				frappe.throw(_("To Date cannot be before From Date."))
 			self.total_days = date_diff(self.to_date, self.from_date) + 1
+			if self.total_days <= 0:
+				frappe.throw(_("Total leave days must be at least 1 day."))
+
+	def validate_gender_admissibility(self):
+		if not self.employee or not self.leave_type:
+			return
+
+		gender = frappe.db.get_value("Govt Employee", self.employee, "gender")
+		leave_type_doc = frappe.get_doc("CCS Leave Type", self.leave_type)
+		leave_code = (leave_type_doc.leave_code or "").upper()
+		leave_name = (self.leave_type or "").lower()
+
+		# Rule 43: Maternity Leave - STRICTLY FEMALE ONLY
+		if leave_code == "MAT" or "maternity" in leave_name:
+			if gender != "Female":
+				frappe.throw(
+					_("Under Central Civil Services (Leave) Rules, 1972 (Rule 43), Maternity Leave is strictly admissible ONLY to Female Government servants. Employee {0} ({1}) is registered as '{2}' and cannot apply for Maternity Leave.").format(
+						self.employee, self.employee_name or "", gender or "Unknown"
+					),
+					title=_("Gender Restriction Violation - Rule 43")
+				)
+
+		# Rule 43-A: Paternity Leave - STRICTLY MALE ONLY
+		if leave_code == "PAT" or "paternity" in leave_name:
+			if gender != "Male":
+				frappe.throw(
+					_("Under Central Civil Services (Leave) Rules, 1972 (Rule 43-A), Paternity Leave is strictly admissible ONLY to Male Government servants during confinement of wife. Employee {0} ({1}) is registered as '{2}' and cannot apply for Paternity Leave.").format(
+						self.employee, self.employee_name or "", gender or "Unknown"
+					),
+					title=_("Gender Restriction Violation - Rule 43-A")
+				)
+
+		# Rule 43-C: Child Care Leave (CCL) - Female & Single Male only
+		if leave_code == "CCL" or "child care" in leave_name:
+			if gender == "Male":
+				marital_status = frappe.db.get_value("Govt Employee", self.employee, "marital_status")
+				if marital_status and marital_status.lower() == "married":
+					frappe.throw(
+						_("Under CCS Leave Rules (Rule 43-C), Child Care Leave is admissible to Female Government servants and Single Male employees (unmarried, widower, or legally divorced). Married male employees are not eligible for Child Care Leave."),
+						title=_("CCL Admissibility Restriction - Rule 43-C")
+					)
 
 	def validate_ccs_rules(self):
 		leave_type_doc = frappe.get_doc("CCS Leave Type", self.leave_type)
+		leave_code = (leave_type_doc.leave_code or "").upper()
+		leave_name = (self.leave_type or "").lower()
+		current_year = getdate(self.from_date or nowdate()).year
 
-		# Rule 5: EL can be availed up to 180 days at a time
-		if leave_type_doc.leave_code == "EL" and self.total_days > 180:
-			frappe.throw(_("Under CCS Leave Rules, Earned Leave cannot be availed for more than 180 days at a time."))
+		# Rule 26: Earned Leave (EL) can be availed up to 180 days at a time
+		if leave_code == "EL" or "earned" in leave_name:
+			if self.total_days > 180:
+				frappe.throw(
+					_("Under CCS Leave Rule 26, Earned Leave (EL) cannot be availed for more than 180 days in a single spell within India. Applied: {0} days.").format(self.total_days),
+					title=_("Max Continuous EL Spell Exceeded")
+				)
 
-		# Rule 6: Commuted leave requires medical certificate
-		if leave_type_doc.is_commuted or leave_type_doc.requires_medical_certificate:
+		# Rule 43: Maternity Leave - Max 180 days
+		if leave_code == "MAT" or "maternity" in leave_name:
+			if self.total_days > 180:
+				frappe.throw(
+					_("Under CCS Leave Rule 43, Maternity Leave cannot exceed 180 days for a single confinement. Applied: {0} days.").format(self.total_days),
+					title=_("Maternity Leave Limit Exceeded")
+				)
 			if not self.medical_certificate_attached:
-				frappe.throw(_("A valid Medical Certificate must be attached for Commuted / Medical Leave."))
+				frappe.throw(
+					_("Under CCS Rule 43, a valid Medical Certificate / Confinement Proof is mandatory for Maternity Leave."),
+					title=_("Medical Certificate Required")
+				)
+
+		# Rule 43-A: Paternity Leave - Max 15 days
+		if leave_code == "PAT" or "paternity" in leave_name:
+			if self.total_days > 15:
+				frappe.throw(
+					_("Under CCS Leave Rule 43-A, Paternity Leave cannot exceed 15 days in a single spell. Applied: {0} days.").format(self.total_days),
+					title=_("Paternity Leave Limit Exceeded")
+				)
+
+		# Rule 43-C: Child Care Leave (CCL) - Min 5 days, Max 730 days lifetime, Max 3 spells per year
+		if leave_code == "CCL" or "child care" in leave_name:
+			if self.total_days < 5:
+				frappe.throw(
+					_("Under CCS Leave Rule 43-C, Child Care Leave (CCL) cannot be granted for less than 5 days at a time. Applied: {0} days.").format(self.total_days),
+					title=_("Minimum Spell Violation")
+				)
+
+			# Check annual spell limit (max 3 spells in a calendar year)
+			ccl_apps = frappe.get_all(
+				"CCS Leave Application",
+				filters={
+					"employee": self.employee,
+					"leave_type": self.leave_type,
+					"status": ["in", ["Sanctioned by Competent Authority", "Applied", "Recommended by RO", "Verified by Dealing Clerk"]],
+					"name": ["!=", self.name or ""]
+				},
+				fields=["from_date", "total_days"]
+			)
+			spells_this_year = sum(1 for a in ccl_apps if a.from_date and getdate(a.from_date).year == current_year)
+			if spells_this_year >= 3:
+				frappe.throw(
+					_("Under CCS Leave Rule 43-C, Child Care Leave cannot be availed for more than 3 spells in a calendar year. You have already availed/applied for {0} spells in {1}.").format(
+						spells_this_year, current_year
+					),
+					title=_("CCL Annual Spell Limit (Max 3 Spells)")
+				)
+
+			# Check cumulative 730 days lifetime ceiling
+			total_ccl_taken = sum(flt(a.total_days) for a in ccl_apps)
+			if (total_ccl_taken + self.total_days) > 730.0:
+				frappe.throw(
+					_("Under CCS Leave Rule 43-C, Child Care Leave exceeds the lifetime ceiling of 730 days. Already availed: {0} days, Currently applied: {1} days (Total: {2} days > 730 days maximum).").format(
+						total_ccl_taken, self.total_days, total_ccl_taken + self.total_days
+					),
+					title=_("CCL Lifetime Ceiling Exceeded")
+				)
+
+		# Casual Leave (CL) - Annual quota of 8 days
+		if leave_code == "CL" or "casual" in leave_name:
+			if self.total_days > 8:
+				frappe.throw(
+					_("Casual Leave (CL) cannot exceed 8 days in total. Applied: {0} days.").format(self.total_days),
+					title=_("CL Annual Quota Exceeded")
+				)
+
+			cl_apps = frappe.get_all(
+				"CCS Leave Application",
+				filters={
+					"employee": self.employee,
+					"leave_type": self.leave_type,
+					"status": ["in", ["Sanctioned by Competent Authority", "Applied", "Recommended by RO", "Verified by Dealing Clerk"]],
+					"name": ["!=", self.name or ""]
+				},
+				fields=["from_date", "total_days"]
+			)
+			cl_taken_year = sum(flt(a.total_days) for a in cl_apps if a.from_date and getdate(a.from_date).year == current_year)
+			if (cl_taken_year + self.total_days) > 8.0:
+				frappe.throw(
+					_("Casual Leave (CL) quota of 8 days per calendar year exceeded. Already availed/applied in {0}: {1} days. Currently applied: {2} days (Total: {3} days > 8 days max quota).").format(
+						current_year, cl_taken_year, self.total_days, cl_taken_year + self.total_days
+					),
+					title=_("CL Annual Quota Exceeded")
+				)
+
+		# Restricted Holiday (RH) - Annual quota of 2 days
+		if leave_code == "RH" or "restricted" in leave_name:
+			if self.total_days > 2:
+				frappe.throw(
+					_("Restricted Holiday (RH) cannot exceed 2 days in a calendar year. Applied: {0} days.").format(self.total_days),
+					title=_("RH Annual Quota Exceeded")
+				)
+
+			rh_apps = frappe.get_all(
+				"CCS Leave Application",
+				filters={
+					"employee": self.employee,
+					"leave_type": self.leave_type,
+					"status": ["in", ["Sanctioned by Competent Authority", "Applied", "Recommended by RO", "Verified by Dealing Clerk"]],
+					"name": ["!=", self.name or ""]
+				},
+				fields=["from_date", "total_days"]
+			)
+			rh_taken_year = sum(flt(a.total_days) for a in rh_apps if a.from_date and getdate(a.from_date).year == current_year)
+			if (rh_taken_year + self.total_days) > 2.0:
+				frappe.throw(
+					_("Restricted Holiday (RH) quota of 2 days per calendar year exceeded. Already availed/applied in {0}: {1} days. Currently applied: {2} days (Total: {3} days > 2 days max quota).").format(
+						current_year, rh_taken_year, self.total_days, rh_taken_year + self.total_days
+					),
+					title=_("RH Annual Quota Exceeded")
+				)
+
+		# Rule 30: Commuted Leave requires medical certificate
+		if leave_type_doc.is_commuted or leave_type_doc.requires_medical_certificate or leave_code == "COMMUTED":
+			if not self.medical_certificate_attached:
+				frappe.throw(
+					_("Under CCS Leave Rule 30, a valid Medical Certificate from a Registered Medical Practitioner is mandatory for Commuted / Medical Leave."),
+					title=_("Medical Certificate Mandatory")
+				)
+
+	def validate_leave_balance(self):
+		leave_type_doc = frappe.get_doc("CCS Leave Type", self.leave_type)
+		leave_code = (leave_type_doc.leave_code or "").upper()
+		leave_name = (self.leave_type or "").lower()
+
+		# For Commuted Leave: check Half Pay Leave (HPL) balance (needs 2x days)
+		if leave_type_doc.is_commuted or leave_code == "COMMUTED":
+			hpl_bal = get_leave_balance(self.employee, "Half Pay Leave")
+			required_hpl = self.total_days * 2
+			if required_hpl > hpl_bal:
+				frappe.throw(
+					_("Insufficient Half Pay Leave (HPL) balance to commute. Commuted Leave of {0} days requires {1} days of HPL (debits 2x), but your available HPL balance is only {2} days. Under CCS Rule 30, you cannot take more commuted leave than your HPL balance permits.").format(
+						self.total_days, required_hpl, hpl_bal
+					),
+					title=_("Insufficient HPL Balance for Commutation")
+				)
+			return
+
+		# For Earned Leave: check standard balance + 300-day buffer balance
+		if leave_code == "EL" or "earned" in leave_name:
+			std_bal = get_leave_balance(self.employee, "Earned Leave")
+			buf_bal = get_buffer_balance(self.employee, "Earned Leave")
+			total_avail = std_bal + buf_bal
+			if self.total_days > total_avail:
+				frappe.throw(
+					_("Insufficient Earned Leave balance for {0}. You are applying for {1} days, but available balance is only {2} days (Standard: {3}d, Buffer: {4}d). Under CCS Leave Rules, leave exceeding available balance cannot be sanctioned without prior Competent Authority approval for Extra Ordinary Leave (EOL).").format(
+						self.employee_name or self.employee, self.total_days, total_avail, std_bal, buf_bal
+					),
+					title=_("Insufficient Earned Leave Balance")
+				)
+			return
+
+		# For Half Pay Leave
+		if leave_code == "HPL" or "half pay" in leave_name:
+			hpl_bal = get_leave_balance(self.employee, "Half Pay Leave")
+			if self.total_days > hpl_bal:
+				frappe.throw(
+					_("Insufficient Half Pay Leave (HPL) balance for {0}. You are applying for {1} days, but available HPL balance is only {2} days.").format(
+						self.employee_name or self.employee, self.total_days, hpl_bal
+					),
+					title=_("Insufficient Half Pay Leave Balance")
+				)
+			return
+
+		# For other ledger-based leave types (excluding quota-based leaves which are validated in validate_ccs_rules)
+		if leave_code not in ["CL", "RH", "EOL", "MAT", "PAT", "CCL"]:
+			bal = get_leave_balance(self.employee, self.leave_type)
+			if bal is not None and self.total_days > bal:
+				frappe.throw(
+					_("Insufficient leave balance for {0}. Applied: {1} days, Available: {2} days.").format(
+						self.leave_type, self.total_days, bal
+					),
+					title=_("Insufficient Leave Balance")
+				)
 
 	def set_current_balance(self):
 		self.current_balance = get_leave_balance(self.employee, self.leave_type)
@@ -93,21 +314,25 @@ class CCSLeaveApplication(Document):
 			do_order.flags.ignore_permissions = True
 			do_order.insert()
 
+@frappe.whitelist()
 def get_leave_balance(employee, leave_type):
 	entries = frappe.get_all(
 		"CCS Leave Ledger Entry",
 		filters={"employee": employee, "leave_type": leave_type},
-		fields=["credit_days", "debit_days"]
+		fields=["credit_days", "debit_days"],
+		ignore_permissions=True
 	)
 	total_credit = sum([flt(e.credit_days) for e in entries])
 	total_debit = sum([flt(e.debit_days) for e in entries])
 	return max(0.0, total_credit - total_debit)
 
+@frappe.whitelist()
 def get_buffer_balance(employee, leave_type):
 	entries = frappe.get_all(
 		"CCS Leave Ledger Entry",
 		filters={"employee": employee, "leave_type": leave_type},
-		fields=["buffer_credit_days", "buffer_debit_days"]
+		fields=["buffer_credit_days", "buffer_debit_days"],
+		ignore_permissions=True
 	)
 	total_buffer_credit = sum([flt(e.buffer_credit_days) for e in entries])
 	total_buffer_debit = sum([flt(e.buffer_debit_days) for e in entries])
