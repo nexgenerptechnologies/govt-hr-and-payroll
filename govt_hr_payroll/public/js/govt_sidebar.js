@@ -148,18 +148,7 @@
 			}
 
 			/* e-HRMS Cards Architecture */
-			.govt-ehrms-dashboard-wrapper {
-				margin: 0 0 24px 0 !important;
-				padding: 16px 20px 20px 20px !important;
-				background: #ffffff !important;
-				border: 1px solid #e2e8f0 !important;
-				border-radius: 14px !important;
-				box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04) !important;
-				display: block !important;
-				clear: both !important;
-				width: 100% !important;
-				box-sizing: border-box !important;
-			}
+			.govt-ehrms-dashboard-wrapper { margin: 0 0 12px 0 !important; padding: 10px 14px 10px 14px !important; background: #ffffff !important; border: 1px solid #e2e8f0 !important; border-radius: 10px !important; box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04) !important; display: block !important; clear: both !important; width: 100% !important; box-sizing: border-box !important; }
 			.govt-ehrms-top-bar {
 				display: flex !important;
 				align-items: center !important;
@@ -212,93 +201,33 @@
 				color: #334155 !important;
 				cursor: pointer !important;
 			}
-			.govt-ehrms-cards-container {
-				display: grid !important;
-				grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)) !important;
-				gap: 14px !important;
-				width: 100% !important;
-			}
-			.govt-ehrms-card {
-				background: #ffffff !important;
-				border-radius: 12px !important;
-				padding: 18px 12px 14px 12px !important;
-				display: flex !important;
-				flex-direction: column !important;
-				align-items: center !important;
-				justify-content: center !important;
-				text-align: center !important;
-				box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04) !important;
-				transition: transform 0.16s ease, box-shadow 0.16s ease !important;
-				cursor: pointer !important;
-				min-height: 155px !important;
-				box-sizing: border-box !important;
-			}
+			.govt-ehrms-cards-container { display: grid !important; grid-template-columns: repeat(auto-fit, minmax(105px, 1fr)) !important; gap: 8px !important; width: 100% !important; }
+			.govt-ehrms-card { background: #ffffff !important; border-radius: 8px !important; padding: 8px 4px 6px 4px !important; display: flex !important; flex-direction: column !important; align-items: center !important; justify-content: center !important; text-align: center !important; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04) !important; transition: transform 0.14s ease, box-shadow 0.14s ease !important; cursor: pointer !important; min-height: 84px !important; max-height: 98px !important; box-sizing: border-box !important; }
 			.govt-ehrms-card:hover {
 				transform: translateY(-3px) !important;
 				box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08) !important;
 			}
-			.govt-ehrms-card-circle {
-				width: 46px !important;
-				height: 46px !important;
-				border-radius: 50% !important;
-				display: flex !important;
-				align-items: center !important;
-				justify-content: center !important;
-				color: #ffffff !important;
-				margin-bottom: 10px !important;
-				box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12) !important;
-				flex-shrink: 0 !important;
-			}
+			.govt-ehrms-card-circle, .govt-ehrms-card-badge { width: 26px !important; height: 26px !important; border-radius: 50% !important; display: flex !important; align-items: center !important; justify-content: center !important; color: #ffffff !important; margin-bottom: 4px !important; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.10) !important; flex-shrink: 0 !important; }
 			.govt-ehrms-card-circle svg {
 				width: 22px !important;
 				height: 22px !important;
 			}
-			.govt-ehrms-card-title {
-				font-size: 12.5px !important;
-				font-weight: 500 !important;
-				color: #475569 !important;
-				margin-bottom: 5px !important;
-				line-height: 1.25 !important;
-				text-align: center !important;
-				min-height: 32px !important;
-				display: flex !important;
-				align-items: center !important;
-				justify-content: center !important;
-			}
-			.govt-ehrms-card-number {
-				font-size: 24px !important;
-				font-weight: 800 !important;
-				color: #0f172a !important;
-				margin-bottom: 5px !important;
-				letter-spacing: -0.5px !important;
-				line-height: 1.1 !important;
-			}
-			.govt-ehrms-card-caption {
-				font-size: 10.5px !important;
-				font-weight: 600 !important;
-				color: #64748b !important;
-				background: #f1f5f9 !important;
-				padding: 3px 8px !important;
-				border-radius: 12px !important;
-				max-width: 95% !important;
-				overflow: hidden !important;
-				text-overflow: ellipsis !important;
-				white-space: nowrap !important;
-				display: inline-block !important;
-			}
+			.govt-ehrms-card-title { font-size: 11px !important; font-weight: 600 !important; color: #475569 !important; margin-bottom: 2px !important; line-height: 1.15 !important; text-align: center !important; height: 24px !important; display: flex !important; align-items: center !important; justify-content: center !important; overflow: hidden !important; }
+			.govt-ehrms-card-number, .govt-ehrms-card-val { font-size: 17px !important; font-weight: 800 !important; color: #0f172a !important; margin-bottom: 2px !important; letter-spacing: -0.3px !important; line-height: 1.1 !important; }
+			.govt-ehrms-card-caption, .govt-ehrms-card-sub { font-size: 9px !important; font-weight: 600 !important; color: #64748b !important; background: #f1f5f9 !important; padding: 1px 5px !important; border-radius: 8px !important; max-width: 95% !important; overflow: hidden !important; text-overflow: ellipsis !important; white-space: nowrap !important; display: inline-block !important; }
 		`;
 	}
 
 	// SVG Icons Library
 	const svgIcons = {
-		calendar: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:22px;height:22px;"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>`,
-		clock: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:22px;height:22px;"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>`,
-		book: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:22px;height:22px;"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>`,
-		medical_cross: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:22px;height:22px;"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>`,
-		family: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:22px;height:22px;"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>`,
-		star: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:22px;height:22px;"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>`,
-		academic: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:22px;height:22px;"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>`,
-		hospital: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:22px;height:22px;"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>`
+		calendar: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px;"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>`,
+		clock: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px;"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>`,
+		book: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px;"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>`,
+		medical_cross: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px;"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>`,
+		family: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px;"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>`,
+		star: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px;"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>`,
+		academic: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px;"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>`,
+		hospital: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px;"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>`
 	};
 
 	// Default Cards Data

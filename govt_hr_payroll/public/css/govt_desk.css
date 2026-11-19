@@ -262,12 +262,12 @@ a[href*="setting" i]:hover,
    ========================================================================== */
 
 .govt-ehrms-dashboard-wrapper {
-	margin: 0 0 24px 0 !important;
-	padding: 16px 20px 20px 20px !important;
+	margin: 0 0 12px 0 !important;
+	padding: 10px 14px 10px 14px !important;
 	background: #ffffff !important;
 	border: 1px solid #e2e8f0 !important;
-	border-radius: 14px !important;
-	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04) !important;
+	border-radius: 10px !important;
+	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04) !important;
 	display: block !important;
 	clear: both !important;
 	width: 100% !important;
@@ -280,9 +280,9 @@ a[href*="setting" i]:hover,
 	align-items: center !important;
 	justify-content: space-between !important;
 	flex-wrap: wrap !important;
-	gap: 12px !important;
-	margin-bottom: 16px !important;
-	padding-bottom: 12px !important;
+	gap: 8px !important;
+	margin-bottom: 8px !important;
+	padding-bottom: 6px !important;
 	border-bottom: 1px solid #f1f5f9 !important;
 }
 
@@ -294,24 +294,24 @@ a[href*="setting" i]:hover,
 }
 
 .govt-ehrms-title {
-	font-size: 15px !important;
+	font-size: 13px !important;
 	font-weight: 700 !important;
 	color: #0f172a !important;
 	display: flex !important;
 	align-items: center !important;
-	gap: 8px !important;
+	gap: 6px !important;
 	letter-spacing: -0.2px !important;
 }
 
 .govt-ehrms-emp-pill {
 	display: inline-flex !important;
 	align-items: center !important;
-	gap: 6px !important;
-	padding: 4px 12px !important;
+	gap: 5px !important;
+	padding: 2px 8px !important;
 	background: #f8fafc !important;
 	border: 1px solid #cbd5e1 !important;
-	border-radius: 20px !important;
-	font-size: 12px !important;
+	border-radius: 14px !important;
+	font-size: 11px !important;
 	font-weight: 600 !important;
 	color: #1e3a8a !important;
 	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04) !important;
@@ -325,16 +325,15 @@ a[href*="setting" i]:hover,
 }
 
 .govt-ehrms-select {
-	padding: 5px 12px !important;
-	border-radius: 8px !important;
+	padding: 3px 8px !important;
+	border-radius: 6px !important;
 	border: 1px solid #cbd5e1 !important;
 	background: #ffffff !important;
-	font-size: 12px !important;
+	font-size: 11px !important;
 	font-weight: 600 !important;
 	color: #334155 !important;
-	outline: none !important;
 	cursor: pointer !important;
-	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03) !important;
+	height: 26px !important;
 }
 
 .govt-ehrms-select:focus {
@@ -345,26 +344,27 @@ a[href*="setting" i]:hover,
 /* Cards Grid Container */
 .govt-ehrms-cards-container {
 	display: grid !important;
-	grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)) !important;
-	gap: 14px !important;
+	grid-template-columns: repeat(auto-fit, minmax(105px, 1fr)) !important;
+	gap: 8px !important;
 	width: 100% !important;
 }
 
 /* Individual Card (Exact Image 3 Spec) */
 .govt-ehrms-card {
 	background: #ffffff !important;
-	border-radius: 12px !important;
-	padding: 18px 12px 14px 12px !important;
+	border-radius: 8px !important;
+	padding: 8px 4px 6px 4px !important;
 	display: flex !important;
 	flex-direction: column !important;
 	align-items: center !important;
 	justify-content: center !important;
 	text-align: center !important;
 	position: relative !important;
-	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04) !important;
-	transition: transform 0.16s ease, box-shadow 0.16s ease !important;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04) !important;
+	transition: transform 0.14s ease, box-shadow 0.14s ease !important;
 	cursor: pointer !important;
-	min-height: 155px !important;
+	min-height: 84px !important;
+	max-height: 98px !important;
 	box-sizing: border-box !important;
 }
 
@@ -374,56 +374,61 @@ a[href*="setting" i]:hover,
 }
 
 /* Top Centered Circular Icon Badge */
-.govt-ehrms-card-circle {
-	width: 46px !important;
-	height: 46px !important;
+.govt-ehrms-card-circle,
+.govt-ehrms-card-badge {
+	width: 26px !important;
+	height: 26px !important;
 	border-radius: 50% !important;
 	display: flex !important;
 	align-items: center !important;
 	justify-content: center !important;
 	color: #ffffff !important;
-	margin-bottom: 10px !important;
-	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12) !important;
+	margin-bottom: 4px !important;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.10) !important;
 	flex-shrink: 0 !important;
 }
 
-.govt-ehrms-card-circle svg {
-	width: 22px !important;
-	height: 22px !important;
+.govt-ehrms-card-circle svg,
+.govt-ehrms-card-badge svg {
+	width: 14px !important;
+	height: 14px !important;
 }
 
 /* Centered Card Title */
 .govt-ehrms-card-title {
-	font-size: 12.5px !important;
-	font-weight: 500 !important;
+	font-size: 11px !important;
+	font-weight: 600 !important;
 	color: #475569 !important;
-	margin-bottom: 5px !important;
-	line-height: 1.25 !important;
+	margin-bottom: 2px !important;
+	line-height: 1.15 !important;
 	text-align: center !important;
-	min-height: 32px !important;
+	height: 24px !important;
 	display: flex !important;
 	align-items: center !important;
 	justify-content: center !important;
+	overflow: hidden !important;
 }
 
 /* Large Bold Metric Number */
-.govt-ehrms-card-number {
-	font-size: 24px !important;
+.govt-ehrms-card-number,
+.govt-ehrms-card-val {
+	font-size: 17px !important;
 	font-weight: 800 !important;
 	color: #0f172a !important;
-	margin-bottom: 5px !important;
-	letter-spacing: -0.5px !important;
+	margin-bottom: 2px !important;
+	letter-spacing: -0.3px !important;
 	line-height: 1.1 !important;
 }
 
 /* Caption / Status Pill */
-.govt-ehrms-card-caption {
-	font-size: 10.5px !important;
+.govt-ehrms-card-caption,
+.govt-ehrms-card-sub {
+	font-size: 9px !important;
 	font-weight: 600 !important;
 	color: #64748b !important;
 	background: #f1f5f9 !important;
-	padding: 3px 8px !important;
-	border-radius: 12px !important;
+	padding: 1px 5px !important;
+	border-radius: 8px !important;
 	max-width: 95% !important;
 	overflow: hidden !important;
 	text-overflow: ellipsis !important;
