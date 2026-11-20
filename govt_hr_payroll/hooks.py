@@ -9,6 +9,12 @@ app_license = "mit"
 after_install = "govt_hr_payroll.setup.install.after_install"
 after_migrate = "govt_hr_payroll.setup.install.after_migrate"
 
+# Automatic Fixture import for Client Intranet
+fixtures = [
+	"Govt Office Unit",
+	"Govt Employee"
+]
+
 # Include client-side desk enhancement
 app_include_js = "/assets/govt_hr_payroll/js/govt_sidebar.js"
 app_include_css = "/assets/govt_hr_payroll/css/govt_desk.css"
