@@ -1703,7 +1703,7 @@ def setup_initial_employees():
 			emp.pension_scheme = "NPS (10% + 14%)"
 			emp.flags.ignore_permissions = True
 			emp.save()
-		frappe.db.commit()
+			frappe.db.commit()
 		except Exception as e:
 			frappe.log_error(f"Error creating employee {ed['employee_id']}: {e}")
 
@@ -1739,6 +1739,6 @@ def setup_initial_employees():
 						entry.remarks = "Initial Opening Credit Balance for ATVP Service"
 						entry.flags.ignore_permissions = True
 						entry.insert()
-		frappe.db.commit()
+			frappe.db.commit()
 		except Exception as e:
 			frappe.log_error(f"Error updating hierarchy for {ed['employee_id']}: {e}")
