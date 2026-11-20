@@ -1742,3 +1742,13 @@ def setup_initial_employees():
 			frappe.db.commit()
 		except Exception as e:
 			frappe.log_error(f"Error updating hierarchy for {ed['employee_id']}: {e}")
+
+@frappe.whitelist()
+def sync_initial_employees():
+	"""
+	Whitelisted endpoint to allow Administrator / HR Admin to trigger
+	the creation / synchronization of the 12 HQ ATVP employees directly from Frappe Desk.
+	"""
+	setup_initial_employees()
+	return {"status": "success", "message": "12 HQ ATVP employees synced successfully!"}
+
