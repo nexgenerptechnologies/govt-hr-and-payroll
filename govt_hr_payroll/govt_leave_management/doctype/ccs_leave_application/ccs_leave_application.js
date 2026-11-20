@@ -43,9 +43,14 @@ frappe.ui.form.on("CCS Leave Application", {
 
 	employee(frm) {
 		if (frm.doc.employee) {
-			frappe.db.get_value("Govt Employee", frm.doc.employee, ["gender", "employee_name", "designation", "office_unit"], function (r) {
+			frappe.db.get_value("Govt Employee", frm.doc.employee, ["gender", "employee_name", "designation", "office_unit", "reports_to", "leave_approver"], function (r) {
 				if (r) {
 					frm.doc.__emp_gender = r.gender;
+					if (r.employee_name) frm.set_value("employee_name", r.employee_name);
+					if (r.designation) frm.set_value("designation", r.designation);
+					if (r.office_unit) frm.set_value("office_unit", r.office_unit);
+					if (r.reports_to) frm.set_value("reports_to", r.reports_to);
+					if (r.leave_approver) frm.set_value("leave_approver", r.leave_approver);
 					if (frm.doc.leave_type) {
 						frm.trigger("leave_type");
 					}

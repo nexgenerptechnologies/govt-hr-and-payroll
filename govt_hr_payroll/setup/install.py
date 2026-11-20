@@ -19,6 +19,7 @@ def after_install():
 	setup_custom_blocks()
 	setup_sidebars()
 	assign_nitin_roles()
+	setup_initial_employees()
 
 def after_migrate():
 	setup_roles()
@@ -33,6 +34,7 @@ def after_migrate():
 	setup_custom_blocks()
 	setup_sidebars()
 	assign_nitin_roles()
+	setup_initial_employees()
 
 def setup_page_workspace_permissions():
 	"""
@@ -1396,3 +1398,347 @@ a[href*="do-part" i] .sidebar-item-icon {
 		frappe.db.commit()
 	except Exception as e:
 		frappe.log_error(f"Error creating Custom HTML Block Govt Leave Dashboard: {e}")
+
+
+def setup_initial_employees():
+	"""
+	Seeds the official 12 employees of HQ ATVP with their complete demographic,
+	joining, designation, hierarchy (Reporting Officer & Leave Sanctioning Authority),
+	User login accounts (default password: Govt@1234), and initial leave ledger credits.
+	"""
+	try:
+		# Ensure Office Unit 'HQ ATVP' exists
+		if not frappe.db.exists("Govt Office Unit", "HQ ATVP"):
+			ou = frappe.new_doc("Govt Office Unit")
+			ou.office_unit_name = "HQ ATVP"
+			ou.office_type = "Headquarters"
+			ou.city = "Delhi"
+			ou.state = "Delhi"
+			ou.pincode = "110001"
+			ou.flags.ignore_permissions = True
+			ou.insert()
+		frappe.db.commit()
+	except Exception as e:
+		frappe.log_error(f"Error ensuring HQ ATVP office unit: {e}")
+
+	employees_data = [
+		{
+			"employee_id": "B327591",
+			"employee_name": "Sachin",
+			"first_name": "Sachin",
+			"gender": "Male",
+			"marital_status": "Married",
+			"dob": "1994-02-21",
+			"doj": "2021-10-18",
+			"doj_in_atvp": "2021-10-13",
+			"designation": "DIR",
+			"hometown": "Delhi",
+			"office_unit": "HQ ATVP",
+			"pay_matrix_level": "Level-13",
+			"basic_pay": 123100,
+			"email": "sachin@atvp.gov.in",
+			"roles": ["Govt Employee", "Desk User", "Govt HR Admin", "Drawing and Disbursing Officer", "Workspace Manager"],
+			"reports_to": None,
+			"leave_approver": None
+		},
+		{
+			"employee_id": "B289635",
+			"employee_name": "Ritik",
+			"first_name": "Ritik",
+			"gender": "Male",
+			"marital_status": "Married",
+			"dob": "1990-07-16",
+			"doj": "2016-06-08",
+			"doj_in_atvp": "2022-03-28",
+			"designation": "PM",
+			"hometown": "Pune",
+			"office_unit": "HQ ATVP",
+			"pay_matrix_level": "Level-11",
+			"basic_pay": 67700,
+			"email": "ritik@atvp.gov.in",
+			"roles": ["Govt Employee", "Desk User", "Section Officer"],
+			"reports_to": "B327591", # Sachin (DIR)
+			"leave_approver": "B327591" # Sachin (DIR)
+		},
+		{
+			"employee_id": "B253674",
+			"employee_name": "Ritu",
+			"first_name": "Ritu",
+			"gender": "Female",
+			"marital_status": "Married",
+			"dob": "1975-07-18",
+			"doj": "2015-09-19",
+			"doj_in_atvp": "2019-12-16",
+			"designation": "DPM",
+			"hometown": "Howrah",
+			"office_unit": "HQ ATVP",
+			"pay_matrix_level": "Level-10",
+			"basic_pay": 56100,
+			"email": "ritu@atvp.gov.in",
+			"roles": ["Govt Employee", "Desk User", "Section Officer"],
+			"reports_to": "B289635", # Ritik (PM)
+			"leave_approver": "B327591" # Sachin (DIR)
+		},
+		{
+			"employee_id": "B256973",
+			"employee_name": "Ravi",
+			"first_name": "Ravi",
+			"gender": "Male",
+			"marital_status": "Married",
+			"dob": "1978-02-08",
+			"doj": "1999-02-16",
+			"doj_in_atvp": "2020-10-05",
+			"designation": "APM",
+			"hometown": "Delhi",
+			"office_unit": "HQ ATVP",
+			"pay_matrix_level": "Level-8",
+			"basic_pay": 47600,
+			"email": "ravi@atvp.gov.in",
+			"roles": ["Govt Employee", "Desk User", "Section Officer"],
+			"reports_to": "B253674", # Ritu (DPM)
+			"leave_approver": "B289635" # Ritik (PM)
+		},
+		{
+			"employee_id": "B256983",
+			"employee_name": "Rampratap",
+			"first_name": "Rampratap",
+			"gender": "Male",
+			"marital_status": "Married",
+			"dob": "1968-03-08",
+			"doj": "1993-12-25",
+			"doj_in_atvp": "2021-03-05",
+			"designation": "PA",
+			"hometown": "Sirsa",
+			"office_unit": "HQ ATVP",
+			"pay_matrix_level": "Level-7",
+			"basic_pay": 44900,
+			"email": "rampratap@atvp.gov.in",
+			"roles": ["Govt Employee", "Desk User", "Dealing Assistant"],
+			"reports_to": "B327591", # Attached to Sachin (DIR)
+			"leave_approver": "B327591" # Sachin (DIR)
+		},
+		{
+			"employee_id": "B583162",
+			"employee_name": "Sonu",
+			"first_name": "Sonu",
+			"gender": "Male",
+			"marital_status": "Married",
+			"dob": "1985-01-15",
+			"doj": "2011-04-22",
+			"doj_in_atvp": "2022-04-01",
+			"designation": "ASO",
+			"hometown": "Jamalpur",
+			"office_unit": "HQ ATVP",
+			"pay_matrix_level": "Level-7",
+			"basic_pay": 44900,
+			"email": "sonu@atvp.gov.in",
+			"roles": ["Govt Employee", "Desk User", "Dealing Assistant"],
+			"reports_to": "B256973", # Ravi (APM)
+			"leave_approver": "B289635" # Ritik (PM)
+		},
+		{
+			"employee_id": "B576983",
+			"employee_name": "Priya",
+			"first_name": "Priya",
+			"gender": "Female",
+			"marital_status": "Married",
+			"dob": "1994-10-12",
+			"doj": "2021-12-26",
+			"doj_in_atvp": "2021-12-21",
+			"designation": "ASO",
+			"hometown": "Delhi",
+			"office_unit": "HQ ATVP",
+			"pay_matrix_level": "Level-7",
+			"basic_pay": 44900,
+			"email": "priya@atvp.gov.in",
+			"roles": ["Govt Employee", "Desk User", "Dealing Assistant"],
+			"reports_to": "B256973", # Ravi (APM)
+			"leave_approver": "B289635" # Ritik (PM)
+		},
+		{
+			"employee_id": "B487962",
+			"employee_name": "Harsh",
+			"first_name": "Harsh",
+			"gender": "Male",
+			"marital_status": "Unmarried",
+			"dob": "1997-02-09",
+			"doj": "2023-04-16",
+			"doj_in_atvp": "2023-04-13",
+			"designation": "ASO",
+			"hometown": "Delhi",
+			"office_unit": "HQ ATVP",
+			"pay_matrix_level": "Level-7",
+			"basic_pay": 44900,
+			"email": "harsh@atvp.gov.in",
+			"roles": ["Govt Employee", "Desk User", "Dealing Assistant"],
+			"reports_to": "B256973", # Ravi (APM)
+			"leave_approver": "B289635" # Ritik (PM)
+		},
+		{
+			"employee_id": "B238769",
+			"employee_name": "Shivam",
+			"first_name": "Shivam",
+			"gender": "Male",
+			"marital_status": "Unmarried",
+			"dob": "1994-12-13",
+			"doj": "2020-11-12",
+			"doj_in_atvp": "2020-11-19",
+			"designation": "ASO",
+			"hometown": "Kerala",
+			"office_unit": "HQ ATVP",
+			"pay_matrix_level": "Level-7",
+			"basic_pay": 44900,
+			"email": "shivam@atvp.gov.in",
+			"roles": ["Govt Employee", "Desk User", "Dealing Assistant"],
+			"reports_to": "B256973", # Ravi (APM)
+			"leave_approver": "B289635" # Ritik (PM)
+		},
+		{
+			"employee_id": "B672984",
+			"employee_name": "Aniket",
+			"first_name": "Aniket",
+			"gender": "Male",
+			"marital_status": "Married",
+			"dob": "1988-08-12",
+			"doj": "2011-03-18",
+			"doj_in_atvp": "2022-01-08",
+			"designation": "SSA",
+			"hometown": "Patna",
+			"office_unit": "HQ ATVP",
+			"pay_matrix_level": "Level-4",
+			"basic_pay": 25500,
+			"email": "aniket@atvp.gov.in",
+			"roles": ["Govt Employee", "Desk User", "Dealing Assistant"],
+			"reports_to": "B583162", # Sonu (ASO)
+			"leave_approver": "B256973" # Ravi (APM)
+		},
+		{
+			"employee_id": "B458632",
+			"employee_name": "Soniya",
+			"first_name": "Soniya",
+			"gender": "Female",
+			"marital_status": "Married",
+			"dob": "1984-12-20",
+			"doj": "2011-01-14",
+			"doj_in_atvp": "2021-10-14",
+			"designation": "JSA",
+			"hometown": "Rajsthan",
+			"office_unit": "HQ ATVP",
+			"pay_matrix_level": "Level-2",
+			"basic_pay": 19900,
+			"email": "soniya@atvp.gov.in",
+			"roles": ["Govt Employee", "Desk User"],
+			"reports_to": "B576983", # Priya (ASO)
+			"leave_approver": "B256973" # Ravi (APM)
+		},
+		{
+			"employee_id": "B238795",
+			"employee_name": "Shivani",
+			"first_name": "Shivani",
+			"gender": "Female",
+			"marital_status": "Unmarried",
+			"dob": "1994-08-15",
+			"doj": "2021-02-26",
+			"doj_in_atvp": "2021-02-22",
+			"designation": "MTS",
+			"hometown": "Jaipur",
+			"office_unit": "HQ ATVP",
+			"pay_matrix_level": "Level-1",
+			"basic_pay": 18000,
+			"email": "shivani@atvp.gov.in",
+			"roles": ["Govt Employee", "Desk User"],
+			"reports_to": "B487962", # Harsh (ASO)
+			"leave_approver": "B256973" # Ravi (APM)
+		}
+	]
+
+	# 1. First Pass: Create Users and Employee Profiles
+	for ed in employees_data:
+		try:
+			email = ed["email"]
+			# Create User Account if not exists
+			if not frappe.db.exists("User", email):
+				u = frappe.new_doc("User")
+				u.email = email
+				u.first_name = ed["first_name"]
+				u.enabled = 1
+				u.send_welcome_email = 0
+				u.user_type = "System User"
+				for role in ed["roles"]:
+					u.append("roles", {"role": role})
+				u.flags.ignore_permissions = True
+				u.insert()
+				# Set Default Password: Govt@1234
+				try:
+					from frappe.utils.password import update_password
+					update_password(email, "Govt@1234")
+				except Exception:
+					pass
+
+			# Create or Update Govt Employee Record
+			emp_id = ed["employee_id"]
+			if not frappe.db.exists("Govt Employee", emp_id):
+				emp = frappe.new_doc("Govt Employee")
+				emp.name = emp_id
+				emp.employee_id = emp_id
+			else:
+				emp = frappe.get_doc("Govt Employee", emp_id)
+
+			emp.employee_name = ed["employee_name"]
+			emp.first_name = ed["first_name"]
+			emp.user_id = email
+			emp.gender = ed["gender"]
+			emp.marital_status = ed["marital_status"]
+			emp.dob = ed["dob"]
+			emp.doj = ed["doj"]
+			emp.doj_in_atvp = ed["doj_in_atvp"]
+			emp.designation = ed["designation"]
+			emp.office_unit = ed["office_unit"]
+			emp.pay_matrix_level = ed["pay_matrix_level"]
+			emp.basic_pay = ed["basic_pay"]
+			emp.hometown = ed["hometown"]
+			emp.status = "Active"
+			emp.hra_city_class = "X (27% / 30%)"
+			emp.tpt_city_type = "Higher TPTA Cities"
+			emp.pension_scheme = "NPS (10% + 14%)"
+			emp.flags.ignore_permissions = True
+			emp.save()
+		frappe.db.commit()
+		except Exception as e:
+			frappe.log_error(f"Error creating employee {ed['employee_id']}: {e}")
+
+	# 2. Second Pass: Link Hierarchy (reports_to & leave_approver) and seed initial leave ledger
+	for ed in employees_data:
+		try:
+			emp_id = ed["employee_id"]
+			if frappe.db.exists("Govt Employee", emp_id):
+				emp = frappe.get_doc("Govt Employee", emp_id)
+				if ed["reports_to"] and frappe.db.exists("Govt Employee", ed["reports_to"]):
+					emp.reports_to = ed["reports_to"]
+				if ed["leave_approver"] and frappe.db.exists("Govt Employee", ed["leave_approver"]):
+					emp.leave_approver = ed["leave_approver"]
+				emp.flags.ignore_permissions = True
+				emp.save()
+
+				# Setup initial leave balances if not already present
+				initial_leaves = [
+					("Earned Leave", 30.0),
+					("Casual Leave", 8.0),
+					("Half Pay Leave", 20.0),
+					("Restricted Holiday", 2.0)
+				]
+				for lt, days in initial_leaves:
+					if not frappe.db.exists("CCS Leave Ledger Entry", {"employee": emp_id, "leave_type": lt, "transaction_type": "Advance Credit"}):
+						entry = frappe.new_doc("CCS Leave Ledger Entry")
+						entry.employee = emp_id
+						entry.leave_type = lt
+						entry.posting_date = ed["doj_in_atvp"]
+						entry.transaction_type = "Advance Credit"
+						entry.credit_days = days
+						entry.debit_days = 0.0
+						entry.remarks = "Initial Opening Credit Balance for ATVP Service"
+						entry.flags.ignore_permissions = True
+						entry.insert()
+		frappe.db.commit()
+		except Exception as e:
+			frappe.log_error(f"Error updating hierarchy for {ed['employee_id']}: {e}")

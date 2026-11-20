@@ -12,15 +12,20 @@
   "last_name",
   "employee_name",
   "gender",
+  "marital_status",
   "status",
   "column_break_office",
   "office_unit",
   "designation",
+  "reports_to",
+  "leave_approver",
   "dob",
   "doj",
+  "doj_in_atvp",
   "dor",
   "dni",
   "pan",
+  "hometown",
   "reemployed_section",
   "is_reemployed",
   "reemployed_pension_deduction",
@@ -145,10 +150,26 @@
   },
   {
    "fieldname": "designation",
-   "fieldtype": "Data",
+   "fieldtype": "Select",
    "in_list_view": 1,
    "label": "Designation",
-   "reqd": 1
+   "reqd": 1,
+   "options": "DIR\nPM\nDPM\nAPM\nPA\nASO\nSSA\nJSA\nMTS",
+   "default": "ASO"
+  },
+  {
+   "fieldname": "reports_to",
+   "fieldtype": "Link",
+   "label": "Reporting Officer (RO)",
+   "options": "Govt Employee",
+   "description": "Immediate superior who scrutinizes & recommends leave applications"
+  },
+  {
+   "fieldname": "leave_approver",
+   "fieldtype": "Link",
+   "label": "Leave Sanctioning Authority",
+   "options": "Govt Employee",
+   "description": "Competent Authority who sanctions / approves leave"
   },
   {
    "fieldname": "dob",
@@ -161,6 +182,12 @@
    "fieldtype": "Date",
    "label": "Date of Joining (DOJ)",
    "reqd": 1
+  },
+  {
+   "fieldname": "doj_in_atvp",
+   "fieldtype": "Date",
+   "label": "DOJ in ATVP",
+   "description": "Date of Joining ATVP / Unit"
   },
   {
    "fieldname": "dor",
@@ -178,6 +205,12 @@
    "fieldname": "pan",
    "fieldtype": "Data",
    "label": "PAN Number"
+  },
+  {
+   "fieldname": "hometown",
+   "fieldtype": "Data",
+   "label": "Hometown",
+   "description": "Declared Hometown for LTC and Service Book"
   },
   {
    "collapsible": 1,

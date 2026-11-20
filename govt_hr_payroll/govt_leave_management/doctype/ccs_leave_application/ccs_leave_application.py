@@ -8,12 +8,26 @@ from frappe.utils import date_diff, getdate, flt, nowdate
 
 class CCSLeaveApplication(Document):
 	def validate(self):
+		self.set_employee_hierarchy_details()
 		self.calculate_total_days()
 		self.validate_gender_admissibility()
 		self.validate_ccs_rules()
 		self.validate_leave_balance()
 		self.validate_prefix_suffix()
 		self.set_current_balance()
+
+	def set_employee_hierarchy_details(self):
+		if self.employee:
+			emp_data = frappe.db.get_value("Govt Employee", self.employee, ["reports_to", "leave_approver", "designation", "office_unit"], as_dict=True)
+			if emp_data:
+				if not getattr(self, "reports_to", None) and emp_data.get("reports_to"):
+					self.reports_to = emp_data.reports_to
+				if not getattr(self, "leave_approver", None) and emp_data.get("leave_approver"):
+					self.leave_approver = emp_data.leave_approver
+				if not getattr(self, "designation", None) and emp_data.get("designation"):
+					self.designation = emp_data.designation
+				if not getattr(self, "office_unit", None) and emp_data.get("office_unit"):
+					self.office_unit = emp_data.office_unit
 
 	def validate_prefix_suffix(self):
 		# Validate Prefix dates under CCS Leave Rules (Rule 22)

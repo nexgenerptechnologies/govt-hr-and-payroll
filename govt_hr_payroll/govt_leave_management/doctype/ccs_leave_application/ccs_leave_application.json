@@ -11,6 +11,8 @@
   "employee_name",
   "designation",
   "office_unit",
+  "reports_to",
+  "leave_approver",
   "status",
   "column_break_leave_info",
   "leave_type",
@@ -92,6 +94,22 @@
    "label": "Deptt / Office / Section",
    "options": "Govt Office Unit",
    "read_only": 1
+  },
+  {
+   "fieldname": "reports_to",
+   "fieldtype": "Link",
+   "label": "Reporting Officer (RO)",
+   "options": "Govt Employee",
+   "read_only": 1,
+   "description": "Immediate superior recommending leave"
+  },
+  {
+   "fieldname": "leave_approver",
+   "fieldtype": "Link",
+   "label": "Sanctioning Authority",
+   "options": "Govt Employee",
+   "read_only": 1,
+   "description": "Competent authority approving leave"
   },
   {
    "default": "Applied",
