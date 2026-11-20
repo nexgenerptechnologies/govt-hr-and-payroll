@@ -1,2 +1,3 @@
 # Patches for Govt HR Payroll
 govt_hr_payroll.patches.v1_0.seed_atvp_employees
+govt_hr_payroll.patches.v1_0.update_workflows_as_per_documents

@@ -41,7 +41,7 @@ def setup_page_workspace_permissions():
 	Grants Read access to standard 'Page', 'Workspace' and 'CCS Leave Ledger Entry' doctypes for Govt HR roles
 	so restricted desk users don't encounter 'No permission for Page' error.
 	"""
-	roles = ["System Manager", "Desk User", "Govt HR Admin", "Dealing Assistant", "Section Officer", "Drawing and Disbursing Officer", "Govt Employee"]
+	roles = ["System Manager", "Desk User", "Govt HR Admin", "Dealing Assistant", "Section Officer", "Reporting Officer", "Competent Authority", "Controlling Officer", "Drawing and Disbursing Officer", "Govt Employee"]
 	for doctype in ["Page", "Workspace", "CCS Leave Ledger Entry"]:
 		for role in roles:
 			try:
@@ -94,6 +94,9 @@ def assign_nitin_roles():
 				"Govt HR Admin",
 				"Dealing Assistant",
 				"Section Officer",
+				"Reporting Officer",
+				"Competent Authority",
+				"Controlling Officer",
 				"Drawing and Disbursing Officer",
 				"Workspace Manager"
 			]
@@ -122,6 +125,9 @@ def setup_roles():
 		{"role_name": "Govt Employee", "desk_access": 1},
 		{"role_name": "Dealing Assistant", "desk_access": 1},
 		{"role_name": "Section Officer", "desk_access": 1},
+		{"role_name": "Reporting Officer", "desk_access": 1},
+		{"role_name": "Competent Authority", "desk_access": 1},
+		{"role_name": "Controlling Officer", "desk_access": 1},
 		{"role_name": "Drawing and Disbursing Officer", "desk_access": 1},
 		{"role_name": "Pay and Accounts Officer", "desk_access": 1},
 		{"role_name": "Govt HR Admin", "desk_access": 1}
@@ -148,10 +154,13 @@ def setup_workflow_states():
 		{"workflow_state_name": "Applied", "style": "Primary"},
 		{"workflow_state_name": "Scrutinized", "style": "Warning"},
 		{"workflow_state_name": "Recommended", "style": "Info"},
+		{"workflow_state_name": "Recommended by RO", "style": "Info"},
 		{"workflow_state_name": "Sanctioned", "style": "Success"},
 		{"workflow_state_name": "Rejected", "style": "Danger"},
+		{"workflow_state_name": "Returned to Employee", "style": "Danger"},
 		{"workflow_state_name": "Claim Drafted", "style": "Primary"},
 		{"workflow_state_name": "Scrutinized by Office", "style": "Warning"},
+		{"workflow_state_name": "Countersigned by Controlling Officer", "style": "Info"},
 		{"workflow_state_name": "Recommended by SO", "style": "Info"},
 		{"workflow_state_name": "Sanctioned for Payment", "style": "Success"},
 		{"workflow_state_name": "Returned for Rectification", "style": "Danger"}
@@ -177,17 +186,26 @@ def setup_workflow_actions():
 		"Sanction & Finalize",
 		"Return to SO",
 		"Forward for Scrutiny",
+		"Forward for Recommendation",
 		"Recommend Leave",
+		"Verify Leave Balance",
 		"Return to Employee",
 		"Sanction Leave",
 		"Reject Leave",
 		"Submit Claim",
 		"Verify Claim",
+		"Countersign & Sanction",
 		"Sanction Claim",
 		"Reject Claim",
+		"Return to Individual",
 		"Submit Tour Bill",
 		"Audit Tour Claims",
-		"Sanction Travel Bill"
+		"Countersign Claim",
+		"Sanction Travel Bill",
+		"Return to Claimant",
+		"Re-submit Leave",
+		"Re-submit Claim",
+		"Re-submit Tour Bill"
 	]
 	for a in actions:
 		try:
@@ -231,16 +249,21 @@ def setup_workflows():
 			"states": [
 				{"state": "Applied", "doc_status": "0", "allow_edit": "Govt Employee"},
 				{"state": "Scrutinized", "doc_status": "0", "allow_edit": "Dealing Assistant"},
-				{"state": "Recommended", "doc_status": "0", "allow_edit": "Section Officer"},
-				{"state": "Sanctioned", "doc_status": "1", "allow_edit": "Drawing and Disbursing Officer"},
-				{"state": "Rejected", "doc_status": "0", "allow_edit": "Drawing and Disbursing Officer"}
+				{"state": "Recommended", "doc_status": "0", "allow_edit": "Reporting Officer"},
+				{"state": "Sanctioned", "doc_status": "1", "allow_edit": "Competent Authority"},
+				{"state": "Rejected", "doc_status": "0", "allow_edit": "Competent Authority"}
 			],
 			"transitions": [
 				{"state": "Applied", "action": "Forward for Scrutiny", "next_state": "Scrutinized", "allowed": "Govt Employee"},
-				{"state": "Scrutinized", "action": "Recommend Leave", "next_state": "Recommended", "allowed": "Dealing Assistant"},
+				{"state": "Applied", "action": "Recommend Leave", "next_state": "Recommended", "allowed": "Reporting Officer"},
+				{"state": "Scrutinized", "action": "Recommend Leave", "next_state": "Recommended", "allowed": "Reporting Officer"},
+				{"state": "Scrutinized", "action": "Verify Leave Balance", "next_state": "Recommended", "allowed": "Dealing Assistant"},
 				{"state": "Scrutinized", "action": "Return to Employee", "next_state": "Applied", "allowed": "Dealing Assistant"},
+				{"state": "Recommended", "action": "Sanction Leave", "next_state": "Sanctioned", "allowed": "Competent Authority"},
 				{"state": "Recommended", "action": "Sanction Leave", "next_state": "Sanctioned", "allowed": "Drawing and Disbursing Officer"},
-				{"state": "Recommended", "action": "Reject Leave", "next_state": "Rejected", "allowed": "Drawing and Disbursing Officer"}
+				{"state": "Recommended", "action": "Reject Leave", "next_state": "Rejected", "allowed": "Competent Authority"},
+				{"state": "Recommended", "action": "Reject Leave", "next_state": "Rejected", "allowed": "Drawing and Disbursing Officer"},
+				{"state": "Recommended", "action": "Return to Employee", "next_state": "Applied", "allowed": "Reporting Officer"}
 			]
 		},
 		{
@@ -251,16 +274,16 @@ def setup_workflows():
 			"states": [
 				{"state": "Claim Drafted", "doc_status": "0", "allow_edit": "Govt Employee"},
 				{"state": "Scrutinized by Office", "doc_status": "0", "allow_edit": "Dealing Assistant"},
-				{"state": "Recommended by SO", "doc_status": "0", "allow_edit": "Section Officer"},
 				{"state": "Sanctioned for Payment", "doc_status": "1", "allow_edit": "Drawing and Disbursing Officer"},
-				{"state": "Returned for Rectification", "doc_status": "0", "allow_edit": "Dealing Assistant"}
+				{"state": "Returned for Rectification", "doc_status": "0", "allow_edit": "Govt Employee"}
 			],
 			"transitions": [
 				{"state": "Claim Drafted", "action": "Submit Claim", "next_state": "Scrutinized by Office", "allowed": "Govt Employee"},
-				{"state": "Scrutinized by Office", "action": "Verify Claim", "next_state": "Recommended by SO", "allowed": "Dealing Assistant"},
-				{"state": "Scrutinized by Office", "action": "Return to Employee", "next_state": "Claim Drafted", "allowed": "Dealing Assistant"},
-				{"state": "Recommended by SO", "action": "Sanction Claim", "next_state": "Sanctioned for Payment", "allowed": "Drawing and Disbursing Officer"},
-				{"state": "Recommended by SO", "action": "Return with Queries", "next_state": "Returned for Rectification", "allowed": "Drawing and Disbursing Officer"}
+				{"state": "Scrutinized by Office", "action": "Countersign & Sanction", "next_state": "Sanctioned for Payment", "allowed": "Drawing and Disbursing Officer"},
+				{"state": "Scrutinized by Office", "action": "Sanction Claim", "next_state": "Sanctioned for Payment", "allowed": "Drawing and Disbursing Officer"},
+				{"state": "Scrutinized by Office", "action": "Return to Individual", "next_state": "Returned for Rectification", "allowed": "Dealing Assistant"},
+				{"state": "Scrutinized by Office", "action": "Return with Queries", "next_state": "Returned for Rectification", "allowed": "Drawing and Disbursing Officer"},
+				{"state": "Returned for Rectification", "action": "Re-submit Claim", "next_state": "Scrutinized by Office", "allowed": "Govt Employee"}
 			]
 		},
 		{
@@ -271,15 +294,20 @@ def setup_workflows():
 			"states": [
 				{"state": "Claim Drafted", "doc_status": "0", "allow_edit": "Govt Employee"},
 				{"state": "Scrutinized by Office", "doc_status": "0", "allow_edit": "Dealing Assistant"},
-				{"state": "Recommended by SO", "doc_status": "0", "allow_edit": "Section Officer"},
+				{"state": "Countersigned by Controlling Officer", "doc_status": "0", "allow_edit": "Controlling Officer"},
 				{"state": "Sanctioned for Payment", "doc_status": "1", "allow_edit": "Drawing and Disbursing Officer"},
-				{"state": "Returned for Rectification", "doc_status": "0", "allow_edit": "Dealing Assistant"}
+				{"state": "Returned for Rectification", "doc_status": "0", "allow_edit": "Govt Employee"}
 			],
 			"transitions": [
 				{"state": "Claim Drafted", "action": "Submit Tour Bill", "next_state": "Scrutinized by Office", "allowed": "Govt Employee"},
-				{"state": "Scrutinized by Office", "action": "Audit Tour Claims", "next_state": "Recommended by SO", "allowed": "Dealing Assistant"},
-				{"state": "Recommended by SO", "action": "Sanction Travel Bill", "next_state": "Sanctioned for Payment", "allowed": "Drawing and Disbursing Officer"},
-				{"state": "Recommended by SO", "action": "Return with Queries", "next_state": "Returned for Rectification", "allowed": "Drawing and Disbursing Officer"}
+				{"state": "Scrutinized by Office", "action": "Audit Tour Claims", "next_state": "Countersigned by Controlling Officer", "allowed": "Dealing Assistant"},
+				{"state": "Scrutinized by Office", "action": "Return to Claimant", "next_state": "Returned for Rectification", "allowed": "Dealing Assistant"},
+				{"state": "Countersigned by Controlling Officer", "action": "Countersign Claim", "next_state": "Countersigned by Controlling Officer", "allowed": "Controlling Officer"},
+				{"state": "Countersigned by Controlling Officer", "action": "Countersign Claim", "next_state": "Countersigned by Controlling Officer", "allowed": "Reporting Officer"},
+				{"state": "Countersigned by Controlling Officer", "action": "Sanction Travel Bill", "next_state": "Sanctioned for Payment", "allowed": "Drawing and Disbursing Officer"},
+				{"state": "Countersigned by Controlling Officer", "action": "Return with Queries", "next_state": "Returned for Rectification", "allowed": "Controlling Officer"},
+				{"state": "Countersigned by Controlling Officer", "action": "Return with Queries", "next_state": "Returned for Rectification", "allowed": "Drawing and Disbursing Officer"},
+				{"state": "Returned for Rectification", "action": "Re-submit Tour Bill", "next_state": "Scrutinized by Office", "allowed": "Govt Employee"}
 			]
 		}
 	]
@@ -1444,7 +1472,7 @@ def setup_initial_employees():
 			"pay_matrix_level": "Level-13",
 			"basic_pay": 123100,
 			"email": "sachin@atvp.gov.in",
-			"roles": ["Govt Employee", "Desk User", "Govt HR Admin", "Drawing and Disbursing Officer", "Workspace Manager"],
+			"roles": ["Govt Employee", "Desk User", "Govt HR Admin", "Drawing and Disbursing Officer", "Workspace Manager", "Competent Authority", "Controlling Officer", "Reporting Officer"],
 			"reports_to": None,
 			"leave_approver": None
 		},
@@ -1463,7 +1491,7 @@ def setup_initial_employees():
 			"pay_matrix_level": "Level-11",
 			"basic_pay": 67700,
 			"email": "ritik@atvp.gov.in",
-			"roles": ["Govt Employee", "Desk User", "Section Officer"],
+			"roles": ["Govt Employee", "Desk User", "Section Officer", "Competent Authority", "Controlling Officer", "Reporting Officer"],
 			"reports_to": "B327591", # Sachin (DIR)
 			"leave_approver": "B327591" # Sachin (DIR)
 		},
@@ -1482,7 +1510,7 @@ def setup_initial_employees():
 			"pay_matrix_level": "Level-10",
 			"basic_pay": 56100,
 			"email": "ritu@atvp.gov.in",
-			"roles": ["Govt Employee", "Desk User", "Section Officer"],
+			"roles": ["Govt Employee", "Desk User", "Section Officer", "Controlling Officer", "Reporting Officer"],
 			"reports_to": "B289635", # Ritik (PM)
 			"leave_approver": "B327591" # Sachin (DIR)
 		},
@@ -1501,7 +1529,7 @@ def setup_initial_employees():
 			"pay_matrix_level": "Level-8",
 			"basic_pay": 47600,
 			"email": "ravi@atvp.gov.in",
-			"roles": ["Govt Employee", "Desk User", "Section Officer"],
+			"roles": ["Govt Employee", "Desk User", "Section Officer", "Controlling Officer", "Reporting Officer", "Competent Authority"],
 			"reports_to": "B253674", # Ritu (DPM)
 			"leave_approver": "B289635" # Ritik (PM)
 		},
@@ -1539,7 +1567,7 @@ def setup_initial_employees():
 			"pay_matrix_level": "Level-7",
 			"basic_pay": 44900,
 			"email": "sonu@atvp.gov.in",
-			"roles": ["Govt Employee", "Desk User", "Dealing Assistant"],
+			"roles": ["Govt Employee", "Desk User", "Dealing Assistant", "Reporting Officer"],
 			"reports_to": "B256973", # Ravi (APM)
 			"leave_approver": "B289635" # Ritik (PM)
 		},
@@ -1558,7 +1586,7 @@ def setup_initial_employees():
 			"pay_matrix_level": "Level-7",
 			"basic_pay": 44900,
 			"email": "priya@atvp.gov.in",
-			"roles": ["Govt Employee", "Desk User", "Dealing Assistant"],
+			"roles": ["Govt Employee", "Desk User", "Dealing Assistant", "Reporting Officer"],
 			"reports_to": "B256973", # Ravi (APM)
 			"leave_approver": "B289635" # Ritik (PM)
 		},
@@ -1577,7 +1605,7 @@ def setup_initial_employees():
 			"pay_matrix_level": "Level-7",
 			"basic_pay": 44900,
 			"email": "harsh@atvp.gov.in",
-			"roles": ["Govt Employee", "Desk User", "Dealing Assistant"],
+			"roles": ["Govt Employee", "Desk User", "Dealing Assistant", "Reporting Officer"],
 			"reports_to": "B256973", # Ravi (APM)
 			"leave_approver": "B289635" # Ritik (PM)
 		},
@@ -1663,7 +1691,7 @@ def setup_initial_employees():
 	for ed in employees_data:
 		try:
 			email = ed["email"]
-			# Create User Account if not exists
+			# Create User Account if not exists, or update roles if already exists
 			if not frappe.db.exists("User", email):
 				u = frappe.new_doc("User")
 				u.email = email
@@ -1681,6 +1709,17 @@ def setup_initial_employees():
 					update_password(email, "Govt@1234")
 				except Exception:
 					pass
+			else:
+				u = frappe.get_doc("User", email)
+				existing_roles = {r.role for r in u.roles}
+				changed = False
+				for role in ed["roles"]:
+					if role not in existing_roles:
+						u.append("roles", {"role": role})
+						changed = True
+				if changed:
+					u.flags.ignore_permissions = True
+					u.save()
 
 			# Create or Update Govt Employee Record
 			emp_id = ed["employee_id"]
@@ -1767,5 +1806,22 @@ def sync_initial_employees():
 		"status": "success",
 		"message": f"Successfully synced {len(emps)} employees in Employee Master!",
 		"employees": emps
+	}
+
+@frappe.whitelist()
+def sync_workflows():
+	"""
+	Whitelisted endpoint to re-apply the official government workflows
+	(CCS Leave, CEA Claim, Tour TA/DA, Govt Pay Bill) matching user-provided flowcharts.
+	"""
+	setup_roles()
+	setup_page_workspace_permissions()
+	setup_workflow_states()
+	setup_workflow_actions()
+	setup_workflows()
+	assign_nitin_roles()
+	return {
+		"status": "success",
+		"message": "Official Government Workflows synchronized successfully as per provided documents!"
 	}
 
