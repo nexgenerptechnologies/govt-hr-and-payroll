@@ -12,7 +12,23 @@ class CCSLeaveApplication(Document):
 		self.validate_gender_admissibility()
 		self.validate_ccs_rules()
 		self.validate_leave_balance()
+		self.validate_prefix_suffix()
 		self.set_current_balance()
+
+	def validate_prefix_suffix(self):
+		# Validate Prefix dates under CCS Leave Rules (Rule 22)
+		if getattr(self, "prefix_from_date", None) and getattr(self, "prefix_to_date", None):
+			if getdate(self.prefix_from_date) > getdate(self.prefix_to_date):
+				frappe.throw(_("Prefix Holiday To Date cannot be earlier than Prefix Holiday From Date."), title=_("Invalid Prefix Dates"))
+			if self.from_date and getdate(self.prefix_to_date) >= getdate(self.from_date):
+				frappe.throw(_("Prefix Holiday To Date must precede the Leave From Date ({0}).").format(self.from_date), title=_("Invalid Prefix Dates"))
+
+		# Validate Suffix dates under CCS Leave Rules (Rule 22)
+		if getattr(self, "suffix_from_date", None) and getattr(self, "suffix_to_date", None):
+			if getdate(self.suffix_from_date) > getdate(self.suffix_to_date):
+				frappe.throw(_("Suffix Holiday To Date cannot be earlier than Suffix Holiday From Date."), title=_("Invalid Suffix Dates"))
+			if self.to_date and getdate(self.suffix_from_date) <= getdate(self.to_date):
+				frappe.throw(_("Suffix Holiday From Date must succeed the Leave To Date ({0}).").format(self.to_date), title=_("Invalid Suffix Dates"))
 
 	def calculate_total_days(self):
 		# Support for Half Day Leave (0.5 days)

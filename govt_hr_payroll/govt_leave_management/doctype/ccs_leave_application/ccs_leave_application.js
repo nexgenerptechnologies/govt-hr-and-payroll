@@ -164,5 +164,19 @@ frappe.ui.form.on("CCS Leave Application", {
 		if (frm.doc.permission_to_leave_station && !frm.doc.station_leave_address) {
 			frappe.msgprint(__("Please enter your station leave address during the leave period."));
 		}
+	},
+
+	prefix_holidays(frm) {
+		if (!frm.doc.prefix_holidays || frm.doc.prefix_holidays === "Nil / None") {
+			frm.set_value("prefix_from_date", null);
+			frm.set_value("prefix_to_date", null);
+		}
+	},
+
+	suffix_holidays(frm) {
+		if (!frm.doc.suffix_holidays || frm.doc.suffix_holidays === "Nil / None") {
+			frm.set_value("suffix_from_date", null);
+			frm.set_value("suffix_to_date", null);
+		}
 	}
 });

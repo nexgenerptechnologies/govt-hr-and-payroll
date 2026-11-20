@@ -14,13 +14,20 @@
   "status",
   "column_break_leave_info",
   "leave_type",
+  "half_day",
+  "half_day_date",
+  "half_day_session",
   "from_date",
   "to_date",
   "total_days",
   "current_balance",
   "section_break_station_ltc",
   "prefix_holidays",
+  "prefix_from_date",
+  "prefix_to_date",
   "suffix_holidays",
+  "suffix_from_date",
+  "suffix_to_date",
   "reason_for_leave",
   "column_break_ltc",
   "permission_to_leave_station",
@@ -162,13 +169,41 @@
   },
   {
    "fieldname": "prefix_holidays",
-   "fieldtype": "Data",
-   "label": "Prefix of Holidays, if any"
+   "fieldtype": "Select",
+   "label": "Prefix of Holidays, if any",
+   "options": "Nil / None\nSunday\nSaturday & Sunday\nGazetted Holiday\nRestricted Holiday (RH)\nSaturday, Sunday & Gazetted Holiday\nGazetted Holiday & Sunday\nOther Public Holiday",
+   "default": "Nil / None"
+  },
+  {
+   "fieldname": "prefix_from_date",
+   "fieldtype": "Date",
+   "label": "Prefix Holiday From Date",
+   "depends_on": "eval:doc.prefix_holidays && doc.prefix_holidays != 'Nil / None'"
+  },
+  {
+   "fieldname": "prefix_to_date",
+   "fieldtype": "Date",
+   "label": "Prefix Holiday To Date",
+   "depends_on": "eval:doc.prefix_holidays && doc.prefix_holidays != 'Nil / None'"
   },
   {
    "fieldname": "suffix_holidays",
-   "fieldtype": "Data",
-   "label": "Suffix of Holidays, if any"
+   "fieldtype": "Select",
+   "label": "Suffix of Holidays, if any",
+   "options": "Nil / None\nSunday\nSaturday & Sunday\nGazetted Holiday\nRestricted Holiday (RH)\nSaturday, Sunday & Gazetted Holiday\nGazetted Holiday & Sunday\nOther Public Holiday",
+   "default": "Nil / None"
+  },
+  {
+   "fieldname": "suffix_from_date",
+   "fieldtype": "Date",
+   "label": "Suffix Holiday From Date",
+   "depends_on": "eval:doc.suffix_holidays && doc.suffix_holidays != 'Nil / None'"
+  },
+  {
+   "fieldname": "suffix_to_date",
+   "fieldtype": "Date",
+   "label": "Suffix Holiday To Date",
+   "depends_on": "eval:doc.suffix_holidays && doc.suffix_holidays != 'Nil / None'"
   },
   {
    "fieldname": "reason_for_leave",
