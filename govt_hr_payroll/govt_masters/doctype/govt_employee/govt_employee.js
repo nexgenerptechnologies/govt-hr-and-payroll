@@ -3,10 +3,41 @@
 
 frappe.ui.form.on("Govt Employee", {
 	refresh(frm) {
+		frm.trigger("show_officer_names");
 		if (!frm.is_new()) {
 			frm.add_custom_button(__("Create / View Monthly Pay Bill"), function() {
 				frappe.set_route("List", "Govt Pay Bill");
 			}, __("Payroll"));
+		}
+	},
+
+	reports_to(frm) {
+		frm.trigger("show_officer_names");
+	},
+
+	leave_approver(frm) {
+		frm.trigger("show_officer_names");
+	},
+
+	show_officer_names(frm) {
+		if (frm.doc.reports_to) {
+			frappe.db.get_value("Govt Employee", frm.doc.reports_to, ["employee_name", "designation"], function(r) {
+				if (r && r.employee_name) {
+					frm.set_df_property("reports_to", "description", `<b>Officer:</b> ${r.employee_name} (${r.designation || 'Staff'})`);
+				}
+			});
+		} else {
+			frm.set_df_property("reports_to", "description", __("Immediate superior who scrutinizes & recommends leave applications"));
+		}
+
+		if (frm.doc.leave_approver) {
+			frappe.db.get_value("Govt Employee", frm.doc.leave_approver, ["employee_name", "designation"], function(r) {
+				if (r && r.employee_name) {
+					frm.set_df_property("leave_approver", "description", `<b>Authority:</b> ${r.employee_name} (${r.designation || 'Staff'})`);
+				}
+			});
+		} else {
+			frm.set_df_property("leave_approver", "description", __("Competent Authority who sanctions / approves leave"));
 		}
 	},
 

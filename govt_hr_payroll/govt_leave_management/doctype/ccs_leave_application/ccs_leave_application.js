@@ -5,6 +5,37 @@ frappe.ui.form.on("CCS Leave Application", {
 	refresh(frm) {
 		frm.trigger("toggle_half_day_fields");
 		frm.trigger("add_half_day_button");
+		frm.trigger("show_approver_details");
+	},
+
+	reports_to(frm) {
+		frm.trigger("show_approver_details");
+	},
+
+	leave_approver(frm) {
+		frm.trigger("show_approver_details");
+	},
+
+	show_approver_details(frm) {
+		if (frm.doc.reports_to) {
+			frappe.db.get_value("Govt Employee", frm.doc.reports_to, ["employee_name", "designation"], function(r) {
+				if (r && r.employee_name) {
+					frm.set_df_property("reports_to", "description", `<b>Reporting Officer:</b> ${r.employee_name} (${r.designation || 'Staff'})`);
+				}
+			});
+		} else {
+			frm.set_df_property("reports_to", "description", __("Immediate superior recommending leave"));
+		}
+
+		if (frm.doc.leave_approver) {
+			frappe.db.get_value("Govt Employee", frm.doc.leave_approver, ["employee_name", "designation"], function(r) {
+				if (r && r.employee_name) {
+					frm.set_df_property("leave_approver", "description", `<b>Sanctioning Authority:</b> ${r.employee_name} (${r.designation || 'Staff'})`);
+				}
+			});
+		} else {
+			frm.set_df_property("leave_approver", "description", __("Competent authority approving leave"));
+		}
 	},
 
 	add_half_day_button(frm) {
@@ -51,6 +82,7 @@ frappe.ui.form.on("CCS Leave Application", {
 					if (r.office_unit) frm.set_value("office_unit", r.office_unit);
 					if (r.reports_to) frm.set_value("reports_to", r.reports_to);
 					if (r.leave_approver) frm.set_value("leave_approver", r.leave_approver);
+					frm.trigger("show_approver_details");
 					if (frm.doc.leave_type) {
 						frm.trigger("leave_type");
 					}
