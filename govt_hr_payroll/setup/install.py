@@ -1411,12 +1411,19 @@ def setup_initial_employees():
 		if not frappe.db.exists("Govt Office Unit", "HQ ATVP"):
 			ou = frappe.new_doc("Govt Office Unit")
 			ou.office_unit_name = "HQ ATVP"
-			ou.office_type = "Headquarters"
-			ou.city = "Delhi"
-			ou.state = "Delhi"
-			ou.pincode = "110001"
+			ou.ministry_dept = "ATVP"
+			ou.station_city = "Delhi"
+			ou.city_classification = "X"
+			ou.ddo_id = "DDO-ATVP-01"
 			ou.flags.ignore_permissions = True
+			ou.flags.ignore_mandatory = True
 			ou.insert()
+		else:
+			ou = frappe.get_doc("Govt Office Unit", "HQ ATVP")
+			ou.ministry_dept = "ATVP"
+			ou.city_classification = "X"
+			ou.flags.ignore_permissions = True
+			ou.save()
 		frappe.db.commit()
 	except Exception as e:
 		frappe.log_error(f"Error ensuring HQ ATVP office unit: {e}")
@@ -1677,10 +1684,11 @@ def setup_initial_employees():
 
 			# Create or Update Govt Employee Record
 			emp_id = ed["employee_id"]
+			is_new = False
 			if not frappe.db.exists("Govt Employee", emp_id):
 				emp = frappe.new_doc("Govt Employee")
-				emp.name = emp_id
 				emp.employee_id = emp_id
+				is_new = True
 			else:
 				emp = frappe.get_doc("Govt Employee", emp_id)
 
@@ -1693,7 +1701,7 @@ def setup_initial_employees():
 			emp.doj = ed["doj"]
 			emp.doj_in_atvp = ed["doj_in_atvp"]
 			emp.designation = ed["designation"]
-			emp.office_unit = ed["office_unit"]
+			emp.office_unit = "HQ ATVP"
 			emp.pay_matrix_level = ed["pay_matrix_level"]
 			emp.basic_pay = ed["basic_pay"]
 			emp.hometown = ed["hometown"]
@@ -1702,7 +1710,11 @@ def setup_initial_employees():
 			emp.tpt_city_type = "Higher TPTA Cities"
 			emp.pension_scheme = "NPS (10% + 14%)"
 			emp.flags.ignore_permissions = True
-			emp.save()
+			emp.flags.ignore_mandatory = True
+			if is_new:
+				emp.insert()
+			else:
+				emp.save()
 			frappe.db.commit()
 		except Exception as e:
 			frappe.log_error(f"Error creating employee {ed['employee_id']}: {e}")
@@ -1750,5 +1762,10 @@ def sync_initial_employees():
 	the creation / synchronization of the 12 HQ ATVP employees directly from Frappe Desk.
 	"""
 	setup_initial_employees()
-	return {"status": "success", "message": "12 HQ ATVP employees synced successfully!"}
+	emps = frappe.get_all("Govt Employee", fields=["employee_id", "employee_name", "designation", "office_unit"])
+	return {
+		"status": "success",
+		"message": f"Successfully synced {len(emps)} employees in Employee Master!",
+		"employees": emps
+	}
 
