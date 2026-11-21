@@ -264,6 +264,30 @@
    "print": 1,
    "email": 1,
    "share": 0
+  },
+  {
+   "role": "Employee Master",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "submit": 0,
+   "cancel": 0,
+   "amend": 0,
+   "print": 1,
+   "email": 1,
+   "share": 0
+  },
+  {
+   "role": "Employee",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "submit": 0,
+   "cancel": 0,
+   "amend": 0,
+   "print": 1,
+   "email": 1,
+   "share": 0
   }
  ],
  "search_fields": "name,order_no,employee_name,station_to",

@@ -48,7 +48,12 @@ def setup_page_workspace_permissions():
 		"Controlling Officer", "Drawing and Disbursing Officer", "Govt Employee",
 		"Employee Master", "Employee"
 	]
-	for doctype in ["Page", "Workspace", "CCS Leave Type", "CCS Leave Ledger Entry", "CCS Leave Application", "Govt Employee", "Govt Office Unit"]:
+	for doctype in [
+		"Page", "Workspace", "CCS Leave Type", "CCS Leave Ledger Entry",
+		"CCS Leave Application", "Govt Employee", "Govt Office Unit",
+		"Tour Movement Order", "TADA Final Claim", "CEA Claim",
+		"Govt Income Tax Statement", "Due Drawn Arrear"
+	]:
 		for role in roles:
 			try:
 				if not frappe.db.exists("Custom DocPerm", {"parent": doctype, "role": role, "permlevel": 0}):
