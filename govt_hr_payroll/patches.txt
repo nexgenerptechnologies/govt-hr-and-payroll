@@ -2,3 +2,4 @@
 govt_hr_payroll.patches.v1_0.seed_atvp_employees
 govt_hr_payroll.patches.v1_0.update_workflows_as_per_documents
 govt_hr_payroll.patches.v1_0.clean_nitin_roles
+govt_hr_payroll.patches.v1_0.fix_leave_type_permissions

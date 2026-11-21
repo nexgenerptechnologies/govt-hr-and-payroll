@@ -599,6 +599,30 @@
    "print": 1,
    "email": 0,
    "share": 0
+  },
+  {
+   "role": "Employee Master",
+   "read": 1,
+   "write": 0,
+   "create": 0,
+   "submit": 0,
+   "cancel": 0,
+   "amend": 0,
+   "print": 1,
+   "email": 0,
+   "share": 0
+  },
+  {
+   "role": "Employee",
+   "read": 1,
+   "write": 0,
+   "create": 0,
+   "submit": 0,
+   "cancel": 0,
+   "amend": 0,
+   "print": 1,
+   "email": 0,
+   "share": 0
   }
  ],
  "search_fields": "employee_id,employee_name,designation,office_unit,pan,pran_no",

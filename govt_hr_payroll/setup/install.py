@@ -38,11 +38,17 @@ def after_migrate():
 
 def setup_page_workspace_permissions():
 	"""
-	Grants Read access to standard 'Page', 'Workspace' and 'CCS Leave Ledger Entry' doctypes for Govt HR roles
-	so restricted desk users don't encounter 'No permission for Page' error.
+	Grants Read access to standard 'Page', 'Workspace', 'CCS Leave Type', 'CCS Leave Ledger Entry'
+	and Master doctypes for all Government HR roles so restricted employee users don't encounter
+	'Insufficient Permission' errors when applying for leaves or accessing Desk.
 	"""
-	roles = ["System Manager", "Desk User", "Govt HR Admin", "Dealing Assistant", "Section Officer", "Reporting Officer", "Competent Authority", "Controlling Officer", "Drawing and Disbursing Officer", "Govt Employee"]
-	for doctype in ["Page", "Workspace", "CCS Leave Ledger Entry"]:
+	roles = [
+		"System Manager", "Desk User", "Govt HR Admin", "Dealing Assistant",
+		"Section Officer", "Reporting Officer", "Competent Authority",
+		"Controlling Officer", "Drawing and Disbursing Officer", "Govt Employee",
+		"Employee Master", "Employee"
+	]
+	for doctype in ["Page", "Workspace", "CCS Leave Type", "CCS Leave Ledger Entry", "CCS Leave Application", "Govt Employee", "Govt Office Unit"]:
 		for role in roles:
 			try:
 				if not frappe.db.exists("Custom DocPerm", {"parent": doctype, "role": role, "permlevel": 0}):
