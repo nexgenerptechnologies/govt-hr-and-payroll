@@ -48,7 +48,7 @@ a[href*="/desk#Flow"] {
 /* ==========================================================================
    2. MODERN COLORFUL SIDEBAR (EXECUTIVE VIBRANT GOVERNMENT DESIGN)
    ========================================================================== */
-/* Sidebar Width 285px - Guarantees full label visibility with ZERO truncation */
+/* Sidebar Width 285px - Guarantees full label visibility with ZERO truncation & ZERO SCROLLING */
 .layout-side-section,
 .desk-sidebar,
 .standard-sidebar,
@@ -60,6 +60,8 @@ a[href*="/desk#Flow"] {
 	min-width: 285px !important;
 	max-width: 285px !important;
 	flex: 0 0 285px !important;
+	overflow: hidden !important;
+	overflow-y: hidden !important;
 }
 
 /* Sidebar Item Container */
@@ -547,7 +549,7 @@ a[href*="do-part" i] .sidebar-item-icon {
 `;
 	}
 
-	// 2. ENHANCE AND COLORIZE SIDEBAR (DYNAMIC VIBRANT BADGES, NO ELLIPSIS, NO FLOW)
+	// 2. ENHANCE AND COLORIZE SIDEBAR (DYNAMIC VIBRANT BADGES, NO ELLIPSIS, NO FLOW, NO SCROLLBAR)
 	function enhanceGovtSidebar() {
 		injectGovtStyles();
 
@@ -557,90 +559,107 @@ a[href*="do-part" i] .sidebar-item-icon {
 			el.remove ? el.remove() : (el.style.display = "none");
 		});
 
-		// Apply module colorful badges
-		const sidebarItems = document.querySelectorAll(".sidebar-item-container, .standard-sidebar-item, .desk-sidebar a, .layout-side-section a, .sidebar-item");
-		if (sidebarItems && sidebarItems.length > 0) {
-			sidebarItems.forEach(function (el) {
-				const text = (el.innerText || el.getAttribute("item-name") || el.getAttribute("data-id") || "").toLowerCase();
-				const href = (el.getAttribute("href") || "").toLowerCase();
+		const sidebarContainer = document.querySelector(".standard-sidebar-section, .desk-sidebar .standard-sidebar, .layout-side-section .standard-sidebar, .desk-sidebar, .layout-side-section");
+		if (!sidebarContainer) return;
 
-				if (text.includes("flow")) {
-					el.style.display = "none";
+		const isStaff = frappe.session && frappe.session.user && frappe.session.user !== "Guest";
+		const roles = (frappe.user_roles || []);
+		const hasOfficerRole = roles.some(r => ["System Manager", "Workspace Manager", "Govt HR Admin", "Dealing Assistant", "Section Officer", "Drawing and Disbursing Officer", "Pay and Accounts Officer"].includes(r));
+
+		// 1. Purge individual DocTypes to prevent an endlessly long, scrolling sidebar
+		const clutterPatterns = [
+			"pay bill (monthly", "supplementary pay", "due-drawn arrear", "income tax statement",
+			"leave application", "do part ii", "leave ledger", "cea claim", "medical claim",
+			"tour movement", "ta/da claim", "tada final", "employee master", "cpc pay level",
+			"office unit", "payroll settings", "statutory doctypes", "modules"
+		];
+
+		sidebarContainer.querySelectorAll("a, .sidebar-item, .standard-sidebar-item, .sidebar-section-header, .sidebar-item-container").forEach(function(el) {
+			const text = (el.innerText || el.getAttribute("item-name") || el.getAttribute("data-id") || "").toLowerCase().trim();
+			const href = (el.getAttribute("href") || "").toLowerCase();
+
+			if (text.includes("flow")) {
+				el.remove ? el.remove() : (el.style.display = "none");
+				return;
+			}
+
+			// If general employee (like Shivani), IMMEDIATELY PURGE Payroll and Income Tax
+			if (!hasOfficerRole) {
+				if (text === "payroll" || href.includes("payroll") || text === "income tax" || href.includes("tax") || text.includes("pay bill") || href.includes("pay_bill") || text.includes("arrear")) {
+					el.remove ? el.remove() : (el.style.display = "none");
 					return;
 				}
+			}
 
-				if (text.includes("home") || href.endsWith("/desk") || href.endsWith("/desk#")) {
-					el.classList.add("govt-badge-home");
-				} else if (text.includes("supplementary")) {
-					el.classList.add("govt-badge-supp");
-				} else if (text.includes("pay bill") || href.includes("pay-bill") || href.includes("govt_pay_bill")) {
-					el.classList.add("govt-badge-paybill");
-				} else if (text.includes("payroll") || href.includes("payroll")) {
-					el.classList.add("govt-badge-payroll");
-				} else if (text.includes("income tax stat") || href.includes("income_tax_statement")) {
-					el.classList.add("govt-badge-taxstmt");
-				} else if (text.includes("tax") || href.includes("tax")) {
-					el.classList.add("govt-badge-tax");
-				} else if (text.includes("do part") || href.includes("do_part")) {
-					el.classList.add("govt-badge-dopart");
-				} else if (text.includes("due-drawn") || text.includes("arrear") || href.includes("due_drawn")) {
-					el.classList.add("govt-badge-arrear");
-				} else if (text.includes("leave") || href.includes("leave")) {
-					el.classList.add("govt-badge-leave");
-				} else if (text.includes("claim") || href.includes("claim") || text.includes("cea") || text.includes("medical")) {
-					el.classList.add("govt-badge-claim");
-				} else if (text.includes("tour") || href.includes("tour") || text.includes("ta/da") || text.includes("tada")) {
-					el.classList.add("govt-badge-tour");
+			// Purge individual DocTypes (they already exist inside Workspace cards/shortcuts)
+			if (clutterPatterns.some(p => text === p || text.startsWith(p) || (href.includes(p) && !href.includes("workspace") && !href.includes("govt-claims") && !href.includes("govt-leave-management") && !href.includes("govt-tour-ta-da") && !href.includes("govt-payroll") && !href.includes("govt-income-tax") && !href.includes("govt-masters")))) {
+				if (!text.includes("leave management") && !text.includes("claims & reimbursements") && !text.includes("tour ta & da") && text !== "payroll" && text !== "income tax" && text !== "home") {
+					el.remove ? el.remove() : (el.style.display = "none");
+					return;
+				}
+			}
+		});
+
+		// 2. Ensure only the exact role-permitted modules exist in the sidebar
+		const currentText = Array.from(sidebarContainer.querySelectorAll("a, .sidebar-item, .standard-sidebar-item")).map(el => (el.innerText || "").toLowerCase()).join(" ");
+
+		const expectedModules = [
+			{ key: "home", label: "Home", href: "/desk/masters-and-settings/govt-masters", iconClass: "govt-badge-home", iconSvg: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>` },
+			{ key: "leave", label: "Leave Management", href: "/desk/leave-management/govt-leave-management", iconClass: "govt-badge-leave", iconSvg: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>` },
+			{ key: "claim", label: "Claims & Reimbursements", href: "/desk/claims-and-reimbursements/govt-claims", iconClass: "govt-badge-claim", iconSvg: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>` },
+			{ key: "tour", label: "Tour TA & DA", href: "/desk/tour-ta-and-da/govt-tour-ta-da", iconClass: "govt-badge-tour", iconSvg: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;"><polygon points="3 11 22 2 13 21 11 13 3 11"></polygon></svg>` }
+		];
+
+		if (hasOfficerRole) {
+			expectedModules.splice(1, 0, 
+				{ key: "payroll", label: "Payroll", href: "/desk/payroll/govt-payroll", iconClass: "govt-badge-payroll", iconSvg: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>` },
+				{ key: "tax", label: "Income Tax", href: "/desk/income-tax/govt-income-tax", iconClass: "govt-badge-tax", iconSvg: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;"><rect x="4" y="2" width="16" height="20" rx="2"></rect><line x1="8" y1="6" x2="16" y2="6"></line><line x1="16" y1="14" x2="16" y2="18"></line><line x1="8" y1="10" x2="8" y2="10.01"></line><line x1="12" y1="10" x2="12" y2="10.01"></line><line x1="16" y1="10" x2="16" y2="10.01"></line><line x1="8" y1="14" x2="8" y2="14.01"></line><line x1="12" y1="14" x2="12" y2="14.01"></line><line x1="8" y1="18" x2="8" y2="18.01"></line><line x1="12" y1="18" x2="12" y2="18.01"></line></svg>` }
+			);
+		}
+
+		if (isStaff) {
+			const targetList = sidebarContainer.querySelector(".standard-sidebar-section, .sidebar-items, ul") || sidebarContainer;
+			expectedModules.forEach(function(mod) {
+				if (!currentText.includes(mod.key)) {
+					const item = document.createElement("a");
+					item.className = "standard-sidebar-item sidebar-item " + mod.iconClass;
+					item.href = mod.href;
+					item.setAttribute("item-name", mod.label);
+					item.setAttribute("data-id", mod.label);
+					item.innerHTML = `<span class="sidebar-item-icon">${mod.iconSvg}</span><span class="sidebar-item-label">${mod.label}</span>`;
+					item.addEventListener("click", function(e) {
+						e.preventDefault();
+						if (frappe.set_route) {
+							const clean = mod.href.replace("/desk/", "").split("/");
+							frappe.set_route(...clean);
+						} else {
+							window.location.href = mod.href;
+						}
+					});
+					targetList.appendChild(item);
 				}
 			});
 		}
 
-		// Ensure all role-authorized government modules are present in the sidebar
-		const sidebarContainer = document.querySelector(".standard-sidebar-section, .desk-sidebar .standard-sidebar, .layout-side-section .standard-sidebar");
-		if (sidebarContainer) {
-			const allText = Array.from(sidebarContainer.querySelectorAll("a, .sidebar-item, .standard-sidebar-item")).map(el => (el.innerText || "").toLowerCase()).join(" ");
-			
-			const isStaff = frappe.session && frappe.session.user && frappe.session.user !== "Guest";
-			const roles = (frappe.user_roles || []);
-			const hasOfficerRole = roles.some(r => ["System Manager", "Workspace Manager", "Govt HR Admin", "Dealing Assistant", "Section Officer", "Drawing and Disbursing Officer", "Pay and Accounts Officer"].includes(r));
+		// 3. Re-apply colorful badges to all remaining items
+		sidebarContainer.querySelectorAll(".sidebar-item-container, .standard-sidebar-item, a.sidebar-item").forEach(function (el) {
+			const text = (el.innerText || el.getAttribute("item-name") || el.getAttribute("data-id") || "").toLowerCase();
+			const href = (el.getAttribute("href") || "").toLowerCase();
 
-			const expectedModules = [
-				{ key: "home", label: "Home", href: "/desk/masters-and-settings/govt-masters", iconClass: "govt-badge-home", iconSvg: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>` },
-				{ key: "leave", label: "Leave Management", href: "/desk/leave-management/govt-leave-management", iconClass: "govt-badge-leave", iconSvg: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>` },
-				{ key: "claim", label: "Claims & Reimbursements", href: "/desk/claims-and-reimbursements/govt-claims", iconClass: "govt-badge-claim", iconSvg: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>` },
-				{ key: "tour", label: "Tour TA & DA", href: "/desk/tour-ta-and-da/govt-tour-ta-da", iconClass: "govt-badge-tour", iconSvg: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;"><polygon points="3 11 22 2 13 21 11 13 3 11"></polygon></svg>` }
-			];
-
-			if (hasOfficerRole) {
-				expectedModules.splice(1, 0, 
-					{ key: "payroll", label: "Payroll", href: "/desk/payroll/govt-payroll", iconClass: "govt-badge-payroll", iconSvg: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>` },
-					{ key: "tax", label: "Income Tax", href: "/desk/income-tax/govt-income-tax", iconClass: "govt-badge-tax", iconSvg: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;"><rect x="4" y="2" width="16" height="20" rx="2"></rect><line x1="8" y1="6" x2="16" y2="6"></line><line x1="16" y1="14" x2="16" y2="18"></line><line x1="8" y1="10" x2="8" y2="10.01"></line><line x1="12" y1="10" x2="12" y2="10.01"></line><line x1="16" y1="10" x2="16" y2="10.01"></line><line x1="8" y1="14" x2="8" y2="14.01"></line><line x1="12" y1="14" x2="12" y2="14.01"></line><line x1="8" y1="18" x2="8" y2="18.01"></line><line x1="12" y1="18" x2="12" y2="18.01"></line></svg>` }
-				);
+			if (text.includes("home") || href.endsWith("/desk") || href.endsWith("/desk#")) {
+				el.classList.add("govt-badge-home");
+			} else if (text.includes("payroll") || href.includes("payroll")) {
+				el.classList.add("govt-badge-payroll");
+			} else if (text.includes("tax") || href.includes("tax")) {
+				el.classList.add("govt-badge-tax");
+			} else if (text.includes("leave") || href.includes("leave")) {
+				el.classList.add("govt-badge-leave");
+			} else if (text.includes("claim") || href.includes("claim") || text.includes("cea") || text.includes("medical")) {
+				el.classList.add("govt-badge-claim");
+			} else if (text.includes("tour") || href.includes("tour") || text.includes("ta/da") || text.includes("tada")) {
+				el.classList.add("govt-badge-tour");
 			}
-
-			if (isStaff) {
-				expectedModules.forEach(function(mod) {
-					if (!allText.includes(mod.key)) {
-						const item = document.createElement("a");
-						item.className = "standard-sidebar-item sidebar-item " + mod.iconClass;
-						item.href = mod.href;
-						item.setAttribute("item-name", mod.label);
-						item.setAttribute("data-id", mod.label);
-						item.innerHTML = `<span class="sidebar-item-icon">${mod.iconSvg}</span><span class="sidebar-item-label">${mod.label}</span>`;
-						item.addEventListener("click", function(e) {
-							e.preventDefault();
-							if (frappe.set_route) {
-								const clean = mod.href.replace("/desk/", "").split("/");
-								frappe.set_route(...clean);
-							} else {
-								window.location.href = mod.href;
-							}
-						});
-						sidebarContainer.appendChild(item);
-					}
-				});
-			}
-		}
+		});
 	}
 
 	// 3. SVG ICONS LIBRARY (12px CRISP SIZE)

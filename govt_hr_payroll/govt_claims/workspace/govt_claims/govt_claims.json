@@ -49,7 +49,19 @@
  "parent_page": "",
  "public": 1,
  "restrict_to_domain": "",
- "roles": [],
+ "roles": [
+  {"role": "System Manager"},
+  {"role": "Workspace Manager"},
+  {"role": "Govt HR Admin"},
+  {"role": "Drawing and Disbursing Officer"},
+  {"role": "Section Officer"},
+  {"role": "Reporting Officer"},
+  {"role": "Competent Authority"},
+  {"role": "Controlling Officer"},
+  {"role": "Dealing Assistant"},
+  {"role": "Govt Employee"},
+  {"role": "Employee Master"}
+ ],
  "sequence_id": 5.0,
  "shortcuts": [
   {

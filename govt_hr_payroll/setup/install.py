@@ -366,29 +366,11 @@ def setup_workflows():
 def setup_sidebars():
 	items_data = [
 		{"type": "Link", "link_type": "Workspace", "link_to": "Govt Masters", "label": "Home", "icon": "home"},
-		{"type": "Section Break", "link_type": "", "link_to": "", "label": "Modules", "icon": ""},
 		{"type": "Link", "link_type": "Workspace", "link_to": "Govt Payroll", "label": "Payroll", "icon": "payroll"},
 		{"type": "Link", "link_type": "Workspace", "link_to": "Govt Income Tax", "label": "Income Tax", "icon": "calculator"},
 		{"type": "Link", "link_type": "Workspace", "link_to": "Govt Leave Management", "label": "Leave Management", "icon": "calendar"},
 		{"type": "Link", "link_type": "Workspace", "link_to": "Govt Claims", "label": "Claims & Reimbursements", "icon": "heart"},
-		{"type": "Link", "link_type": "Workspace", "link_to": "Govt Tour TA DA", "label": "Tour TA & DA", "icon": "navigation"},
-		{"type": "Link", "link_type": "Workspace", "link_to": "Govt Masters", "label": "Masters & Settings", "icon": "users"},
-		{"type": "Section Break", "link_type": "", "link_to": "", "label": "Statutory DocTypes", "icon": ""},
-		{"type": "Link", "link_type": "DocType", "link_to": "Govt Pay Bill", "label": "Pay Bill (Monthly Payroll)", "icon": "file-text"},
-		{"type": "Link", "link_type": "DocType", "link_to": "Supplementary Pay Bill", "label": "Supplementary Pay Bill", "icon": "file-plus"},
-		{"type": "Link", "link_type": "DocType", "link_to": "Due Drawn Arrear", "label": "Due-Drawn Arrears", "icon": "trending-up"},
-		{"type": "Link", "link_type": "DocType", "link_to": "Govt Income Tax Statement", "label": "Income Tax Statement", "icon": "calculator"},
-		{"type": "Link", "link_type": "DocType", "link_to": "CCS Leave Application", "label": "Leave Application", "icon": "calendar"},
-		{"type": "Link", "link_type": "DocType", "link_to": "DO Part Two Order", "label": "DO Part II Order", "icon": "award"},
-		{"type": "Link", "link_type": "DocType", "link_to": "CCS Leave Ledger Entry", "label": "Leave Ledger", "icon": "book"},
-		{"type": "Link", "link_type": "DocType", "link_to": "CEA Claim", "label": "CEA Claim", "icon": "heart"},
-		{"type": "Link", "link_type": "DocType", "link_to": "CGHS Medical Claim", "label": "Medical Claim (MRC-S)", "icon": "activity"},
-		{"type": "Link", "link_type": "DocType", "link_to": "Tour Movement Order", "label": "Tour Movement Order", "icon": "navigation"},
-		{"type": "Link", "link_type": "DocType", "link_to": "TADA Final Claim", "label": "TA/DA Claim", "icon": "dollar-sign"},
-		{"type": "Link", "link_type": "DocType", "link_to": "Govt Employee", "label": "Employee Master", "icon": "users"},
-		{"type": "Link", "link_type": "DocType", "link_to": "CPC Pay Level", "label": "CPC Pay Level (1-18)", "icon": "layers"},
-		{"type": "Link", "link_type": "DocType", "link_to": "Govt Office Unit", "label": "Office Unit (DDO/PAO)", "icon": "home"},
-		{"type": "Link", "link_type": "DocType", "link_to": "Govt Payroll Settings", "label": "Payroll Settings", "icon": "settings"}
+		{"type": "Link", "link_type": "Workspace", "link_to": "Govt Tour TA DA", "label": "Tour TA & DA", "icon": "navigation"}
 	]
 
 	target_names = [
@@ -546,6 +528,20 @@ def setup_workspaces():
 			for lk in data.get("links", []):
 				doc.append("links", lk)
 			
+			# Enforce strict role-based access for Workspaces
+			doc.set("roles", [])
+			roles_from_json = data.get("roles", [])
+			if roles_from_json:
+				for r in roles_from_json:
+					doc.append("roles", r)
+			else:
+				if ws_name in ["Govt Payroll", "Govt Income Tax", "Payroll", "Income Tax"]:
+					for r in ["System Manager", "Workspace Manager", "Govt HR Admin", "Drawing and Disbursing Officer", "Section Officer", "Dealing Assistant", "Pay and Accounts Officer"]:
+						doc.append("roles", {"role": r})
+				else:
+					for r in ["System Manager", "Workspace Manager", "Govt HR Admin", "Drawing and Disbursing Officer", "Section Officer", "Dealing Assistant", "Reporting Officer", "Competent Authority", "Controlling Officer", "Employee Master", "Govt Employee"]:
+						doc.append("roles", {"role": r})
+
 			doc.flags.ignore_permissions = True
 			doc.flags.ignore_mandatory = True
 			doc.save()
@@ -555,6 +551,11 @@ def setup_workspaces():
 		except Exception as e:
 			frappe.log_error(f"Error loading workspace {rel_file}: {e}")
 	
+	try:
+		frappe.db.delete("Workspace", {"for_user": ["!=", ""]})
+	except Exception:
+		pass
+
 	frappe.db.commit()
 
 def setup_payroll_settings():

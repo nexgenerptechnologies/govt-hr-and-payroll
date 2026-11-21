@@ -92,7 +92,15 @@
  "parent_page": "",
  "public": 1,
  "restrict_to_domain": "",
- "roles": [],
+  "roles": [
+  {"role": "System Manager"},
+  {"role": "Workspace Manager"},
+  {"role": "Govt HR Admin"},
+  {"role": "Drawing and Disbursing Officer"},
+  {"role": "Section Officer"},
+  {"role": "Dealing Assistant"},
+  {"role": "Pay and Accounts Officer"}
+ ],
  "sequence_id": 2.0,
  "shortcuts": [
   {
