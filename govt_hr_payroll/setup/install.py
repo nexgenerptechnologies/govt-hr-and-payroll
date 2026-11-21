@@ -104,6 +104,7 @@ def assign_nitin_roles():
 				"Workspace Manager",
 				"Govt HR Admin",
 				"Govt Employee",
+				"Employee Master",
 				"Dealing Assistant",
 				"Section Officer",
 				"Reporting Officer",
@@ -119,8 +120,17 @@ def assign_nitin_roles():
 				if frappe.db.exists("Role", ar):
 					user_doc.append("roles", {"role": ar})
 
+			# Completely unblock all modules (empty block_modules)
+			user_doc.set("block_modules", [])
+			user_doc.enabled = 1
 			user_doc.flags.ignore_permissions = True
 			user_doc.save()
+
+			# Remove user-customized workspace overrides so standard workspace is loaded
+			try:
+				frappe.db.delete("Workspace", {"for_user": user_doc.name})
+			except Exception:
+				pass
 
 		frappe.db.commit()
 	except Exception as e:
@@ -261,6 +271,7 @@ def setup_workflows():
 			],
 			"transitions": [
 				{"state": "Applied", "action": "Forward for Scrutiny", "next_state": "Scrutinized", "allowed": "Govt Employee"},
+				{"state": "Applied", "action": "Forward for Scrutiny", "next_state": "Scrutinized", "allowed": "Employee Master"},
 				{"state": "Applied", "action": "Recommend Leave", "next_state": "Recommended", "allowed": "Reporting Officer"},
 				{"state": "Scrutinized", "action": "Recommend Leave", "next_state": "Recommended", "allowed": "Reporting Officer"},
 				{"state": "Scrutinized", "action": "Verify Leave Balance", "next_state": "Recommended", "allowed": "Dealing Assistant"},
@@ -285,11 +296,13 @@ def setup_workflows():
 			],
 			"transitions": [
 				{"state": "Claim Drafted", "action": "Submit Claim", "next_state": "Scrutinized by Office", "allowed": "Govt Employee"},
+				{"state": "Claim Drafted", "action": "Submit Claim", "next_state": "Scrutinized by Office", "allowed": "Employee Master"},
 				{"state": "Scrutinized by Office", "action": "Countersign & Sanction", "next_state": "Sanctioned for Payment", "allowed": "Drawing and Disbursing Officer"},
 				{"state": "Scrutinized by Office", "action": "Sanction Claim", "next_state": "Sanctioned for Payment", "allowed": "Drawing and Disbursing Officer"},
 				{"state": "Scrutinized by Office", "action": "Return to Individual", "next_state": "Returned for Rectification", "allowed": "Dealing Assistant"},
 				{"state": "Scrutinized by Office", "action": "Return with Queries", "next_state": "Returned for Rectification", "allowed": "Drawing and Disbursing Officer"},
-				{"state": "Returned for Rectification", "action": "Re-submit Claim", "next_state": "Scrutinized by Office", "allowed": "Govt Employee"}
+				{"state": "Returned for Rectification", "action": "Re-submit Claim", "next_state": "Scrutinized by Office", "allowed": "Govt Employee"},
+				{"state": "Returned for Rectification", "action": "Re-submit Claim", "next_state": "Scrutinized by Office", "allowed": "Employee Master"}
 			]
 		},
 		{
@@ -306,6 +319,7 @@ def setup_workflows():
 			],
 			"transitions": [
 				{"state": "Claim Drafted", "action": "Submit Tour Bill", "next_state": "Scrutinized by Office", "allowed": "Govt Employee"},
+				{"state": "Claim Drafted", "action": "Submit Tour Bill", "next_state": "Scrutinized by Office", "allowed": "Employee Master"},
 				{"state": "Scrutinized by Office", "action": "Audit Tour Claims", "next_state": "Countersigned by Controlling Officer", "allowed": "Dealing Assistant"},
 				{"state": "Scrutinized by Office", "action": "Return to Claimant", "next_state": "Returned for Rectification", "allowed": "Dealing Assistant"},
 				{"state": "Countersigned by Controlling Officer", "action": "Countersign Claim", "next_state": "Countersigned by Controlling Officer", "allowed": "Controlling Officer"},
@@ -313,7 +327,8 @@ def setup_workflows():
 				{"state": "Countersigned by Controlling Officer", "action": "Sanction Travel Bill", "next_state": "Sanctioned for Payment", "allowed": "Drawing and Disbursing Officer"},
 				{"state": "Countersigned by Controlling Officer", "action": "Return with Queries", "next_state": "Returned for Rectification", "allowed": "Controlling Officer"},
 				{"state": "Countersigned by Controlling Officer", "action": "Return with Queries", "next_state": "Returned for Rectification", "allowed": "Drawing and Disbursing Officer"},
-				{"state": "Returned for Rectification", "action": "Re-submit Tour Bill", "next_state": "Scrutinized by Office", "allowed": "Govt Employee"}
+				{"state": "Returned for Rectification", "action": "Re-submit Tour Bill", "next_state": "Scrutinized by Office", "allowed": "Govt Employee"},
+				{"state": "Returned for Rectification", "action": "Re-submit Tour Bill", "next_state": "Scrutinized by Office", "allowed": "Employee Master"}
 			]
 		}
 	]
@@ -385,7 +400,18 @@ def setup_sidebars():
 		("Govt Tour TA DA", "Tour TA & DA"),
 		("Govt HR & Payroll", "HR & Payroll"),
 		("Masters & Settings", "Masters & Settings"),
-		("HR & Payroll", "HR & Payroll")
+		("HR & Payroll", "HR & Payroll"),
+		("Leave Management", "Leave Management"),
+		("Claims & Reimbursements", "Claims & Reimbursements"),
+		("Tour TA & DA", "Tour TA & DA"),
+		("Payroll", "Payroll"),
+		("Income Tax", "Income Tax"),
+		("masters-and-settings", "Masters & Settings"),
+		("leave-management", "Leave Management"),
+		("claims-and-reimbursements", "Claims & Reimbursements"),
+		("tour-ta-and-da", "Tour TA & DA"),
+		("payroll", "Payroll"),
+		("income-tax", "Income Tax")
 	]
 
 	try:
@@ -461,6 +487,11 @@ def setup_sidebars():
 					sb_doc.save()
 				except Exception as e:
 					frappe.log_error(f"Error updating Workspace Sidebar {sb_name}: {e}")
+
+			try:
+				frappe.db.delete("Workspace Sidebar", {"is_standard": 0})
+			except Exception:
+				pass
 
 		frappe.db.commit()
 		frappe.clear_cache()
@@ -1478,7 +1509,7 @@ def setup_initial_employees():
 			"pay_matrix_level": "Level-13",
 			"basic_pay": 123100,
 			"email": "sachin@atvp.gov.in",
-			"roles": ["Govt Employee", "Desk User", "Govt HR Admin", "Drawing and Disbursing Officer", "Workspace Manager", "Competent Authority", "Controlling Officer", "Reporting Officer"],
+			"roles": ["Govt Employee", "Employee Master", "Desk User", "Govt HR Admin", "Drawing and Disbursing Officer", "Workspace Manager", "Competent Authority", "Controlling Officer", "Reporting Officer"],
 			"reports_to": None,
 			"leave_approver": None
 		},
@@ -1497,7 +1528,7 @@ def setup_initial_employees():
 			"pay_matrix_level": "Level-11",
 			"basic_pay": 67700,
 			"email": "ritik@atvp.gov.in",
-			"roles": ["Govt Employee", "Desk User", "Section Officer", "Competent Authority", "Controlling Officer", "Reporting Officer"],
+			"roles": ["Govt Employee", "Employee Master", "Desk User", "Section Officer", "Competent Authority", "Controlling Officer", "Reporting Officer"],
 			"reports_to": "B327591", # Sachin (DIR)
 			"leave_approver": "B327591" # Sachin (DIR)
 		},
@@ -1516,7 +1547,7 @@ def setup_initial_employees():
 			"pay_matrix_level": "Level-10",
 			"basic_pay": 56100,
 			"email": "ritu@atvp.gov.in",
-			"roles": ["Govt Employee", "Desk User", "Section Officer", "Controlling Officer", "Reporting Officer"],
+			"roles": ["Govt Employee", "Employee Master", "Desk User", "Section Officer", "Controlling Officer", "Reporting Officer"],
 			"reports_to": "B289635", # Ritik (PM)
 			"leave_approver": "B327591" # Sachin (DIR)
 		},
@@ -1535,7 +1566,7 @@ def setup_initial_employees():
 			"pay_matrix_level": "Level-8",
 			"basic_pay": 47600,
 			"email": "ravi@atvp.gov.in",
-			"roles": ["Govt Employee", "Desk User", "Section Officer", "Controlling Officer", "Reporting Officer", "Competent Authority"],
+			"roles": ["Govt Employee", "Employee Master", "Desk User", "Section Officer", "Controlling Officer", "Reporting Officer", "Competent Authority"],
 			"reports_to": "B253674", # Ritu (DPM)
 			"leave_approver": "B289635" # Ritik (PM)
 		},
@@ -1554,7 +1585,7 @@ def setup_initial_employees():
 			"pay_matrix_level": "Level-7",
 			"basic_pay": 44900,
 			"email": "rampratap@atvp.gov.in",
-			"roles": ["Govt Employee", "Desk User", "Dealing Assistant"],
+			"roles": ["Govt Employee", "Employee Master", "Desk User", "Dealing Assistant"],
 			"reports_to": "B327591", # Attached to Sachin (DIR)
 			"leave_approver": "B327591" # Sachin (DIR)
 		},
@@ -1573,7 +1604,7 @@ def setup_initial_employees():
 			"pay_matrix_level": "Level-7",
 			"basic_pay": 44900,
 			"email": "sonu@atvp.gov.in",
-			"roles": ["Govt Employee", "Desk User", "Dealing Assistant", "Reporting Officer"],
+			"roles": ["Govt Employee", "Employee Master", "Desk User", "Dealing Assistant", "Reporting Officer"],
 			"reports_to": "B256973", # Ravi (APM)
 			"leave_approver": "B289635" # Ritik (PM)
 		},
@@ -1592,7 +1623,7 @@ def setup_initial_employees():
 			"pay_matrix_level": "Level-7",
 			"basic_pay": 44900,
 			"email": "priya@atvp.gov.in",
-			"roles": ["Govt Employee", "Desk User", "Dealing Assistant", "Reporting Officer"],
+			"roles": ["Govt Employee", "Employee Master", "Desk User", "Dealing Assistant", "Reporting Officer"],
 			"reports_to": "B256973", # Ravi (APM)
 			"leave_approver": "B289635" # Ritik (PM)
 		},
@@ -1611,7 +1642,7 @@ def setup_initial_employees():
 			"pay_matrix_level": "Level-7",
 			"basic_pay": 44900,
 			"email": "harsh@atvp.gov.in",
-			"roles": ["Govt Employee", "Desk User", "Dealing Assistant", "Reporting Officer"],
+			"roles": ["Govt Employee", "Employee Master", "Desk User", "Dealing Assistant", "Reporting Officer"],
 			"reports_to": "B256973", # Ravi (APM)
 			"leave_approver": "B289635" # Ritik (PM)
 		},
@@ -1630,7 +1661,7 @@ def setup_initial_employees():
 			"pay_matrix_level": "Level-7",
 			"basic_pay": 44900,
 			"email": "shivam@atvp.gov.in",
-			"roles": ["Govt Employee", "Desk User", "Dealing Assistant"],
+			"roles": ["Govt Employee", "Employee Master", "Desk User", "Dealing Assistant"],
 			"reports_to": "B256973", # Ravi (APM)
 			"leave_approver": "B289635" # Ritik (PM)
 		},
@@ -1649,7 +1680,7 @@ def setup_initial_employees():
 			"pay_matrix_level": "Level-4",
 			"basic_pay": 25500,
 			"email": "aniket@atvp.gov.in",
-			"roles": ["Govt Employee", "Desk User", "Dealing Assistant"],
+			"roles": ["Govt Employee", "Employee Master", "Desk User", "Dealing Assistant"],
 			"reports_to": "B583162", # Sonu (ASO)
 			"leave_approver": "B256973" # Ravi (APM)
 		},
@@ -1668,7 +1699,7 @@ def setup_initial_employees():
 			"pay_matrix_level": "Level-2",
 			"basic_pay": 19900,
 			"email": "soniya@atvp.gov.in",
-			"roles": ["Govt Employee", "Desk User"],
+			"roles": ["Govt Employee", "Employee Master", "Desk User"],
 			"reports_to": "B576983", # Priya (ASO)
 			"leave_approver": "B256973" # Ravi (APM)
 		},
@@ -1687,7 +1718,7 @@ def setup_initial_employees():
 			"pay_matrix_level": "Level-1",
 			"basic_pay": 18000,
 			"email": "shivani@atvp.gov.in",
-			"roles": ["Govt Employee", "Desk User"],
+			"roles": ["Govt Employee", "Employee Master", "Desk User"],
 			"reports_to": "B487962", # Harsh (ASO)
 			"leave_approver": "B256973" # Ravi (APM)
 		}
@@ -1706,7 +1737,9 @@ def setup_initial_employees():
 				u.send_welcome_email = 0
 				u.user_type = "System User"
 				for role in ed["roles"]:
-					u.append("roles", {"role": role})
+					if frappe.db.exists("Role", role):
+						u.append("roles", {"role": role})
+				u.set("block_modules", [])
 				u.flags.ignore_permissions = True
 				u.insert()
 				# Set Default Password: Govt@1234
@@ -1717,15 +1750,20 @@ def setup_initial_employees():
 					pass
 			else:
 				u = frappe.get_doc("User", email)
-				existing_roles = {r.role for r in u.roles}
-				changed = False
+				u.set("roles", [])
 				for role in ed["roles"]:
-					if role not in existing_roles:
+					if frappe.db.exists("Role", role):
 						u.append("roles", {"role": role})
-						changed = True
-				if changed:
-					u.flags.ignore_permissions = True
-					u.save()
+				u.set("block_modules", [])
+				u.enabled = 1
+				u.flags.ignore_permissions = True
+				u.save()
+
+			# Delete user-specific workspace overrides so standard workspace is loaded
+			try:
+				frappe.db.delete("Workspace", {"for_user": email})
+			except Exception:
+				pass
 
 			# Create or Update Govt Employee Record
 			emp_id = ed["employee_id"]
@@ -1830,4 +1868,31 @@ def sync_workflows():
 		"status": "success",
 		"message": "Official Government Workflows synchronized successfully as per provided documents!"
 	}
+
+@frappe.whitelist()
+def sync_all_sidebars_and_roles():
+	"""
+	Comprehensive whitelisted endpoint to repair and synchronize:
+	1. All Desk sidebars (Home, Payroll, Income Tax, Leave Management, Claims & Reimbursements, Tour TA & DA).
+	2. Nitin's full administrative roles and clear blocked modules.
+	3. All 12 ATVP employees' exact workflow roles, clear blocked modules, and ensure permissions.
+	4. Reset custom override sidebars/workspaces and clear system cache.
+	"""
+	setup_roles()
+	setup_page_workspace_permissions()
+	setup_workflow_states()
+	setup_workflow_actions()
+	setup_workflows()
+	setup_workspaces()
+	setup_sidebars()
+	assign_nitin_roles()
+	setup_initial_employees()
+	frappe.clear_cache()
+	frappe.db.commit()
+
+	return {
+		"status": "success",
+		"message": "All Sidebars, Workspaces, and 12 Employees' Roles & Permissions have been successfully synchronized and cleared of all module blocks!"
+	}
+
 
