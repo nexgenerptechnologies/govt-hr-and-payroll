@@ -85,33 +85,28 @@ def assign_nitin_roles():
 
 		for u in users:
 			user_doc = frappe.get_doc("User", u.name)
-			existing_roles = {r.role for r in user_doc.roles}
 
-			# Ensure primary Government HR roles and Workspace Manager
-			target_roles = [
+			# Strictly assign ONLY Government HR & Payroll roles and System Administration
+			allowed_roles = [
 				"System Manager",
 				"Desk User",
+				"Workspace Manager",
 				"Govt HR Admin",
+				"Govt Employee",
 				"Dealing Assistant",
 				"Section Officer",
 				"Reporting Officer",
 				"Competent Authority",
 				"Controlling Officer",
 				"Drawing and Disbursing Officer",
-				"Workspace Manager"
+				"Pay and Accounts Officer"
 			]
-			for tr in target_roles:
-				if tr not in existing_roles:
-					user_doc.append("roles", {"role": tr})
 
-			# Strip other ERP module roles to isolate access to Govt HR & Payroll only
-			unwanted_roles = [
-				"Accounts User", "Accounts Manager", "Stock User", "Stock Manager",
-				"Purchase User", "Purchase Manager", "Sales User", "Sales Manager",
-				"Manufacturing User", "Manufacturing Manager", "Projects User"
-			]
-			user_doc.roles = [r for r in user_doc.roles if r.role not in unwanted_roles]
-			user_doc.block_modules = []
+			# Completely wipe out all unrelated commercial/loan/school/marketing roles
+			user_doc.set("roles", [])
+			for ar in allowed_roles:
+				if frappe.db.exists("Role", ar):
+					user_doc.append("roles", {"role": ar})
 
 			user_doc.flags.ignore_permissions = True
 			user_doc.save()
